@@ -12,16 +12,16 @@ namespace R3Extends4WinForms
     public static class R3ExtendsScrollableControl
     {
         /// <summary><see cref="ScrollableControl.Scroll"/> as <see cref="Observable(Of EventArgs)"/></summary>
-        /// <param name="ctrl">target</param>
+        /// <param name="sc">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
         public static Observable<ScrollEventArgs> MoveAsObservable(
-            this ScrollableControl ctrl,
+            this ScrollableControl sc,
             CancellationToken tkn = default) =>
             Observable.FromEvent<ScrollEventHandler, ScrollEventArgs>(
                 h => (s, e) => h(e),
-                h => ctrl.Scroll += h,
-                h => ctrl.Scroll -= h,
+                h => sc.Scroll += h,
+                h => sc.Scroll -= h,
                 tkn);
     }
 }
