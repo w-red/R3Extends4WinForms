@@ -10,7 +10,7 @@ namespace R3Extends4WinForms
     /// so they need to be added.
     /// The type must follow the type of each event handler.
     /// </remarks>
-    public static class R3ExtendsForm
+    public static class R3Extends4Form
     {
         /// <summary><see cref="Form.Load"/> as <see cref="Observable(Of EventArgs)"/></summary>
         /// <param name="frm">target</param>
