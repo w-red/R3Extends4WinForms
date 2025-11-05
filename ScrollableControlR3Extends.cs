@@ -9,7 +9,7 @@ namespace R3Extends4WinForms
     /// so they need to be added.
     /// The type must follow the type of each event handler.
     /// </remarks>
-    public static class R3Extends4ScrollableControl
+    public static class ScrollableControlR3Extends
     {
         /// <summary><see cref="ScrollableControl.Scroll"/> as <see cref="Observable(Of EventArgs)"/></summary>
         /// <param name="sc">target</param>

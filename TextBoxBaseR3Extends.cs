@@ -2,26 +2,26 @@
 
 namespace R3Extends4WinForms
 {
-    /// <summary><see cref="R3"/>'s Extends for <see cref="TextBox"/>.</summary>
+    /// <summary><see cref="R3"/>'s Extends for <see cref="TextBoxBase"/>.</summary>
     /// <remarks>
     /// Add extension methods for any events you need.<br />
     /// Maybe there are some things that have been expanded by your Framework,<br />
     /// so they need to be added.
     /// The type must follow the type of each event handler.
     /// </remarks>
-    public static class R3Extends4TextBox
+    public static class TextBoxBaseR3Extends
     {
-        /// <summary><see cref="TextBox.TextAlignChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
-        /// <param name="tb">target</param>
+        /// <summary><see cref="TextBoxBase.AcceptsTabChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <param name="tbb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> TextAlignChangedAsObservable(
-            this TextBox tb,
+        public static Observable<EventArgs> AcceptsTabChangedAsObservable(
+            this TextBoxBase tbb,
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
-                h => tb.TextAlignChanged += h,
-                h => tb.TextAlignChanged -= h,
+                h => tbb.AcceptsTabChanged += h,
+                h => tbb.AcceptsTabChanged -= h,
                 tkn);
 
         /// <summary><see cref="TextBoxBase.BorderStyleChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>

@@ -9,7 +9,7 @@ namespace R3Extends4WinForms
     /// so they need to be added.
     /// The type must follow the type of each event handler.
     /// </remarks>
-    public static class R3Extends4DomainUpDown
+    public static class DomainUpDownR3Extends
     {
         /// <summary><see cref="DomainUpDown.SelectedItemChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
         /// <param name="dud">target</param>
