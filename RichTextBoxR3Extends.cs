@@ -2,7 +2,7 @@
 
 namespace R3Extends4WinForms
 {
-    /// <summary><see cref="R3"/>'s Extends for <see cref="TextBoxBase"/>.</summary>
+    /// <summary><see cref="R3"/>'s Extends for <see cref="RichTextBox"/>.</summary>
     /// <remarks>
     /// Add extension methods for any events you need.<br />
     /// Maybe there are some things that have been expanded by your Framework,<br />
