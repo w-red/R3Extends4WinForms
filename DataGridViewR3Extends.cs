@@ -959,5 +959,616 @@ namespace R3Extends4WinForms
                 h => dgv.DataSourceChanged += h,
                 h => dgv.DataSourceChanged -= h,
                 tkn);
+
+        /// <summary><see cref="DataGridView.DefaultCellStyleChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <param name="dgv">target</param>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public static Observable<EventArgs> DefaultCellStyleChangedAsObservable(
+            this DataGridView dgv,
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => dgv.DefaultCellStyleChanged += h,
+                h => dgv.DefaultCellStyleChanged -= h,
+                tkn);
+
+        /// <summary><see cref="DataGridView.DefaultValuesNeeded"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <param name="dgv">target</param>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public static Observable<DataGridViewRowEventArgs> DefaultValuesNeededAsObservable(
+            this DataGridView dgv,
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<DataGridViewRowEventHandler, DataGridViewRowEventArgs>(
+                h => (s, e) => h(e),
+                h => dgv.DefaultValuesNeeded += h,
+                h => dgv.DefaultValuesNeeded -= h,
+                tkn);
+
+        /// <summary><see cref="DataGridView.EditingControlShowing"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <param name="dgv">target</param>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public static Observable<DataGridViewEditingControlShowingEventArgs> EditingControlShowingAsObservable(
+            this DataGridView dgv,
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<DataGridViewEditingControlShowingEventHandler, DataGridViewEditingControlShowingEventArgs>(
+                h => (s, e) => h(e),
+                h => dgv.EditingControlShowing += h,
+                h => dgv.EditingControlShowing -= h,
+                tkn);
+
+        /// <summary><see cref="DataGridView.EditModeChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <param name="dgv">target</param>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public static Observable<EventArgs> EditModeChangedAsObservable(
+            this DataGridView dgv,
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => dgv.EditModeChanged += h,
+                h => dgv.EditModeChanged -= h,
+                tkn);
+
+        /// <summary><see cref="DataGridView.FontChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <param name="dgv">target</param>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public static Observable<EventArgs> FontChangedAsObservable(
+            this DataGridView dgv,
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => dgv.FontChanged += h,
+                h => dgv.FontChanged -= h,
+                tkn);
+
+        /// <summary><see cref="DataGridView.ForeColorChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <param name="dgv">target</param>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public static Observable<EventArgs> ForeColorChangedAsObservable(
+            this DataGridView dgv,
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => dgv.ForeColorChanged += h,
+                h => dgv.ForeColorChanged -= h,
+                tkn);
+
+        /// <summary><see cref="DataGridView.GridColorChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <param name="dgv">target</param>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public static Observable<EventArgs> GridColorChangedAsObservable(
+            this DataGridView dgv,
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => dgv.GridColorChanged += h,
+                h => dgv.GridColorChanged -= h,
+                tkn);
+
+        /// <summary><see cref="DataGridView.MultiSelectChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <param name="dgv">target</param>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public static Observable<EventArgs> MultiSelectChangedAsObservable(
+            this DataGridView dgv,
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => dgv.MultiSelectChanged += h,
+                h => dgv.MultiSelectChanged -= h,
+                tkn);
+
+        /// <summary><see cref="DataGridView.NewRowNeeded"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <param name="dgv">target</param>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public static Observable<DataGridViewRowEventArgs> NewRowNeededAsObservable(
+            this DataGridView dgv,
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<DataGridViewRowEventHandler, DataGridViewRowEventArgs>(
+                h => (s, e) => h(e),
+                h => dgv.NewRowNeeded += h,
+                h => dgv.NewRowNeeded -= h,
+                tkn);
+
+        /// <summary><see cref="DataGridView.ReadOnlyChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <param name="dgv">target</param>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public static Observable<EventArgs> ReadOnlyChangedAsObservable(
+            this DataGridView dgv,
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => dgv.ReadOnlyChanged += h,
+                h => dgv.ReadOnlyChanged -= h,
+                tkn);
+
+        /// <summary><see cref="DataGridView.RowContextMenuStripChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <param name="dgv">target</param>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public static Observable<DataGridViewRowEventArgs> RowContextMenuStripChangedAsObservable(
+            this DataGridView dgv,
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<DataGridViewRowEventHandler, DataGridViewRowEventArgs>(
+                h => (s, e) => h(e),
+                h => dgv.RowContextMenuStripChanged += h,
+                h => dgv.RowContextMenuStripChanged -= h,
+                tkn);
+
+        /// <summary><see cref="DataGridView.RowContextMenuStripNeeded"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <param name="dgv">target</param>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public static Observable<DataGridViewRowContextMenuStripNeededEventArgs> RowContextMenuStripNeededAsObservable(
+            this DataGridView dgv,
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<DataGridViewRowContextMenuStripNeededEventHandler, DataGridViewRowContextMenuStripNeededEventArgs>(
+                h => (s, e) => h(e),
+                h => dgv.RowContextMenuStripNeeded += h,
+                h => dgv.RowContextMenuStripNeeded -= h,
+                tkn);
+
+        /// <summary><see cref="DataGridView.RowDefaultCellStyleChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <param name="dgv">target</param>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public static Observable<DataGridViewRowEventArgs> RowDefaultCellStyleChangedAsObservable(
+            this DataGridView dgv,
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<DataGridViewRowEventHandler, DataGridViewRowEventArgs>(
+                h => (s, e) => h(e),
+                h => dgv.RowDefaultCellStyleChanged += h,
+                h => dgv.RowDefaultCellStyleChanged -= h,
+                tkn);
+
+        /// <summary><see cref="DataGridView.RowDirtyStateNeeded"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <param name="dgv">target</param>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public static Observable<QuestionEventArgs> RowDirtyStateNeededAsObservable(
+            this DataGridView dgv,
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<QuestionEventHandler, QuestionEventArgs>(
+                h => (s, e) => h(e),
+                h => dgv.RowDirtyStateNeeded += h,
+                h => dgv.RowDirtyStateNeeded -= h,
+                tkn);
+
+        /// <summary><see cref="DataGridView.RowDividerDoubleClick"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <param name="dgv">target</param>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public static Observable<DataGridViewRowDividerDoubleClickEventArgs> RowDividerDoubleClickAsObservable(
+            this DataGridView dgv,
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<DataGridViewRowDividerDoubleClickEventHandler, DataGridViewRowDividerDoubleClickEventArgs>(
+                h => (s, e) => h(e),
+                h => dgv.RowDividerDoubleClick += h,
+                h => dgv.RowDividerDoubleClick -= h,
+                tkn);
+
+        /// <summary><see cref="DataGridView.RowDividerHeightChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <param name="dgv">target</param>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public static Observable<DataGridViewRowEventArgs> RowDividerHeightChangedAsObservable(
+            this DataGridView dgv,
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<DataGridViewRowEventHandler, DataGridViewRowEventArgs>(
+                h => (s, e) => h(e),
+                h => dgv.RowDividerHeightChanged += h,
+                h => dgv.RowDividerHeightChanged -= h,
+                tkn);
+
+        /// <summary><see cref="DataGridView.RowEnter"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <param name="dgv">target</param>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public static Observable<DataGridViewCellEventArgs> RowEnterAsObservable(
+            this DataGridView dgv,
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<DataGridViewCellEventHandler, DataGridViewCellEventArgs>(
+                h => (s, e) => h(e),
+                h => dgv.RowEnter += h,
+                h => dgv.RowEnter -= h,
+                tkn);
+
+        /// <summary><see cref="DataGridView.RowErrorTextChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <param name="dgv">target</param>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public static Observable<DataGridViewRowEventArgs> RowErrorTextChangedAsObservable(
+            this DataGridView dgv,
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<DataGridViewRowEventHandler, DataGridViewRowEventArgs>(
+                h => (s, e) => h(e),
+                h => dgv.RowErrorTextChanged += h,
+                h => dgv.RowErrorTextChanged -= h,
+                tkn);
+
+        /// <summary><see cref="DataGridView.RowErrorTextNeeded"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <param name="dgv">target</param>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public static Observable<DataGridViewRowErrorTextNeededEventArgs> RowErrorTextNeededAsObservable(
+            this DataGridView dgv,
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<DataGridViewRowErrorTextNeededEventHandler, DataGridViewRowErrorTextNeededEventArgs>(
+                h => (s, e) => h(e),
+                h => dgv.RowErrorTextNeeded += h,
+                h => dgv.RowErrorTextNeeded -= h,
+                tkn);
+
+        /// <summary><see cref="DataGridView.RowHeaderCellChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <param name="dgv">target</param>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public static Observable<DataGridViewRowEventArgs> RowHeaderCellChangedAsObservable(
+            this DataGridView dgv,
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<DataGridViewRowEventHandler, DataGridViewRowEventArgs>(
+                h => (s, e) => h(e),
+                h => dgv.RowHeaderCellChanged += h,
+                h => dgv.RowHeaderCellChanged -= h,
+                tkn);
+
+        /// <summary><see cref="DataGridView.RowHeaderMouseClick"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <param name="dgv">target</param>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public static Observable<DataGridViewCellMouseEventArgs> RowHeaderMouseClickAsObservable(
+            this DataGridView dgv,
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<DataGridViewCellMouseEventHandler, DataGridViewCellMouseEventArgs>(
+                h => (s, e) => h(e),
+                h => dgv.RowHeaderMouseClick += h,
+                h => dgv.RowHeaderMouseClick-= h,
+                tkn);
+
+        /// <summary><see cref="DataGridView.RowHeaderMouseDoubleClick"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <param name="dgv">target</param>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public static Observable<DataGridViewCellMouseEventArgs> RowHeaderMouseDoubleClickAsObservable(
+            this DataGridView dgv,
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<DataGridViewCellMouseEventHandler, DataGridViewCellMouseEventArgs>(
+                h => (s, e) => h(e),
+                h => dgv.RowHeaderMouseDoubleClick += h,
+                h => dgv.RowHeaderMouseDoubleClick -= h,
+                tkn);
+
+        /// <summary><see cref="DataGridView.RowHeadersBorderStyleChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <param name="dgv">target</param>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public static Observable<EventArgs> RowHeadersBorderStyleChangedAsObservable(
+            this DataGridView dgv,
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => dgv.RowHeadersBorderStyleChanged += h,
+                h => dgv.RowHeadersBorderStyleChanged -= h,
+                tkn);
+
+        /// <summary><see cref="DataGridView.RowHeadersDefaultCellStyleChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <param name="dgv">target</param>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public static Observable<EventArgs> RowHeadersDefaultCellStyleChangedAsObservable(
+            this DataGridView dgv,
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => dgv.RowHeadersDefaultCellStyleChanged += h,
+                h => dgv.RowHeadersDefaultCellStyleChanged -= h,
+                tkn);
+
+        /// <summary><see cref="DataGridView.RowHeadersWidthChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <param name="dgv">target</param>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public static Observable<EventArgs> RowHeadersWidthChangedAsObservable(
+            this DataGridView dgv,
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => dgv.RowHeadersWidthChanged += h,
+                h => dgv.RowHeadersWidthChanged -= h,
+                tkn);
+
+        /// <summary><see cref="DataGridView.RowHeadersWidthSizeModeChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <param name="dgv">target</param>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public static Observable<DataGridViewAutoSizeModeEventArgs> RowHeadersWidthSizeModeChangedAsObservable(
+            this DataGridView dgv,
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<DataGridViewAutoSizeModeEventHandler, DataGridViewAutoSizeModeEventArgs>(
+                h => (s, e) => h(e),
+                h => dgv.RowHeadersWidthSizeModeChanged += h,
+                h => dgv.RowHeadersWidthSizeModeChanged -= h,
+                tkn);
+
+        /// <summary><see cref="DataGridView.RowHeightChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <param name="dgv">target</param>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public static Observable<DataGridViewRowEventArgs> RowHeightChangedAsObservable(
+            this DataGridView dgv,
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<DataGridViewRowEventHandler, DataGridViewRowEventArgs>(
+                h => (s, e) => h(e),
+                h => dgv.RowHeightChanged += h,
+                h => dgv.RowHeightChanged -= h,
+                tkn);
+
+        /// <summary><see cref="DataGridView.RowHeightInfoNeeded"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <param name="dgv">target</param>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public static Observable<DataGridViewRowHeightInfoNeededEventArgs> RowHeightInfoNeededAsObservable(
+            this DataGridView dgv,
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<DataGridViewRowHeightInfoNeededEventHandler, DataGridViewRowHeightInfoNeededEventArgs>(
+                h => (s, e) => h(e),
+                h => dgv.RowHeightInfoNeeded += h,
+                h => dgv.RowHeightInfoNeeded -= h,
+                tkn);
+
+        /// <summary><see cref="DataGridView.RowHeightInfoPushed"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <param name="dgv">target</param>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public static Observable<DataGridViewRowHeightInfoPushedEventArgs> RowHeightInfoPushedAsObservable(
+            this DataGridView dgv,
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<DataGridViewRowHeightInfoPushedEventHandler, DataGridViewRowHeightInfoPushedEventArgs>(
+                h => (s, e) => h(e),
+                h => dgv.RowHeightInfoPushed += h,
+                h => dgv.RowHeightInfoPushed -= h,
+                tkn);
+
+        /// <summary><see cref="DataGridView.RowLeave"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <param name="dgv">target</param>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public static Observable<DataGridViewCellEventArgs> RowLeaveAsObservable(
+            this DataGridView dgv,
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<DataGridViewCellEventHandler, DataGridViewCellEventArgs>(
+                h => (s, e) => h(e),
+                h => dgv.RowLeave += h,
+                h => dgv.RowLeave -= h,
+                tkn);
+
+        /// <summary><see cref="DataGridView.RowMinimumHeightChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <param name="dgv">target</param>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public static Observable<DataGridViewRowEventArgs> RowMinimumHeightChangedAsObservable(
+            this DataGridView dgv,
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<DataGridViewRowEventHandler, DataGridViewRowEventArgs>(
+                h => (s, e) => h(e),
+                h => dgv.RowMinimumHeightChanged += h,
+                h => dgv.RowMinimumHeightChanged -= h,
+                tkn);
+
+        /// <summary><see cref="DataGridView.RowPostPaint"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <param name="dgv">target</param>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public static Observable<DataGridViewRowPostPaintEventArgs> RowPostPaintAsObservable(
+            this DataGridView dgv,
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<DataGridViewRowPostPaintEventHandler, DataGridViewRowPostPaintEventArgs>(
+                h => (s, e) => h(e),
+                h => dgv.RowPostPaint += h,
+                h => dgv.RowPostPaint -= h,
+                tkn);
+
+        /// <summary><see cref="DataGridView.RowPrePaint"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <param name="dgv">target</param>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public static Observable<DataGridViewRowPrePaintEventArgs> RowPrePaintAsObservable(
+            this DataGridView dgv,
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<DataGridViewRowPrePaintEventHandler, DataGridViewRowPrePaintEventArgs>(
+                h => (s, e) => h(e),
+                h => dgv.RowPrePaint += h,
+                h => dgv.RowPrePaint -= h,
+                tkn);
+
+        /// <summary><see cref="DataGridView.RowsAdded"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <param name="dgv">target</param>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public static Observable<DataGridViewRowsAddedEventArgs> RowsAddedAsObservable(
+            this DataGridView dgv,
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<DataGridViewRowsAddedEventHandler, DataGridViewRowsAddedEventArgs>(
+                h => (s, e) => h(e),
+                h => dgv.RowsAdded += h,
+                h => dgv.RowsAdded -= h,
+                tkn);
+
+        /// <summary><see cref="DataGridView.RowsDefaultCellStyleChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <param name="dgv">target</param>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public static Observable<EventArgs> RowsDefaultCellStyleChangedAsObservable(
+            this DataGridView dgv,
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => dgv.RowsDefaultCellStyleChanged += h,
+                h => dgv.RowsDefaultCellStyleChanged -= h,
+                tkn);
+
+        /// <summary><see cref="DataGridView.RowsRemoved"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <param name="dgv">target</param>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public static Observable<DataGridViewRowsRemovedEventArgs> RowsRemovedAsObservable(
+            this DataGridView dgv,
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<DataGridViewRowsRemovedEventHandler, DataGridViewRowsRemovedEventArgs>(
+                h => (s, e) => h(e),
+                h => dgv.RowsRemoved += h,
+                h => dgv.RowsRemoved -= h,
+                tkn);
+
+        /// <summary><see cref="DataGridView.RowStateChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <param name="dgv">target</param>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public static Observable<DataGridViewRowStateChangedEventArgs> RowStateChangedAsObservable(
+            this DataGridView dgv,
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<DataGridViewRowStateChangedEventHandler, DataGridViewRowStateChangedEventArgs>(
+                h => (s, e) => h(e),
+                h => dgv.RowStateChanged += h,
+                h => dgv.RowStateChanged -= h,
+                tkn);
+
+        /// <summary><see cref="DataGridView.RowUnshared"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <param name="dgv">target</param>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public static Observable<DataGridViewRowEventArgs> RowUnsharedAsObservable(
+            this DataGridView dgv,
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<DataGridViewRowEventHandler, DataGridViewRowEventArgs>(
+                h => (s, e) => h(e),
+                h => dgv.RowUnshared += h,
+                h => dgv.RowUnshared -= h,
+                tkn);
+
+        /// <summary><see cref="DataGridView.RowValidated"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <param name="dgv">target</param>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public static Observable<DataGridViewCellEventArgs> RowValidatedAsObservable(
+            this DataGridView dgv,
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<DataGridViewCellEventHandler, DataGridViewCellEventArgs>(
+                h => (s, e) => h(e),
+                h => dgv.RowValidated += h,
+                h => dgv.RowValidated -= h,
+                tkn);
+
+        /// <summary><see cref="DataGridView.RowValidating"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <param name="dgv">target</param>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public static Observable<DataGridViewCellCancelEventArgs> RowValidatingAsObservable(
+            this DataGridView dgv,
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<DataGridViewCellCancelEventHandler, DataGridViewCellCancelEventArgs>(
+                h => (s, e) => h(e),
+                h => dgv.RowValidating += h,
+                h => dgv.RowValidating -= h,
+                tkn);
+
+        /// <summary><see cref="DataGridView.Scroll"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <param name="dgv">target</param>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public static Observable<ScrollEventArgs> ScrollAsObservable(
+            this DataGridView dgv,
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<ScrollEventHandler, ScrollEventArgs>(
+                h => (s, e) => h(e),
+                h => dgv.Scroll += h,
+                h => dgv.Scroll -= h,
+                tkn);
+
+        /// <summary><see cref="DataGridView.SelectionChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <param name="dgv">target</param>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public static Observable<EventArgs> SelectionChangedAsObservable(
+            this DataGridView dgv,
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => dgv.SelectionChanged += h,
+                h => dgv.SelectionChanged -= h,
+                tkn);
+
+        /// <summary><see cref="DataGridView.SortCompare"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <param name="dgv">target</param>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public static Observable<DataGridViewSortCompareEventArgs> SortCompareAsObservable(
+            this DataGridView dgv,
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<DataGridViewSortCompareEventHandler, DataGridViewSortCompareEventArgs>(
+                h => (s, e) => h(e),
+                h => dgv.SortCompare += h,
+                h => dgv.SortCompare -= h,
+                tkn);
+
+        /// <summary><see cref="DataGridView.Sorted"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <param name="dgv">target</param>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public static Observable<EventArgs> SortedAsObservable(
+            this DataGridView dgv,
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => dgv.Sorted += h,
+                h => dgv.Sorted -= h,
+                tkn);
+
+        /// <summary><see cref="DataGridView.UserAddedRow"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <param name="dgv">target</param>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public static Observable<DataGridViewRowEventArgs> UserAddedRowAsObservable(
+            this DataGridView dgv,
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<DataGridViewRowEventHandler, DataGridViewRowEventArgs>(
+                h => (s, e) => h(e),
+                h => dgv.UserAddedRow += h,
+                h => dgv.UserAddedRow -= h,
+                tkn);
+
+        /// <summary><see cref="DataGridView.UserDeletedRow"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <param name="dgv">target</param>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public static Observable<DataGridViewRowEventArgs> UserDeletedRowAsObservable(
+            this DataGridView dgv,
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<DataGridViewRowEventHandler, DataGridViewRowEventArgs>(
+                h => (s, e) => h(e),
+                h => dgv.UserDeletedRow += h,
+                h => dgv.UserDeletedRow -= h,
+                tkn);
+
+        /// <summary><see cref="DataGridView.UserDeletingRow"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <param name="dgv">target</param>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public static Observable<DataGridViewRowCancelEventArgs> UserDeletingRowAsObservable(
+            this DataGridView dgv,
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<DataGridViewRowCancelEventHandler, DataGridViewRowCancelEventArgs>(
+                h => (s, e) => h(e),
+                h => dgv.UserDeletingRow += h,
+                h => dgv.UserDeletingRow -= h,
+                tkn);
     }
 }
