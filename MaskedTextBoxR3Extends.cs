@@ -11,7 +11,7 @@ namespace R3Extends4WinForms
     /// </remarks>
     public static class MaskedTextBoxR3Extends
     {
-        /// <summary><see cref="MaskedTextBox.IsOverwriteModeChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="MaskedTextBox.IsOverwriteModeChanged"/> as <see cref="Observable"/></summary>
         /// <param name="rtb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -24,7 +24,7 @@ namespace R3Extends4WinForms
                 h => rtb.IsOverwriteModeChanged -= h,
                 tkn);
 
-        /// <summary><see cref="MaskedTextBox.MaskChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="MaskedTextBox.MaskChanged"/> as <see cref="Observable"/></summary>
         /// <param name="rtb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -37,7 +37,7 @@ namespace R3Extends4WinForms
                 h => rtb.MaskChanged -= h,
                 tkn);
 
-        /// <summary><see cref="MaskedTextBox.MaskInputRejected"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="MaskedTextBox.MaskInputRejected"/> as <see cref="Observable"/></summary>
         /// <param name="rtb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -50,7 +50,7 @@ namespace R3Extends4WinForms
                 h => rtb.MaskInputRejected -= h,
                 tkn);
 
-        /// <summary><see cref="MaskedTextBox.TextAlignChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="MaskedTextBox.TextAlignChanged"/> as <see cref="Observable"/></summary>
         /// <param name="rtb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -63,7 +63,7 @@ namespace R3Extends4WinForms
                 h => rtb.TextAlignChanged -= h,
                 tkn);
 
-        /// <summary><see cref="MaskedTextBox.TypeValidationCompleted"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="MaskedTextBox.TypeValidationCompleted"/> as <see cref="Observable"/></summary>
         /// <param name="rtb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
