@@ -11,7 +11,7 @@ namespace R3Extends4WinForms
     /// </remarks>
     public static class ToolStripPanelR3Extends
     {
-        /// <summary><see cref="ToolStripPanel.AutoSizeChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripPanel.AutoSizeChanged"/> as <see cref="Observable"/></summary>
         /// <param name="tsp">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -24,7 +24,7 @@ namespace R3Extends4WinForms
                 h => tsp.AutoSizeChanged -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripPanel.RendererChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripPanel.RendererChanged"/> as <see cref="Observable"/></summary>
         /// <param name="tsp">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>

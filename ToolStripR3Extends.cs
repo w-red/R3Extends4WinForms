@@ -11,7 +11,7 @@ namespace R3Extends4WinForms
     /// </remarks>
     public static class ToolStripR3Extends
     {
-        /// <summary><see cref="ToolStrip.AutoSizeChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStrip.AutoSizeChanged"/> as <see cref="Observable"/></summary>
         /// <param name="ts">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -24,7 +24,7 @@ namespace R3Extends4WinForms
                 h => ts.AutoSizeChanged -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStrip.BeginDrag"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStrip.BeginDrag"/> as <see cref="Observable"/></summary>
         /// <param name="ts">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -37,7 +37,7 @@ namespace R3Extends4WinForms
                 h => ts.BeginDrag -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStrip.EndDrag"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStrip.EndDrag"/> as <see cref="Observable"/></summary>
         /// <param name="ts">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -50,7 +50,7 @@ namespace R3Extends4WinForms
                 h => ts.EndDrag -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStrip.CausesValidationChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStrip.CausesValidationChanged"/> as <see cref="Observable"/></summary>
         /// <param name="ts">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -63,7 +63,7 @@ namespace R3Extends4WinForms
                 h => ts.CausesValidationChanged -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStrip.CursorChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStrip.CursorChanged"/> as <see cref="Observable"/></summary>
         /// <param name="ts">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -76,7 +76,7 @@ namespace R3Extends4WinForms
                 h => ts.CursorChanged -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStrip.ForeColorChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStrip.ForeColorChanged"/> as <see cref="Observable"/></summary>
         /// <param name="ts">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -89,7 +89,7 @@ namespace R3Extends4WinForms
                 h => ts.ForeColorChanged -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStrip.ItemAdded"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStrip.ItemAdded"/> as <see cref="Observable"/></summary>
         /// <param name="ts">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -102,7 +102,7 @@ namespace R3Extends4WinForms
                 h => ts.ItemAdded -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStrip.ItemRemoved"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStrip.ItemRemoved"/> as <see cref="Observable"/></summary>
         /// <param name="ts">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -115,7 +115,7 @@ namespace R3Extends4WinForms
                 h => ts.ItemRemoved -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStrip.ItemClicked"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStrip.ItemClicked"/> as <see cref="Observable"/></summary>
         /// <param name="ts">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -128,7 +128,7 @@ namespace R3Extends4WinForms
                 h => ts.ItemClicked -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStrip.LayoutCompleted"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStrip.LayoutCompleted"/> as <see cref="Observable"/></summary>
         /// <param name="ts">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -141,7 +141,7 @@ namespace R3Extends4WinForms
                 h => ts.LayoutCompleted -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStrip.LayoutStyleChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStrip.LayoutStyleChanged"/> as <see cref="Observable"/></summary>
         /// <param name="ts">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -154,7 +154,7 @@ namespace R3Extends4WinForms
                 h => ts.LayoutStyleChanged -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStrip.PaintGrip"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStrip.PaintGrip"/> as <see cref="Observable"/></summary>
         /// <param name="ts">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -167,7 +167,7 @@ namespace R3Extends4WinForms
                 h => ts.PaintGrip -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStrip.RendererChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStrip.RendererChanged"/> as <see cref="Observable"/></summary>
         /// <param name="ts">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>

@@ -11,7 +11,7 @@ namespace R3Extends4WinForms
     /// </remarks>
     public static class LinkLabelR3Extends
     {
-        /// <summary><see cref="LinkLabel.LinkClicked"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="LinkLabel.LinkClicked"/> as <see cref="Observable"/></summary>
         /// <param name="ll">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -24,7 +24,7 @@ namespace R3Extends4WinForms
                 h => ll.LinkClicked -= h,
                 tkn);
 
-        /// <summary><see cref="LinkLabel.TabStopChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="LinkLabel.TabStopChanged"/> as <see cref="Observable"/></summary>
         /// <param name="ll">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>

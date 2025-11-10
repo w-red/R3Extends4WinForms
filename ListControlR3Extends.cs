@@ -11,7 +11,7 @@ namespace R3Extends4WinForms
     /// </remarks>
     public static class ListControlR3Extends
     {
-        /// <summary><see cref="ListControl.DataSourceChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ListControl.DataSourceChanged"/> as <see cref="Observable"/></summary>
         /// <param name="lc">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -24,7 +24,7 @@ namespace R3Extends4WinForms
                 h => lc.DataSourceChanged -= h,
                 tkn);
 
-        /// <summary><see cref="ListControl.DisplayMemberChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ListControl.DisplayMemberChanged"/> as <see cref="Observable"/></summary>
         /// <param name="lc">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -37,7 +37,7 @@ namespace R3Extends4WinForms
                 h => lc.DisplayMemberChanged -= h,
                 tkn);
 
-        /// <summary><see cref="ListControl.FormatInfoChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ListControl.FormatInfoChanged"/> as <see cref="Observable"/></summary>
         /// <param name="lc">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -50,7 +50,7 @@ namespace R3Extends4WinForms
                 h => lc.FormatInfoChanged -= h,
                 tkn);
 
-        /// <summary><see cref="ListControl.FormatStringChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ListControl.FormatStringChanged"/> as <see cref="Observable"/></summary>
         /// <param name="lc">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -63,7 +63,7 @@ namespace R3Extends4WinForms
                 h => lc.FormatStringChanged -= h,
                 tkn);
 
-        /// <summary><see cref="ListControl.FormattingEnabledChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ListControl.FormattingEnabledChanged"/> as <see cref="Observable"/></summary>
         /// <param name="lc">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -76,7 +76,7 @@ namespace R3Extends4WinForms
                 h => lc.FormattingEnabledChanged -= h,
                 tkn);
 
-        /// <summary><see cref="ListControl.Format"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ListControl.Format"/> as <see cref="Observable"/></summary>
         /// <param name="lc">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -89,7 +89,7 @@ namespace R3Extends4WinForms
                 h => lc.Format -= h,
                 tkn);
 
-        /// <summary><see cref="ListControl.SelectedValueChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ListControl.SelectedValueChanged"/> as <see cref="Observable"/></summary>
         /// <param name="lc">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -102,7 +102,7 @@ namespace R3Extends4WinForms
                 h => lc.SelectedValueChanged -= h,
                 tkn);
 
-        /// <summary><see cref="ListControl.ValueMemberChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ListControl.ValueMemberChanged"/> as <see cref="Observable"/></summary>
         /// <param name="lc">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>

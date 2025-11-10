@@ -12,7 +12,7 @@ namespace R3Extends4WinForms
     /// </remarks>
     public static class BindingSourceR3Extends
     {
-        /// <summary><see cref="BindingSource.AddingNew"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="BindingSource.AddingNew"/> as <see cref="Observable"/></summary>
         /// <param name="bs">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -25,7 +25,7 @@ namespace R3Extends4WinForms
                 h => bs.AddingNew -= h,
                 tkn);
 
-        /// <summary><see cref="BindingSource.BindingComplete"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="BindingSource.BindingComplete"/> as <see cref="Observable"/></summary>
         /// <param name="bs">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -38,7 +38,7 @@ namespace R3Extends4WinForms
                 h => bs.BindingComplete -= h,
                 tkn);
 
-        /// <summary><see cref="BindingSource.CurrentChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="BindingSource.CurrentChanged"/> as <see cref="Observable"/></summary>
         /// <param name="bs">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -51,7 +51,7 @@ namespace R3Extends4WinForms
                 h => bs.CurrentChanged -= h,
                 tkn);
 
-        /// <summary><see cref="BindingSource.CurrentItemChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="BindingSource.CurrentItemChanged"/> as <see cref="Observable"/></summary>
         /// <param name="bs">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -64,7 +64,7 @@ namespace R3Extends4WinForms
                 h => bs.CurrentItemChanged -= h,
                 tkn);
 
-        /// <summary><see cref="BindingSource.DataError"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="BindingSource.DataError"/> as <see cref="Observable"/></summary>
         /// <param name="bs">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -77,7 +77,7 @@ namespace R3Extends4WinForms
                 h => bs.DataError -= h,
                 tkn);
 
-        /// <summary><see cref="BindingSource.DataMemberChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="BindingSource.DataMemberChanged"/> as <see cref="Observable"/></summary>
         /// <param name="bs">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -90,7 +90,7 @@ namespace R3Extends4WinForms
                 h => bs.DataMemberChanged -= h,
                 tkn);
 
-        /// <summary><see cref="BindingSource.DataSourceChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="BindingSource.DataSourceChanged"/> as <see cref="Observable"/></summary>
         /// <param name="bs">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -103,7 +103,7 @@ namespace R3Extends4WinForms
                 h => bs.DataSourceChanged -= h,
                 tkn);
 
-        /// <summary><see cref="BindingSource.ListChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="BindingSource.ListChanged"/> as <see cref="Observable"/></summary>
         /// <param name="bs">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -116,7 +116,7 @@ namespace R3Extends4WinForms
                 h => bs.ListChanged -= h,
                 tkn);
 
-        /// <summary><see cref="BindingSource.PositionChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="BindingSource.PositionChanged"/> as <see cref="Observable"/></summary>
         /// <param name="bs">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>

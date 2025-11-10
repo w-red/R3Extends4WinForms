@@ -12,7 +12,7 @@ namespace R3Extends4WinForms
     /// </remarks>
     public static class CurrencyManagerR3Extends
     {
-        /// <summary><see cref="CurrencyManager.ItemChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="CurrencyManager.ItemChanged"/> as <see cref="Observable"/></summary>
         /// <param name="cm">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -25,7 +25,7 @@ namespace R3Extends4WinForms
                 h => cm.ItemChanged -= h,
                 tkn);
 
-        /// <summary><see cref="CurrencyManager.ListChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="CurrencyManager.ListChanged"/> as <see cref="Observable"/></summary>
         /// <param name="cm">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -38,7 +38,7 @@ namespace R3Extends4WinForms
                 h => cm.ListChanged -= h,
                 tkn);
 
-        /// <summary><see cref="CurrencyManager.MetaDataChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="CurrencyManager.MetaDataChanged"/> as <see cref="Observable"/></summary>
         /// <param name="cm">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>

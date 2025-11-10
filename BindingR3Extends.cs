@@ -11,7 +11,7 @@ namespace R3Extends4WinForms
     /// </remarks>
     public static class BindingR3Extends
     {
-        /// <summary><see cref="Binding.BindingComplete"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Binding.BindingComplete"/> as <see cref="Observable"/></summary>
         /// <param name="bg">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -24,7 +24,7 @@ namespace R3Extends4WinForms
                 h => bg.BindingComplete -= h,
                 tkn);
 
-        /// <summary><see cref="Binding.Format"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Binding.Format"/> as <see cref="Observable"/></summary>
         /// <param name="bg">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -37,7 +37,7 @@ namespace R3Extends4WinForms
                 h => bg.Format -= h,
                 tkn);
 
-        /// <summary><see cref="Binding.Parse"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Binding.Parse"/> as <see cref="Observable"/></summary>
         /// <param name="bg">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>

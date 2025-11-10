@@ -12,7 +12,7 @@ namespace R3Extends4WinForms
     /// </remarks>
     public static class ToolStripControlHostR3Extends
     {
-        /// <summary><see cref="ToolStripControlHost.Enter"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripControlHost.Enter"/> as <see cref="Observable"/></summary>
         /// <param name="tsch">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -25,7 +25,7 @@ namespace R3Extends4WinForms
                 h => tsch.Enter -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripControlHost.Leave"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripControlHost.Leave"/> as <see cref="Observable"/></summary>
         /// <param name="tsch">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -38,7 +38,7 @@ namespace R3Extends4WinForms
                 h => tsch.Leave -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripControlHost.GotFocus"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripControlHost.GotFocus"/> as <see cref="Observable"/></summary>
         /// <param name="tsch">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -51,7 +51,7 @@ namespace R3Extends4WinForms
                 h => tsch.GotFocus -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripControlHost.LostFocus"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripControlHost.LostFocus"/> as <see cref="Observable"/></summary>
         /// <param name="tsch">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -64,7 +64,7 @@ namespace R3Extends4WinForms
                 h => tsch.LostFocus -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripControlHost.KeyDown"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripControlHost.KeyDown"/> as <see cref="Observable"/></summary>
         /// <param name="tsch">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -77,7 +77,7 @@ namespace R3Extends4WinForms
                 h => tsch.KeyDown -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripControlHost.KeyUp"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripControlHost.KeyUp"/> as <see cref="Observable"/></summary>
         /// <param name="tsch">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -90,7 +90,7 @@ namespace R3Extends4WinForms
                 h => tsch.KeyUp -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripControlHost.KeyPress"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripControlHost.KeyPress"/> as <see cref="Observable"/></summary>
         /// <param name="tsch">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -103,7 +103,7 @@ namespace R3Extends4WinForms
                 h => tsch.KeyPress -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripControlHost.Validated"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripControlHost.Validated"/> as <see cref="Observable"/></summary>
         /// <param name="tsch">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -116,7 +116,7 @@ namespace R3Extends4WinForms
                 h => tsch.Validated -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripControlHost.Validating"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripControlHost.Validating"/> as <see cref="Observable"/></summary>
         /// <param name="tsch">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>

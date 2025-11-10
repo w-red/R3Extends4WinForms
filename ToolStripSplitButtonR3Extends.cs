@@ -11,7 +11,7 @@ namespace R3Extends4WinForms
     /// </remarks>
     public static class ToolStripSplitButtonR3Extends
     {
-        /// <summary><see cref="ToolStripSplitButton.ButtonClick"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripSplitButton.ButtonClick"/> as <see cref="Observable"/></summary>
         /// <param name="tssb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -24,7 +24,7 @@ namespace R3Extends4WinForms
                 h => tssb.ButtonClick -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripSplitButton.ButtonDoubleClick"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripSplitButton.ButtonDoubleClick"/> as <see cref="Observable"/></summary>
         /// <param name="tssb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -37,7 +37,7 @@ namespace R3Extends4WinForms
                 h => tssb.ButtonDoubleClick -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripSplitButton.DefaultItemChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripSplitButton.DefaultItemChanged"/> as <see cref="Observable"/></summary>
         /// <param name="tssb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>

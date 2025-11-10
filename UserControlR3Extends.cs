@@ -11,7 +11,7 @@ namespace R3Extends4WinForms
     /// </remarks>
     public static class UserControlR3Extends
     {
-        /// <summary><see cref="UserControl.Load"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="UserControl.Load"/> as <see cref="Observable"/></summary>
         /// <param name="sc">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -24,7 +24,7 @@ namespace R3Extends4WinForms
                 h => uc.Load -= h,
                 tkn);
 
-        /// <summary><see cref="UserControl.AutoSizeChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="UserControl.AutoSizeChanged"/> as <see cref="Observable"/></summary>
         /// <param name="sc">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -37,7 +37,7 @@ namespace R3Extends4WinForms
                 h => uc.AutoValidateChanged -= h,
                 tkn);
 
-        /// <summary><see cref="UserControl.AutoValidateChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="UserControl.AutoValidateChanged"/> as <see cref="Observable"/></summary>
         /// <param name="sc">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -50,7 +50,7 @@ namespace R3Extends4WinForms
                 h => uc.AutoValidateChanged -= h,
                 tkn);
 
-        /// <summary><see cref="UserControl.TextChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="UserControl.TextChanged"/> as <see cref="Observable"/></summary>
         /// <param name="sc">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>

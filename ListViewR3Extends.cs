@@ -11,7 +11,7 @@ namespace R3Extends4WinForms
     /// </remarks>
     public static class ListViewR3Extends
     {
-        /// <summary><see cref="ListView.BeforeLabelEdit"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ListView.BeforeLabelEdit"/> as <see cref="Observable"/></summary>
         /// <param name="lv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -24,7 +24,7 @@ namespace R3Extends4WinForms
                 h => lv.BeforeLabelEdit -= h,
                 tkn);
 
-        /// <summary><see cref="ListView.AfterLabelEdit"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ListView.AfterLabelEdit"/> as <see cref="Observable"/></summary>
         /// <param name="lv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -37,7 +37,7 @@ namespace R3Extends4WinForms
                 h => lv.AfterLabelEdit -= h,
                 tkn);
 
-        /// <summary><see cref="ListView.SearchForVirtualItem"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ListView.SearchForVirtualItem"/> as <see cref="Observable"/></summary>
         /// <param name="lv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -50,7 +50,7 @@ namespace R3Extends4WinForms
                 h => lv.SearchForVirtualItem -= h,
                 tkn);
 
-        /// <summary><see cref="ListView.CacheVirtualItems"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ListView.CacheVirtualItems"/> as <see cref="Observable"/></summary>
         /// <param name="lv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -63,7 +63,7 @@ namespace R3Extends4WinForms
                 h => lv.CacheVirtualItems -= h,
                 tkn);
 
-        /// <summary><see cref="ListView.RetrieveVirtualItem"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ListView.RetrieveVirtualItem"/> as <see cref="Observable"/></summary>
         /// <param name="lv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -76,7 +76,7 @@ namespace R3Extends4WinForms
                 h => lv.RetrieveVirtualItem -= h,
                 tkn);
 
-        /// <summary><see cref="ListView.ColumnClick"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ListView.ColumnClick"/> as <see cref="Observable"/></summary>
         /// <param name="lv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -89,7 +89,7 @@ namespace R3Extends4WinForms
                 h => lv.ColumnClick -= h,
                 tkn);
 
-        /// <summary><see cref="ListView.ColumnReordered"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ListView.ColumnReordered"/> as <see cref="Observable"/></summary>
         /// <param name="lv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -102,7 +102,7 @@ namespace R3Extends4WinForms
                 h => lv.ColumnReordered -= h,
                 tkn);
 
-        /// <summary><see cref="ListView.ColumnWidthChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ListView.ColumnWidthChanged"/> as <see cref="Observable"/></summary>
         /// <param name="lv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -115,7 +115,7 @@ namespace R3Extends4WinForms
                 h => lv.ColumnWidthChanged -= h,
                 tkn);
 
-        /// <summary><see cref="ListView.ColumnWidthChanging"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ListView.ColumnWidthChanging"/> as <see cref="Observable"/></summary>
         /// <param name="lv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -128,7 +128,7 @@ namespace R3Extends4WinForms
                 h => lv.ColumnWidthChanging -= h,
                 tkn);
 
-        /// <summary><see cref="ListView.DrawColumnHeader"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ListView.DrawColumnHeader"/> as <see cref="Observable"/></summary>
         /// <param name="lv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -141,7 +141,7 @@ namespace R3Extends4WinForms
                 h => lv.DrawColumnHeader -= h,
                 tkn);
 
-        /// <summary><see cref="ListView.DrawItem"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ListView.DrawItem"/> as <see cref="Observable"/></summary>
         /// <param name="lv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -154,7 +154,7 @@ namespace R3Extends4WinForms
                 h => lv.DrawItem -= h,
                 tkn);
 
-        /// <summary><see cref="ListView.DrawSubItem"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ListView.DrawSubItem"/> as <see cref="Observable"/></summary>
         /// <param name="lv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -167,7 +167,7 @@ namespace R3Extends4WinForms
                 h => lv.DrawSubItem -= h,
                 tkn);
 
-        /// <summary><see cref="ListView.GroupCollapsedStateChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ListView.GroupCollapsedStateChanged"/> as <see cref="Observable"/></summary>
         /// <param name="lv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -180,7 +180,7 @@ namespace R3Extends4WinForms
                 h => lv.GroupCollapsedStateChanged -= h,
                 tkn);
 
-        /// <summary><see cref="ListView.GroupTaskLinkClick"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ListView.GroupTaskLinkClick"/> as <see cref="Observable"/></summary>
         /// <param name="lv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -193,7 +193,7 @@ namespace R3Extends4WinForms
                 h => lv.GroupTaskLinkClick -= h,
                 tkn);
 
-        /// <summary><see cref="ListView.ItemActivate"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ListView.ItemActivate"/> as <see cref="Observable"/></summary>
         /// <param name="lv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -206,7 +206,7 @@ namespace R3Extends4WinForms
                 h => lv.ItemActivate -= h,
                 tkn);
 
-        /// <summary><see cref="ListView.ItemChecked"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ListView.ItemChecked"/> as <see cref="Observable"/></summary>
         /// <param name="lv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -219,7 +219,7 @@ namespace R3Extends4WinForms
                 h => lv.ItemChecked -= h,
                 tkn);
 
-        /// <summary><see cref="ListView.ItemCheck"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ListView.ItemCheck"/> as <see cref="Observable"/></summary>
         /// <param name="lv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -232,7 +232,7 @@ namespace R3Extends4WinForms
                 h => lv.ItemCheck -= h,
                 tkn);
 
-        /// <summary><see cref="ListView.ItemDrag"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ListView.ItemDrag"/> as <see cref="Observable"/></summary>
         /// <param name="lv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -245,7 +245,7 @@ namespace R3Extends4WinForms
                 h => lv.ItemDrag -= h,
                 tkn);
 
-        /// <summary><see cref="ListView.ItemMouseHover"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ListView.ItemMouseHover"/> as <see cref="Observable"/></summary>
         /// <param name="lv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -258,7 +258,7 @@ namespace R3Extends4WinForms
                 h => lv.ItemMouseHover -= h,
                 tkn);
 
-        /// <summary><see cref="ListView.ItemSelectionChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ListView.ItemSelectionChanged"/> as <see cref="Observable"/></summary>
         /// <param name="lv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -271,7 +271,7 @@ namespace R3Extends4WinForms
                 h => lv.ItemSelectionChanged -= h,
                 tkn);
 
-        /// <summary><see cref="ListView.RightToLeftLayoutChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ListView.RightToLeftLayoutChanged"/> as <see cref="Observable"/></summary>
         /// <param name="lv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -284,7 +284,7 @@ namespace R3Extends4WinForms
                 h => lv.RightToLeftLayoutChanged -= h,
                 tkn);
 
-        /// <summary><see cref="ListView.SelectedIndexChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ListView.SelectedIndexChanged"/> as <see cref="Observable"/></summary>
         /// <param name="lv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -297,7 +297,7 @@ namespace R3Extends4WinForms
                 h => lv.SelectedIndexChanged -= h,
                 tkn);
 
-        /// <summary><see cref="ListView.VirtualItemsSelectionRangeChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ListView.VirtualItemsSelectionRangeChanged"/> as <see cref="Observable"/></summary>
         /// <param name="lv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>

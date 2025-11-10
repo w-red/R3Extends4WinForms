@@ -11,7 +11,7 @@ namespace R3Extends4WinForms
     /// </remarks>
     public static class ToolStripButtonR3Extends
     {
-        /// <summary><see cref="ToolStripButton.CheckedChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripButton.CheckedChanged"/> as <see cref="Observable"/></summary>
         /// <param name="tsb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -24,7 +24,7 @@ namespace R3Extends4WinForms
                 h => tsb.CheckedChanged -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripButton.CheckStateChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripButton.CheckStateChanged"/> as <see cref="Observable"/></summary>
         /// <param name="tsb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>

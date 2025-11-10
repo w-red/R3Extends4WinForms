@@ -11,7 +11,7 @@ namespace R3Extends4WinForms
     /// </remarks>
     public static class DataGridViewR3Extends
     {
-        /// <summary><see cref="DataGridView.AllowUserToAddRowsChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.AllowUserToAddRowsChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -24,7 +24,7 @@ namespace R3Extends4WinForms
                 h => dgv.AllowUserToAddRowsChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.AllowUserToDeleteRowsChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.AllowUserToDeleteRowsChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -37,7 +37,7 @@ namespace R3Extends4WinForms
                 h => dgv.AllowUserToDeleteRowsChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.AllowUserToOrderColumnsChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.AllowUserToOrderColumnsChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -50,7 +50,7 @@ namespace R3Extends4WinForms
                 h => dgv.AllowUserToOrderColumnsChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.AllowUserToResizeColumnsChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.AllowUserToResizeColumnsChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -63,7 +63,7 @@ namespace R3Extends4WinForms
                 h => dgv.AllowUserToResizeColumnsChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.AllowUserToResizeRowsChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.AllowUserToResizeRowsChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -76,7 +76,7 @@ namespace R3Extends4WinForms
                 h => dgv.AllowUserToResizeRowsChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.AlternatingRowsDefaultCellStyleChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.AlternatingRowsDefaultCellStyleChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -89,7 +89,7 @@ namespace R3Extends4WinForms
                 h => dgv.AlternatingRowsDefaultCellStyleChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.AutoGenerateColumnsChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.AutoGenerateColumnsChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -102,7 +102,7 @@ namespace R3Extends4WinForms
                 h => dgv.AutoGenerateColumnsChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.AutoSizeColumnModeChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.AutoSizeColumnModeChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -115,7 +115,7 @@ namespace R3Extends4WinForms
                 h => dgv.AutoSizeColumnModeChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.AutoSizeColumnsModeChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.AutoSizeColumnsModeChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -128,7 +128,7 @@ namespace R3Extends4WinForms
                 h => dgv.AutoSizeColumnsModeChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.AutoSizeRowsModeChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.AutoSizeRowsModeChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -141,7 +141,7 @@ namespace R3Extends4WinForms
                 h => dgv.AutoSizeRowsModeChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.BackgroundColorChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.BackgroundColorChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -154,7 +154,7 @@ namespace R3Extends4WinForms
                 h => dgv.BackgroundColorChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.BorderStyleChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.BorderStyleChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -167,7 +167,7 @@ namespace R3Extends4WinForms
                 h => dgv.BorderStyleChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.CancelRowEdit"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.CancelRowEdit"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -180,7 +180,7 @@ namespace R3Extends4WinForms
                 h => dgv.CancelRowEdit -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.CellBeginEdit"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.CellBeginEdit"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -193,7 +193,7 @@ namespace R3Extends4WinForms
                 h => dgv.CellBeginEdit -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.CellBorderStyleChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.CellBorderStyleChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -206,7 +206,7 @@ namespace R3Extends4WinForms
                 h => dgv.CellBorderStyleChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.CellClick"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.CellClick"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -219,7 +219,7 @@ namespace R3Extends4WinForms
                 h => dgv.CellClick -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.CellContentClick"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.CellContentClick"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -232,7 +232,7 @@ namespace R3Extends4WinForms
                 h => dgv.CellContentClick -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.CellContentDoubleClick"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.CellContentDoubleClick"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -245,7 +245,7 @@ namespace R3Extends4WinForms
                 h => dgv.CellContentDoubleClick -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.CellContextMenuStripChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.CellContextMenuStripChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -258,7 +258,7 @@ namespace R3Extends4WinForms
                 h => dgv.CellContextMenuStripChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.CellContextMenuStripNeeded"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.CellContextMenuStripNeeded"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -271,7 +271,7 @@ namespace R3Extends4WinForms
                 h => dgv.CellContextMenuStripNeeded -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.CellDoubleClick"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.CellDoubleClick"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -284,7 +284,7 @@ namespace R3Extends4WinForms
                 h => dgv.CellDoubleClick -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.CellEndEdit"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.CellEndEdit"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -297,7 +297,7 @@ namespace R3Extends4WinForms
                 h => dgv.CellEndEdit -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.CellEnter"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.CellEnter"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -310,7 +310,7 @@ namespace R3Extends4WinForms
                 h => dgv.CellEnter -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.CellErrorTextChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.CellErrorTextChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -323,7 +323,7 @@ namespace R3Extends4WinForms
                 h => dgv.CellErrorTextChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.CellErrorTextNeeded"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.CellErrorTextNeeded"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -336,7 +336,7 @@ namespace R3Extends4WinForms
                 h => dgv.CellErrorTextNeeded -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.CellFormatting"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.CellFormatting"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -349,7 +349,7 @@ namespace R3Extends4WinForms
                 h => dgv.CellFormatting -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.CellLeave"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.CellLeave"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -362,7 +362,7 @@ namespace R3Extends4WinForms
                 h => dgv.CellLeave -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.CellMouseClick"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.CellMouseClick"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -375,7 +375,7 @@ namespace R3Extends4WinForms
                 h => dgv.CellMouseClick -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.CellMouseDoubleClick"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.CellMouseDoubleClick"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -388,7 +388,7 @@ namespace R3Extends4WinForms
                 h => dgv.CellMouseDoubleClick -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.CellMouseDown"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.CellMouseDown"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -401,7 +401,7 @@ namespace R3Extends4WinForms
                 h => dgv.CellMouseDown -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.CellMouseEnter"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.CellMouseEnter"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -414,7 +414,7 @@ namespace R3Extends4WinForms
                 h => dgv.CellMouseEnter -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.CellMouseLeave"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.CellMouseLeave"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -427,7 +427,7 @@ namespace R3Extends4WinForms
                 h => dgv.CellMouseLeave -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.CellMouseMove"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.CellMouseMove"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -440,7 +440,7 @@ namespace R3Extends4WinForms
                 h => dgv.CellMouseMove -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.CellMouseUp"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.CellMouseUp"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -453,7 +453,7 @@ namespace R3Extends4WinForms
                 h => dgv.CellMouseUp -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.CellPainting"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.CellPainting"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -466,7 +466,7 @@ namespace R3Extends4WinForms
                 h => dgv.CellPainting -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.CellParsing"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.CellParsing"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -479,7 +479,7 @@ namespace R3Extends4WinForms
                 h => dgv.CellParsing -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.CellStateChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.CellStateChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -492,7 +492,7 @@ namespace R3Extends4WinForms
                 h => dgv.CellStateChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.CellStyleChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.CellStyleChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -505,7 +505,7 @@ namespace R3Extends4WinForms
                 h => dgv.CellStyleChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.CellStyleContentChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.CellStyleContentChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -518,7 +518,7 @@ namespace R3Extends4WinForms
                 h => dgv.CellStyleContentChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.CellToolTipTextChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.CellToolTipTextChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -531,7 +531,7 @@ namespace R3Extends4WinForms
                 h => dgv.CellToolTipTextChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.CellToolTipTextNeeded"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.CellToolTipTextNeeded"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -544,7 +544,7 @@ namespace R3Extends4WinForms
                 h => dgv.CellToolTipTextNeeded -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.CellValidated"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.CellValidated"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -557,7 +557,7 @@ namespace R3Extends4WinForms
                 h => dgv.CellValidated -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.CellValidating"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.CellValidating"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -570,7 +570,7 @@ namespace R3Extends4WinForms
                 h => dgv.CellValidating -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.CellValueChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.CellValueChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -583,7 +583,7 @@ namespace R3Extends4WinForms
                 h => dgv.CellValueChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.CellValueNeeded"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.CellValueNeeded"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -596,7 +596,7 @@ namespace R3Extends4WinForms
                 h => dgv.CellValueNeeded -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.CellValuePushed"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.CellValuePushed"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -609,7 +609,7 @@ namespace R3Extends4WinForms
                 h => dgv.CellValuePushed -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.ColumnAdded"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.ColumnAdded"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -622,7 +622,7 @@ namespace R3Extends4WinForms
                 h => dgv.ColumnAdded -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.ColumnContextMenuStripChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.ColumnContextMenuStripChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -635,7 +635,7 @@ namespace R3Extends4WinForms
                 h => dgv.ColumnContextMenuStripChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.ColumnDataPropertyNameChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.ColumnDataPropertyNameChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -648,7 +648,7 @@ namespace R3Extends4WinForms
                 h => dgv.ColumnDataPropertyNameChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.ColumnDefaultCellStyleChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.ColumnDefaultCellStyleChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -661,7 +661,7 @@ namespace R3Extends4WinForms
                 h => dgv.ColumnDefaultCellStyleChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.ColumnDisplayIndexChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.ColumnDisplayIndexChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -674,7 +674,7 @@ namespace R3Extends4WinForms
                 h => dgv.ColumnDisplayIndexChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.ColumnDividerDoubleClick"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.ColumnDividerDoubleClick"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -687,7 +687,7 @@ namespace R3Extends4WinForms
                 h => dgv.ColumnDividerDoubleClick -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.ColumnDividerWidthChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.ColumnDividerWidthChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -700,7 +700,7 @@ namespace R3Extends4WinForms
                 h => dgv.ColumnDividerWidthChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.ColumnHeaderCellChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.ColumnHeaderCellChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -713,7 +713,7 @@ namespace R3Extends4WinForms
                 h => dgv.ColumnHeaderCellChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.ColumnHeaderMouseClick"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.ColumnHeaderMouseClick"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -726,7 +726,7 @@ namespace R3Extends4WinForms
                 h => dgv.ColumnHeaderMouseClick -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.ColumnHeaderMouseDoubleClick"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.ColumnHeaderMouseDoubleClick"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -739,7 +739,7 @@ namespace R3Extends4WinForms
                 h => dgv.ColumnHeaderMouseDoubleClick -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.ColumnHeadersBorderStyleChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.ColumnHeadersBorderStyleChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -752,7 +752,7 @@ namespace R3Extends4WinForms
                 h => dgv.ColumnHeadersBorderStyleChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.ColumnHeadersDefaultCellStyleChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.ColumnHeadersDefaultCellStyleChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -765,7 +765,7 @@ namespace R3Extends4WinForms
                 h => dgv.ColumnHeadersDefaultCellStyleChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.ColumnHeadersHeightChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.ColumnHeadersHeightChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -778,7 +778,7 @@ namespace R3Extends4WinForms
                 h => dgv.ColumnHeadersHeightChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.ColumnHeadersHeightSizeModeChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.ColumnHeadersHeightSizeModeChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -791,7 +791,7 @@ namespace R3Extends4WinForms
                 h => dgv.ColumnHeadersHeightSizeModeChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.ColumnMinimumWidthChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.ColumnMinimumWidthChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -804,7 +804,7 @@ namespace R3Extends4WinForms
                 h => dgv.ColumnMinimumWidthChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.ColumnNameChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.ColumnNameChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -817,7 +817,7 @@ namespace R3Extends4WinForms
                 h => dgv.ColumnNameChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.ColumnRemoved"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.ColumnRemoved"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -830,7 +830,7 @@ namespace R3Extends4WinForms
                 h => dgv.ColumnRemoved -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.ColumnSortModeChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.ColumnSortModeChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -843,7 +843,7 @@ namespace R3Extends4WinForms
                 h => dgv.ColumnSortModeChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.ColumnStateChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.ColumnStateChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -856,7 +856,7 @@ namespace R3Extends4WinForms
                 h => dgv.ColumnStateChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.ColumnToolTipTextChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.ColumnToolTipTextChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -869,7 +869,7 @@ namespace R3Extends4WinForms
                 h => dgv.ColumnToolTipTextChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.ColumnWidthChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.ColumnWidthChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -882,7 +882,7 @@ namespace R3Extends4WinForms
                 h => dgv.ColumnWidthChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.CurrentCellChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.CurrentCellChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -895,7 +895,7 @@ namespace R3Extends4WinForms
                 h => dgv.CurrentCellChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.CurrentCellDirtyStateChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.CurrentCellDirtyStateChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -908,7 +908,7 @@ namespace R3Extends4WinForms
                 h => dgv.CurrentCellDirtyStateChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.DataBindingComplete"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.DataBindingComplete"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -921,7 +921,7 @@ namespace R3Extends4WinForms
                 h => dgv.DataBindingComplete -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.DataError"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.DataError"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -934,7 +934,7 @@ namespace R3Extends4WinForms
                 h => dgv.DataError -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.DataMemberChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.DataMemberChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -947,7 +947,7 @@ namespace R3Extends4WinForms
                 h => dgv.DataMemberChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.DataSourceChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.DataSourceChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -960,7 +960,7 @@ namespace R3Extends4WinForms
                 h => dgv.DataSourceChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.DefaultCellStyleChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.DefaultCellStyleChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -973,7 +973,7 @@ namespace R3Extends4WinForms
                 h => dgv.DefaultCellStyleChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.DefaultValuesNeeded"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.DefaultValuesNeeded"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -986,7 +986,7 @@ namespace R3Extends4WinForms
                 h => dgv.DefaultValuesNeeded -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.EditingControlShowing"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.EditingControlShowing"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -999,7 +999,7 @@ namespace R3Extends4WinForms
                 h => dgv.EditingControlShowing -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.EditModeChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.EditModeChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -1012,7 +1012,7 @@ namespace R3Extends4WinForms
                 h => dgv.EditModeChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.FontChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.FontChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -1025,7 +1025,7 @@ namespace R3Extends4WinForms
                 h => dgv.FontChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.ForeColorChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.ForeColorChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -1038,7 +1038,7 @@ namespace R3Extends4WinForms
                 h => dgv.ForeColorChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.GridColorChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.GridColorChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -1051,7 +1051,7 @@ namespace R3Extends4WinForms
                 h => dgv.GridColorChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.MultiSelectChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.MultiSelectChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -1064,7 +1064,7 @@ namespace R3Extends4WinForms
                 h => dgv.MultiSelectChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.NewRowNeeded"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.NewRowNeeded"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -1077,7 +1077,7 @@ namespace R3Extends4WinForms
                 h => dgv.NewRowNeeded -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.ReadOnlyChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.ReadOnlyChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -1090,7 +1090,7 @@ namespace R3Extends4WinForms
                 h => dgv.ReadOnlyChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.RowContextMenuStripChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.RowContextMenuStripChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -1103,7 +1103,7 @@ namespace R3Extends4WinForms
                 h => dgv.RowContextMenuStripChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.RowContextMenuStripNeeded"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.RowContextMenuStripNeeded"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -1116,7 +1116,7 @@ namespace R3Extends4WinForms
                 h => dgv.RowContextMenuStripNeeded -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.RowDefaultCellStyleChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.RowDefaultCellStyleChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -1129,7 +1129,7 @@ namespace R3Extends4WinForms
                 h => dgv.RowDefaultCellStyleChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.RowDirtyStateNeeded"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.RowDirtyStateNeeded"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -1142,7 +1142,7 @@ namespace R3Extends4WinForms
                 h => dgv.RowDirtyStateNeeded -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.RowDividerDoubleClick"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.RowDividerDoubleClick"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -1155,7 +1155,7 @@ namespace R3Extends4WinForms
                 h => dgv.RowDividerDoubleClick -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.RowDividerHeightChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.RowDividerHeightChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -1168,7 +1168,7 @@ namespace R3Extends4WinForms
                 h => dgv.RowDividerHeightChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.RowEnter"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.RowEnter"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -1181,7 +1181,7 @@ namespace R3Extends4WinForms
                 h => dgv.RowEnter -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.RowErrorTextChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.RowErrorTextChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -1194,7 +1194,7 @@ namespace R3Extends4WinForms
                 h => dgv.RowErrorTextChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.RowErrorTextNeeded"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.RowErrorTextNeeded"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -1207,7 +1207,7 @@ namespace R3Extends4WinForms
                 h => dgv.RowErrorTextNeeded -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.RowHeaderCellChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.RowHeaderCellChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -1220,7 +1220,7 @@ namespace R3Extends4WinForms
                 h => dgv.RowHeaderCellChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.RowHeaderMouseClick"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.RowHeaderMouseClick"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -1233,7 +1233,7 @@ namespace R3Extends4WinForms
                 h => dgv.RowHeaderMouseClick-= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.RowHeaderMouseDoubleClick"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.RowHeaderMouseDoubleClick"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -1246,7 +1246,7 @@ namespace R3Extends4WinForms
                 h => dgv.RowHeaderMouseDoubleClick -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.RowHeadersBorderStyleChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.RowHeadersBorderStyleChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -1259,7 +1259,7 @@ namespace R3Extends4WinForms
                 h => dgv.RowHeadersBorderStyleChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.RowHeadersDefaultCellStyleChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.RowHeadersDefaultCellStyleChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -1272,7 +1272,7 @@ namespace R3Extends4WinForms
                 h => dgv.RowHeadersDefaultCellStyleChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.RowHeadersWidthChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.RowHeadersWidthChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -1285,7 +1285,7 @@ namespace R3Extends4WinForms
                 h => dgv.RowHeadersWidthChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.RowHeadersWidthSizeModeChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.RowHeadersWidthSizeModeChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -1298,7 +1298,7 @@ namespace R3Extends4WinForms
                 h => dgv.RowHeadersWidthSizeModeChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.RowHeightChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.RowHeightChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -1311,7 +1311,7 @@ namespace R3Extends4WinForms
                 h => dgv.RowHeightChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.RowHeightInfoNeeded"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.RowHeightInfoNeeded"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -1324,7 +1324,7 @@ namespace R3Extends4WinForms
                 h => dgv.RowHeightInfoNeeded -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.RowHeightInfoPushed"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.RowHeightInfoPushed"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -1337,7 +1337,7 @@ namespace R3Extends4WinForms
                 h => dgv.RowHeightInfoPushed -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.RowLeave"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.RowLeave"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -1350,7 +1350,7 @@ namespace R3Extends4WinForms
                 h => dgv.RowLeave -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.RowMinimumHeightChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.RowMinimumHeightChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -1363,7 +1363,7 @@ namespace R3Extends4WinForms
                 h => dgv.RowMinimumHeightChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.RowPostPaint"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.RowPostPaint"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -1376,7 +1376,7 @@ namespace R3Extends4WinForms
                 h => dgv.RowPostPaint -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.RowPrePaint"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.RowPrePaint"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -1389,7 +1389,7 @@ namespace R3Extends4WinForms
                 h => dgv.RowPrePaint -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.RowsAdded"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.RowsAdded"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -1402,7 +1402,7 @@ namespace R3Extends4WinForms
                 h => dgv.RowsAdded -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.RowsDefaultCellStyleChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.RowsDefaultCellStyleChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -1415,7 +1415,7 @@ namespace R3Extends4WinForms
                 h => dgv.RowsDefaultCellStyleChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.RowsRemoved"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.RowsRemoved"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -1428,7 +1428,7 @@ namespace R3Extends4WinForms
                 h => dgv.RowsRemoved -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.RowStateChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.RowStateChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -1441,7 +1441,7 @@ namespace R3Extends4WinForms
                 h => dgv.RowStateChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.RowUnshared"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.RowUnshared"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -1454,7 +1454,7 @@ namespace R3Extends4WinForms
                 h => dgv.RowUnshared -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.RowValidated"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.RowValidated"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -1467,7 +1467,7 @@ namespace R3Extends4WinForms
                 h => dgv.RowValidated -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.RowValidating"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.RowValidating"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -1480,7 +1480,7 @@ namespace R3Extends4WinForms
                 h => dgv.RowValidating -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.Scroll"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.Scroll"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -1493,7 +1493,7 @@ namespace R3Extends4WinForms
                 h => dgv.Scroll -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.SelectionChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.SelectionChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -1506,7 +1506,7 @@ namespace R3Extends4WinForms
                 h => dgv.SelectionChanged -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.SortCompare"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.SortCompare"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -1519,7 +1519,7 @@ namespace R3Extends4WinForms
                 h => dgv.SortCompare -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.Sorted"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.Sorted"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -1532,7 +1532,7 @@ namespace R3Extends4WinForms
                 h => dgv.Sorted -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.UserAddedRow"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.UserAddedRow"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -1545,7 +1545,7 @@ namespace R3Extends4WinForms
                 h => dgv.UserAddedRow -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.UserDeletedRow"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.UserDeletedRow"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -1558,7 +1558,7 @@ namespace R3Extends4WinForms
                 h => dgv.UserDeletedRow -= h,
                 tkn);
 
-        /// <summary><see cref="DataGridView.UserDeletingRow"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridView.UserDeletingRow"/> as <see cref="Observable"/></summary>
         /// <param name="dgv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>

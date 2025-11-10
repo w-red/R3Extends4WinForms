@@ -11,7 +11,7 @@ namespace R3Extends4WinForms
     /// </remarks>
     public static class UpDownBaseR3Extends
     {
-        /// <summary><see cref="UpDownBase.AutoSizeChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="UpDownBase.AutoSizeChanged"/> as <see cref="Observable"/></summary>
         /// <param name="udb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -24,7 +24,7 @@ namespace R3Extends4WinForms
                 h => udb.AutoSizeChanged -= h,
                 tkn);
 
-        /// <summary><see cref="UpDownBase.BackgroundImageChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="UpDownBase.BackgroundImageChanged"/> as <see cref="Observable"/></summary>
         /// <param name="udb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -37,7 +37,7 @@ namespace R3Extends4WinForms
                 h => udb.BackgroundImageChanged -= h,
                 tkn);
 
-        /// <summary><see cref="UpDownBase.BackgroundImageLayoutChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="UpDownBase.BackgroundImageLayoutChanged"/> as <see cref="Observable"/></summary>
         /// <param name="udb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -50,7 +50,7 @@ namespace R3Extends4WinForms
                 h => udb.BackgroundImageLayoutChanged -= h,
                 tkn);
 
-        /// <summary><see cref="UpDownBase.MouseEnter"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="UpDownBase.MouseEnter"/> as <see cref="Observable"/></summary>
         /// <param name="udb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -63,7 +63,7 @@ namespace R3Extends4WinForms
                 h => udb.MouseEnter -= h,
                 tkn);
 
-        /// <summary><see cref="UpDownBase.MouseLeave"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="UpDownBase.MouseLeave"/> as <see cref="Observable"/></summary>
         /// <param name="udb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -76,7 +76,7 @@ namespace R3Extends4WinForms
                 h => udb.MouseLeave -= h,
                 tkn);
 
-        /// <summary><see cref="UpDownBase.MouseHover"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="UpDownBase.MouseHover"/> as <see cref="Observable"/></summary>
         /// <param name="udb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -89,7 +89,7 @@ namespace R3Extends4WinForms
                 h => udb.MouseHover -= h,
                 tkn);
 
-        /// <summary><see cref="UpDownBase.MouseMove"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="UpDownBase.MouseMove"/> as <see cref="Observable"/></summary>
         /// <param name="udb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>

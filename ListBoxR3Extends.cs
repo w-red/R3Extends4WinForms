@@ -11,7 +11,7 @@ namespace R3Extends4WinForms
     /// </remarks>
     public static class ListBoxR3Extends
     {
-        /// <summary><see cref="ListBox.Click"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ListBox.Click"/> as <see cref="Observable"/></summary>
         /// <param name="lb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -24,7 +24,7 @@ namespace R3Extends4WinForms
                 h => lb.Click -= h,
                 tkn);
 
-        /// <summary><see cref="ListBox.DrawItem"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ListBox.DrawItem"/> as <see cref="Observable"/></summary>
         /// <param name="lb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -37,7 +37,7 @@ namespace R3Extends4WinForms
                 h => lb.DrawItem -= h,
                 tkn);
 
-        /// <summary><see cref="ListBox.MeasureItem"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ListBox.MeasureItem"/> as <see cref="Observable"/></summary>
         /// <param name="lb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -50,7 +50,7 @@ namespace R3Extends4WinForms
                 h => lb.MeasureItem -= h,
                 tkn);
 
-        /// <summary><see cref="ListBox.MouseClick"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ListBox.MouseClick"/> as <see cref="Observable"/></summary>
         /// <param name="lb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -63,7 +63,7 @@ namespace R3Extends4WinForms
                 h => lb.MouseClick -= h,
                 tkn);
 
-        /// <summary><see cref="ListBox.SelectedIndexChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ListBox.SelectedIndexChanged"/> as <see cref="Observable"/></summary>
         /// <param name="lb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -76,7 +76,7 @@ namespace R3Extends4WinForms
                 h => lb.SelectedIndexChanged -= h,
                 tkn);
 
-        /// <summary><see cref="ListBox.TextChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ListBox.TextChanged"/> as <see cref="Observable"/></summary>
         /// <param name="lb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>

@@ -12,7 +12,7 @@ namespace R3Extends4WinForms
     /// </remarks>
     public static class DataGridViewCellCollectionR3Extends
     {
-        /// <summary><see cref="DataGridViewCellCollection.CollectionChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="DataGridViewCellCollection.CollectionChanged"/> as <see cref="Observable"/></summary>
         /// <param name="dgvcc">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>

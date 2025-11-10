@@ -11,7 +11,7 @@ namespace R3Extends4WinForms
     /// </remarks>
     public static class ToolStripRendererR3Extends
     {
-        /// <summary><see cref="ToolStripRenderer.RenderArrow"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripRenderer.RenderArrow"/> as <see cref="Observable"/></summary>
         /// <param name="tsr">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -24,7 +24,7 @@ namespace R3Extends4WinForms
                 h => tsr.RenderArrow -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripRenderer.RenderButtonBackground"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripRenderer.RenderButtonBackground"/> as <see cref="Observable"/></summary>
         /// <param name="tsr">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -37,7 +37,7 @@ namespace R3Extends4WinForms
                 h => tsr.RenderButtonBackground -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripRenderer.RenderDropDownButtonBackground"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripRenderer.RenderDropDownButtonBackground"/> as <see cref="Observable"/></summary>
         /// <param name="tsr">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -50,7 +50,7 @@ namespace R3Extends4WinForms
                 h => tsr.RenderDropDownButtonBackground -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripRenderer.RenderGrip"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripRenderer.RenderGrip"/> as <see cref="Observable"/></summary>
         /// <param name="tsr">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -63,7 +63,7 @@ namespace R3Extends4WinForms
                 h => tsr.RenderGrip -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripRenderer.RenderImageMargin"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripRenderer.RenderImageMargin"/> as <see cref="Observable"/></summary>
         /// <param name="tsr">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -76,7 +76,7 @@ namespace R3Extends4WinForms
                 h => tsr.RenderImageMargin -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripRenderer.RenderItemBackground"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripRenderer.RenderItemBackground"/> as <see cref="Observable"/></summary>
         /// <param name="tsr">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -89,7 +89,7 @@ namespace R3Extends4WinForms
                 h => tsr.RenderItemBackground -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripRenderer.RenderItemCheck"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripRenderer.RenderItemCheck"/> as <see cref="Observable"/></summary>
         /// <param name="tsr">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -102,7 +102,7 @@ namespace R3Extends4WinForms
                 h => tsr.RenderItemCheck -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripRenderer.RenderItemImage"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripRenderer.RenderItemImage"/> as <see cref="Observable"/></summary>
         /// <param name="tsr">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -115,7 +115,7 @@ namespace R3Extends4WinForms
                 h => tsr.RenderItemImage -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripRenderer.RenderItemText"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripRenderer.RenderItemText"/> as <see cref="Observable"/></summary>
         /// <param name="tsr">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -128,7 +128,7 @@ namespace R3Extends4WinForms
                 h => tsr.RenderItemText -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripRenderer.RenderLabelBackground"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripRenderer.RenderLabelBackground"/> as <see cref="Observable"/></summary>
         /// <param name="tsr">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -141,7 +141,7 @@ namespace R3Extends4WinForms
                 h => tsr.RenderLabelBackground -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripRenderer.RenderMenuItemBackground"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripRenderer.RenderMenuItemBackground"/> as <see cref="Observable"/></summary>
         /// <param name="tsr">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -154,7 +154,7 @@ namespace R3Extends4WinForms
                 h => tsr.RenderMenuItemBackground -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripRenderer.RenderOverflowButtonBackground"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripRenderer.RenderOverflowButtonBackground"/> as <see cref="Observable"/></summary>
         /// <param name="tsr">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -167,7 +167,7 @@ namespace R3Extends4WinForms
                 h => tsr.RenderOverflowButtonBackground -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripRenderer.RenderSeparator"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripRenderer.RenderSeparator"/> as <see cref="Observable"/></summary>
         /// <param name="tsr">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -180,7 +180,7 @@ namespace R3Extends4WinForms
                 h => tsr.RenderSeparator -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripRenderer.RenderSplitButtonBackground"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripRenderer.RenderSplitButtonBackground"/> as <see cref="Observable"/></summary>
         /// <param name="tsr">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -193,7 +193,7 @@ namespace R3Extends4WinForms
                 h => tsr.RenderSplitButtonBackground -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripRenderer.RenderStatusStripSizingGrip"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripRenderer.RenderStatusStripSizingGrip"/> as <see cref="Observable"/></summary>
         /// <param name="tsr">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -206,7 +206,7 @@ namespace R3Extends4WinForms
                 h => tsr.RenderStatusStripSizingGrip -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripRenderer.RenderToolStripBackground"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripRenderer.RenderToolStripBackground"/> as <see cref="Observable"/></summary>
         /// <param name="tsr">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -219,7 +219,7 @@ namespace R3Extends4WinForms
                 h => tsr.RenderToolStripBackground -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripRenderer.RenderToolStripBorder"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripRenderer.RenderToolStripBorder"/> as <see cref="Observable"/></summary>
         /// <param name="tsr">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -232,7 +232,7 @@ namespace R3Extends4WinForms
                 h => tsr.RenderToolStripBorder -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripRenderer.RenderToolStripContentPanelBackground"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripRenderer.RenderToolStripContentPanelBackground"/> as <see cref="Observable"/></summary>
         /// <param name="tsr">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -245,7 +245,7 @@ namespace R3Extends4WinForms
                 h => tsr.RenderToolStripContentPanelBackground -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripRenderer.RenderToolStripPanelBackground"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripRenderer.RenderToolStripPanelBackground"/> as <see cref="Observable"/></summary>
         /// <param name="tsr">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -258,7 +258,7 @@ namespace R3Extends4WinForms
                 h => tsr.RenderToolStripPanelBackground -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripRenderer.RenderToolStripStatusLabelBackground"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripRenderer.RenderToolStripStatusLabelBackground"/> as <see cref="Observable"/></summary>
         /// <param name="tsr">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>

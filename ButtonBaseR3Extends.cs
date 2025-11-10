@@ -11,7 +11,7 @@ namespace R3Extends4WinForms
     /// </remarks>
     public static class ButtonBaseR3Extends
     {
-        /// <summary><see cref="ButtonBase.AutoSizeChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ButtonBase.AutoSizeChanged"/> as <see cref="Observable"/></summary>
         /// <param name="bb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -24,7 +24,7 @@ namespace R3Extends4WinForms
                 h => bb.AutoSizeChanged -= h,
                 tkn);
 
-        /// <summary><see cref="ButtonBase.CommandCanExecuteChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ButtonBase.CommandCanExecuteChanged"/> as <see cref="Observable"/></summary>
         /// <param name="bb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -37,7 +37,7 @@ namespace R3Extends4WinForms
                 h => bb.CommandCanExecuteChanged -= h,
                 tkn);
 
-        /// <summary><see cref="ButtonBase.CommandChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ButtonBase.CommandChanged"/> as <see cref="Observable"/></summary>
         /// <param name="bb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -50,7 +50,7 @@ namespace R3Extends4WinForms
                 h => bb.CommandChanged -= h,
                 tkn);
 
-        /// <summary><see cref="ButtonBase.CommandParameterChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ButtonBase.CommandParameterChanged"/> as <see cref="Observable"/></summary>
         /// <param name="bb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>

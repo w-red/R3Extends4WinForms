@@ -12,7 +12,7 @@ namespace R3Extends4WinForms
     /// </remarks>
     public static class ControlR3Extends
     {
-        /// <summary><see cref="Control.BackColorChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.BackColorChanged"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -25,7 +25,7 @@ namespace R3Extends4WinForms
                 h => ctrl.BackColorChanged -= h,
                 tkn);
 
-        /// <summary><see cref="Control.ForeColorChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.ForeColorChanged"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -38,7 +38,7 @@ namespace R3Extends4WinForms
                 h => ctrl.ForeColorChanged -= h,
                 tkn);
 
-        /// <summary><see cref="Control.SystemColorsChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.SystemColorsChanged"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -51,7 +51,7 @@ namespace R3Extends4WinForms
                 h => ctrl.SystemColorsChanged -= h,
                 tkn);
 
-        /// <summary><see cref="Control.BackgroundImageChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.BackgroundImageChanged"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -64,7 +64,7 @@ namespace R3Extends4WinForms
                 h => ctrl.BackgroundImageChanged -= h,
                 tkn);
 
-        /// <summary><see cref="Control.BackgroundImageLayoutChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.BackgroundImageLayoutChanged"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -77,7 +77,7 @@ namespace R3Extends4WinForms
                 h => ctrl.BackgroundImageLayoutChanged -= h,
                 tkn);
 
-        /// <summary><see cref="Control.BindingContextChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.BindingContextChanged"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -90,7 +90,7 @@ namespace R3Extends4WinForms
                 h => ctrl.BindingContextChanged -= h,
                 tkn);
 
-        /// <summary><see cref="Control.CausesValidationChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.CausesValidationChanged"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -103,7 +103,7 @@ namespace R3Extends4WinForms
                 h => ctrl.CausesValidationChanged -= h,
                 tkn);
 
-        /// <summary><see cref="Control.ChangeUICues"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.ChangeUICues"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -116,7 +116,7 @@ namespace R3Extends4WinForms
                 h => ctrl.ChangeUICues -= h,
                 tkn);
 
-        /// <summary><see cref="Control.ClientSizeChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.ClientSizeChanged"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -129,7 +129,7 @@ namespace R3Extends4WinForms
                 h => ctrl.ClientSizeChanged -= h,
                 tkn);
 
-        /// <summary><see cref="Control.ContextMenuStripChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.ContextMenuStripChanged"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -142,7 +142,7 @@ namespace R3Extends4WinForms
                 h => ctrl.ContextMenuStripChanged -= h,
                 tkn);
 
-        /// <summary><see cref="Control.ControlAdded"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.ControlAdded"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -155,7 +155,7 @@ namespace R3Extends4WinForms
                 h => ctrl.ControlAdded -= h,
                 tkn);
 
-        /// <summary><see cref="Control.ControlRemoved"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.ControlRemoved"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -168,7 +168,7 @@ namespace R3Extends4WinForms
                 h => ctrl.ControlRemoved -= h,
                 tkn);
 
-        /// <summary><see cref="Control.CursorChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.CursorChanged"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -181,7 +181,7 @@ namespace R3Extends4WinForms
                 h => ctrl.CursorChanged -= h,
                 tkn);
 
-        /// <summary><see cref="Control.DataContextChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.DataContextChanged"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -194,7 +194,7 @@ namespace R3Extends4WinForms
                 h => ctrl.DataContextChanged -= h,
                 tkn);
 
-        /// <summary><see cref="Control.DockChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.DockChanged"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -207,7 +207,7 @@ namespace R3Extends4WinForms
                 h => ctrl.DockChanged -= h,
                 tkn);
 
-        /// <summary><see cref="Control.DpiChangedAfterParent"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.DpiChangedAfterParent"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -220,7 +220,7 @@ namespace R3Extends4WinForms
                 h => ctrl.DpiChangedAfterParent -= h,
                 tkn);
 
-        /// <summary><see cref="Control.DpiChangedBeforeParent"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.DpiChangedBeforeParent"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -233,7 +233,7 @@ namespace R3Extends4WinForms
                 h => ctrl.DpiChangedBeforeParent -= h,
                 tkn);
 
-        /// <summary><see cref="Control.DragDrop"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.DragDrop"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -246,7 +246,7 @@ namespace R3Extends4WinForms
                 h => ctrl.DragDrop -= h,
                 tkn);
 
-        /// <summary><see cref="Control.DragEnter"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.DragEnter"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -259,7 +259,7 @@ namespace R3Extends4WinForms
                 h => ctrl.DragEnter -= h,
                 tkn);
 
-        /// <summary><see cref="Control.DragOver"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.DragOver"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -272,7 +272,7 @@ namespace R3Extends4WinForms
                 h => ctrl.DragOver -= h,
                 tkn);
 
-        /// <summary><see cref="Control.DragLeave"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.DragLeave"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -285,7 +285,7 @@ namespace R3Extends4WinForms
                 h => ctrl.DragLeave -= h,
                 tkn);
 
-        /// <summary><see cref="Control.GiveFeedback"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.GiveFeedback"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -298,7 +298,7 @@ namespace R3Extends4WinForms
                 h => ctrl.GiveFeedback -= h,
                 tkn);
 
-        /// <summary><see cref="Control.EnabledChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.EnabledChanged"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -311,7 +311,7 @@ namespace R3Extends4WinForms
                 h => ctrl.EnabledChanged -= h,
                 tkn);
 
-        /// <summary><see cref="Control.FontChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.FontChanged"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -324,7 +324,7 @@ namespace R3Extends4WinForms
                 h => ctrl.FontChanged -= h,
                 tkn);
 
-        /// <summary><see cref="Control.Click"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.Click"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -337,7 +337,7 @@ namespace R3Extends4WinForms
                 h => ctrl.Click -= h,
                 tkn);
 
-        /// <summary><see cref="Control.DoubleClick"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.DoubleClick"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -350,7 +350,7 @@ namespace R3Extends4WinForms
                 h => ctrl.DoubleClick -= h,
                 tkn);
 
-        /// <summary><see cref="Control.Enter"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.Enter"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -363,7 +363,7 @@ namespace R3Extends4WinForms
                 h => ctrl.Enter -= h,
                 tkn);
 
-        /// <summary><see cref="Control.Leave"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.Leave"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -376,7 +376,7 @@ namespace R3Extends4WinForms
                 h => ctrl.Leave -= h,
                 tkn);
 
-        /// <summary><see cref="Control.GotFocus"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.GotFocus"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -389,7 +389,7 @@ namespace R3Extends4WinForms
                 h => ctrl.GotFocus -= h,
                 tkn);
 
-        /// <summary><see cref="Control.LostFocus"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.LostFocus"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -402,7 +402,7 @@ namespace R3Extends4WinForms
                 h => ctrl.LostFocus -= h,
                 tkn);
 
-        /// <summary><see cref="Control.HandleCreated"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.HandleCreated"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -415,7 +415,7 @@ namespace R3Extends4WinForms
                 h => ctrl.HandleCreated -= h,
                 tkn);
 
-        /// <summary><see cref="Control.HandleDestroyed"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.HandleDestroyed"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -428,7 +428,7 @@ namespace R3Extends4WinForms
                 h => ctrl.HandleDestroyed -= h,
                 tkn);
 
-        /// <summary><see cref="Control.HelpRequested"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.HelpRequested"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -441,7 +441,7 @@ namespace R3Extends4WinForms
                 h => ctrl.HelpRequested -= h,
                 tkn);
 
-        /// <summary><see cref="Control.ImeModeChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.ImeModeChanged"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -454,7 +454,7 @@ namespace R3Extends4WinForms
                 h => ctrl.ImeModeChanged -= h,
                 tkn);
 
-        /// <summary><see cref="Control.RightToLeftChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.RightToLeftChanged"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -467,7 +467,7 @@ namespace R3Extends4WinForms
                 h => ctrl.RightToLeftChanged -= h,
                 tkn);
 
-        /// <summary><see cref="Control.Invalidated"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.Invalidated"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -480,7 +480,7 @@ namespace R3Extends4WinForms
                 h => ctrl.Invalidated -= h,
                 tkn);
 
-        /// <summary><see cref="Control.KeyDown"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.KeyDown"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -493,7 +493,7 @@ namespace R3Extends4WinForms
                 h => ctrl.KeyDown -= h,
                 tkn);
 
-        /// <summary><see cref="Control.PreviewKeyDown"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.PreviewKeyDown"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -506,7 +506,7 @@ namespace R3Extends4WinForms
                 h => ctrl.PreviewKeyDown -= h,
                 tkn);
 
-        /// <summary><see cref="Control.QueryAccessibilityHelp"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.QueryAccessibilityHelp"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -519,7 +519,7 @@ namespace R3Extends4WinForms
                 h => ctrl.QueryAccessibilityHelp -= h,
                 tkn);
 
-        /// <summary><see cref="Control.QueryContinueDrag"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.QueryContinueDrag"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -532,7 +532,7 @@ namespace R3Extends4WinForms
                 h => ctrl.QueryContinueDrag -= h,
                 tkn);
 
-        /// <summary><see cref="Control.RegionChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.RegionChanged"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -545,7 +545,7 @@ namespace R3Extends4WinForms
                 h => ctrl.RegionChanged -= h,
                 tkn);
 
-        /// <summary><see cref="Control.Resize"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.Resize"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -558,7 +558,7 @@ namespace R3Extends4WinForms
                 h => ctrl.Resize -= h,
                 tkn);
 
-        /// <summary><see cref="Control.SizeChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.SizeChanged"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -571,7 +571,7 @@ namespace R3Extends4WinForms
                 h => ctrl.SizeChanged -= h,
                 tkn);
 
-        /// <summary><see cref="Control.StyleChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.StyleChanged"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -584,7 +584,7 @@ namespace R3Extends4WinForms
                 h => ctrl.StyleChanged -= h,
                 tkn);
 
-        /// <summary><see cref="Control.KeyUp"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.KeyUp"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -597,7 +597,7 @@ namespace R3Extends4WinForms
                 h => ctrl.KeyUp -= h,
                 tkn);
 
-        /// <summary><see cref="Control.KeyPress"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.KeyPress"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -610,7 +610,7 @@ namespace R3Extends4WinForms
                 h => ctrl.KeyPress -= h,
                 tkn);
 
-        /// <summary><see cref="Control.ParentChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.ParentChanged"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -623,7 +623,7 @@ namespace R3Extends4WinForms
                 h => ctrl.ParentChanged -= h,
                 tkn);
 
-        /// <summary><see cref="Control.Layout"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.Layout"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -636,7 +636,7 @@ namespace R3Extends4WinForms
                 h => ctrl.Layout -= h,
                 tkn);
 
-        /// <summary><see cref="Control.LocationChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.LocationChanged"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -649,7 +649,7 @@ namespace R3Extends4WinForms
                 h => ctrl.LocationChanged -= h,
                 tkn);
 
-        /// <summary><see cref="Control.MarginChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.MarginChanged"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -662,7 +662,7 @@ namespace R3Extends4WinForms
                 h => ctrl.MarginChanged -= h,
                 tkn);
 
-        /// <summary><see cref="Control.PaddingChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.PaddingChanged"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -675,7 +675,7 @@ namespace R3Extends4WinForms
                 h => ctrl.PaddingChanged -= h,
                 tkn);
 
-        /// <summary><see cref="Control.Paint"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.Paint"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -688,7 +688,7 @@ namespace R3Extends4WinForms
                 h => ctrl.Paint -= h,
                 tkn);
 
-        /// <summary><see cref="Control.TabIndexChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.TabIndexChanged"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -701,7 +701,7 @@ namespace R3Extends4WinForms
                 h => ctrl.TabIndexChanged -= h,
                 tkn);
 
-        /// <summary><see cref="Control.TabStopChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.TabStopChanged"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -714,7 +714,7 @@ namespace R3Extends4WinForms
                 h => ctrl.TabStopChanged -= h,
                 tkn);
 
-        /// <summary><see cref="Control.TextChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.TextChanged"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -727,7 +727,7 @@ namespace R3Extends4WinForms
                 h => ctrl.TextChanged -= h,
                 tkn);
 
-        /// <summary><see cref="Control.Validated"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.Validated"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -740,7 +740,7 @@ namespace R3Extends4WinForms
                 h => ctrl.Validated -= h,
                 tkn);
 
-        /// <summary><see cref="Control.Validating"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.Validating"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -753,7 +753,7 @@ namespace R3Extends4WinForms
                 h => ctrl.Validating -= h,
                 tkn);
 
-        /// <summary><see cref="Control.VisibleChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.VisibleChanged"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -766,7 +766,7 @@ namespace R3Extends4WinForms
                 h => ctrl.VisibleChanged -= h,
                 tkn);
 
-        /// <summary><see cref="Control.MouseCaptureChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.MouseCaptureChanged"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -779,7 +779,7 @@ namespace R3Extends4WinForms
                 h => ctrl.MouseCaptureChanged -= h,
                 tkn);
 
-        /// <summary><see cref="Control.MouseClick"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.MouseClick"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -792,7 +792,7 @@ namespace R3Extends4WinForms
                 h => ctrl.MouseClick -= h,
                 tkn);
 
-        /// <summary><see cref="Control.MouseDoubleClick"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.MouseDoubleClick"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -805,7 +805,7 @@ namespace R3Extends4WinForms
                 h => ctrl.MouseDoubleClick -= h,
                 tkn);
 
-        /// <summary><see cref="Control.MouseDown"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.MouseDown"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -818,7 +818,7 @@ namespace R3Extends4WinForms
                 h => ctrl.MouseDown -= h,
                 tkn);
 
-        /// <summary><see cref="Control.MouseUp"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.MouseUp"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -831,7 +831,7 @@ namespace R3Extends4WinForms
                 h => ctrl.MouseUp -= h,
                 tkn);
 
-        /// <summary><see cref="Control.MouseWheel"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.MouseWheel"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -844,7 +844,7 @@ namespace R3Extends4WinForms
                 h => ctrl.MouseWheel -= h,
                 tkn);
 
-        /// <summary><see cref="Control.MouseMove"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.MouseMove"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -857,7 +857,7 @@ namespace R3Extends4WinForms
                 h => ctrl.MouseMove -= h,
                 tkn);
 
-        /// <summary><see cref="Control.MouseHover"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.MouseHover"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -870,7 +870,7 @@ namespace R3Extends4WinForms
                 h => ctrl.MouseHover -= h,
                 tkn);
 
-        /// <summary><see cref="Control.MouseEnter"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.MouseEnter"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -883,7 +883,7 @@ namespace R3Extends4WinForms
                 h => ctrl.MouseEnter -= h,
                 tkn);
 
-        /// <summary><see cref="Control.MouseLeave"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.MouseLeave"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -896,7 +896,7 @@ namespace R3Extends4WinForms
                 h => ctrl.MouseLeave -= h,
                 tkn);
 
-        /// <summary><see cref="Control.Move"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Control.Move"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>

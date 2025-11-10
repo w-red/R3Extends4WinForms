@@ -11,7 +11,7 @@ namespace R3Extends4WinForms
     /// </remarks>
     public static class ToolStripTextBoxR3Extends
     {
-        /// <summary><see cref="ToolStripTextBox.AcceptsTabChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripTextBox.AcceptsTabChanged"/> as <see cref="Observable"/></summary>
         /// <param name="tstb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -24,7 +24,7 @@ namespace R3Extends4WinForms
                 h => tstb.AcceptsTabChanged -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripTextBox.BorderStyleChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripTextBox.BorderStyleChanged"/> as <see cref="Observable"/></summary>
         /// <param name="tstb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -37,7 +37,7 @@ namespace R3Extends4WinForms
                 h => tstb.BorderStyleChanged -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripTextBox.HideSelectionChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripTextBox.HideSelectionChanged"/> as <see cref="Observable"/></summary>
         /// <param name="tstb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -50,7 +50,7 @@ namespace R3Extends4WinForms
                 h => tstb.HideSelectionChanged -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripTextBox.ModifiedChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripTextBox.ModifiedChanged"/> as <see cref="Observable"/></summary>
         /// <param name="tstb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -63,7 +63,7 @@ namespace R3Extends4WinForms
                 h => tstb.ModifiedChanged -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripTextBox.ReadOnlyChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripTextBox.ReadOnlyChanged"/> as <see cref="Observable"/></summary>
         /// <param name="tstb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -76,7 +76,7 @@ namespace R3Extends4WinForms
                 h => tstb.ReadOnlyChanged -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripTextBox.TextBoxTextAlignChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripTextBox.TextBoxTextAlignChanged"/> as <see cref="Observable"/></summary>
         /// <param name="tstb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>

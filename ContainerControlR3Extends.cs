@@ -11,7 +11,7 @@ namespace R3Extends4WinForms
     /// </remarks>
     public static class ContainerControlR3Extends
     {
-        /// <summary><see cref="ContainerControl.AutoValidateChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ContainerControl.AutoValidateChanged"/> as <see cref="Observable"/></summary>
         /// <param name="cc">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>

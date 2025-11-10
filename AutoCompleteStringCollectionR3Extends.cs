@@ -12,7 +12,7 @@ namespace R3Extends4WinForms
     /// </remarks>
     public static class AutoCompleteStringCollectionR3Extends
     {
-        /// <summary><see cref="AutoCompleteStringCollection.CollectionChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="AutoCompleteStringCollection.CollectionChanged"/> as <see cref="Observable"/></summary>
         /// <param name="acsc">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>

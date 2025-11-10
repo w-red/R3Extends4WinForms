@@ -11,7 +11,7 @@ namespace R3Extends4WinForms
     /// </remarks>
     public static class BindingNavigatorR3Extends
     {
-        /// <summary><see cref="BindingNavigator.RefreshItems"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="BindingNavigator.RefreshItems"/> as <see cref="Observable"/></summary>
         /// <param name="bn">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>

@@ -11,7 +11,7 @@ namespace R3Extends4WinForms
     /// </remarks>
     public static class RichTextBoxR3Extends
     {
-        /// <summary><see cref="RichTextBox.ContentsResized"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="RichTextBox.ContentsResized"/> as <see cref="Observable"/></summary>
         /// <param name="rtb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -24,7 +24,7 @@ namespace R3Extends4WinForms
                 h => rtb.ContentsResized -= h,
                 tkn);
 
-        /// <summary><see cref="RichTextBox.DragDrop"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="RichTextBox.DragDrop"/> as <see cref="Observable"/></summary>
         /// <param name="rtb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -37,7 +37,7 @@ namespace R3Extends4WinForms
                 h => rtb.DragDrop -= h,
                 tkn);
 
-        /// <summary><see cref="RichTextBox.DragEnter"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="RichTextBox.DragEnter"/> as <see cref="Observable"/></summary>
         /// <param name="rtb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -50,7 +50,7 @@ namespace R3Extends4WinForms
                 h => rtb.DragEnter -= h,
                 tkn);
 
-        /// <summary><see cref="RichTextBox.HScroll"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="RichTextBox.HScroll"/> as <see cref="Observable"/></summary>
         /// <param name="rtb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -63,7 +63,7 @@ namespace R3Extends4WinForms
                 h => rtb.HScroll -= h,
                 tkn);
 
-        /// <summary><see cref="RichTextBox.ImeChange"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="RichTextBox.ImeChange"/> as <see cref="Observable"/></summary>
         /// <param name="rtb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -76,7 +76,7 @@ namespace R3Extends4WinForms
                 h => rtb.ImeChange -= h,
                 tkn);
 
-        /// <summary><see cref="RichTextBox.LinkClicked"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="RichTextBox.LinkClicked"/> as <see cref="Observable"/></summary>
         /// <param name="rtb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -89,7 +89,7 @@ namespace R3Extends4WinForms
                 h => rtb.LinkClicked -= h,
                 tkn);
 
-        /// <summary><see cref="RichTextBox.Protected"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="RichTextBox.Protected"/> as <see cref="Observable"/></summary>
         /// <param name="rtb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>

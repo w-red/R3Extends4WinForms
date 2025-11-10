@@ -11,7 +11,7 @@ namespace R3Extends4WinForms
     /// </remarks>
     public static class ToolStripMenuItemR3Extends
     {
-        /// <summary><see cref="ToolStripMenuItem.CheckedChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripMenuItem.CheckedChanged"/> as <see cref="Observable"/></summary>
         /// <param name="tsmi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -24,7 +24,7 @@ namespace R3Extends4WinForms
                 h => tsmi.CheckedChanged -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripMenuItem.CheckStateChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripMenuItem.CheckStateChanged"/> as <see cref="Observable"/></summary>
         /// <param name="tsmi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>

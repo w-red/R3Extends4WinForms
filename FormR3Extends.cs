@@ -12,7 +12,7 @@ namespace R3Extends4WinForms
     /// </remarks>
     public static class FormR3Extends
     {
-        /// <summary><see cref="Form.Load"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Form.Load"/> as <see cref="Observable"/></summary>
         /// <param name="frm">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -38,7 +38,7 @@ namespace R3Extends4WinForms
                 h => frm.Closing -= h,
                 tkn);
 
-        /// <summary><see cref="Form.Closed"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Form.Closed"/> as <see cref="Observable"/></summary>
         /// <param name="frm">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -77,7 +77,7 @@ namespace R3Extends4WinForms
                 h => frm.FormClosed -= h,
                 tkn);
 
-        /// <summary><see cref="Form.Activated"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Form.Activated"/> as <see cref="Observable"/></summary>
         /// <param name="frm">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -90,7 +90,7 @@ namespace R3Extends4WinForms
                 h => frm.Activated -= h,
                 tkn);
 
-        /// <summary><see cref="Form.Deactivate"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Form.Deactivate"/> as <see cref="Observable"/></summary>
         /// <param name="frm">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -103,7 +103,7 @@ namespace R3Extends4WinForms
                 h => frm.Deactivate -= h,
                 tkn);
 
-        /// <summary><see cref="Form.Shown"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Form.Shown"/> as <see cref="Observable"/></summary>
         /// <param name="frm">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -116,7 +116,7 @@ namespace R3Extends4WinForms
                 h => frm.Shown -= h,
                 tkn);
 
-        /// <summary><see cref="Form.HelpButtonClicked"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Form.HelpButtonClicked"/> as <see cref="Observable"/></summary>
         /// <param name="frm">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -129,7 +129,7 @@ namespace R3Extends4WinForms
                 h => frm.HelpButtonClicked -= h,
                 tkn);
 
-        /// <summary><see cref="Form.AutoSizeChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Form.AutoSizeChanged"/> as <see cref="Observable"/></summary>
         /// <param name="frm">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -142,7 +142,7 @@ namespace R3Extends4WinForms
                 h => frm.AutoSizeChanged -= h,
                 tkn);
 
-        /// <summary><see cref="Form.AutoValidateChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Form.AutoValidateChanged"/> as <see cref="Observable"/></summary>
         /// <param name="frm">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -155,7 +155,7 @@ namespace R3Extends4WinForms
                 h => frm.AutoValidateChanged -= h,
                 tkn);
 
-        /// <summary><see cref="Form.DpiChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Form.DpiChanged"/> as <see cref="Observable"/></summary>
         /// <param name="frm">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -168,7 +168,7 @@ namespace R3Extends4WinForms
                 h => frm.DpiChanged -= h,
                 tkn);
 
-        /// <summary><see cref="Form.InputLanguageChanging"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Form.InputLanguageChanging"/> as <see cref="Observable"/></summary>
         /// <param name="frm">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -181,7 +181,7 @@ namespace R3Extends4WinForms
                 h => frm.InputLanguageChanging -= h,
                 tkn);
 
-        /// <summary><see cref="Form.InputLanguageChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Form.InputLanguageChanged"/> as <see cref="Observable"/></summary>
         /// <param name="frm">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -194,7 +194,7 @@ namespace R3Extends4WinForms
                 h => frm.InputLanguageChanged -= h,
                 tkn);
 
-        /// <summary><see cref="Form.MaximizedBoundsChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Form.MaximizedBoundsChanged"/> as <see cref="Observable"/></summary>
         /// <param name="frm">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -207,7 +207,7 @@ namespace R3Extends4WinForms
                 h => frm.MaximizedBoundsChanged -= h,
                 tkn);
 
-        /// <summary><see cref="Form.MaximumSizeChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Form.MaximumSizeChanged"/> as <see cref="Observable"/></summary>
         /// <param name="frm">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -220,7 +220,7 @@ namespace R3Extends4WinForms
                 h => frm.MaximumSizeChanged -= h,
                 tkn);
 
-        /// <summary><see cref="Form.MinimumSizeChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Form.MinimumSizeChanged"/> as <see cref="Observable"/></summary>
         /// <param name="frm">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -233,7 +233,7 @@ namespace R3Extends4WinForms
                 h => frm.MinimumSizeChanged -= h,
                 tkn);
 
-        /// <summary><see cref="Form.MdiChildActivate"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Form.MdiChildActivate"/> as <see cref="Observable"/></summary>
         /// <param name="frm">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -246,7 +246,7 @@ namespace R3Extends4WinForms
                 h => frm.MdiChildActivate -= h,
                 tkn);
 
-        /// <summary><see cref="Form.MenuStart"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Form.MenuStart"/> as <see cref="Observable"/></summary>
         /// <param name="frm">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -259,7 +259,7 @@ namespace R3Extends4WinForms
                 h => frm.MenuStart -= h,
                 tkn);
 
-        /// <summary><see cref="Form.MenuComplete"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Form.MenuComplete"/> as <see cref="Observable"/></summary>
         /// <param name="frm">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -272,7 +272,7 @@ namespace R3Extends4WinForms
                 h => frm.MenuComplete -= h,
                 tkn);
 
-        /// <summary><see cref="Form.ResizeBegin"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Form.ResizeBegin"/> as <see cref="Observable"/></summary>
         /// <param name="frm">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -285,7 +285,7 @@ namespace R3Extends4WinForms
                 h => frm.ResizeBegin -= h,
                 tkn);
 
-        /// <summary><see cref="Form.ResizeEnd"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Form.ResizeEnd"/> as <see cref="Observable"/></summary>
         /// <param name="frm">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -298,7 +298,7 @@ namespace R3Extends4WinForms
                 h => frm.ResizeEnd -= h,
                 tkn);
 
-        /// <summary><see cref="Form.RightToLeftLayoutChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="Form.RightToLeftLayoutChanged"/> as <see cref="Observable"/></summary>
         /// <param name="frm">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>

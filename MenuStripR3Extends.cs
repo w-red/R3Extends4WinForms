@@ -11,7 +11,7 @@ namespace R3Extends4WinForms
     /// </remarks>
     public static class MenuStripR3Extends
     {
-        /// <summary><see cref="MenuStrip.MenuActivate"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="MenuStrip.MenuActivate"/> as <see cref="Observable"/></summary>
         /// <param name="ms">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -24,7 +24,7 @@ namespace R3Extends4WinForms
                 h => ms.MenuActivate -= h,
                 tkn);
 
-        /// <summary><see cref="MenuStrip.MenuDeactivate"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="MenuStrip.MenuDeactivate"/> as <see cref="Observable"/></summary>
         /// <param name="ms">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>

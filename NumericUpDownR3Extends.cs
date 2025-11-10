@@ -11,7 +11,7 @@ namespace R3Extends4WinForms
     /// </remarks>
     public static class NumericUpDownR3Extends
     {
-        /// <summary><see cref="NumericUpDown.ValueChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="NumericUpDown.ValueChanged"/> as <see cref="Observable"/></summary>
         /// <param name="nud">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -24,7 +24,7 @@ namespace R3Extends4WinForms
                 h => nud.ValueChanged -= h,
                 tkn);
 
-        /// <summary><see cref="NumericUpDown.TextChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="NumericUpDown.TextChanged"/> as <see cref="Observable"/></summary>
         /// <param name="nud">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -40,7 +40,7 @@ namespace R3Extends4WinForms
 
         // PaddingChenged cannot compile.
 #if false
-        /// <summary><see cref="NumericUpDown.PaddingChenged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="NumericUpDown.PaddingChenged"/> as <see cref="Observable"/></summary>
         /// <param name="nud">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>

@@ -11,7 +11,7 @@ namespace R3Extends4WinForms
     /// </remarks>
     public static class TextBoxBaseR3Extends
     {
-        /// <summary><see cref="TextBoxBase.AcceptsTabChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="TextBoxBase.AcceptsTabChanged"/> as <see cref="Observable"/></summary>
         /// <param name="tbb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -24,7 +24,7 @@ namespace R3Extends4WinForms
                 h => tbb.AcceptsTabChanged -= h,
                 tkn);
 
-        /// <summary><see cref="TextBoxBase.BorderStyleChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="TextBoxBase.BorderStyleChanged"/> as <see cref="Observable"/></summary>
         /// <param name="tbb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -37,7 +37,7 @@ namespace R3Extends4WinForms
                 h => tbb.BorderStyleChanged -= h,
                 tkn);
 
-        /// <summary><see cref="TextBoxBase.Click"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="TextBoxBase.Click"/> as <see cref="Observable"/></summary>
         /// <param name="tbb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -50,7 +50,7 @@ namespace R3Extends4WinForms
                 h => tbb.Click -= h,
                 tkn);
 
-        /// <summary><see cref="TextBoxBase.MouseClick"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="TextBoxBase.MouseClick"/> as <see cref="Observable"/></summary>
         /// <param name="tbb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -63,7 +63,7 @@ namespace R3Extends4WinForms
                 h => tbb.MouseClick -= h,
                 tkn);
 
-        /// <summary><see cref="TextBoxBase.HideSelectionChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="TextBoxBase.HideSelectionChanged"/> as <see cref="Observable"/></summary>
         /// <param name="tbb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -76,7 +76,7 @@ namespace R3Extends4WinForms
                 h => tbb.HideSelectionChanged -= h,
                 tkn);
 
-        /// <summary><see cref="TextBoxBase.ModifiedChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="TextBoxBase.ModifiedChanged"/> as <see cref="Observable"/></summary>
         /// <param name="tbb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -89,7 +89,7 @@ namespace R3Extends4WinForms
                 h => tbb.ModifiedChanged -= h,
                 tkn);
 
-        /// <summary><see cref="TextBoxBase.MultilineChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="TextBoxBase.MultilineChanged"/> as <see cref="Observable"/></summary>
         /// <param name="tbb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -102,7 +102,7 @@ namespace R3Extends4WinForms
                 h => tbb.MultilineChanged -= h,
                 tkn);
 
-        /// <summary><see cref="TextBoxBase.ReadOnlyChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="TextBoxBase.ReadOnlyChanged"/> as <see cref="Observable"/></summary>
         /// <param name="tbb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>

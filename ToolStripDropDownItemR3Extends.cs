@@ -11,7 +11,7 @@ namespace R3Extends4WinForms
     /// </remarks>
     public static class ToolStripDropDownItemR3Extends
     {
-        /// <summary><see cref="ToolStripDropDownItem.DropDownOpened"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripDropDownItem.DropDownOpened"/> as <see cref="Observable"/></summary>
         /// <param name="tsddi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -24,7 +24,7 @@ namespace R3Extends4WinForms
                 h => tsddi.DropDownOpened -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripDropDownItem.DropDownOpening"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripDropDownItem.DropDownOpening"/> as <see cref="Observable"/></summary>
         /// <param name="tsddi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -37,7 +37,7 @@ namespace R3Extends4WinForms
                 h => tsddi.DropDownOpening -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripDropDownItem.DropDownClosed"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripDropDownItem.DropDownClosed"/> as <see cref="Observable"/></summary>
         /// <param name="tsddi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -50,7 +50,7 @@ namespace R3Extends4WinForms
                 h => tsddi.DropDownClosed -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripDropDownItem.DropDownItemClicked"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripDropDownItem.DropDownItemClicked"/> as <see cref="Observable"/></summary>
         /// <param name="tsddi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>

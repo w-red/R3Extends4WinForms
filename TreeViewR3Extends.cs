@@ -11,7 +11,7 @@ namespace R3Extends4WinForms
     /// </remarks>
     public static class TreeViewR3Extends
     {
-        /// <summary><see cref="TreeView.AfterCheck"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="TreeView.AfterCheck"/> as <see cref="Observable"/></summary>
         /// <param name="tv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -24,7 +24,7 @@ namespace R3Extends4WinForms
                 h => tv.AfterCheck -= h,
                 tkn);
 
-        /// <summary><see cref="TreeView.AfterCollapse"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="TreeView.AfterCollapse"/> as <see cref="Observable"/></summary>
         /// <param name="tv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -37,7 +37,7 @@ namespace R3Extends4WinForms
                 h => tv.AfterCollapse -= h,
                 tkn);
 
-        /// <summary><see cref="TreeView.AfterExpand"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="TreeView.AfterExpand"/> as <see cref="Observable"/></summary>
         /// <param name="tv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -50,7 +50,7 @@ namespace R3Extends4WinForms
                 h => tv.AfterExpand -= h,
                 tkn);
 
-        /// <summary><see cref="TreeView.AfterLabelEdit"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="TreeView.AfterLabelEdit"/> as <see cref="Observable"/></summary>
         /// <param name="tv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -63,7 +63,7 @@ namespace R3Extends4WinForms
                 h => tv.AfterLabelEdit -= h,
                 tkn);
 
-        /// <summary><see cref="TreeView.AfterSelect"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="TreeView.AfterSelect"/> as <see cref="Observable"/></summary>
         /// <param name="tv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -76,7 +76,7 @@ namespace R3Extends4WinForms
                 h => tv.AfterSelect -= h,
                 tkn);
 
-        /// <summary><see cref="TreeView.BeforeCheck"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="TreeView.BeforeCheck"/> as <see cref="Observable"/></summary>
         /// <param name="tv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -89,7 +89,7 @@ namespace R3Extends4WinForms
                 h => tv.BeforeCheck -= h,
                 tkn);
 
-        /// <summary><see cref="TreeView.BeforeCollapse"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="TreeView.BeforeCollapse"/> as <see cref="Observable"/></summary>
         /// <param name="tv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -102,7 +102,7 @@ namespace R3Extends4WinForms
                 h => tv.BeforeCollapse -= h,
                 tkn);
 
-        /// <summary><see cref="TreeView.BeforeExpand"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="TreeView.BeforeExpand"/> as <see cref="Observable"/></summary>
         /// <param name="tv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -115,7 +115,7 @@ namespace R3Extends4WinForms
                 h => tv.BeforeExpand -= h,
                 tkn);
 
-        /// <summary><see cref="TreeView.BeforeLabelEdit"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="TreeView.BeforeLabelEdit"/> as <see cref="Observable"/></summary>
         /// <param name="tv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -128,7 +128,7 @@ namespace R3Extends4WinForms
                 h => tv.BeforeLabelEdit -= h,
                 tkn);
 
-        /// <summary><see cref="TreeView.BeforeSelect"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="TreeView.BeforeSelect"/> as <see cref="Observable"/></summary>
         /// <param name="tv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -141,7 +141,7 @@ namespace R3Extends4WinForms
                 h => tv.BeforeSelect -= h,
                 tkn);
 
-        /// <summary><see cref="TreeView.DrawNode"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="TreeView.DrawNode"/> as <see cref="Observable"/></summary>
         /// <param name="tv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -154,7 +154,7 @@ namespace R3Extends4WinForms
                 h => tv.DrawNode -= h,
                 tkn);
 
-        /// <summary><see cref="TreeView.ItemDrag"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="TreeView.ItemDrag"/> as <see cref="Observable"/></summary>
         /// <param name="tv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -167,7 +167,7 @@ namespace R3Extends4WinForms
                 h => tv.ItemDrag -= h,
                 tkn);
 
-        /// <summary><see cref="TreeView.NodeMouseClick"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="TreeView.NodeMouseClick"/> as <see cref="Observable"/></summary>
         /// <param name="tv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -180,7 +180,7 @@ namespace R3Extends4WinForms
                 h => tv.NodeMouseClick -= h,
                 tkn);
 
-        /// <summary><see cref="TreeView.NodeMouseDoubleClick"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="TreeView.NodeMouseDoubleClick"/> as <see cref="Observable"/></summary>
         /// <param name="tv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -193,7 +193,7 @@ namespace R3Extends4WinForms
                 h => tv.NodeMouseDoubleClick -= h,
                 tkn);
 
-        /// <summary><see cref="TreeView.NodeMouseHover"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="TreeView.NodeMouseHover"/> as <see cref="Observable"/></summary>
         /// <param name="tv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -206,7 +206,7 @@ namespace R3Extends4WinForms
                 h => tv.NodeMouseHover -= h,
                 tkn);
 
-        /// <summary><see cref="TreeView.RightToLeftLayoutChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="TreeView.RightToLeftLayoutChanged"/> as <see cref="Observable"/></summary>
         /// <param name="tv">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>

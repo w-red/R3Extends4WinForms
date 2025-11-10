@@ -11,7 +11,7 @@ namespace R3Extends4WinForms
     /// </remarks>
     public static class ToolStripItemR3Extends
     {
-        /// <summary><see cref="ToolStripItem.AvailableChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripItem.AvailableChanged"/> as <see cref="Observable"/></summary>
         /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -24,7 +24,7 @@ namespace R3Extends4WinForms
                 h => tsi.AvailableChanged -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripItem.BackColorChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripItem.BackColorChanged"/> as <see cref="Observable"/></summary>
         /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -37,7 +37,7 @@ namespace R3Extends4WinForms
                 h => tsi.BackColorChanged -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripItem.ForeColorChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripItem.ForeColorChanged"/> as <see cref="Observable"/></summary>
         /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -50,7 +50,7 @@ namespace R3Extends4WinForms
                 h => tsi.ForeColorChanged -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripItem.Click"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripItem.Click"/> as <see cref="Observable"/></summary>
         /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -63,7 +63,7 @@ namespace R3Extends4WinForms
                 h => tsi.Click -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripItem.DoubleClick"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripItem.DoubleClick"/> as <see cref="Observable"/></summary>
         /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -76,7 +76,7 @@ namespace R3Extends4WinForms
                 h => tsi.DoubleClick -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripItem.CommandCanExecuteChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripItem.CommandCanExecuteChanged"/> as <see cref="Observable"/></summary>
         /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -89,7 +89,7 @@ namespace R3Extends4WinForms
                 h => tsi.CommandCanExecuteChanged -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripItem.CommandChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripItem.CommandChanged"/> as <see cref="Observable"/></summary>
         /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -102,7 +102,7 @@ namespace R3Extends4WinForms
                 h => tsi.CommandChanged -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripItem.CommandParameterChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripItem.CommandParameterChanged"/> as <see cref="Observable"/></summary>
         /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -115,7 +115,7 @@ namespace R3Extends4WinForms
                 h => tsi.CommandParameterChanged -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripItem.DisplayStyleChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripItem.DisplayStyleChanged"/> as <see cref="Observable"/></summary>
         /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -128,7 +128,7 @@ namespace R3Extends4WinForms
                 h => tsi.DisplayStyleChanged -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripItem.DragDrop"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripItem.DragDrop"/> as <see cref="Observable"/></summary>
         /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -141,7 +141,7 @@ namespace R3Extends4WinForms
                 h => tsi.DragDrop -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripItem.DragEnter"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripItem.DragEnter"/> as <see cref="Observable"/></summary>
         /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -154,7 +154,7 @@ namespace R3Extends4WinForms
                 h => tsi.DragEnter -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripItem.DragLeave"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripItem.DragLeave"/> as <see cref="Observable"/></summary>
         /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -167,7 +167,7 @@ namespace R3Extends4WinForms
                 h => tsi.DragLeave -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripItem.DragOver"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripItem.DragOver"/> as <see cref="Observable"/></summary>
         /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -180,7 +180,7 @@ namespace R3Extends4WinForms
                 h => tsi.DragOver -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripItem.EnabledChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripItem.EnabledChanged"/> as <see cref="Observable"/></summary>
         /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -193,7 +193,7 @@ namespace R3Extends4WinForms
                 h => tsi.EnabledChanged -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripItem.GiveFeedback"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripItem.GiveFeedback"/> as <see cref="Observable"/></summary>
         /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -206,7 +206,7 @@ namespace R3Extends4WinForms
                 h => tsi.GiveFeedback -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripItem.LocationChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripItem.LocationChanged"/> as <see cref="Observable"/></summary>
         /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -219,7 +219,7 @@ namespace R3Extends4WinForms
                 h => tsi.LocationChanged -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripItem.MouseDown"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripItem.MouseDown"/> as <see cref="Observable"/></summary>
         /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -232,7 +232,7 @@ namespace R3Extends4WinForms
                 h => tsi.MouseDown -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripItem.MouseUp"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripItem.MouseUp"/> as <see cref="Observable"/></summary>
         /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -245,7 +245,7 @@ namespace R3Extends4WinForms
                 h => tsi.MouseUp -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripItem.MouseEnter"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripItem.MouseEnter"/> as <see cref="Observable"/></summary>
         /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -258,7 +258,7 @@ namespace R3Extends4WinForms
                 h => tsi.MouseEnter -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripItem.MouseLeave"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripItem.MouseLeave"/> as <see cref="Observable"/></summary>
         /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -271,7 +271,7 @@ namespace R3Extends4WinForms
                 h => tsi.MouseLeave -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripItem.MouseHover"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripItem.MouseHover"/> as <see cref="Observable"/></summary>
         /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -284,7 +284,7 @@ namespace R3Extends4WinForms
                 h => tsi.MouseHover -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripItem.MouseMove"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripItem.MouseMove"/> as <see cref="Observable"/></summary>
         /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -297,7 +297,7 @@ namespace R3Extends4WinForms
                 h => tsi.MouseMove -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripItem.OwnerChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripItem.OwnerChanged"/> as <see cref="Observable"/></summary>
         /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -310,7 +310,7 @@ namespace R3Extends4WinForms
                 h => tsi.OwnerChanged -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripItem.Paint"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripItem.Paint"/> as <see cref="Observable"/></summary>
         /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -323,7 +323,7 @@ namespace R3Extends4WinForms
                 h => tsi.Paint -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripItem.QueryAccessibilityHelp"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripItem.QueryAccessibilityHelp"/> as <see cref="Observable"/></summary>
         /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -336,7 +336,7 @@ namespace R3Extends4WinForms
                 h => tsi.QueryAccessibilityHelp -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripItem.QueryContinueDrag"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripItem.QueryContinueDrag"/> as <see cref="Observable"/></summary>
         /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -349,7 +349,7 @@ namespace R3Extends4WinForms
                 h => tsi.QueryContinueDrag -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripItem.RightToLeftChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripItem.RightToLeftChanged"/> as <see cref="Observable"/></summary>
         /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -362,7 +362,7 @@ namespace R3Extends4WinForms
                 h => tsi.RightToLeftChanged -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripItem.TextChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripItem.TextChanged"/> as <see cref="Observable"/></summary>
         /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -375,7 +375,7 @@ namespace R3Extends4WinForms
                 h => tsi.TextChanged -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripItem.VisibleChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripItem.VisibleChanged"/> as <see cref="Observable"/></summary>
         /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>

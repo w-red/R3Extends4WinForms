@@ -11,7 +11,7 @@ namespace R3Extends4WinForms
     /// </remarks>
     public static class ToolStripComboBoxR3Extends
     {
-        /// <summary><see cref="ToolStripComboBox.DropDown"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripComboBox.DropDown"/> as <see cref="Observable"/></summary>
         /// <param name="tscb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -24,7 +24,7 @@ namespace R3Extends4WinForms
                 h => tscb.DropDown -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripComboBox.DropDownClosed"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripComboBox.DropDownClosed"/> as <see cref="Observable"/></summary>
         /// <param name="tscb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -37,7 +37,7 @@ namespace R3Extends4WinForms
                 h => tscb.DropDownClosed -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripComboBox.DropDownStyleChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripComboBox.DropDownStyleChanged"/> as <see cref="Observable"/></summary>
         /// <param name="tscb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -50,7 +50,7 @@ namespace R3Extends4WinForms
                 h => tscb.DropDownStyleChanged -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripComboBox.SelectedIndexChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripComboBox.SelectedIndexChanged"/> as <see cref="Observable"/></summary>
         /// <param name="tscb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -63,7 +63,7 @@ namespace R3Extends4WinForms
                 h => tscb.SelectedIndexChanged -= h,
                 tkn);
 
-        /// <summary><see cref="ToolStripComboBox.TextUpdate"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ToolStripComboBox.TextUpdate"/> as <see cref="Observable"/></summary>
         /// <param name="tscb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>

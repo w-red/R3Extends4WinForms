@@ -11,7 +11,7 @@ namespace R3Extends4WinForms
     /// </remarks>
     public static class ProgressBarR3Extends
     {
-        /// <summary><see cref="ProgressBar.RightToLeftLayoutChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="ProgressBar.RightToLeftLayoutChanged"/> as <see cref="Observable"/></summary>
         /// <param name="ss">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>

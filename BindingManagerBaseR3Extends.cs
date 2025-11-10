@@ -24,7 +24,7 @@ namespace R3Extends4WinForms
                 h => bmb.BindingComplete -= h,
                 tkn);
 
-        /// <summary><see cref="BindingManagerBase.CurrentChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="BindingManagerBase.CurrentChanged"/> as <see cref="Observable"/></summary>
         /// <param name="bmb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -37,7 +37,7 @@ namespace R3Extends4WinForms
                 h => bmb.CurrentChanged -= h,
                 tkn);
 
-        /// <summary><see cref="BindingManagerBase.CurrentItemChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="BindingManagerBase.CurrentItemChanged"/> as <see cref="Observable"/></summary>
         /// <param name="bmb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -63,7 +63,7 @@ namespace R3Extends4WinForms
                 h => bmb.DataError -= h,
                 tkn);
 
-        /// <summary><see cref="BindingManagerBase.PositionChanged"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="BindingManagerBase.PositionChanged"/> as <see cref="Observable"/></summary>
         /// <param name="bmb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>

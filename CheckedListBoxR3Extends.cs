@@ -11,7 +11,7 @@ namespace R3Extends4WinForms
     /// </remarks>
     public static class CheckedListBoxR3Extends
     {
-        /// <summary><see cref="CheckedListBox.Click"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="CheckedListBox.Click"/> as <see cref="Observable"/></summary>
         /// <param name="clb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -24,7 +24,7 @@ namespace R3Extends4WinForms
                 h => clb.Click -= h,
                 tkn);
 
-        /// <summary><see cref="CheckedListBox.ItemCheck"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="CheckedListBox.ItemCheck"/> as <see cref="Observable"/></summary>
         /// <param name="clb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -37,7 +37,7 @@ namespace R3Extends4WinForms
                 h => clb.ItemCheck -= h,
                 tkn);
 
-        /// <summary><see cref="CheckedListBox.MouseClick"/> as <see cref="Observable(Of EventArgs)"/></summary>
+        /// <summary><see cref="CheckedListBox.MouseClick"/> as <see cref="Observable"/></summary>
         /// <param name="clb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
