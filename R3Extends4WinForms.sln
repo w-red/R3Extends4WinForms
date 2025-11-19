@@ -5,7 +5,7 @@ VisualStudioVersion = 18.0.11205.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "R3Extends4WinForms", "src\R3Extends4WinForms.csproj", "{F0FD2E47-AE20-7B77-2836-5F0A435265BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "R3Extends4WinFormsTest", "..\tests\R3Extends4WinFormsTest\R3Extends4WinFormsTest.csproj", "{44C05407-B70C-E874-2448-79C07109814A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "R3Extends4WinFormsTest", "tests\R3Extends4WinFormsTest\R3Extends4WinFormsTest.csproj", "{44C05407-B70C-E874-2448-79C07109814A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
