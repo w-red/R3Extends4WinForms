@@ -76,6 +76,7 @@ namespace R3Extends4WinForms
                 h => tsi.DoubleClick -= h,
                 tkn);
 
+#if NET7_0_OR_GREATER
         /// <summary><see cref="ToolStripItem.CommandCanExecuteChanged"/> as <see cref="Observable"/></summary>
         /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
@@ -114,6 +115,7 @@ namespace R3Extends4WinForms
                 h => tsi.CommandParameterChanged += h,
                 h => tsi.CommandParameterChanged -= h,
                 tkn);
+#endif
 
         /// <summary><see cref="ToolStripItem.DisplayStyleChanged"/> as <see cref="Observable"/></summary>
         /// <param name="tsi">target</param>

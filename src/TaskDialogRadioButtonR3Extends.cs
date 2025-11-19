@@ -2,6 +2,7 @@
 
 namespace R3Extends4WinForms
 {
+#if NET5_0_OR_GREATER
     /// <summary><see cref="R3"/>'s Extends for <see cref="TaskDialogRadioButton"/>.</summary>
     /// <remarks>
     /// Add extension methods for any events you need.<br />
@@ -24,4 +25,5 @@ namespace R3Extends4WinForms
                 h => tdrb.CheckedChanged -= h,
                 tkn);
     }
+#endif
 }
