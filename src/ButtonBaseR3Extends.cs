@@ -24,6 +24,7 @@ namespace R3Extends4WinForms
                 h => bb.AutoSizeChanged -= h,
                 tkn);
 
+#if NET7_0_OR_GREATER
         /// <summary><see cref="ButtonBase.CommandCanExecuteChanged"/> as <see cref="Observable"/></summary>
         /// <param name="bb">target</param>
         /// <param name="tkn">token</param>
@@ -62,5 +63,6 @@ namespace R3Extends4WinForms
                 h => bb.CommandParameterChanged += h,
                 h => bb.CommandParameterChanged -= h,
                 tkn);
+#endif
     }
 }

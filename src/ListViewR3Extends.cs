@@ -1,4 +1,5 @@
 ﻿using R3;
+using System.Windows.Forms;
 
 namespace R3Extends4WinForms
 {
@@ -167,6 +168,7 @@ namespace R3Extends4WinForms
                 h => lv.DrawSubItem -= h,
                 tkn);
 
+#if NET5_0_OR_GREATER
         /// <summary><see cref="ListView.GroupCollapsedStateChanged"/> as <see cref="Observable"/></summary>
         /// <param name="lv">target</param>
         /// <param name="tkn">token</param>
@@ -192,6 +194,7 @@ namespace R3Extends4WinForms
                 h => lv.GroupTaskLinkClick += h,
                 h => lv.GroupTaskLinkClick -= h,
                 tkn);
+#endif
 
         /// <summary><see cref="ListView.ItemActivate"/> as <see cref="Observable"/></summary>
         /// <param name="lv">target</param>

@@ -181,6 +181,7 @@ namespace R3Extends4WinForms
                 h => ctrl.CursorChanged -= h,
                 tkn);
 
+#if NET7_0_OR_GREATER
         /// <summary><see cref="Control.DataContextChanged"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
@@ -193,6 +194,7 @@ namespace R3Extends4WinForms
                 h => ctrl.DataContextChanged += h,
                 h => ctrl.DataContextChanged -= h,
                 tkn);
+#endif
 
         /// <summary><see cref="Control.DockChanged"/> as <see cref="Observable"/></summary>
         /// <param name="ctrl">target</param>
