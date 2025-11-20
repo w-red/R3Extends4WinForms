@@ -10,6 +10,7 @@ public class AsObservableTest
     [Fact]
     public void FormLoadAsObservableTest()
     {
+        // Arrange
         var form = new Form();
         var observed = false;
         var observable = 
@@ -19,6 +20,7 @@ public class AsObservableTest
             observable.
             Subscribe(_ => observed = true);
 
+        // Act & Assert
         form.Show();
         observed.ShouldBeTrue();
         form.Close();
