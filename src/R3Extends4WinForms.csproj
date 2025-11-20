@@ -18,6 +18,8 @@
 		<Title>R3Extends4WinForms</Title>
 		<Authors>TERASHI, yohei</Authors>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<Version>0.1.0.0</Version>
+		<PackageReleaseNotes>Initial Preview.</PackageReleaseNotes>
 	</PropertyGroup>
 
     <ItemGroup>
