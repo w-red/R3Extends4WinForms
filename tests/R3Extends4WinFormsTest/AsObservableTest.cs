@@ -1,9 +1,10 @@
-using Shouldly;
-using System.Windows.Forms;
+using R3;
 using R3Extends4WinForms;
+using Shouldly;
 
 namespace R3Extends4WinFormsTest;
 
+/// <summary>AsObservable's test.</summary>
 public class AsObservableTest
 {
     [Fact]
@@ -16,7 +17,7 @@ public class AsObservableTest
             LoadAsObservable();
         using var subscription =
             observable.
-            Subscribe(_ => { observed = true; return Disposable.Empty; });
+            Subscribe(_ => observed = true);
 
         form.Show();
         observed.ShouldBeTrue();
