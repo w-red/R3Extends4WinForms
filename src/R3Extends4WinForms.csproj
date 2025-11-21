@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	
 	<PropertyGroup>
-		<TargetFrameworks>net472;net8.0-windows</TargetFrameworks>
+		<TargetFrameworks>net472;net6.0-windows;net8.0-windows;net10.0-windows</TargetFrameworks>
 		<LangVersion>latest</LangVersion>
 		<Nullable>enable</Nullable>
 		<UseWindowsForms>true</UseWindowsForms>
@@ -10,15 +10,15 @@
 		<AssemblyVersion>0.1.0.0</AssemblyVersion>
 		<FileVersion>0.1.0.0</FileVersion>
 		<Description>R3's observable object from WinForms event.</Description>
-		<Copyright></Copyright>
-		<PackageProjectUrl>https://github.com/w-red/R3Extends4WinForms</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/w-red/R3Extends4WinForms</RepositoryUrl>
-		<PackageTags>R3; Windows Form; WinForms;</PackageTags>
-		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Title>R3Extends4WinForms</Title>
-		<Authors>TERASHI, yohei</Authors>
+		<Authors>w-red as TERASHI, yohei</Authors>
+		<Version>0.1.1.0</Version>
+
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<PackageTags>R3; Windows Form; WinForms;</PackageTags>
+		<PackageProjectUrl>https://github.com/w-red/R3Extends4WinForms</PackageProjectUrl>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<Version>0.1.0.0</Version>
 		<PackageReleaseNotes>Initial Preview.</PackageReleaseNotes>
 		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
