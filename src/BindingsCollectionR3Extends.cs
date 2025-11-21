@@ -12,7 +12,7 @@ namespace R3Extends4WinForms
     /// </remarks>
     public static class BindingsCollectionR3Extends
     {
-        /// <summary><see cref="BindingsCollection.CollectionChanged"/> as <see cref="Observable(Of CollectionChangeEventArgs)"/></summary>
+        /// <summary><see cref="BindingsCollection.CollectionChanged"/> as <see cref="Observable"/></summary>
         /// <param name="bc">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -25,7 +25,7 @@ namespace R3Extends4WinForms
                 h => bc.CollectionChanged -= h,
                 tkn);
 
-        /// <summary><see cref="BindingsCollection.CollectionChanging"/> as <see cref="Observable(Of CollectionChangeEventArgs)"/></summary>
+        /// <summary><see cref="BindingsCollection.CollectionChanging"/> as <see cref="Observable"/></summary>
         /// <param name="bc">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>

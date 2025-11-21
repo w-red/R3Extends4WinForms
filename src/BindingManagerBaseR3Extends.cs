@@ -11,7 +11,7 @@ namespace R3Extends4WinForms
     /// </remarks>
     public static class BindingManagerBaseR3Extends
     {
-        /// <summary><see cref="BindingManagerBase.BindingComplete"/> as <see cref="Observable(Of BindingCompleteEventArgs)"/></summary>
+        /// <summary><see cref="BindingManagerBase.BindingComplete"/> as <see cref="Observable"/></summary>
         /// <param name="bmb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -50,7 +50,7 @@ namespace R3Extends4WinForms
                 h => bmb.CurrentItemChanged -= h,
                 tkn);
 
-        /// <summary><see cref="BindingManagerBase.DataError"/> as <see cref="Observable(Of BindingManagerDataErrorEventArgs)"/></summary>
+        /// <summary><see cref="BindingManagerBase.DataError"/> as <see cref="Observable"/></summary>
         /// <param name="bmb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>

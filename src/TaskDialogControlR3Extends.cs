@@ -2,6 +2,7 @@
 
 namespace R3Extends4WinForms
 {
+#if NET5_0_OR_GREATER
     /// <summary><see cref="R3"/>'s Extends for <see cref="TaskDialogControl"/>.</summary>
     /// <remarks>
     /// Add extension methods for any events you need.<br />
@@ -12,4 +13,5 @@ namespace R3Extends4WinForms
     public static class TaskDialogControlR3Extends
     {
     }
+#endif
 }
