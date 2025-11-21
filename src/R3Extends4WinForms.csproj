@@ -21,6 +21,7 @@
 		<Version>0.1.0.0</Version>
 		<PackageReleaseNotes>Initial Preview.</PackageReleaseNotes>
 		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 	</PropertyGroup>
 
     <ItemGroup>
