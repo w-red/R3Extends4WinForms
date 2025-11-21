@@ -51,6 +51,7 @@ namespace R3Extends4WinForms
                 h => tdp.HelpRequest -= h,
                 tkn);
 
+#if NET8_0_OR_GREATER
         /// <summary><see cref="TaskDialogPage.LinkClicked"/> as <see cref="Observable"/></summary>
         /// <param name="tdp">target</param>
         /// <param name="tkn">token</param>
@@ -63,6 +64,7 @@ namespace R3Extends4WinForms
                 h => tdp.LinkClicked += h,
                 h => tdp.LinkClicked -= h,
                 tkn);
+#endif
     }
 #endif
 }

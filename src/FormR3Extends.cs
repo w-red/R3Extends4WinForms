@@ -25,6 +25,8 @@ namespace R3Extends4WinForms
                 h => frm.Load -= h,
                 tkn);
 
+#if NET10_0_OR_GREATER
+#else
         /// <summary><see cref="Form.Closing"/> as <see cref="Observable"/></summary>
         /// <param name="frm">target</param>
         /// <param name="tkn">token</param>
@@ -50,6 +52,7 @@ namespace R3Extends4WinForms
                 h => frm.Closed += h,
                 h => frm.Closed -= h,
                 tkn);
+#endif
 
         /// <summary><see cref="Form.FormClosing"/> as <see cref="Observable"/></summary>
         /// <param name="frm">target</param>
