@@ -15,7 +15,7 @@ namespace R3Extends4WinForms
         /// <param name="sc">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<ScrollEventArgs> MoveAsObservable(
+        public static Observable<ScrollEventArgs> ScrollAsObservable(
             this ScrollableControl sc,
             CancellationToken tkn = default) =>
             Observable.FromEvent<ScrollEventHandler, ScrollEventArgs>(
