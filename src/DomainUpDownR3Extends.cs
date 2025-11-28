@@ -11,16 +11,18 @@ namespace R3Extends4WinForms;
 /// </remarks>
 public static class DomainUpDownR3Extends
 {
-    /// <summary><see cref="DomainUpDown.SelectedItemChanged"/> as <see cref="Observable"/></summary>
-    /// <param name="dud">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<EventArgs> SelectedItemChangedAsObservable(
-        this DomainUpDown dud,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<EventHandler, EventArgs>(
-            h => (s, e) => h(e),
-            h => dud.SelectedItemChanged += h,
-            h => dud.SelectedItemChanged -= h,
-            tkn);
+    /// <summary><see cref="DomainUpDown"/> extension methods.</summary>
+    extension(DomainUpDown dud)
+    {
+        /// <summary><see cref="DomainUpDown.SelectedItemChanged"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<EventArgs> SelectedItemChangedAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => dud.SelectedItemChanged += h,
+                h => dud.SelectedItemChanged -= h,
+                tkn);
+    }
 }

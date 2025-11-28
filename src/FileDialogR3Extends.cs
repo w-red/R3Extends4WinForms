@@ -12,16 +12,18 @@ namespace R3Extends4WinForms;
 /// </remarks>
 public static class FileDialogR3Extends
 {
-    /// <summary><see cref="FileDialog.FileOk"/> as <see cref="Observable"/></summary>
-    /// <param name="fd">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<CancelEventArgs> FileOkAsObservable(
-        this FileDialog fd,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<CancelEventHandler, CancelEventArgs>(
-            h => (s, e) => h(e),
-            h => fd.FileOk += h,
-            h => fd.FileOk -= h,
-            tkn);
+    /// <summary><see cref="FileDialog"/> extension methods.</summary>
+    extension(FileDialog fd)
+    {
+        /// <summary><see cref="FileDialog.FileOk"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<CancelEventArgs> FileOkAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<CancelEventHandler, CancelEventArgs>(
+                h => (s, e) => h(e),
+                h => fd.FileOk += h,
+                h => fd.FileOk -= h,
+                tkn);
+    }
 }

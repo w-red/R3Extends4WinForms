@@ -11,29 +11,29 @@ namespace R3Extends4WinForms;
 /// </remarks>
 public static class MenuStripR3Extends
 {
-    /// <summary><see cref="MenuStrip.MenuActivate"/> as <see cref="Observable"/></summary>
-    /// <param name="ms">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<EventArgs> MenuActivateAsObservable(
-        this MenuStrip ms,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<EventHandler, EventArgs>(
-            h => (s, e) => h(e),
-            h => ms.MenuActivate += h,
-            h => ms.MenuActivate -= h,
-            tkn);
+    /// <summary><see cref="MenuStrip"/> extension methods.</summary>
+    extension(MenuStrip ms)
+    {
+        /// <summary><see cref="MenuStrip.MenuActivate"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<EventArgs> MenuActivateAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => ms.MenuActivate += h,
+                h => ms.MenuActivate -= h,
+                tkn);
 
-    /// <summary><see cref="MenuStrip.MenuDeactivate"/> as <see cref="Observable"/></summary>
-    /// <param name="ms">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<EventArgs> MenuDeactivateAsObservable(
-        this MenuStrip ms,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<EventHandler, EventArgs>(
-            h => (s, e) => h(e),
-            h => ms.MenuDeactivate += h,
-            h => ms.MenuDeactivate -= h,
-            tkn);
+        /// <summary><see cref="MenuStrip.MenuDeactivate"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<EventArgs> MenuDeactivateAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => ms.MenuDeactivate += h,
+                h => ms.MenuDeactivate -= h,
+                tkn);
+    }
 }

@@ -11,16 +11,18 @@ namespace R3Extends4WinForms;
 /// </remarks>
 public static class TextBoxR3Extends
 {
-    /// <summary><see cref="TextBox.TextAlignChanged"/> as <see cref="Observable"/></summary>
-    /// <param name="tb">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<EventArgs> TextAlignChangedAsObservable(
-        this TextBox tb,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<EventHandler, EventArgs>(
-            h => (s, e) => h(e),
-            h => tb.TextAlignChanged += h,
-            h => tb.TextAlignChanged -= h,
-            tkn);
+    /// <summary><see cref="TextBox"/> extension methods.</summary>
+    extension(TextBox tb)
+    {
+        /// <summary><see cref="TextBox.TextAlignChanged"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<EventArgs> TextAlignChangedAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => tb.TextAlignChanged += h,
+                h => tb.TextAlignChanged -= h,
+                tkn);
+    }
 }

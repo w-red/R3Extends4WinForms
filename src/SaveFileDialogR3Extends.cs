@@ -11,4 +11,8 @@ namespace R3Extends4WinForms;
 /// </remarks>
 public static class SaveFileDialogR3Extends
 {
+    /// <summary><see cref="SaveFileDialog"/> extension methods.</summary>
+    extension(SaveFileDialog sfd)
+    {
+    }
 }

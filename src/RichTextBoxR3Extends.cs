@@ -11,95 +11,84 @@ namespace R3Extends4WinForms;
 /// </remarks>
 public static class RichTextBoxR3Extends
 {
-    /// <summary><see cref="RichTextBox.ContentsResized"/> as <see cref="Observable"/></summary>
-    /// <param name="rtb">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<ContentsResizedEventArgs> ContentsResizedAsObservable(
-        this RichTextBox rtb,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<ContentsResizedEventHandler, ContentsResizedEventArgs>(
-            h => (s, e) => h(e),
-            h => rtb.ContentsResized += h,
-            h => rtb.ContentsResized -= h,
-            tkn);
+    /// <summary><see cref="RichTextBox"/> extension methods.</summary>
+    extension(RichTextBox rtb)
+    {
+        /// <summary><see cref="RichTextBox.ContentsResized"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<ContentsResizedEventArgs> ContentsResizedAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<ContentsResizedEventHandler, ContentsResizedEventArgs>(
+                h => (s, e) => h(e),
+                h => rtb.ContentsResized += h,
+                h => rtb.ContentsResized -= h,
+                tkn);
 
-    /// <summary><see cref="RichTextBox.DragDrop"/> as <see cref="Observable"/></summary>
-    /// <param name="rtb">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<DragEventArgs> DragDropAsObservable(
-        this RichTextBox rtb,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<DragEventHandler, DragEventArgs>(
-            h => (s, e) => h(e),
-            h => rtb.DragDrop += h,
-            h => rtb.DragDrop -= h,
-            tkn);
+        /// <summary><see cref="RichTextBox.DragDrop"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<DragEventArgs> DragDropAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<DragEventHandler, DragEventArgs>(
+                h => (s, e) => h(e),
+                h => rtb.DragDrop += h,
+                h => rtb.DragDrop -= h,
+                tkn);
 
-    /// <summary><see cref="RichTextBox.DragEnter"/> as <see cref="Observable"/></summary>
-    /// <param name="rtb">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<DragEventArgs> DragEnterAsObservable(
-        this RichTextBox rtb,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<DragEventHandler, DragEventArgs>(
-            h => (s, e) => h(e),
-            h => rtb.DragEnter += h,
-            h => rtb.DragEnter -= h,
-            tkn);
+        /// <summary><see cref="RichTextBox.DragEnter"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<DragEventArgs> DragEnterAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<DragEventHandler, DragEventArgs>(
+                h => (s, e) => h(e),
+                h => rtb.DragEnter += h,
+                h => rtb.DragEnter -= h,
+                tkn);
 
-    /// <summary><see cref="RichTextBox.HScroll"/> as <see cref="Observable"/></summary>
-    /// <param name="rtb">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<EventArgs> HScrollAsObservable(
-        this RichTextBox rtb,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<EventHandler, EventArgs>(
-            h => (s, e) => h(e),
-            h => rtb.HScroll += h,
-            h => rtb.HScroll -= h,
-            tkn);
+        /// <summary><see cref="RichTextBox.HScroll"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<EventArgs> HScrollAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => rtb.HScroll += h,
+                h => rtb.HScroll -= h,
+                tkn);
 
-    /// <summary><see cref="RichTextBox.ImeChange"/> as <see cref="Observable"/></summary>
-    /// <param name="rtb">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<EventArgs> ImeChangeAsObservable(
-        this RichTextBox rtb,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<EventHandler, EventArgs>(
-            h => (s, e) => h(e),
-            h => rtb.ImeChange += h,
-            h => rtb.ImeChange -= h,
-            tkn);
+        /// <summary><see cref="RichTextBox.ImeChange"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<EventArgs> ImeChangeAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => rtb.ImeChange += h,
+                h => rtb.ImeChange -= h,
+                tkn);
 
-    /// <summary><see cref="RichTextBox.LinkClicked"/> as <see cref="Observable"/></summary>
-    /// <param name="rtb">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<LinkClickedEventArgs> LinkClickedAsObservable(
-        this RichTextBox rtb,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<LinkClickedEventHandler, LinkClickedEventArgs>(
-            h => (s, e) => h(e),
-            h => rtb.LinkClicked += h,
-            h => rtb.LinkClicked -= h,
-            tkn);
+        /// <summary><see cref="RichTextBox.LinkClicked"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<LinkClickedEventArgs> LinkClickedAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<LinkClickedEventHandler, LinkClickedEventArgs>(
+                h => (s, e) => h(e),
+                h => rtb.LinkClicked += h,
+                h => rtb.LinkClicked -= h,
+                tkn);
 
-    /// <summary><see cref="RichTextBox.Protected"/> as <see cref="Observable"/></summary>
-    /// <param name="rtb">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<EventArgs> ProtectedAsObservable(
-        this RichTextBox rtb,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<EventHandler, EventArgs>(
-            h => (s, e) => h(e),
-            h => rtb.Protected += h,
-            h => rtb.Protected -= h,
-            tkn);
-
+        /// <summary><see cref="RichTextBox.Protected"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<EventArgs> ProtectedAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => rtb.Protected += h,
+                h => rtb.Protected -= h,
+                tkn);
+    }
 }

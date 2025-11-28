@@ -11,4 +11,8 @@ namespace R3Extends4WinForms;
 /// </remarks>
 public static class ThreadExceptionDialogR3Extends
 {
+    /// <summary><see cref="ThreadExceptionDialog"/> extension methods.</summary>
+    extension(ThreadExceptionDialog ted)
+    {
+    }
 }

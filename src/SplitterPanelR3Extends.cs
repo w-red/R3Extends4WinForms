@@ -11,4 +11,8 @@ namespace R3Extends4WinForms;
 /// </remarks>
 public static class SplitterPanelR3Extends
 {
+    /// <summary><see cref="SplitterPanel"/> extension methods.</summary>
+    extension(SplitterPanel sp)
+    {
+    }
 }

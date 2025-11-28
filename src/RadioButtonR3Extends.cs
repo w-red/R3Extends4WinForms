@@ -11,29 +11,29 @@ namespace R3Extends4WinForms;
 /// </remarks>
 public static class RadioButtonR3Extends
 {
-    /// <summary><see cref="RadioButton.AppearanceChanged"/> as <see cref="Observable"/></summary>
-    /// <param name="rb">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<EventArgs> AppearanceChangedAsObservable(
-        this RadioButton rb,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<EventHandler, EventArgs>(
-            h => (s, e) => h(e),
-            h => rb.AppearanceChanged += h,
-            h => rb.AppearanceChanged -= h,
-            tkn);
+    /// <summary><see cref="RadioButton"/> extension methods.</summary>
+    extension(RadioButton rb)
+    {
+        /// <summary><see cref="RadioButton.AppearanceChanged"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<EventArgs> AppearanceChangedAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => rb.AppearanceChanged += h,
+                h => rb.AppearanceChanged -= h,
+                tkn);
 
-    /// <summary><see cref="RadioButton.CheckedChanged"/> as <see cref="Observable"/></summary>
-    /// <param name="rb">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<EventArgs> CheckedChangedAsObservable(
-        this RadioButton rb,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<EventHandler, EventArgs>(
-            h => (s, e) => h(e),
-            h => rb.CheckedChanged += h,
-            h => rb.CheckedChanged -= h,
-            tkn);
+        /// <summary><see cref="RadioButton.CheckedChanged"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<EventArgs> CheckedChangedAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => rb.CheckedChanged += h,
+                h => rb.CheckedChanged -= h,
+                tkn);
+    }
 }

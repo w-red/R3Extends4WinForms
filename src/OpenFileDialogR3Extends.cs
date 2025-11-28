@@ -11,4 +11,8 @@ namespace R3Extends4WinForms;
 /// </remarks>
 public static class OpenFileDialogR3Extends
 {
+    /// <summary><see cref="OpenFileDialog"/> extension methods.</summary>
+    extension(OpenFileDialog ofd)
+    {
+    }
 }

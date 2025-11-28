@@ -11,42 +11,40 @@ namespace R3Extends4WinForms;
 /// </remarks>
 public static class MonthCalendarR3Extends
 {
-    /// <summary><see cref="MonthCalendar.DateChanged"/> as <see cref="Observable"/></summary>
-    /// <param name="mc">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<DateRangeEventArgs> DateChangedAsObservable(
-        this MonthCalendar mc,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<DateRangeEventHandler, DateRangeEventArgs>(
-            h => (s, e) => h(e),
-            h => mc.DateChanged += h,
-            h => mc.DateChanged -= h,
-            tkn);
 
-    /// <summary><see cref="MonthCalendar.DateSelected"/> as <see cref="Observable"/></summary>
-    /// <param name="mc">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<DateRangeEventArgs> DateSelectedAsObservable(
-        this MonthCalendar mc,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<DateRangeEventHandler, DateRangeEventArgs>(
-            h => (s, e) => h(e),
-            h => mc.DateSelected += h,
-            h => mc.DateSelected -= h,
-            tkn);
+    extension(MonthCalendar mc)
+    {
+        /// <summary><see cref="MonthCalendar.DateChanged"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<DateRangeEventArgs> DateChangedAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<DateRangeEventHandler, DateRangeEventArgs>(
+                h => (s, e) => h(e),
+                h => mc.DateChanged += h,
+                h => mc.DateChanged -= h,
+                tkn);
 
-    /// <summary><see cref="MonthCalendar.RightToLeftLayoutChanged"/> as <see cref="Observable"/></summary>
-    /// <param name="mc">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<EventArgs> RightToLeftLayoutChangedAsObservable(
-        this MonthCalendar mc,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<EventHandler, EventArgs>(
-            h => (s, e) => h(e),
-            h => mc.RightToLeftLayoutChanged += h,
-            h => mc.RightToLeftLayoutChanged -= h,
-            tkn);
+        /// <summary><see cref="MonthCalendar.DateSelected"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<DateRangeEventArgs> DateSelectedAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<DateRangeEventHandler, DateRangeEventArgs>(
+                h => (s, e) => h(e),
+                h => mc.DateSelected += h,
+                h => mc.DateSelected -= h,
+                tkn);
+
+        /// <summary><see cref="MonthCalendar.RightToLeftLayoutChanged"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<EventArgs> RightToLeftLayoutChangedAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => mc.RightToLeftLayoutChanged += h,
+                h => mc.RightToLeftLayoutChanged -= h,
+                tkn);
+    }
 }

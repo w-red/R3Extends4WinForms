@@ -3,7 +3,7 @@
 namespace R3Extends4WinForms;
 
 #if !NET5_0_OR_GREATER
-#pragma warning disable CS1574 // XML comment has cref attribute 'TaskDialog' that could not be resolved
+#pragma warning disable CS1574 // XML comment has cref attribute 'TaskDialogVerificationCheckBox' that could not be resolved
 #endif
 /// <summary><see cref="R3"/>'s Extends for <see cref="TaskDialogVerificationCheckBox"/>.</summary>
 /// <remarks>
@@ -13,7 +13,7 @@ namespace R3Extends4WinForms;
 /// The type must follow the type of each event handler.
 /// </remarks>
 #if !NET5_0_OR_GREATER
-#pragma warning restore CS1574 // XML comment has cref attribute 'TaskDialog' that could not be resolved
+#pragma warning restore CS1574 // XML comment has cref attribute 'TaskDialogVerificationCheckBox' that could not be resolved
 #endif
 public static class TaskDialogVerificationCheckBoxR3Extends
 {

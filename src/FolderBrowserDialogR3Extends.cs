@@ -11,4 +11,8 @@ namespace R3Extends4WinForms;
 /// </remarks>
 public static class FolderBrowserDialogR3Extends
 {
+    /// <summary><see cref="FolderBrowserDialog"/> extension methods.</summary>
+    extension(FolderBrowserDialog fbd)
+    {
+    }
 }

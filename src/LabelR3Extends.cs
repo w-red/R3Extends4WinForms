@@ -11,29 +11,29 @@ namespace R3Extends4WinForms;
 /// </remarks>
 public static class LabelR3Extends
 {
-    /// <summary><see cref="Label.TextAlignChanged"/> as <see cref="Observable"/></summary>
-    /// <param name="lbl">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<EventArgs> TextAlignChangedAsObservable(
-        this Label lbl,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<EventHandler, EventArgs>(
-            h => (s, e) => h(e),
-            h => lbl.TextAlignChanged += h,
-            h => lbl.TextAlignChanged -= h,
-            tkn);
 
-    /// <summary><see cref="Label.AutoSizeChanged"/> as <see cref="Observable"/></summary>
-    /// <param name="lbl">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<EventArgs> AutoSizeChangedAsObservable(
-        this Label lbl,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<EventHandler, EventArgs>(
-            h => (s, e) => h(e),
-            h => lbl.AutoSizeChanged += h,
-            h => lbl.AutoSizeChanged -= h,
-            tkn);
+    extension(Label lbl)
+    {
+        /// <summary><see cref="Label.TextAlignChanged"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<EventArgs> TextAlignChangedAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => lbl.TextAlignChanged += h,
+                h => lbl.TextAlignChanged -= h,
+                tkn);
+
+        /// <summary><see cref="Label.AutoSizeChanged"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<EventArgs> AutoSizeChangedAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => lbl.AutoSizeChanged += h,
+                h => lbl.AutoSizeChanged -= h,
+                tkn);
+    }
 }

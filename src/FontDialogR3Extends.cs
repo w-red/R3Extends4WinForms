@@ -11,16 +11,18 @@ namespace R3Extends4WinForms;
 /// </remarks>
 public static class FontDialogR3Extends
 {
-    /// <summary><see cref="FontDialog.Apply"/> as <see cref="Observable"/></summary>
-    /// <param name="fd">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<EventArgs> ApplyAsObservable(
-        this FontDialog fd,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<EventHandler, EventArgs>(
-            h => (s, e) => h(e),
-            h => fd.Apply += h,
-            h => fd.Apply -= h,
-            tkn);
+    /// <summary><see cref="FontDialog"/> extension methods.</summary>
+    extension(FontDialog fd)
+    {
+        /// <summary><see cref="FontDialog.Apply"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<EventArgs> ApplyAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => fd.Apply += h,
+                h => fd.Apply -= h,
+                tkn);
+    }
 }

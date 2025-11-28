@@ -12,42 +12,40 @@ namespace R3Extends4WinForms;
 /// </remarks>
 public static class PictureBoxR3Extends
 {
-    /// <summary><see cref="PictureBox.LoadCompleted"/> as <see cref="Observable"/></summary>
-    /// <param name="pb">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<AsyncCompletedEventArgs> LoadCompletedAsObservable(
-        this PictureBox pb,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<AsyncCompletedEventHandler, AsyncCompletedEventArgs>(
-            h => (s, e) => h(e),
-            h => pb.LoadCompleted += h,
-            h => pb.LoadCompleted -= h,
-            tkn);
+    /// <summary><see cref="PictureBox"/> extension methods.</summary>
+    extension(PictureBox pb)
+    {
+        /// <summary><see cref="PictureBox.LoadCompleted"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<AsyncCompletedEventArgs> LoadCompletedAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<AsyncCompletedEventHandler, AsyncCompletedEventArgs>(
+                h => (s, e) => h(e),
+                h => pb.LoadCompleted += h,
+                h => pb.LoadCompleted -= h,
+                tkn);
 
-    /// <summary><see cref="PictureBox.LoadProgressChanged"/> as <see cref="Observable"/></summary>
-    /// <param name="pb">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<ProgressChangedEventArgs> LoadProgressChangedAsObservable(
-        this PictureBox pb,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<ProgressChangedEventHandler, ProgressChangedEventArgs>(
-            h => (s, e) => h(e),
-            h => pb.LoadProgressChanged += h,
-            h => pb.LoadProgressChanged -= h,
-            tkn);
+        /// <summary><see cref="PictureBox.LoadProgressChanged"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<ProgressChangedEventArgs> LoadProgressChangedAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<ProgressChangedEventHandler, ProgressChangedEventArgs>(
+                h => (s, e) => h(e),
+                h => pb.LoadProgressChanged += h,
+                h => pb.LoadProgressChanged -= h,
+                tkn);
 
-    /// <summary><see cref="PictureBox.SizeModeChanged"/> as <see cref="Observable"/></summary>
-    /// <param name="pb">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<EventArgs> SizeModeChangedAsObservable(
-        this PictureBox pb,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<EventHandler, EventArgs>(
-            h => (s, e) => h(e),
-            h => pb.SizeModeChanged += h,
-            h => pb.SizeModeChanged -= h,
-            tkn);
+        /// <summary><see cref="PictureBox.SizeModeChanged"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<EventArgs> SizeModeChangedAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => pb.SizeModeChanged += h,
+                h => pb.SizeModeChanged -= h,
+                tkn);
+    }
 }

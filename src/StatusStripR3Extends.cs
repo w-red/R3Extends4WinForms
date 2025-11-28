@@ -11,16 +11,18 @@ namespace R3Extends4WinForms;
 /// </remarks>
 public static class StatusStripR3Extends
 {
-    /// <summary><see cref="StatusStrip.PaddingChanged"/> as <see cref="Observable"/></summary>
-    /// <param name="ss">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<EventArgs> PaddingChangedAsObservable(
-        this StatusStrip ss,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<EventHandler, EventArgs>(
-            h => (s, e) => h(e),
-            h => ss.PaddingChanged += h,
-            h => ss.PaddingChanged -= h,
-            tkn);
+    /// <summary><see cref="StatusStrip"/> extension methods.</summary>
+    extension(StatusStrip ss)
+    {
+        /// <summary><see cref="StatusStrip.PaddingChanged"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<EventArgs> PaddingChangedAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => ss.PaddingChanged += h,
+                h => ss.PaddingChanged -= h,
+                tkn);
+    }
 }

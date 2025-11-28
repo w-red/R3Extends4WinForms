@@ -11,16 +11,18 @@ namespace R3Extends4WinForms;
 /// </remarks>
 public static class TableLayoutPanelR3Extends
 {
-    /// <summary><see cref="TableLayoutPanel.CellPaint"/> as <see cref="Observable"/></summary>
-    /// <param name="tlp">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<TableLayoutCellPaintEventArgs> CellPaintAsObservable(
-        this TableLayoutPanel tlp,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<TableLayoutCellPaintEventHandler, TableLayoutCellPaintEventArgs>(
-            h => (s, e) => h(e),
-            h => tlp.CellPaint += h,
-            h => tlp.CellPaint -= h,
-            tkn);
+    /// <summary><see cref="TableLayoutPanel"/> extension methods.</summary>
+    extension(TableLayoutPanel tlp)
+    {
+        /// <summary><see cref="TableLayoutPanel.CellPaint"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<TableLayoutCellPaintEventArgs> CellPaintAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<TableLayoutCellPaintEventHandler, TableLayoutCellPaintEventArgs>(
+                h => (s, e) => h(e),
+                h => tlp.CellPaint += h,
+                h => tlp.CellPaint -= h,
+                tkn);
+    }
 }

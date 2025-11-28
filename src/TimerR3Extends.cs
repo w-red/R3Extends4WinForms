@@ -11,16 +11,18 @@ namespace R3Extends4WinForms;
 /// </remarks>
 public static class TimerR3Extends
 {
-    /// <summary><see cref="System.Windows.Forms.Timer.Tick"/> as <see cref="Observable"/></summary>
-    /// <param name="t">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<EventArgs> TickAsObservable(
-        this System.Windows.Forms.Timer t,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<EventHandler, EventArgs>(
-            h => (s, e) => h(e),
-            h => t.Tick += h,
-            h => t.Tick -= h,
-            tkn);
+    /// <summary><see cref="System.Windows.Forms.Timer"/> extension methods.</summary>
+    extension(System.Windows.Forms.Timer t)
+    {
+        /// <summary><see cref="System.Windows.Forms.Timer.Tick"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<EventArgs> TickAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => t.Tick += h,
+                h => t.Tick -= h,
+                tkn);
+    }
 }

@@ -11,4 +11,7 @@ namespace R3Extends4WinForms;
 /// </remarks>
 public static class PrintPreviewDialogR3Extends
 {
+    extension(PrintPreviewDialog ppd)
+    {
+    }
 }

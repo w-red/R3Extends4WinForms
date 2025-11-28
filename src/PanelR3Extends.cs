@@ -11,17 +11,18 @@ namespace R3Extends4WinForms;
 /// </remarks>
 public static class PanelR3Extends
 {
-    /// <summary><see cref="Panel.AutoSizeChanged"/> as <see cref="Observable"/></summary>
-    /// <param name="p">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<EventArgs> AutoSizeChangedAsObservable(
-        this Panel p,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<EventHandler, EventArgs>(
-            h => (s, e) => h(e),
-            h => p.AutoSizeChanged += h,
-            h => p.AutoSizeChanged -= h,
-            tkn);
 
+    extension(Panel p)
+    {
+        /// <summary><see cref="Panel.AutoSizeChanged"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<EventArgs> AutoSizeChangedAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => p.AutoSizeChanged += h,
+                h => p.AutoSizeChanged -= h,
+                tkn);
+    }
 }

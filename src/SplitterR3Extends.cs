@@ -11,29 +11,29 @@ namespace R3Extends4WinForms;
 /// </remarks>
 public static class SplitterR3Extends
 {
-    /// <summary><see cref="Splitter.SplitterMoved"/> as <see cref="Observable"/></summary>
-    /// <param name="s">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<SplitterEventArgs> SplitterMovedAsObservable(
-        this Splitter s,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<SplitterEventHandler, SplitterEventArgs>(
-            h => (s, e) => h(e),
-            h => s.SplitterMoved += h,
-            h => s.SplitterMoved -= h,
-            tkn);
 
-    /// <summary><see cref="Splitter.SplitterMoving"/> as <see cref="Observable"/></summary>
-    /// <param name="s">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<SplitterEventArgs> SplitterMovingAsObservable(
-        this Splitter s,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<SplitterEventHandler, SplitterEventArgs>(
-            h => (s, e) => h(e),
-            h => s.SplitterMoving += h,
-            h => s.SplitterMoving -= h,
-            tkn);
+    extension(Splitter s)
+    {
+        /// <summary><see cref="Splitter.SplitterMoved"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<SplitterEventArgs> SplitterMovedAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<SplitterEventHandler, SplitterEventArgs>(
+                h => (s, e) => h(e),
+                h => s.SplitterMoved += h,
+                h => s.SplitterMoved -= h,
+                tkn);
+
+        /// <summary><see cref="Splitter.SplitterMoving"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<SplitterEventArgs> SplitterMovingAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<SplitterEventHandler, SplitterEventArgs>(
+                h => (s, e) => h(e),
+                h => s.SplitterMoving += h,
+                h => s.SplitterMoving -= h,
+                tkn);
+    }
 }

@@ -11,29 +11,29 @@ namespace R3Extends4WinForms;
 /// </remarks>
 public static class ScrollBarR3Extends
 {
-    /// <summary><see cref="ScrollBar.Scroll"/> as <see cref="Observable"/></summary>
-    /// <param name="sb">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<ScrollEventArgs> ScrollAsObservable(
-        this ScrollBar sb,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<ScrollEventHandler, ScrollEventArgs>(
-            h => (s, e) => h(e),
-            h => sb.Scroll += h,
-            h => sb.Scroll -= h,
-            tkn);
+    /// <summary><see cref="ScrollBar"/> extension methods.</summary>
+    extension(ScrollBar sb)
+    {
+        /// <summary><see cref="ScrollBar.Scroll"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<ScrollEventArgs> ScrollAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<ScrollEventHandler, ScrollEventArgs>(
+                h => (s, e) => h(e),
+                h => sb.Scroll += h,
+                h => sb.Scroll -= h,
+                tkn);
 
-    /// <summary><see cref="ScrollBar.ValueChanged"/> as <see cref="Observable"/></summary>
-    /// <param name="sb">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<EventArgs> ValueChangedAsObservable(
-        this ScrollBar sb,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<EventHandler, EventArgs>(
-            h => (s, e) => h(e),
-            h => sb.ValueChanged += h,
-            h => sb.ValueChanged -= h,
-            tkn);
+        /// <summary><see cref="ScrollBar.ValueChanged"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<EventArgs> ValueChangedAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => sb.ValueChanged += h,
+                h => sb.ValueChanged -= h,
+                tkn);
+    }
 }
