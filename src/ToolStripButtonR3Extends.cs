@@ -11,29 +11,29 @@ namespace R3Extends4WinForms;
 /// </remarks>
 public static class ToolStripButtonR3Extends
 {
-    /// <summary><see cref="ToolStripButton.CheckedChanged"/> as <see cref="Observable"/></summary>
-    /// <param name="tsb">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<EventArgs> CheckedChangedAsObservable(
-        this ToolStripButton tsb,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<EventHandler, EventArgs>(
-            h => (s, e) => h(e),
-            h => tsb.CheckedChanged += h,
-            h => tsb.CheckedChanged -= h,
-            tkn);
+    /// <summary><see cref="ToolStripButton"/> extension methods.</summary>
+    extension(ToolStripButton tsb)
+    {
+        /// <summary><see cref="ToolStripButton.CheckedChanged"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<EventArgs> CheckedChangedAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => tsb.CheckedChanged += h,
+                h => tsb.CheckedChanged -= h,
+                tkn);
 
-    /// <summary><see cref="ToolStripButton.CheckStateChanged"/> as <see cref="Observable"/></summary>
-    /// <param name="tsb">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<EventArgs> CheckStateChangedAsObservable(
-        this ToolStripButton tsb,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<EventHandler, EventArgs>(
-            h => (s, e) => h(e),
-            h => tsb.CheckStateChanged += h,
-            h => tsb.CheckStateChanged -= h,
-            tkn);
+        /// <summary><see cref="ToolStripButton.CheckStateChanged"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<EventArgs> CheckStateChangedAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => tsb.CheckStateChanged += h,
+                h => tsb.CheckStateChanged -= h,
+                tkn);
+    }
 }

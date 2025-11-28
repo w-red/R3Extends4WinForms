@@ -11,4 +11,8 @@ namespace R3Extends4WinForms;
 /// </remarks>
 public static class ToolStripContainerR3Extends
 {
+    /// <summary><see cref="ToolStripContainer"/> extension methods.</summary>
+    extension(ToolStripContainer tsc)
+    {
+    }
 }

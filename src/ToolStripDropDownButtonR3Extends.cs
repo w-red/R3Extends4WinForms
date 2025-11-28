@@ -11,4 +11,8 @@ namespace R3Extends4WinForms;
 /// </remarks>
 public static class ToolStripDropDownButtonR3Extends
 {
+    /// <summary><see cref="ToolStripDropDownButton"/> extension methods.</summary>
+    extension(ToolStripDropDownButton tsddb)
+    {
+    }
 }
