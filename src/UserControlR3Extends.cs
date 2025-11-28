@@ -11,55 +11,51 @@ namespace R3Extends4WinForms;
 /// </remarks>
 public static class UserControlR3Extends
 {
-    /// <summary><see cref="UserControl.Load"/> as <see cref="Observable"/></summary>
-    /// <param name="uc">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<EventArgs> LoadAsObservable(
-        this UserControl uc,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<EventHandler, EventArgs>(
-            h => (s, e) => h(e),
-            h => uc.Load += h,
-            h => uc.Load -= h,
-            tkn);
+    /// <summary><see cref="UserControl"/> extension methods.</summary>
+    extension(UserControl uc)
+    {
+        /// <summary><see cref="UserControl.Load"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<EventArgs> LoadAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => uc.Load += h,
+                h => uc.Load -= h,
+                tkn);
 
-    /// <summary><see cref="UserControl.AutoSizeChanged"/> as <see cref="Observable"/></summary>
-    /// <param name="uc">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<EventArgs> AutoSizeChangedAsObservable(
-        this UserControl uc,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<EventHandler, EventArgs>(
-            h => (s, e) => h(e),
-            h => uc.AutoValidateChanged += h,
-            h => uc.AutoValidateChanged -= h,
-            tkn);
+        /// <summary><see cref="UserControl.AutoSizeChanged"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<EventArgs> AutoSizeChangedAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => uc.AutoValidateChanged += h,
+                h => uc.AutoValidateChanged -= h,
+                tkn);
 
-    /// <summary><see cref="UserControl.AutoValidateChanged"/> as <see cref="Observable"/></summary>
-    /// <param name="uc">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<EventArgs> AutoValidateChangedAsObservable(
-        this UserControl uc,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<EventHandler, EventArgs>(
-            h => (s, e) => h(e),
-            h => uc.AutoValidateChanged += h,
-            h => uc.AutoValidateChanged -= h,
-            tkn);
+        /// <summary><see cref="UserControl.AutoValidateChanged"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<EventArgs> AutoValidateChangedAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => uc.AutoValidateChanged += h,
+                h => uc.AutoValidateChanged -= h,
+                tkn);
 
-    /// <summary><see cref="UserControl.TextChanged"/> as <see cref="Observable"/></summary>
-    /// <param name="uc">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<EventArgs> TextChangedAsObservable(
-        this UserControl uc,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<EventHandler, EventArgs>(
-            h => (s, e) => h(e),
-            h => uc.TextChanged += h,
-            h => uc.TextChanged -= h,
-            tkn);
+        /// <summary><see cref="UserControl.TextChanged"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<EventArgs> TextChangedAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => uc.TextChanged += h,
+                h => uc.TextChanged -= h,
+                tkn);
+    }
 }

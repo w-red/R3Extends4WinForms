@@ -11,4 +11,8 @@ namespace R3Extends4WinForms;
 /// </remarks>
 public static class VScrollBarR3Extends
 {
+    /// <summary><see cref="VScrollBar"/> extension methods.</summary>
+    extension(VScrollBar vsb)
+    {
+    }
 }

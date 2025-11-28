@@ -11,4 +11,8 @@ namespace R3Extends4WinForms;
 /// </remarks>
 public static class WebBrowserBaseR3Extends
 {
+    /// <summary><see cref="WebBrowserBase"/> extension methods.</summary>
+    extension(WebBrowserBase wbb)
+    {
+    }
 }

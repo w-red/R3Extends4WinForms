@@ -11,29 +11,29 @@ namespace R3Extends4WinForms;
 /// </remarks>
 public static class ToolStripPanelR3Extends
 {
-    /// <summary><see cref="ToolStripPanel.AutoSizeChanged"/> as <see cref="Observable"/></summary>
-    /// <param name="tsp">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<EventArgs> AutoSizeChangedAsObservable(
-        this ToolStripPanel tsp,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<EventHandler, EventArgs>(
-            h => (s, e) => h(e),
-            h => tsp.AutoSizeChanged += h,
-            h => tsp.AutoSizeChanged -= h,
-            tkn);
+    /// <summary><see cref="ToolStripPanel"/> extension methods.</summary>
+    extension(ToolStripPanel tsp)
+    {
+        /// <summary><see cref="ToolStripPanel.AutoSizeChanged"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<EventArgs> AutoSizeChangedAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => tsp.AutoSizeChanged += h,
+                h => tsp.AutoSizeChanged -= h,
+                tkn);
 
-    /// <summary><see cref="ToolStripPanel.RendererChanged"/> as <see cref="Observable"/></summary>
-    /// <param name="tsp">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<EventArgs> RendererChangedAsObservable(
-        this ToolStripPanel tsp,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<EventHandler, EventArgs>(
-            h => (s, e) => h(e),
-            h => tsp.RendererChanged += h,
-            h => tsp.RendererChanged -= h,
-            tkn);
+        /// <summary><see cref="ToolStripPanel.RendererChanged"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<EventArgs> RendererChangedAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => tsp.RendererChanged += h,
+                h => tsp.RendererChanged -= h,
+                tkn);
+    }
 }

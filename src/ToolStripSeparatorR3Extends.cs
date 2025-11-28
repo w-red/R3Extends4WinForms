@@ -11,4 +11,8 @@ namespace R3Extends4WinForms;
 /// </remarks>
 public static class ToolStripSeparatorR3Extends
 {
+    /// <summary><see cref="ToolStripSeparator"/> extension methods.</summary>
+    extension(ToolStripSeparator tss)
+    {
+    }
 }
