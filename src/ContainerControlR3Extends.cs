@@ -11,16 +11,18 @@ namespace R3Extends4WinForms;
 /// </remarks>
 public static class ContainerControlR3Extends
 {
-    /// <summary><see cref="ContainerControl.AutoValidateChanged"/> as <see cref="Observable"/></summary>
-    /// <param name="cc">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<EventArgs> AutoValidateChangedAsObservable(
-        this ContainerControl cc,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<EventHandler, EventArgs>(
-            h => (s, e) => h(e),
-            h => cc.AutoValidateChanged += h,
-            h => cc.AutoValidateChanged -= h,
-            tkn);
+    /// <summary><see cref="ContainerControl"/> extension methods.</summary>
+    extension(ContainerControl cc)
+    {
+        /// <summary><see cref="ContainerControl.AutoValidateChanged"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<EventArgs> AutoValidateChangedAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => cc.AutoValidateChanged += h,
+                h => cc.AutoValidateChanged -= h,
+                tkn);
+    }
 }

@@ -11,16 +11,18 @@ namespace R3Extends4WinForms;
 /// </remarks>
 public static class BindingNavigatorR3Extends
 {
-    /// <summary><see cref="BindingNavigator.RefreshItems"/> as <see cref="Observable"/></summary>
-    /// <param name="bn">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<EventArgs> RefreshItemsAsObservable(
-        this BindingNavigator bn,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<EventHandler, EventArgs>(
-            h => (s, e) => h(e),
-            h => bn.RefreshItems += h,
-            h => bn.RefreshItems -= h,
-            tkn);
+    /// <summary><see cref="BindingNavigator"/> extension methods.</summary>
+    extension(BindingNavigator bn)
+    {
+        /// <summary><see cref="BindingNavigator.RefreshItems"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<EventArgs> RefreshItemsAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => bn.RefreshItems += h,
+                h => bn.RefreshItems -= h,
+                tkn);
+    }
 }

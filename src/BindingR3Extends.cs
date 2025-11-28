@@ -11,42 +11,40 @@ namespace R3Extends4WinForms;
 /// </remarks>
 public static class BindingR3Extends
 {
-    /// <summary><see cref="Binding.BindingComplete"/> as <see cref="Observable"/></summary>
-    /// <param name="bg">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<BindingCompleteEventArgs> BindingCompleteAsObservable(
-        this Binding bg,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<BindingCompleteEventHandler, BindingCompleteEventArgs>(
-            h => (s, e) => h(e),
-            h => bg.BindingComplete += h,
-            h => bg.BindingComplete -= h,
-            tkn);
+    /// <summary><see cref="Binding"/> extension methods.</summary>
+    extension(Binding bg)
+    {
+        /// <summary><see cref="Binding.BindingComplete"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<BindingCompleteEventArgs> BindingCompleteAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<BindingCompleteEventHandler, BindingCompleteEventArgs>(
+                h => (s, e) => h(e),
+                h => bg.BindingComplete += h,
+                h => bg.BindingComplete -= h,
+                tkn);
 
-    /// <summary><see cref="Binding.Format"/> as <see cref="Observable"/></summary>
-    /// <param name="bg">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<ConvertEventArgs> FormatAsObservable(
-        this Binding bg,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<ConvertEventHandler, ConvertEventArgs>(
-            h => (s, e) => h(e),
-            h => bg.Format += h,
-            h => bg.Format -= h,
-            tkn);
+        /// <summary><see cref="Binding.Format"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<ConvertEventArgs> FormatAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<ConvertEventHandler, ConvertEventArgs>(
+                h => (s, e) => h(e),
+                h => bg.Format += h,
+                h => bg.Format -= h,
+                tkn);
 
-    /// <summary><see cref="Binding.Parse"/> as <see cref="Observable"/></summary>
-    /// <param name="bg">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<ConvertEventArgs> ParseAsObservable(
-        this Binding bg,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<ConvertEventHandler, ConvertEventArgs>(
-            h => (s, e) => h(e),
-            h => bg.Parse += h,
-            h => bg.Parse -= h,
-            tkn);
+        /// <summary><see cref="Binding.Parse"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<ConvertEventArgs> ParseAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<ConvertEventHandler, ConvertEventArgs>(
+                h => (s, e) => h(e),
+                h => bg.Parse += h,
+                h => bg.Parse -= h,
+                tkn);
+    }
 }

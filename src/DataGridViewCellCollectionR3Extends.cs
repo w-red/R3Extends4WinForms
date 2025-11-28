@@ -12,16 +12,18 @@ namespace R3Extends4WinForms;
 /// </remarks>
 public static class DataGridViewCellCollectionR3Extends
 {
-    /// <summary><see cref="DataGridViewCellCollection.CollectionChanged"/> as <see cref="Observable"/></summary>
-    /// <param name="dgvcc">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<CollectionChangeEventArgs> CollectionChangedAsObservable(
-        this DataGridViewCellCollection dgvcc,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<CollectionChangeEventHandler, CollectionChangeEventArgs>(
-            h => (s, e) => h(e),
-            h => dgvcc.CollectionChanged += h,
-            h => dgvcc.CollectionChanged -= h,
-            tkn);
+    /// <summary><see cref="DataGridViewCellCollection"/> extension methods.</summary>
+    extension(DataGridViewCellCollection dgvcc)
+    {
+        /// <summary><see cref="DataGridViewCellCollection.CollectionChanged"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<CollectionChangeEventArgs> CollectionChangedAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<CollectionChangeEventHandler, CollectionChangeEventArgs>(
+                h => (s, e) => h(e),
+                h => dgvcc.CollectionChanged += h,
+                h => dgvcc.CollectionChanged -= h,
+                tkn);
+    }
 }

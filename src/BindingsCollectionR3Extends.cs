@@ -12,29 +12,29 @@ namespace R3Extends4WinForms;
 /// </remarks>
 public static class BindingsCollectionR3Extends
 {
-    /// <summary><see cref="BindingsCollection.CollectionChanged"/> as <see cref="Observable"/></summary>
-    /// <param name="bc">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<CollectionChangeEventArgs> CollectionChangedAsObservable(
-        this BindingsCollection bc,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<CollectionChangeEventHandler, CollectionChangeEventArgs>(
-            h => (s, e) => h(e),
-            h => bc.CollectionChanged += h,
-            h => bc.CollectionChanged -= h,
-            tkn);
+    /// <summary><see cref="BindingsCollection"/> extension methods.</summary>
+    extension(BindingsCollection bc)
+    {
+        /// <summary><see cref="BindingsCollection.CollectionChanged"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<CollectionChangeEventArgs> CollectionChangedAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<CollectionChangeEventHandler, CollectionChangeEventArgs>(
+                h => (s, e) => h(e),
+                h => bc.CollectionChanged += h,
+                h => bc.CollectionChanged -= h,
+                tkn);
 
-    /// <summary><see cref="BindingsCollection.CollectionChanging"/> as <see cref="Observable"/></summary>
-    /// <param name="bc">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<CollectionChangeEventArgs> CollectionChangingAsObservable(
-        this BindingsCollection bc,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<CollectionChangeEventHandler, CollectionChangeEventArgs>(
-            h => (s, e) => h(e),
-            h => bc.CollectionChanging += h,
-            h => bc.CollectionChanging -= h,
-            tkn);
+        /// <summary><see cref="BindingsCollection.CollectionChanging"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<CollectionChangeEventArgs> CollectionChangingAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<CollectionChangeEventHandler, CollectionChangeEventArgs>(
+                h => (s, e) => h(e),
+                h => bc.CollectionChanging += h,
+                h => bc.CollectionChanging -= h,
+                tkn);
+    }
 }

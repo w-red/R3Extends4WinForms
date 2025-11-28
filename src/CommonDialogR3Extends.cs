@@ -11,16 +11,18 @@ namespace R3Extends4WinForms;
 /// </remarks>
 public static class CommonDialogR3Extends
 {
-    /// <summary><see cref="CommonDialog.HelpRequest"/> as <see cref="Observable"/></summary>
-    /// <param name="cd">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<EventArgs> HelpRequestAsObservable(
-        this CommonDialog cd,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<EventHandler, EventArgs>(
-            h => (s, e) => h(e),
-            h => cd.HelpRequest += h,
-            h => cd.HelpRequest -= h,
-            tkn);
+    /// <summary><see cref="CommonDialog"/> extension methods.</summary>
+    extension(CommonDialog cd)
+    {
+        /// <summary><see cref="CommonDialog.HelpRequest"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<EventArgs> HelpRequestAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => cd.HelpRequest += h,
+                h => cd.HelpRequest -= h,
+                tkn);
+    }
 }

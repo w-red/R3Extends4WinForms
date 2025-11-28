@@ -11,42 +11,40 @@ namespace R3Extends4WinForms;
 /// </remarks>
 public static class CheckBoxR3Extends
 {
-    /// <summary><see cref="CheckBox.AppearanceChanged"/> as <see cref="Observable"/></summary>
-    /// <param name="cb">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<EventArgs> AppearanceChangedAsObservable(
-        this CheckBox cb,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<EventHandler, EventArgs>(
-            h => (s, e) => h(e),
-            h => cb.AppearanceChanged += h,
-            h => cb.AppearanceChanged -= h,
-            tkn);
+    /// <summary><see cref="CheckBox"/> extension methods.</summary>
+    extension(CheckBox cb)
+    {
+        /// <summary><see cref="CheckBox.AppearanceChanged"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<EventArgs> AppearanceChangedAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => cb.AppearanceChanged += h,
+                h => cb.AppearanceChanged -= h,
+                tkn);
 
-    /// <summary><see cref="CheckBox.CheckedChanged"/> as <see cref="Observable"/></summary>
-    /// <param name="cb">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<EventArgs> CheckedChangedAsObservable(
-        this CheckBox cb,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<EventHandler, EventArgs>(
-            h => (s, e) => h(e),
-            h => cb.CheckedChanged += h,
-            h => cb.CheckedChanged -= h,
-            tkn);
+        /// <summary><see cref="CheckBox.CheckedChanged"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<EventArgs> CheckedChangedAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => cb.CheckedChanged += h,
+                h => cb.CheckedChanged -= h,
+                tkn);
 
-    /// <summary><see cref="CheckBox.CheckStateChanged"/> as <see cref="Observable"/></summary>
-    /// <param name="cb">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<EventArgs> CheckStateChangedAsObservable(
-        this CheckBox cb,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<EventHandler, EventArgs>(
-            h => (s, e) => h(e),
-            h => cb.CheckStateChanged += h,
-            h => cb.CheckStateChanged -= h,
-            tkn);
+        /// <summary><see cref="CheckBox.CheckStateChanged"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<EventArgs> CheckStateChangedAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => cb.CheckStateChanged += h,
+                h => cb.CheckStateChanged -= h,
+                tkn);
+    }
 }

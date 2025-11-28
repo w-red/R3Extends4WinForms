@@ -12,16 +12,19 @@ namespace R3Extends4WinForms;
 /// </remarks>
 public static class ComponentR3Extends
 {
-    /// <summary><see cref="Component.Disposed"/> as <see cref="Observable"/></summary>
-    /// <param name="c">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<EventArgs> DisposedAsObservable(
-        this Component c,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<EventHandler, EventArgs>(
-            h => (s, e) => h(e),
-            h => c.Disposed += h,
-            h => c.Disposed -= h,
-            tkn);
+    /// <summary><see cref="Component"/> extension methods.</summary>
+    extension(Component c)
+    {
+        /// <summary><see cref="Component.Disposed"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<EventArgs> DisposedAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => c.Disposed += h,
+                h => c.Disposed -= h,
+                tkn);
+    }
+
 }

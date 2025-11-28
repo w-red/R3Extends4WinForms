@@ -11,4 +11,8 @@ namespace R3Extends4WinForms;
 /// </remarks>
 public static class ControlBindingsCollectionR3Extends
 {
+    /// <summary><see cref="ControlBindingsCollection"/> extension methods.</summary>
+    extension(ControlBindingsCollection cbc)
+    {
+    }
 }
