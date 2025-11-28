@@ -11,4 +11,8 @@ namespace R3Extends4WinForms;
 /// </remarks>
 public static class AxHostR3Extends
 {
+    /// <summary>Extensions for <see cref="AxHost"/>.</summary>
+    extension(AxHost ah)
+    {
+    }
 }

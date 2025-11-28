@@ -12,16 +12,17 @@ namespace R3Extends4WinForms;
 /// </remarks>
 public static class AutoCompleteStringCollectionR3Extends
 {
-    /// <summary><see cref="AutoCompleteStringCollection.CollectionChanged"/> as <see cref="Observable"/></summary>
-    /// <param name="acsc">target</param>
-    /// <param name="tkn">token</param>
-    /// <returns>Observable object.</returns>
-    public static Observable<CollectionChangeEventArgs> CollectionChangedAsObservable(
-        this AutoCompleteStringCollection acsc,
-        CancellationToken tkn = default) =>
-        Observable.FromEvent<CollectionChangeEventHandler, CollectionChangeEventArgs>(
-            h => (s, e) => h(e),
-            h => acsc.CollectionChanged += h,
-            h => acsc.CollectionChanged -= h,
-            tkn);
+    extension(AutoCompleteStringCollection acsc)
+    {
+        /// <summary><see cref="AutoCompleteStringCollection.CollectionChanged"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<CollectionChangeEventArgs> CollectionChangedAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<CollectionChangeEventHandler, CollectionChangeEventArgs>(
+                h => (s, e) => h(e),
+                h => acsc.CollectionChanged += h,
+                h => acsc.CollectionChanged -= h,
+                tkn);
+    }
 }
