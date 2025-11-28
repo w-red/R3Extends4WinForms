@@ -7,13 +7,13 @@
 		<UseWindowsForms>true</UseWindowsForms>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<AssemblyVersion>0.1.0.0</AssemblyVersion>
-		<FileVersion>0.1.0.0</FileVersion>
+		<AssemblyVersion>0.2.0.0</AssemblyVersion>
+		<FileVersion>0.2.0.0</FileVersion>
 		<Description>R3's observable object from WinForms event.</Description>
 		<RepositoryUrl>https://github.com/w-red/R3Extends4WinForms</RepositoryUrl>
 		<Title>R3Extends4WinForms</Title>
 		<Authors>w-red as TERASHI, yohei</Authors>
-		<Version>0.1.1.0</Version>
+		<Version>0.2.0.0</Version>
 
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<PackageTags>R3; Windows Form; WinForms;</PackageTags>
@@ -22,6 +22,7 @@
 		<PackageReleaseNotes>Initial Preview.</PackageReleaseNotes>
 		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
 	</PropertyGroup>
 	
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net10.0-windows|AnyCPU'">
