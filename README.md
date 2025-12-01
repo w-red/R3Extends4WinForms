@@ -10,3 +10,6 @@ Add the [NuGet package](https://www.nuget.org/packages/R3Extends4WinForms) to yo
 ```
 You can also add it via the NuGet Package Manager in Visual Studio.
 
+# APIs
+Please refer to the [Wiki Page](https://github.com/w-red/R3Extends4WinForms/wiki) for details on APIs.
+
