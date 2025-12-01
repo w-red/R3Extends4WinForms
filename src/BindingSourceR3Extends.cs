@@ -1,23 +1,24 @@
 ﻿using R3;
 using System.ComponentModel;
 
-namespace R3Extends4WinForms
+namespace R3Extends4WinForms;
+
+/// <summary><see cref="R3"/>'s Extends for <see cref="BindingSource"/>.</summary>
+/// <remarks>
+/// Add extension methods for any events you need.<br />
+/// Maybe there are some things that have been expanded by your Framework,<br />
+/// so they need to be added.
+/// The type must follow the type of each event handler.
+/// </remarks>
+public static class BindingSourceR3Extends
 {
-    /// <summary><see cref="R3"/>'s Extends for <see cref="BindingSource"/>.</summary>
-    /// <remarks>
-    /// Add extension methods for any events you need.<br />
-    /// Maybe there are some things that have been expanded by your Framework,<br />
-    /// so they need to be added.
-    /// The type must follow the type of each event handler.
-    /// </remarks>
-    public static class BindingSourceR3Extends
+
+    extension(BindingSource bs)
     {
         /// <summary><see cref="BindingSource.AddingNew"/> as <see cref="Observable"/></summary>
-        /// <param name="bs">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<AddingNewEventArgs> AddingNewAsObservable(
-            this BindingSource bs,
+        public Observable<AddingNewEventArgs> AddingNewAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<AddingNewEventHandler, AddingNewEventArgs>(
                 h => (s, e) => h(e),
@@ -26,11 +27,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="BindingSource.BindingComplete"/> as <see cref="Observable"/></summary>
-        /// <param name="bs">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<BindingCompleteEventArgs> BindingCompleteAsObservable(
-            this BindingSource bs,
+        public Observable<BindingCompleteEventArgs> BindingCompleteAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<BindingCompleteEventHandler, BindingCompleteEventArgs>(
                 h => (s, e) => h(e),
@@ -39,11 +38,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="BindingSource.CurrentChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="bs">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> CurrentChangedAsObservable(
-            this BindingSource bs,
+        public Observable<EventArgs> CurrentChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -52,11 +49,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="BindingSource.CurrentItemChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="bs">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> CurrentItemChangedAsObservable(
-            this BindingSource bs,
+        public Observable<EventArgs> CurrentItemChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -65,11 +60,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="BindingSource.DataError"/> as <see cref="Observable"/></summary>
-        /// <param name="bs">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<BindingManagerDataErrorEventArgs> DataErrorAsObservable(
-            this BindingSource bs,
+        public Observable<BindingManagerDataErrorEventArgs> DataErrorAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<BindingManagerDataErrorEventHandler, BindingManagerDataErrorEventArgs>(
                 h => (s, e) => h(e),
@@ -78,11 +71,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="BindingSource.DataMemberChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="bs">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> DataMemberChangedAsObservable(
-            this BindingSource bs,
+        public Observable<EventArgs> DataMemberChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -91,11 +82,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="BindingSource.DataSourceChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="bs">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> DataSourceChangedAsObservable(
-            this BindingSource bs,
+        public Observable<EventArgs> DataSourceChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -104,11 +93,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="BindingSource.ListChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="bs">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<ListChangedEventArgs> ListChangedAsObservable(
-            this BindingSource bs,
+        public Observable<ListChangedEventArgs> ListChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<ListChangedEventHandler, ListChangedEventArgs>(
                 h => (s, e) => h(e),
@@ -117,11 +104,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="BindingSource.PositionChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="bs">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> PositionChangedAsObservable(
-            this BindingSource bs,
+        public Observable<EventArgs> PositionChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),

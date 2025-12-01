@@ -1,23 +1,24 @@
 ﻿using R3;
 using System.ComponentModel;
 
-namespace R3Extends4WinForms
+namespace R3Extends4WinForms;
+
+/// <summary><see cref="R3"/>'s Extends for <see cref="ToolStripDropDown"/>.</summary>
+/// <remarks>
+/// Add extension methods for any events you need.<br />
+/// Maybe there are some things that have been expanded by your Framework,<br />
+/// so they need to be added.
+/// The type must follow the type of each event handler.
+/// </remarks>
+public static class ToolStripDropDownR3Extends
 {
-    /// <summary><see cref="R3"/>'s Extends for <see cref="ToolStripDropDown"/>.</summary>
-    /// <remarks>
-    /// Add extension methods for any events you need.<br />
-    /// Maybe there are some things that have been expanded by your Framework,<br />
-    /// so they need to be added.
-    /// The type must follow the type of each event handler.
-    /// </remarks>
-    public static class ToolStripDropDownR3Extends
+    /// <summary><see cref="ToolStripDropDown"/> extension methods.</summary>
+    extension(ToolStripDropDown tsdd)
     {
         /// <summary><see cref="ToolStripDropDown.BackgroundImageChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="tsdd">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> BackgroundImageChangedAsObservable(
-            this ToolStripDropDown tsdd,
+        public Observable<EventArgs> BackgroundImageChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -26,11 +27,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripDropDown.BackgroundImageLayoutChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="tsdd">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> BackgroundImageLayoutChangedAsObservable(
-            this ToolStripDropDown tsdd,
+        public Observable<EventArgs> BackgroundImageLayoutChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -39,11 +38,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripDropDown.BindingContextChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="tsdd">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> BindingContextChangedAsObservable(
-            this ToolStripDropDown tsdd,
+        public Observable<EventArgs> BindingContextChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -52,11 +49,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripDropDown.ChangeUICues"/> as <see cref="Observable"/></summary>
-        /// <param name="tsdd">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<UICuesEventArgs> ChangeUICuesAsObservable(
-            this ToolStripDropDown tsdd,
+        public Observable<UICuesEventArgs> ChangeUICuesAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<UICuesEventHandler, UICuesEventArgs>(
                 h => (s, e) => h(e),
@@ -65,11 +60,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripDropDown.Closed"/> as <see cref="Observable"/></summary>
-        /// <param name="tsdd">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<ToolStripDropDownClosedEventArgs> ClosedAsObservable(
-            this ToolStripDropDown tsdd,
+        public Observable<ToolStripDropDownClosedEventArgs> ClosedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<ToolStripDropDownClosedEventHandler, ToolStripDropDownClosedEventArgs>(
                 h => (s, e) => h(e),
@@ -78,11 +71,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripDropDown.Closing"/> as <see cref="Observable"/></summary>
-        /// <param name="tsdd">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<ToolStripDropDownClosingEventArgs> ClosingAsObservable(
-            this ToolStripDropDown tsdd,
+        public Observable<ToolStripDropDownClosingEventArgs> ClosingAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<ToolStripDropDownClosingEventHandler, ToolStripDropDownClosingEventArgs>(
                 h => (s, e) => h(e),
@@ -91,11 +82,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripDropDown.ContextMenuStripChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="tsdd">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> ContextMenuStripChangedAsObservable(
-            this ToolStripDropDown tsdd,
+        public Observable<EventArgs> ContextMenuStripChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -104,11 +93,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripDropDown.DockChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="tsdd">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> DockChangedAsObservable(
-            this ToolStripDropDown tsdd,
+        public Observable<EventArgs> DockChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -117,11 +104,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripDropDown.Enter"/> as <see cref="Observable"/></summary>
-        /// <param name="tsdd">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> EnterAsObservable(
-            this ToolStripDropDown tsdd,
+        public Observable<EventArgs> EnterAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -130,11 +115,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripDropDown.Leave"/> as <see cref="Observable"/></summary>
-        /// <param name="tsdd">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> LeaveAsObservable(
-            this ToolStripDropDown tsdd,
+        public Observable<EventArgs> LeaveAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -143,11 +126,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripDropDown.FontChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="tsdd">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> FontChangedAsObservable(
-            this ToolStripDropDown tsdd,
+        public Observable<EventArgs> FontChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -156,11 +137,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripDropDown.HelpRequested"/> as <see cref="Observable"/></summary>
-        /// <param name="tsdd">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<HelpEventArgs> HelpRequestedAsObservable(
-            this ToolStripDropDown tsdd,
+        public Observable<HelpEventArgs> HelpRequestedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<HelpEventHandler, HelpEventArgs>(
                 h => (s, e) => h(e),
@@ -169,11 +148,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripDropDown.ImeModeChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="tsdd">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> ImeModeChangedAsObservable(
-            this ToolStripDropDown tsdd,
+        public Observable<EventArgs> ImeModeChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -182,11 +159,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripDropDown.KeyDown"/> as <see cref="Observable"/></summary>
-        /// <param name="tsdd">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<KeyEventArgs> KeyDownAsObservable(
-            this ToolStripDropDown tsdd,
+        public Observable<KeyEventArgs> KeyDownAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<KeyEventHandler, KeyEventArgs>(
                 h => (s, e) => h(e),
@@ -195,11 +170,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripDropDown.KeyUp"/> as <see cref="Observable"/></summary>
-        /// <param name="tsdd">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<KeyEventArgs> KeyUpAsObservable(
-            this ToolStripDropDown tsdd,
+        public Observable<KeyEventArgs> KeyUpAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<KeyEventHandler, KeyEventArgs>(
                 h => (s, e) => h(e),
@@ -208,11 +181,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripDropDown.KeyPress"/> as <see cref="Observable"/></summary>
-        /// <param name="tsdd">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<KeyPressEventArgs> KeyPressAsObservable(
-            this ToolStripDropDown tsdd,
+        public Observable<KeyPressEventArgs> KeyPressAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<KeyPressEventHandler, KeyPressEventArgs>(
                 h => (s, e) => h(e),
@@ -221,11 +192,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripDropDown.Opened"/> as <see cref="Observable"/></summary>
-        /// <param name="tsdd">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> OpenedAsObservable(
-            this ToolStripDropDown tsdd,
+        public Observable<EventArgs> OpenedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -234,11 +203,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripDropDown.Opening"/> as <see cref="Observable"/></summary>
-        /// <param name="tsdd">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<CancelEventArgs> OpeningAsObservable(
-            this ToolStripDropDown tsdd,
+        public Observable<CancelEventArgs> OpeningAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<CancelEventHandler, CancelEventArgs>(
                 h => (s, e) => h(e),
@@ -247,11 +214,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripDropDown.RegionChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="tsdd">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> RegionChangedAsObservable(
-            this ToolStripDropDown tsdd,
+        public Observable<EventArgs> RegionChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -260,11 +225,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripDropDown.StyleChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="tsdd">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> StyleChangedAsObservable(
-            this ToolStripDropDown tsdd,
+        public Observable<EventArgs> StyleChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),

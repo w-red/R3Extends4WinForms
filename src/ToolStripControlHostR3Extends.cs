@@ -1,23 +1,24 @@
 ﻿using R3;
 using System.ComponentModel;
 
-namespace R3Extends4WinForms
+namespace R3Extends4WinForms;
+
+/// <summary><see cref="R3"/>'s Extends for <see cref="ToolStripControlHost"/>.</summary>
+/// <remarks>
+/// Add extension methods for any events you need.<br />
+/// Maybe there are some things that have been expanded by your Framework,<br />
+/// so they need to be added.
+/// The type must follow the type of each event handler.
+/// </remarks>
+public static class ToolStripControlHostR3Extends
 {
-    /// <summary><see cref="R3"/>'s Extends for <see cref="ToolStripControlHost"/>.</summary>
-    /// <remarks>
-    /// Add extension methods for any events you need.<br />
-    /// Maybe there are some things that have been expanded by your Framework,<br />
-    /// so they need to be added.
-    /// The type must follow the type of each event handler.
-    /// </remarks>
-    public static class ToolStripControlHostR3Extends
+    /// <summary><see cref="ToolStripControlHost"/> extension methods.</summary>
+    extension(ToolStripControlHost tsch)
     {
         /// <summary><see cref="ToolStripControlHost.Enter"/> as <see cref="Observable"/></summary>
-        /// <param name="tsch">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> EnterAsObservable(
-            this ToolStripControlHost tsch,
+        public Observable<EventArgs> EnterAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -26,11 +27,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripControlHost.Leave"/> as <see cref="Observable"/></summary>
-        /// <param name="tsch">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> LeaveAsObservable(
-            this ToolStripControlHost tsch,
+        public Observable<EventArgs> LeaveAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -39,11 +38,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripControlHost.GotFocus"/> as <see cref="Observable"/></summary>
-        /// <param name="tsch">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> GotFocusAsObservable(
-            this ToolStripControlHost tsch,
+        public Observable<EventArgs> GotFocusAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -52,11 +49,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripControlHost.LostFocus"/> as <see cref="Observable"/></summary>
-        /// <param name="tsch">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> LostFocusAsObservable(
-            this ToolStripControlHost tsch,
+        public Observable<EventArgs> LostFocusAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -65,11 +60,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripControlHost.KeyDown"/> as <see cref="Observable"/></summary>
-        /// <param name="tsch">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<KeyEventArgs> KeyDownAsObservable(
-            this ToolStripControlHost tsch,
+        public Observable<KeyEventArgs> KeyDownAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<KeyEventHandler, KeyEventArgs>(
                 h => (s, e) => h(e),
@@ -78,11 +71,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripControlHost.KeyUp"/> as <see cref="Observable"/></summary>
-        /// <param name="tsch">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<KeyEventArgs> KeyUpAsObservable(
-            this ToolStripControlHost tsch,
+        public Observable<KeyEventArgs> KeyUpAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<KeyEventHandler, KeyEventArgs>(
                 h => (s, e) => h(e),
@@ -91,11 +82,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripControlHost.KeyPress"/> as <see cref="Observable"/></summary>
-        /// <param name="tsch">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<KeyPressEventArgs> KeyPressAsObservable(
-            this ToolStripControlHost tsch,
+        public Observable<KeyPressEventArgs> KeyPressAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<KeyPressEventHandler, KeyPressEventArgs>(
                 h => (s, e) => h(e),
@@ -104,11 +93,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripControlHost.Validated"/> as <see cref="Observable"/></summary>
-        /// <param name="tsch">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> ValidatedAsObservable(
-            this ToolStripControlHost tsch,
+        public Observable<EventArgs> ValidatedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -117,11 +104,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripControlHost.Validating"/> as <see cref="Observable"/></summary>
-        /// <param name="tsch">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<CancelEventArgs> ValidatingAsObservable(
-            this ToolStripControlHost tsch,
+        public Observable<CancelEventArgs> ValidatingAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<CancelEventHandler, CancelEventArgs>(
                 h => (s, e) => h(e),

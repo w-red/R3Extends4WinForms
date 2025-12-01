@@ -1,22 +1,23 @@
 ﻿using R3;
 
-namespace R3Extends4WinForms
+namespace R3Extends4WinForms;
+
+/// <summary><see cref="R3"/>'s Extends for <see cref="GroupBox"/>.</summary>
+/// <remarks>
+/// Add extension methods for any events you need.<br />
+/// Maybe there are some things that have been expanded by your Framework,<br />
+/// so they need to be added.
+/// The type must follow the type of each event handler.
+/// </remarks>
+public static class GroupBoxR3Extends
 {
-    /// <summary><see cref="R3"/>'s Extends for <see cref="GroupBox"/>.</summary>
-    /// <remarks>
-    /// Add extension methods for any events you need.<br />
-    /// Maybe there are some things that have been expanded by your Framework,<br />
-    /// so they need to be added.
-    /// The type must follow the type of each event handler.
-    /// </remarks>
-    public static class GroupBoxR3Extends
+    /// <summary><see cref="GroupBox"/> extension methods.</summary>
+    extension(GroupBox gb)
     {
         /// <summary><see cref="GroupBox.AutoSizeChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="gb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> AutoSizeChangedAsObservable(
-            this GroupBox gb,
+        public Observable<EventArgs> AutoSizeChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -25,11 +26,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="GroupBox.Click"/> as <see cref="Observable"/></summary>
-        /// <param name="gb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> ClickAsObservable(
-            this GroupBox gb,
+        public Observable<EventArgs> ClickAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -38,11 +37,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="GroupBox.DoubleClick"/> as <see cref="Observable"/></summary>
-        /// <param name="gb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> DoubleClickAsObservable(
-            this GroupBox gb,
+        public Observable<EventArgs> DoubleClickAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -51,11 +48,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="GroupBox.KeyDown"/> as <see cref="Observable"/></summary>
-        /// <param name="gb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<KeyEventArgs> KeyDownAsObservable(
-            this GroupBox gb,
+        public Observable<KeyEventArgs> KeyDownAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<KeyEventHandler, KeyEventArgs>(
                 h => (s, e) => h(e),
@@ -64,11 +59,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="GroupBox.KeyUp"/> as <see cref="Observable"/></summary>
-        /// <param name="gb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<KeyEventArgs> KeyUpAsObservable(
-            this GroupBox gb,
+        public Observable<KeyEventArgs> KeyUpAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<KeyEventHandler, KeyEventArgs>(
                 h => (s, e) => h(e),
@@ -77,11 +70,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="GroupBox.KeyPress"/> as <see cref="Observable"/></summary>
-        /// <param name="gb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<KeyPressEventArgs> KeyPressAsObservable(
-            this GroupBox gb,
+        public Observable<KeyPressEventArgs> KeyPressAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<KeyPressEventHandler, KeyPressEventArgs>(
                 h => (s, e) => h(e),
@@ -90,11 +81,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="GroupBox.MouseClick"/> as <see cref="Observable"/></summary>
-        /// <param name="gb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<MouseEventArgs> MouseClickAsObservable(
-            this GroupBox gb,
+        public Observable<MouseEventArgs> MouseClickAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<MouseEventHandler, MouseEventArgs>(
                 h => (s, e) => h(e),
@@ -103,11 +92,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="GroupBox.MouseDoubleClick"/> as <see cref="Observable"/></summary>
-        /// <param name="gb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<MouseEventArgs> MouseDoubleClickAsObservable(
-            this GroupBox gb,
+        public Observable<MouseEventArgs> MouseDoubleClickAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<MouseEventHandler, MouseEventArgs>(
                 h => (s, e) => h(e),
@@ -116,11 +103,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="GroupBox.MouseDown"/> as <see cref="Observable"/></summary>
-        /// <param name="gb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<MouseEventArgs> MouseDownAsObservable(
-            this GroupBox gb,
+        public Observable<MouseEventArgs> MouseDownAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<MouseEventHandler, MouseEventArgs>(
                 h => (s, e) => h(e),
@@ -129,11 +114,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="GroupBox.MouseUp"/> as <see cref="Observable"/></summary>
-        /// <param name="gb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<MouseEventArgs> MouseUpAsObservable(
-            this GroupBox gb,
+        public Observable<MouseEventArgs> MouseUpAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<MouseEventHandler, MouseEventArgs>(
                 h => (s, e) => h(e),
@@ -142,11 +125,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="GroupBox.MouseEnter"/> as <see cref="Observable"/></summary>
-        /// <param name="gb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> MouseEnterAsObservable(
-            this GroupBox gb,
+        public Observable<EventArgs> MouseEnterAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -155,11 +136,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="GroupBox.MouseLeave"/> as <see cref="Observable"/></summary>
-        /// <param name="gb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> MouseLeaveAsObservable(
-            this GroupBox gb,
+        public Observable<EventArgs> MouseLeaveAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -168,11 +147,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="GroupBox.MouseMove"/> as <see cref="Observable"/></summary>
-        /// <param name="gb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<MouseEventArgs> MouseMoveAsObservable(
-            this GroupBox gb,
+        public Observable<MouseEventArgs> MouseMoveAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<MouseEventHandler, MouseEventArgs>(
                 h => (s, e) => h(e),
@@ -181,11 +158,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="GroupBox.TabStopChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="gb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> TabStopChangedAsObservable(
-            this GroupBox gb,
+        public Observable<EventArgs> TabStopChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),

@@ -1,22 +1,23 @@
 ﻿using R3;
 
-namespace R3Extends4WinForms
+namespace R3Extends4WinForms;
+
+/// <summary><see cref="R3"/>'s Extends for <see cref="HtmlWindow"/>.</summary>
+/// <remarks>
+/// Add extension methods for any events you need.<br />
+/// Maybe there are some things that have been expanded by your Framework,<br />
+/// so they need to be added.
+/// The type must follow the type of each event handler.
+/// </remarks>
+public static class HtmlWindowR3Extends
 {
-    /// <summary><see cref="R3"/>'s Extends for <see cref="HtmlWindow"/>.</summary>
-    /// <remarks>
-    /// Add extension methods for any events you need.<br />
-    /// Maybe there are some things that have been expanded by your Framework,<br />
-    /// so they need to be added.
-    /// The type must follow the type of each event handler.
-    /// </remarks>
-    public static class HtmlWindowR3Extends
+    /// <summary><see cref="HtmlWindow"/> extension methods.</summary>
+    extension(HtmlWindow hw)
     {
         /// <summary><see cref="HtmlWindow.Error"/> as <see cref="Observable"/></summary>
-        /// <param name="hw">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<HtmlElementErrorEventArgs> ErrorAsObservable(
-            this HtmlWindow hw,
+        public Observable<HtmlElementErrorEventArgs> ErrorAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<HtmlElementErrorEventHandler, HtmlElementErrorEventArgs>(
                 h => (s, e) => h(e),
@@ -25,11 +26,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="HtmlWindow.GotFocus"/> as <see cref="Observable"/></summary>
-        /// <param name="hw">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<HtmlElementEventArgs> GotFocusAsObservable(
-            this HtmlWindow hw,
+        public Observable<HtmlElementEventArgs> GotFocusAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<HtmlElementEventHandler, HtmlElementEventArgs>(
                 h => (s, e) => h(e),
@@ -38,11 +37,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="HtmlWindow.Load"/> as <see cref="Observable"/></summary>
-        /// <param name="hw">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<HtmlElementEventArgs> LoadAsObservable(
-            this HtmlWindow hw,
+        public Observable<HtmlElementEventArgs> LoadAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<HtmlElementEventHandler, HtmlElementEventArgs>(
                 h => (s, e) => h(e),
@@ -51,11 +48,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="HtmlWindow.LostFocus"/> as <see cref="Observable"/></summary>
-        /// <param name="hw">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<HtmlElementEventArgs> LostFocusAsObservable(
-            this HtmlWindow hw,
+        public Observable<HtmlElementEventArgs> LostFocusAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<HtmlElementEventHandler, HtmlElementEventArgs>(
                 h => (s, e) => h(e),
@@ -64,11 +59,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="HtmlWindow.Resize"/> as <see cref="Observable"/></summary>
-        /// <param name="hw">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<HtmlElementEventArgs> ResizeAsObservable(
-            this HtmlWindow hw,
+        public Observable<HtmlElementEventArgs> ResizeAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<HtmlElementEventHandler, HtmlElementEventArgs>(
                 h => (s, e) => h(e),
@@ -77,11 +70,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="HtmlWindow.Scroll"/> as <see cref="Observable"/></summary>
-        /// <param name="hw">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<HtmlElementEventArgs> ScrollAsObservable(
-            this HtmlWindow hw,
+        public Observable<HtmlElementEventArgs> ScrollAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<HtmlElementEventHandler, HtmlElementEventArgs>(
                 h => (s, e) => h(e),
@@ -90,11 +81,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="HtmlWindow.Unload"/> as <see cref="Observable"/></summary>
-        /// <param name="hw">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<HtmlElementEventArgs> UnloadAsObservable(
-            this HtmlWindow hw,
+        public Observable<HtmlElementEventArgs> UnloadAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<HtmlElementEventHandler, HtmlElementEventArgs>(
                 h => (s, e) => h(e),

@@ -1,23 +1,24 @@
 ﻿using R3;
 using System.ComponentModel;
 
-namespace R3Extends4WinForms
+namespace R3Extends4WinForms;
+
+/// <summary><see cref="R3"/>'s Extends for <see cref="WebBrowser"/>.</summary>
+/// <remarks>
+/// Add extension methods for any events you need.<br />
+/// Maybe there are some things that have been expanded by your Framework,<br />
+/// so they need to be added.
+/// The type must follow the type of each event handler.
+/// </remarks>
+public static class WebBrowserR3Extends
 {
-    /// <summary><see cref="R3"/>'s Extends for <see cref="WebBrowser"/>.</summary>
-    /// <remarks>
-    /// Add extension methods for any events you need.<br />
-    /// Maybe there are some things that have been expanded by your Framework,<br />
-    /// so they need to be added.
-    /// The type must follow the type of each event handler.
-    /// </remarks>
-    public static class WebBrowserR3Extends
+    /// <summary><see cref="WebBrowser"/> extension methods.</summary>
+    extension(WebBrowser wb)
     {
         /// <summary><see cref="WebBrowser.CanGoBackChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="wb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> CanGoBackChangedAsObservable(
-            this WebBrowser wb,
+        public Observable<EventArgs> CanGoBackChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -26,11 +27,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="WebBrowser.CanGoForwardChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="wb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> CanGoForwardChangedAsObservable(
-            this WebBrowser wb,
+        public Observable<EventArgs> CanGoForwardChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -39,11 +38,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="WebBrowser.DocumentCompleted"/> as <see cref="Observable"/></summary>
-        /// <param name="wb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<WebBrowserDocumentCompletedEventArgs> DocumentCompletedAsObservable(
-            this WebBrowser wb,
+        public Observable<WebBrowserDocumentCompletedEventArgs> DocumentCompletedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<WebBrowserDocumentCompletedEventHandler, WebBrowserDocumentCompletedEventArgs>(
                 h => (s, e) => h(e),
@@ -52,11 +49,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="WebBrowser.DocumentTitleChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="wb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> DocumentTitleChangedAsObservable(
-            this WebBrowser wb,
+        public Observable<EventArgs> DocumentTitleChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -65,11 +60,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="WebBrowser.EncryptionLevelChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="wb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> EncryptionLevelChangedAsObservable(
-            this WebBrowser wb,
+        public Observable<EventArgs> EncryptionLevelChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -78,11 +71,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="WebBrowser.FileDownload"/> as <see cref="Observable"/></summary>
-        /// <param name="wb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> FileDownloadAsObservable(
-            this WebBrowser wb,
+        public Observable<EventArgs> FileDownloadAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -91,11 +82,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="WebBrowser.Navigated"/> as <see cref="Observable"/></summary>
-        /// <param name="wb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<WebBrowserNavigatedEventArgs> NavigatedAsObservable(
-            this WebBrowser wb,
+        public Observable<WebBrowserNavigatedEventArgs> NavigatedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<WebBrowserNavigatedEventHandler, WebBrowserNavigatedEventArgs>(
                 h => (s, e) => h(e),
@@ -104,11 +93,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="WebBrowser.Navigating"/> as <see cref="Observable"/></summary>
-        /// <param name="wb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<WebBrowserNavigatingEventArgs> NavigatingAsObservable(
-            this WebBrowser wb,
+        public Observable<WebBrowserNavigatingEventArgs> NavigatingAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<WebBrowserNavigatingEventHandler, WebBrowserNavigatingEventArgs>(
                 h => (s, e) => h(e),
@@ -117,11 +104,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="WebBrowser.NewWindow"/> as <see cref="Observable"/></summary>
-        /// <param name="wb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<CancelEventArgs> NewWindowAsObservable(
-            this WebBrowser wb,
+        public Observable<CancelEventArgs> NewWindowAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<CancelEventHandler, CancelEventArgs>(
                 h => (s, e) => h(e),
@@ -130,11 +115,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="WebBrowser.ProgressChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="wb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<WebBrowserProgressChangedEventArgs> ProgressChangedAsObservable(
-            this WebBrowser wb,
+        public Observable<WebBrowserProgressChangedEventArgs> ProgressChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<WebBrowserProgressChangedEventHandler, WebBrowserProgressChangedEventArgs>(
                 h => (s, e) => h(e),
@@ -143,11 +126,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="WebBrowser.StatusTextChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="wb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> StatusTextChangedAsObservable(
-            this WebBrowser wb,
+        public Observable<EventArgs> StatusTextChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),

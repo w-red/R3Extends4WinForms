@@ -1,22 +1,23 @@
 ﻿using R3;
 
-namespace R3Extends4WinForms
+namespace R3Extends4WinForms;
+
+/// <summary><see cref="R3"/>'s Extends for <see cref="ComboBox"/>.</summary>
+/// <remarks>
+/// Add extension methods for any events you need.<br />
+/// Maybe there are some things that have been expanded by your Framework,<br />
+/// so they need to be added.
+/// The type must follow the type of each event handler.
+/// </remarks>
+public static class ComboBoxR3Extends
 {
-    /// <summary><see cref="R3"/>'s Extends for <see cref="ComboBox"/>.</summary>
-    /// <remarks>
-    /// Add extension methods for any events you need.<br />
-    /// Maybe there are some things that have been expanded by your Framework,<br />
-    /// so they need to be added.
-    /// The type must follow the type of each event handler.
-    /// </remarks>
-    public static class ComboBoxR3Extends
+    /// <summary><see cref="ComboBox"/> extension methods.</summary>
+    extension(ComboBox cb)
     {
         /// <summary><see cref="ComboBox.DrawItem"/> as <see cref="Observable"/></summary>
-        /// <param name="cb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<DrawItemEventArgs> DrawItemAsObservable(
-            this ComboBox cb,
+        public Observable<DrawItemEventArgs> DrawItemAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<DrawItemEventHandler, DrawItemEventArgs>(
                 h => (s, e) => h(e),
@@ -25,11 +26,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ComboBox.DropDownClosed"/> as <see cref="Observable"/></summary>
-        /// <param name="cb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> DropDownClosedAsObservable(
-            this ComboBox cb,
+        public Observable<EventArgs> DropDownClosedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -38,11 +37,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ComboBox.DropDownStyleChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="cb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> DropDownStyleChangedAsObservable(
-            this ComboBox cb,
+        public Observable<EventArgs> DropDownStyleChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -51,11 +48,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ComboBox.DropDown"/> as <see cref="Observable"/></summary>
-        /// <param name="cb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> DropDownAsObservable(
-            this ComboBox cb,
+        public Observable<EventArgs> DropDownAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -64,11 +59,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ComboBox.MeasureItem"/> as <see cref="Observable"/></summary>
-        /// <param name="cb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<MeasureItemEventArgs> MeasureItemAsObservable(
-            this ComboBox cb,
+        public Observable<MeasureItemEventArgs> MeasureItemAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<MeasureItemEventHandler, MeasureItemEventArgs>(
                 h => (s, e) => h(e),
@@ -77,11 +70,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ComboBox.SelectedIndexChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="cb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> SelectedIndexChangedAsObservable(
-            this ComboBox cb,
+        public Observable<EventArgs> SelectedIndexChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -90,11 +81,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ComboBox.SelectionChangeCommitted"/> as <see cref="Observable"/></summary>
-        /// <param name="cb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> SelectionChangeCommittedAsObservable(
-            this ComboBox cb,
+        public Observable<EventArgs> SelectionChangeCommittedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -103,11 +92,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ComboBox.TextUpdate"/> as <see cref="Observable"/></summary>
-        /// <param name="cb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> TextUpdateAsObservable(
-            this ComboBox cb,
+        public Observable<EventArgs> TextUpdateAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),

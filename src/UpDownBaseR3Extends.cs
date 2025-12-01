@@ -1,22 +1,23 @@
 ﻿using R3;
 
-namespace R3Extends4WinForms
+namespace R3Extends4WinForms;
+
+/// <summary><see cref="R3"/>'s Extends for <see cref="UpDownBase"/>.</summary>
+/// <remarks>
+/// Add extension methods for any events you need.<br />
+/// Maybe there are some things that have been expanded by your Framework,<br />
+/// so they need to be added.
+/// The type must follow the type of each event handler.
+/// </remarks>
+public static class UpDownBaseR3Extends
 {
-    /// <summary><see cref="R3"/>'s Extends for <see cref="UpDownBase"/>.</summary>
-    /// <remarks>
-    /// Add extension methods for any events you need.<br />
-    /// Maybe there are some things that have been expanded by your Framework,<br />
-    /// so they need to be added.
-    /// The type must follow the type of each event handler.
-    /// </remarks>
-    public static class UpDownBaseR3Extends
+    /// <summary><see cref="UpDownBase"/> extension methods.</summary>
+    extension(UpDownBase udb)
     {
         /// <summary><see cref="UpDownBase.AutoSizeChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="udb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> AutoSizeChangedAsObservable(
-            this UpDownBase udb,
+        public Observable<EventArgs> AutoSizeChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -25,11 +26,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="UpDownBase.BackgroundImageChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="udb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> BackgroundImageChangedAsObservable(
-            this UpDownBase udb,
+        public Observable<EventArgs> BackgroundImageChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -38,11 +37,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="UpDownBase.BackgroundImageLayoutChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="udb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> BackgroundImageLayoutChangedAsObservable(
-            this UpDownBase udb,
+        public Observable<EventArgs> BackgroundImageLayoutChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -51,11 +48,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="UpDownBase.MouseEnter"/> as <see cref="Observable"/></summary>
-        /// <param name="udb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> MouseEnterAsObservable(
-            this UpDownBase udb,
+        public Observable<EventArgs> MouseEnterAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -64,11 +59,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="UpDownBase.MouseLeave"/> as <see cref="Observable"/></summary>
-        /// <param name="udb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> MouseLeaveAsObservable(
-            this UpDownBase udb,
+        public Observable<EventArgs> MouseLeaveAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -77,11 +70,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="UpDownBase.MouseHover"/> as <see cref="Observable"/></summary>
-        /// <param name="udb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> MouseHoverAsObservable(
-            this UpDownBase udb,
+        public Observable<EventArgs> MouseHoverAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -90,11 +81,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="UpDownBase.MouseMove"/> as <see cref="Observable"/></summary>
-        /// <param name="udb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<MouseEventArgs> MouseMoveAsObservable(
-            this UpDownBase udb,
+        public Observable<MouseEventArgs> MouseMoveAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<MouseEventHandler, MouseEventArgs>(
                 h => (s, e) => h(e),

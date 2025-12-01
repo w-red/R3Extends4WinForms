@@ -1,22 +1,23 @@
 ﻿using R3;
 
-namespace R3Extends4WinForms
+namespace R3Extends4WinForms;
+
+/// <summary><see cref="R3"/>'s Extends for <see cref="ToolStripItem"/>.</summary>
+/// <remarks>
+/// Add extension methods for any events you need.<br />
+/// Maybe there are some things that have been expanded by your Framework,<br />
+/// so they need to be added.
+/// The type must follow the type of each event handler.
+/// </remarks>
+public static class ToolStripItemR3Extends
 {
-    /// <summary><see cref="R3"/>'s Extends for <see cref="ToolStripItem"/>.</summary>
-    /// <remarks>
-    /// Add extension methods for any events you need.<br />
-    /// Maybe there are some things that have been expanded by your Framework,<br />
-    /// so they need to be added.
-    /// The type must follow the type of each event handler.
-    /// </remarks>
-    public static class ToolStripItemR3Extends
+    /// <summary>Extension methods for <see cref="ToolStripItem"/>.</summary>
+    extension(ToolStripItem tsi)
     {
         /// <summary><see cref="ToolStripItem.AvailableChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> AvailableChangedAsObservable(
-            this ToolStripItem tsi,
+        public Observable<EventArgs> AvailableChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -25,11 +26,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripItem.BackColorChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> BackColorChangedAsObservable(
-            this ToolStripItem tsi,
+        public Observable<EventArgs> BackColorChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -38,11 +37,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripItem.ForeColorChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> ForeColorChangedAsObservable(
-            this ToolStripItem tsi,
+        public Observable<EventArgs> ForeColorChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -51,11 +48,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripItem.Click"/> as <see cref="Observable"/></summary>
-        /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> ClickAsObservable(
-            this ToolStripItem tsi,
+        public Observable<EventArgs> ClickAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -64,11 +59,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripItem.DoubleClick"/> as <see cref="Observable"/></summary>
-        /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> DoubleClickAsObservable(
-            this ToolStripItem tsi,
+        public Observable<EventArgs> DoubleClickAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -78,11 +71,9 @@ namespace R3Extends4WinForms
 
 #if NET7_0_OR_GREATER
         /// <summary><see cref="ToolStripItem.CommandCanExecuteChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> CommandCanExecuteChangedAsObservable(
-            this ToolStripItem tsi,
+        public Observable<EventArgs> CommandCanExecuteChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -91,11 +82,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripItem.CommandChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> CommandChangedAsObservable(
-            this ToolStripItem tsi,
+        public Observable<EventArgs> CommandChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -104,11 +93,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripItem.CommandParameterChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> CommandParameterChangedAsObservable(
-            this ToolStripItem tsi,
+        public Observable<EventArgs> CommandParameterChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -118,11 +105,9 @@ namespace R3Extends4WinForms
 #endif
 
         /// <summary><see cref="ToolStripItem.DisplayStyleChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> DisplayStyleChangedAsObservable(
-            this ToolStripItem tsi,
+        public Observable<EventArgs> DisplayStyleChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -131,11 +116,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripItem.DragDrop"/> as <see cref="Observable"/></summary>
-        /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<DragEventArgs> DragDropAsObservable(
-            this ToolStripItem tsi,
+        public Observable<DragEventArgs> DragDropAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<DragEventHandler, DragEventArgs>(
                 h => (s, e) => h(e),
@@ -144,11 +127,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripItem.DragEnter"/> as <see cref="Observable"/></summary>
-        /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<DragEventArgs> DragEnterAsObservable(
-            this ToolStripItem tsi,
+        public Observable<DragEventArgs> DragEnterAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<DragEventHandler, DragEventArgs>(
                 h => (s, e) => h(e),
@@ -157,11 +138,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripItem.DragLeave"/> as <see cref="Observable"/></summary>
-        /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> DragLeaveAsObservable(
-            this ToolStripItem tsi,
+        public Observable<EventArgs> DragLeaveAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -170,11 +149,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripItem.DragOver"/> as <see cref="Observable"/></summary>
-        /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<DragEventArgs> DragOverAsObservable(
-            this ToolStripItem tsi,
+        public Observable<DragEventArgs> DragOverAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<DragEventHandler, DragEventArgs>(
                 h => (s, e) => h(e),
@@ -183,11 +160,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripItem.EnabledChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> EnabledChangedAsObservable(
-            this ToolStripItem tsi,
+        public Observable<EventArgs> EnabledChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -196,11 +171,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripItem.GiveFeedback"/> as <see cref="Observable"/></summary>
-        /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<GiveFeedbackEventArgs> GiveFeedbackAsObservable(
-            this ToolStripItem tsi,
+        public Observable<GiveFeedbackEventArgs> GiveFeedbackAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<GiveFeedbackEventHandler, GiveFeedbackEventArgs>(
                 h => (s, e) => h(e),
@@ -209,11 +182,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripItem.LocationChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> LocationChangedAsObservable(
-            this ToolStripItem tsi,
+        public Observable<EventArgs> LocationChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -222,11 +193,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripItem.MouseDown"/> as <see cref="Observable"/></summary>
-        /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<MouseEventArgs> MouseDownAsObservable(
-            this ToolStripItem tsi,
+        public Observable<MouseEventArgs> MouseDownAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<MouseEventHandler, MouseEventArgs>(
                 h => (s, e) => h(e),
@@ -235,11 +204,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripItem.MouseUp"/> as <see cref="Observable"/></summary>
-        /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<MouseEventArgs> MouseUpAsObservable(
-            this ToolStripItem tsi,
+        public Observable<MouseEventArgs> MouseUpAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<MouseEventHandler, MouseEventArgs>(
                 h => (s, e) => h(e),
@@ -248,11 +215,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripItem.MouseEnter"/> as <see cref="Observable"/></summary>
-        /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> MouseEnterAsObservable(
-            this ToolStripItem tsi,
+        public Observable<EventArgs> MouseEnterAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -261,11 +226,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripItem.MouseLeave"/> as <see cref="Observable"/></summary>
-        /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> MouseLeaveAsObservable(
-            this ToolStripItem tsi,
+        public Observable<EventArgs> MouseLeaveAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -274,11 +237,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripItem.MouseHover"/> as <see cref="Observable"/></summary>
-        /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> MouseHoverAsObservable(
-            this ToolStripItem tsi,
+        public Observable<EventArgs> MouseHoverAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -287,11 +248,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripItem.MouseMove"/> as <see cref="Observable"/></summary>
-        /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<MouseEventArgs> MouseMoveAsObservable(
-            this ToolStripItem tsi,
+        public Observable<MouseEventArgs> MouseMoveAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<MouseEventHandler, MouseEventArgs>(
                 h => (s, e) => h(e),
@@ -300,11 +259,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripItem.OwnerChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> OwnerChangedAsObservable(
-            this ToolStripItem tsi,
+        public Observable<EventArgs> OwnerChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -313,11 +270,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripItem.Paint"/> as <see cref="Observable"/></summary>
-        /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<PaintEventArgs> PaintAsObservable(
-            this ToolStripItem tsi,
+        public Observable<PaintEventArgs> PaintAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<PaintEventHandler, PaintEventArgs>(
                 h => (s, e) => h(e),
@@ -326,11 +281,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripItem.QueryAccessibilityHelp"/> as <see cref="Observable"/></summary>
-        /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<QueryAccessibilityHelpEventArgs> QueryAccessibilityHelpAsObservable(
-            this ToolStripItem tsi,
+        public Observable<QueryAccessibilityHelpEventArgs> QueryAccessibilityHelpAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<QueryAccessibilityHelpEventHandler, QueryAccessibilityHelpEventArgs>(
                 h => (s, e) => h(e),
@@ -339,11 +292,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripItem.QueryContinueDrag"/> as <see cref="Observable"/></summary>
-        /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<QueryContinueDragEventArgs> QueryContinueDragAsObservable(
-            this ToolStripItem tsi,
+        public Observable<QueryContinueDragEventArgs> QueryContinueDragAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<QueryContinueDragEventHandler, QueryContinueDragEventArgs>(
                 h => (s, e) => h(e),
@@ -352,11 +303,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripItem.RightToLeftChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> RightToLeftChangedAsObservable(
-            this ToolStripItem tsi,
+        public Observable<EventArgs> RightToLeftChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -365,11 +314,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripItem.TextChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> TextChangedAsObservable(
-            this ToolStripItem tsi,
+        public Observable<EventArgs> TextChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -378,11 +325,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripItem.VisibleChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="tsi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> VisibleChangedAsObservable(
-            this ToolStripItem tsi,
+        public Observable<EventArgs> VisibleChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),

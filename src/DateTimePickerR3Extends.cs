@@ -1,22 +1,23 @@
 ﻿using R3;
 
-namespace R3Extends4WinForms
+namespace R3Extends4WinForms;
+
+/// <summary><see cref="R3"/>'s Extends for <see cref="DateTimePicker"/>.</summary>
+/// <remarks>
+/// Add extension methods for any events you need.<br />
+/// Maybe there are some things that have been expanded by your Framework,<br />
+/// so they need to be added.
+/// The type must follow the type of each event handler.
+/// </remarks>
+public static class DateTimePickerR3Extends
 {
-    /// <summary><see cref="R3"/>'s Extends for <see cref="DateTimePicker"/>.</summary>
-    /// <remarks>
-    /// Add extension methods for any events you need.<br />
-    /// Maybe there are some things that have been expanded by your Framework,<br />
-    /// so they need to be added.
-    /// The type must follow the type of each event handler.
-    /// </remarks>
-    public static class DateTimePickerR3Extends
+    /// <summary><see cref="DateTimePicker"/> extension methods.</summary>
+    extension(DateTimePicker dtp)
     {
         /// <summary><see cref="DateTimePicker.CloseUp"/> as <see cref="Observable"/></summary>
-        /// <param name="dtp">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> CloseUpAsObservable(
-            this DateTimePicker dtp,
+        public Observable<EventArgs> CloseUpAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -25,11 +26,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="DateTimePicker.DropDown"/> as <see cref="Observable"/></summary>
-        /// <param name="dtp">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> DropDownAsObservable(
-            this DateTimePicker dtp,
+        public Observable<EventArgs> DropDownAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -38,11 +37,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="DateTimePicker.FormatChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="dtp">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> FormatChangedAsObservable(
-            this DateTimePicker dtp,
+        public Observable<EventArgs> FormatChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -51,11 +48,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="DateTimePicker.RightToLeftLayoutChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="dtp">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> RightToLeftLayoutChangedAsObservable(
-            this DateTimePicker dtp,
+        public Observable<EventArgs> RightToLeftLayoutChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -64,11 +59,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="DateTimePicker.TextChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="dtp">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> TextChangedAsObservable(
-            this DateTimePicker dtp,
+        public Observable<EventArgs> TextChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -77,11 +70,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="DateTimePicker.ValueChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="dtp">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> ValueChangedAsObservable(
-            this DateTimePicker dtp,
+        public Observable<EventArgs> ValueChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),

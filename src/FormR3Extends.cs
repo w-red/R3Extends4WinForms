@@ -1,23 +1,24 @@
 ﻿using R3;
 using System.ComponentModel;
 
-namespace R3Extends4WinForms
+namespace R3Extends4WinForms;
+
+/// <summary><see cref="R3"/>'s Extends for <see cref="Form"/>.</summary>
+/// <remarks>
+/// Add extension methods for any events you need.<br />
+/// Maybe there are some things that have been expanded by your Framework,<br />
+/// so they need to be added.
+/// The type must follow the type of each event handler.
+/// </remarks>
+public static class FormR3Extends
 {
-    /// <summary><see cref="R3"/>'s Extends for <see cref="Form"/>.</summary>
-    /// <remarks>
-    /// Add extension methods for any events you need.<br />
-    /// Maybe there are some things that have been expanded by your Framework,<br />
-    /// so they need to be added.
-    /// The type must follow the type of each event handler.
-    /// </remarks>
-    public static class FormR3Extends
+    /// <summary>Extensions for <see cref="Form"/>.</summary>
+    extension(Form frm)
     {
         /// <summary><see cref="Form.Load"/> as <see cref="Observable"/></summary>
-        /// <param name="frm">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> LoadAsObservable(
-            this Form frm,
+        public Observable<EventArgs> LoadAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -28,11 +29,9 @@ namespace R3Extends4WinForms
 #if NET10_0_OR_GREATER
 #else
         /// <summary><see cref="Form.Closing"/> as <see cref="Observable"/></summary>
-        /// <param name="frm">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<CancelEventArgs> ClosingAsObservable(
-            this Form frm,
+        public Observable<CancelEventArgs> ClosingAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<CancelEventHandler, CancelEventArgs>(
                 h => (s, e) => h(e),
@@ -41,11 +40,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Form.Closed"/> as <see cref="Observable"/></summary>
-        /// <param name="frm">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> ClosedAsObservable(
-            this Form frm,
+        public Observable<EventArgs> ClosedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -55,11 +52,9 @@ namespace R3Extends4WinForms
 #endif
 
         /// <summary><see cref="Form.FormClosing"/> as <see cref="Observable"/></summary>
-        /// <param name="frm">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<FormClosingEventArgs> FormClosingAsObservable(
-            this Form frm,
+        public Observable<FormClosingEventArgs> FormClosingAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<FormClosingEventHandler, FormClosingEventArgs>(
                 h => (s, e) => h(e),
@@ -68,11 +63,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Form.FormClosed"/> as <see cref="Observable"/></summary>
-        /// <param name="frm">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<FormClosedEventArgs> FormClosedAsObservable(
-            this Form frm,
+        public Observable<FormClosedEventArgs> FormClosedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<FormClosedEventHandler, FormClosedEventArgs>(
                 h => (s, e) => h(e),
@@ -81,11 +74,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Form.Activated"/> as <see cref="Observable"/></summary>
-        /// <param name="frm">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> ActivatedAsObservable(
-            this Form frm,
+        public Observable<EventArgs> ActivatedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -94,11 +85,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Form.Deactivate"/> as <see cref="Observable"/></summary>
-        /// <param name="frm">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> DeactivateAsObservable(
-            this Form frm,
+        public Observable<EventArgs> DeactivateAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -107,11 +96,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Form.Shown"/> as <see cref="Observable"/></summary>
-        /// <param name="frm">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> ShownAsObservable(
-            this Form frm,
+        public Observable<EventArgs> ShownAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -120,11 +107,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Form.HelpButtonClicked"/> as <see cref="Observable"/></summary>
-        /// <param name="frm">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<CancelEventArgs> HelpButtonClickedAsObservable(
-            this Form frm,
+        public Observable<CancelEventArgs> HelpButtonClickedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<CancelEventHandler, CancelEventArgs>(
                 h => (s, e) => h(e),
@@ -133,11 +118,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Form.AutoSizeChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="frm">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> AutoSizeChangedAsObservable(
-            this Form frm,
+        public Observable<EventArgs> AutoSizeChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -146,11 +129,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Form.AutoValidateChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="frm">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> AutoValidateChangedAsObservable(
-            this Form frm,
+        public Observable<EventArgs> AutoValidateChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -159,11 +140,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Form.DpiChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="frm">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<DpiChangedEventArgs> DpiChangedAsObservable(
-            this Form frm,
+        public Observable<DpiChangedEventArgs> DpiChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<DpiChangedEventHandler, DpiChangedEventArgs>(
                 h => (s, e) => h(e),
@@ -172,11 +151,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Form.InputLanguageChanging"/> as <see cref="Observable"/></summary>
-        /// <param name="frm">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<InputLanguageChangingEventArgs> InputLanguageChangingAsObservable(
-            this Form frm,
+        public Observable<InputLanguageChangingEventArgs> InputLanguageChangingAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<InputLanguageChangingEventHandler, InputLanguageChangingEventArgs>(
                 h => (s, e) => h(e),
@@ -185,11 +162,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Form.InputLanguageChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="frm">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<InputLanguageChangedEventArgs> InputLanguageChangedAsObservable(
-            this Form frm,
+        public Observable<InputLanguageChangedEventArgs> InputLanguageChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<InputLanguageChangedEventHandler, InputLanguageChangedEventArgs>(
                 h => (s, e) => h(e),
@@ -198,11 +173,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Form.MaximizedBoundsChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="frm">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> MaximizedBoundsChangedAsObservable(
-            this Form frm,
+        public Observable<EventArgs> MaximizedBoundsChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -211,11 +184,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Form.MaximumSizeChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="frm">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> MaximumSizeChangedAsObservable(
-            this Form frm,
+        public Observable<EventArgs> MaximumSizeChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -224,11 +195,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Form.MinimumSizeChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="frm">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> MinimumSizeChangedAsObservable(
-            this Form frm,
+        public Observable<EventArgs> MinimumSizeChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -237,11 +206,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Form.MdiChildActivate"/> as <see cref="Observable"/></summary>
-        /// <param name="frm">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> MdiChildActivateAsObservable(
-            this Form frm,
+        public Observable<EventArgs> MdiChildActivateAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -250,11 +217,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Form.MenuStart"/> as <see cref="Observable"/></summary>
-        /// <param name="frm">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> MenuStartAsObservable(
-            this Form frm,
+        public Observable<EventArgs> MenuStartAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -263,11 +228,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Form.MenuComplete"/> as <see cref="Observable"/></summary>
-        /// <param name="frm">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> MenuCompleteAsObservable(
-            this Form frm,
+        public Observable<EventArgs> MenuCompleteAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -276,11 +239,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Form.ResizeBegin"/> as <see cref="Observable"/></summary>
-        /// <param name="frm">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> ResizeBeginAsObservable(
-            this Form frm,
+        public Observable<EventArgs> ResizeBeginAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -289,11 +250,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Form.ResizeEnd"/> as <see cref="Observable"/></summary>
-        /// <param name="frm">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> ResizeEndAsObservable(
-            this Form frm,
+        public Observable<EventArgs> ResizeEndAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -302,11 +261,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Form.RightToLeftLayoutChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="frm">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> RightToLeftLayoutChangedAsObservable(
-            this Form frm,
+        public Observable<EventArgs> RightToLeftLayoutChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),

@@ -1,22 +1,23 @@
 ﻿using R3;
 
-namespace R3Extends4WinForms
+namespace R3Extends4WinForms;
+
+/// <summary><see cref="R3"/>'s Extends for <see cref="ToolStripDropDownItem"/>.</summary>
+/// <remarks>
+/// Add extension methods for any events you need.<br />
+/// Maybe there are some things that have been expanded by your Framework,<br />
+/// so they need to be added.
+/// The type must follow the type of each event handler.
+/// </remarks>
+public static class ToolStripDropDownItemR3Extends
 {
-    /// <summary><see cref="R3"/>'s Extends for <see cref="ToolStripDropDownItem"/>.</summary>
-    /// <remarks>
-    /// Add extension methods for any events you need.<br />
-    /// Maybe there are some things that have been expanded by your Framework,<br />
-    /// so they need to be added.
-    /// The type must follow the type of each event handler.
-    /// </remarks>
-    public static class ToolStripDropDownItemR3Extends
+    /// <summary><see cref="ToolStripDropDownItem"/> extension methods.</summary>
+    extension(ToolStripDropDownItem tsddi)
     {
         /// <summary><see cref="ToolStripDropDownItem.DropDownOpened"/> as <see cref="Observable"/></summary>
-        /// <param name="tsddi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> DropDownOpenedAsObservable(
-            this ToolStripDropDownItem tsddi,
+        public Observable<EventArgs> DropDownOpenedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -25,11 +26,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripDropDownItem.DropDownOpening"/> as <see cref="Observable"/></summary>
-        /// <param name="tsddi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> DropDownOpeningAsObservable(
-            this ToolStripDropDownItem tsddi,
+        public Observable<EventArgs> DropDownOpeningAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -38,11 +37,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripDropDownItem.DropDownClosed"/> as <see cref="Observable"/></summary>
-        /// <param name="tsddi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> DropDownClosedAsObservable(
-            this ToolStripDropDownItem tsddi,
+        public Observable<EventArgs> DropDownClosedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -51,11 +48,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="ToolStripDropDownItem.DropDownItemClicked"/> as <see cref="Observable"/></summary>
-        /// <param name="tsddi">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<ToolStripItemClickedEventArgs> DropDownItemClickedAsObservable(
-            this ToolStripDropDownItem tsddi,
+        public Observable<ToolStripItemClickedEventArgs> DropDownItemClickedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<ToolStripItemClickedEventHandler, ToolStripItemClickedEventArgs>(
                 h => (s, e) => h(e),

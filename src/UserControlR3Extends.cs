@@ -1,22 +1,23 @@
 ﻿using R3;
 
-namespace R3Extends4WinForms
+namespace R3Extends4WinForms;
+
+/// <summary><see cref="R3"/>'s Extends for <see cref="UserControl"/>.</summary>
+/// <remarks>
+/// Add extension methods for any events you need.<br />
+/// Maybe there are some things that have been expanded by your Framework,<br />
+/// so they need to be added.
+/// The type must follow the type of each event handler.
+/// </remarks>
+public static class UserControlR3Extends
 {
-    /// <summary><see cref="R3"/>'s Extends for <see cref="UserControl"/>.</summary>
-    /// <remarks>
-    /// Add extension methods for any events you need.<br />
-    /// Maybe there are some things that have been expanded by your Framework,<br />
-    /// so they need to be added.
-    /// The type must follow the type of each event handler.
-    /// </remarks>
-    public static class UserControlR3Extends
+    /// <summary><see cref="UserControl"/> extension methods.</summary>
+    extension(UserControl uc)
     {
         /// <summary><see cref="UserControl.Load"/> as <see cref="Observable"/></summary>
-        /// <param name="uc">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> LoadAsObservable(
-            this UserControl uc,
+        public Observable<EventArgs> LoadAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -25,11 +26,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="UserControl.AutoSizeChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="uc">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> AutoSizeChangedAsObservable(
-            this UserControl uc,
+        public Observable<EventArgs> AutoSizeChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -38,11 +37,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="UserControl.AutoValidateChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="uc">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> AutoValidateChangedAsObservable(
-            this UserControl uc,
+        public Observable<EventArgs> AutoValidateChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -51,11 +48,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="UserControl.TextChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="uc">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> TextChangedAsObservable(
-            this UserControl uc,
+        public Observable<EventArgs> TextChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),

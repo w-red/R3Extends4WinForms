@@ -1,22 +1,23 @@
 ﻿using R3;
 
-namespace R3Extends4WinForms
+namespace R3Extends4WinForms;
+
+/// <summary><see cref="R3"/>'s Extends for <see cref="HtmlElement"/>.</summary>
+/// <remarks>
+/// Add extension methods for any events you need.<br />
+/// Maybe there are some things that have been expanded by your Framework,<br />
+/// so they need to be added.
+/// The type must follow the type of each event handler.
+/// </remarks>
+public static class HtmlElementR3Extends
 {
-    /// <summary><see cref="R3"/>'s Extends for <see cref="HtmlElement"/>.</summary>
-    /// <remarks>
-    /// Add extension methods for any events you need.<br />
-    /// Maybe there are some things that have been expanded by your Framework,<br />
-    /// so they need to be added.
-    /// The type must follow the type of each event handler.
-    /// </remarks>
-    public static class HtmlElementR3Extends
+    /// <summary><see cref="HtmlElement"/> extension methods.</summary>
+    extension(HtmlElement he)
     {
         /// <summary><see cref="HtmlElement.Click"/> as <see cref="Observable"/></summary>
-        /// <param name="he">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<HtmlElementEventArgs> ClickAsObservable(
-            this HtmlElement he,
+        public Observable<HtmlElementEventArgs> ClickAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<HtmlElementEventHandler, HtmlElementEventArgs>(
                 h => (s, e) => h(e),
@@ -25,11 +26,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="HtmlElement.DoubleClick"/> as <see cref="Observable"/></summary>
-        /// <param name="he">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<HtmlElementEventArgs> DoubleClickAsObservable(
-            this HtmlElement he,
+        public Observable<HtmlElementEventArgs> DoubleClickAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<HtmlElementEventHandler, HtmlElementEventArgs>(
                 h => (s, e) => h(e),
@@ -38,11 +37,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="HtmlElement.DragEnd"/> as <see cref="Observable"/></summary>
-        /// <param name="he">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<HtmlElementEventArgs> DragEndAsObservable(
-            this HtmlElement he,
+        public Observable<HtmlElementEventArgs> DragEndAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<HtmlElementEventHandler, HtmlElementEventArgs>(
                 h => (s, e) => h(e),
@@ -51,11 +48,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="HtmlElement.DragLeave"/> as <see cref="Observable"/></summary>
-        /// <param name="he">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<HtmlElementEventArgs> DragLeaveAsObservable(
-            this HtmlElement he,
+        public Observable<HtmlElementEventArgs> DragLeaveAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<HtmlElementEventHandler, HtmlElementEventArgs>(
                 h => (s, e) => h(e),
@@ -64,11 +59,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="HtmlElement.DragOver"/> as <see cref="Observable"/></summary>
-        /// <param name="he">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<HtmlElementEventArgs> DragOverAsObservable(
-            this HtmlElement he,
+        public Observable<HtmlElementEventArgs> DragOverAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<HtmlElementEventHandler, HtmlElementEventArgs>(
                 h => (s, e) => h(e),
@@ -77,11 +70,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="HtmlElement.Drag"/> as <see cref="Observable"/></summary>
-        /// <param name="he">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<HtmlElementEventArgs> DragAsObservable(
-            this HtmlElement he,
+        public Observable<HtmlElementEventArgs> DragAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<HtmlElementEventHandler, HtmlElementEventArgs>(
                 h => (s, e) => h(e),
@@ -90,11 +81,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="HtmlElement.Focusing"/> as <see cref="Observable"/></summary>
-        /// <param name="he">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<HtmlElementEventArgs> FocusingAsObservable(
-            this HtmlElement he,
+        public Observable<HtmlElementEventArgs> FocusingAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<HtmlElementEventHandler, HtmlElementEventArgs>(
                 h => (s, e) => h(e),
@@ -103,11 +92,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="HtmlElement.GotFocus"/> as <see cref="Observable"/></summary>
-        /// <param name="he">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<HtmlElementEventArgs> GotFocusAsObservable(
-            this HtmlElement he,
+        public Observable<HtmlElementEventArgs> GotFocusAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<HtmlElementEventHandler, HtmlElementEventArgs>(
                 h => (s, e) => h(e),
@@ -116,11 +103,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="HtmlElement.KeyDown"/> as <see cref="Observable"/></summary>
-        /// <param name="he">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<HtmlElementEventArgs> KeyDownAsObservable(
-            this HtmlElement he,
+        public Observable<HtmlElementEventArgs> KeyDownAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<HtmlElementEventHandler, HtmlElementEventArgs>(
                 h => (s, e) => h(e),
@@ -129,11 +114,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="HtmlElement.KeyPress"/> as <see cref="Observable"/></summary>
-        /// <param name="he">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<HtmlElementEventArgs> KeyPressAsObservable(
-            this HtmlElement he,
+        public Observable<HtmlElementEventArgs> KeyPressAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<HtmlElementEventHandler, HtmlElementEventArgs>(
                 h => (s, e) => h(e),
@@ -142,11 +125,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="HtmlElement.KeyUp"/> as <see cref="Observable"/></summary>
-        /// <param name="he">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<HtmlElementEventArgs> KeyUpAsObservable(
-            this HtmlElement he,
+        public Observable<HtmlElementEventArgs> KeyUpAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<HtmlElementEventHandler, HtmlElementEventArgs>(
                 h => (s, e) => h(e),
@@ -155,11 +136,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="HtmlElement.LosingFocus"/> as <see cref="Observable"/></summary>
-        /// <param name="he">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<HtmlElementEventArgs> LosingFocusAsObservable(
-            this HtmlElement he,
+        public Observable<HtmlElementEventArgs> LosingFocusAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<HtmlElementEventHandler, HtmlElementEventArgs>(
                 h => (s, e) => h(e),
@@ -168,11 +147,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="HtmlElement.LostFocus"/> as <see cref="Observable"/></summary>
-        /// <param name="he">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<HtmlElementEventArgs> LostFocusAsObservable(
-            this HtmlElement he,
+        public Observable<HtmlElementEventArgs> LostFocusAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<HtmlElementEventHandler, HtmlElementEventArgs>(
                 h => (s, e) => h(e),
@@ -181,11 +158,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="HtmlElement.MouseDown"/> as <see cref="Observable"/></summary>
-        /// <param name="he">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<HtmlElementEventArgs> MouseDownAsObservable(
-            this HtmlElement he,
+        public Observable<HtmlElementEventArgs> MouseDownAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<HtmlElementEventHandler, HtmlElementEventArgs>(
                 h => (s, e) => h(e),
@@ -194,11 +169,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="HtmlElement.MouseEnter"/> as <see cref="Observable"/></summary>
-        /// <param name="he">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<HtmlElementEventArgs> MouseEnterAsObservable(
-            this HtmlElement he,
+        public Observable<HtmlElementEventArgs> MouseEnterAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<HtmlElementEventHandler, HtmlElementEventArgs>(
                 h => (s, e) => h(e),
@@ -207,11 +180,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="HtmlElement.MouseLeave"/> as <see cref="Observable"/></summary>
-        /// <param name="he">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<HtmlElementEventArgs> MouseLeaveAsObservable(
-            this HtmlElement he,
+        public Observable<HtmlElementEventArgs> MouseLeaveAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<HtmlElementEventHandler, HtmlElementEventArgs>(
                 h => (s, e) => h(e),
@@ -220,11 +191,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="HtmlElement.MouseMove"/> as <see cref="Observable"/></summary>
-        /// <param name="he">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<HtmlElementEventArgs> MouseMoveAsObservable(
-            this HtmlElement he,
+        public Observable<HtmlElementEventArgs> MouseMoveAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<HtmlElementEventHandler, HtmlElementEventArgs>(
                 h => (s, e) => h(e),
@@ -233,11 +202,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="HtmlElement.MouseOver"/> as <see cref="Observable"/></summary>
-        /// <param name="he">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<HtmlElementEventArgs> MouseOverAsObservable(
-            this HtmlElement he,
+        public Observable<HtmlElementEventArgs> MouseOverAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<HtmlElementEventHandler, HtmlElementEventArgs>(
                 h => (s, e) => h(e),
@@ -246,11 +213,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="HtmlElement.MouseUp"/> as <see cref="Observable"/></summary>
-        /// <param name="he">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<HtmlElementEventArgs> MouseUpAsObservable(
-            this HtmlElement he,
+        public Observable<HtmlElementEventArgs> MouseUpAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<HtmlElementEventHandler, HtmlElementEventArgs>(
                 h => (s, e) => h(e),

@@ -1,23 +1,24 @@
 ﻿using R3;
 using System.ComponentModel;
 
-namespace R3Extends4WinForms
+namespace R3Extends4WinForms;
+
+/// <summary><see cref="R3"/>'s Extends for <see cref="Control"/>.</summary>
+/// <remarks>
+/// Add extension methods for any events you need.<br />
+/// Maybe there are some things that have been expanded by your Framework,<br />
+/// so they need to be added.
+/// The type must follow the type of each event handler.
+/// </remarks>
+public static class ControlR3Extends
 {
-    /// <summary><see cref="R3"/>'s Extends for <see cref="Control"/>.</summary>
-    /// <remarks>
-    /// Add extension methods for any events you need.<br />
-    /// Maybe there are some things that have been expanded by your Framework,<br />
-    /// so they need to be added.
-    /// The type must follow the type of each event handler.
-    /// </remarks>
-    public static class ControlR3Extends
+    /// <summary>Extensions for <see cref="Control"/>.</summary>
+    extension(Control ctrl)
     {
         /// <summary><see cref="Control.BackColorChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> BackColorChangedAsObservable(
-            this Control ctrl,
+        public Observable<EventArgs> BackColorChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -26,11 +27,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.ForeColorChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> ForeColorChangedAsObservable(
-            this Control ctrl,
+        public Observable<EventArgs> ForeColorChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -39,11 +38,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.SystemColorsChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> SystemColorsChangedAsObservable(
-            this Control ctrl,
+        public Observable<EventArgs> SystemColorsChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -52,11 +49,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.BackgroundImageChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> BackgroundImageChangedAsObservable(
-            this Control ctrl,
+        public Observable<EventArgs> BackgroundImageChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -65,11 +60,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.BackgroundImageLayoutChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> BackgroundImageLayoutChangedAsObservable(
-            this Control ctrl,
+        public Observable<EventArgs> BackgroundImageLayoutChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -78,11 +71,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.BindingContextChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> BindingContextChangedAsObservable(
-            this Control ctrl,
+        public Observable<EventArgs> BindingContextChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -91,11 +82,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.CausesValidationChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> CausesValidationChangedAsObservable(
-            this Control ctrl,
+        public Observable<EventArgs> CausesValidationChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -104,11 +93,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.ChangeUICues"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<UICuesEventArgs> ChangeUICuesAsObservable(
-            this Control ctrl,
+        public Observable<UICuesEventArgs> ChangeUICuesAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<UICuesEventHandler, UICuesEventArgs>(
                 h => (s, e) => h(e),
@@ -117,11 +104,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.ClientSizeChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> ClientSizeChangedAsObservable(
-            this Control ctrl,
+        public Observable<EventArgs> ClientSizeChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -130,11 +115,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.ContextMenuStripChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> ContextMenuStripChangedAsObservable(
-            this Control ctrl,
+        public Observable<EventArgs> ContextMenuStripChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -143,11 +126,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.ControlAdded"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<ControlEventArgs> ControlAddedAsObservable(
-            this Control ctrl,
+        public Observable<ControlEventArgs> ControlAddedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<ControlEventHandler, ControlEventArgs>(
                 h => (s, e) => h(e),
@@ -156,11 +137,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.ControlRemoved"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<ControlEventArgs> ControlRemovedAsObservable(
-            this Control ctrl,
+        public Observable<ControlEventArgs> ControlRemovedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<ControlEventHandler, ControlEventArgs>(
                 h => (s, e) => h(e),
@@ -169,11 +148,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.CursorChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> CursorChangedAsObservable(
-            this Control ctrl,
+        public Observable<EventArgs> CursorChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -181,13 +158,12 @@ namespace R3Extends4WinForms
                 h => ctrl.CursorChanged -= h,
                 tkn);
 
+
 #if NET7_0_OR_GREATER
         /// <summary><see cref="Control.DataContextChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> DataContextChangedAsObservable(
-            this Control ctrl,
+        public Observable<EventArgs> DataContextChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -197,11 +173,9 @@ namespace R3Extends4WinForms
 #endif
 
         /// <summary><see cref="Control.DockChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> DockChangedAsObservable(
-            this Control ctrl,
+        public Observable<EventArgs> DockChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -209,12 +183,11 @@ namespace R3Extends4WinForms
                 h => ctrl.DockChanged -= h,
                 tkn);
 
+
         /// <summary><see cref="Control.DpiChangedAfterParent"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> DpiChangedAfterParentAsObservable(
-            this Control ctrl,
+        public Observable<EventArgs> DpiChangedAfterParentAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -223,11 +196,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.DpiChangedBeforeParent"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> DpiChangedBeforeParentAsObservable(
-            this Control ctrl,
+        public Observable<EventArgs> DpiChangedBeforeParentAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -236,11 +207,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.DragDrop"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<DragEventArgs> DragDropAsObservable(
-            this Control ctrl,
+        public Observable<DragEventArgs> DragDropAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<DragEventHandler, DragEventArgs>(
                 h => (s, e) => h(e),
@@ -249,11 +218,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.DragEnter"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<DragEventArgs> DragEnterAsObservable(
-            this Control ctrl,
+        public Observable<DragEventArgs> DragEnterAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<DragEventHandler, DragEventArgs>(
                 h => (s, e) => h(e),
@@ -262,11 +229,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.DragOver"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<DragEventArgs> DragOverAsObservable(
-            this Control ctrl,
+        public Observable<DragEventArgs> DragOverAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<DragEventHandler, DragEventArgs>(
                 h => (s, e) => h(e),
@@ -275,11 +240,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.DragLeave"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> DragLeaveAsObservable(
-            this Control ctrl,
+        public Observable<EventArgs> DragLeaveAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -288,11 +251,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.GiveFeedback"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<GiveFeedbackEventArgs> GiveFeedbackAsObservable(
-            this Control ctrl,
+        public Observable<GiveFeedbackEventArgs> GiveFeedbackAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<GiveFeedbackEventHandler, GiveFeedbackEventArgs>(
                 h => (s, e) => h(e),
@@ -301,11 +262,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.EnabledChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> EnabledChangedAsObservable(
-            this Control ctrl,
+        public Observable<EventArgs> EnabledChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -314,11 +273,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.FontChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> FontChangedAsObservable(
-            this Control ctrl,
+        public Observable<EventArgs> FontChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -327,11 +284,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.Click"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> ClickAsObservable(
-            this Control ctrl,
+        public Observable<EventArgs> ClickAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -340,11 +295,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.DoubleClick"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> DoubleClickAsObservable(
-            this Control ctrl,
+        public Observable<EventArgs> DoubleClickAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -353,11 +306,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.Enter"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> EnterAsObservable(
-            this Control ctrl,
+        public Observable<EventArgs> EnterAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -366,11 +317,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.Leave"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> LeaveAsObservable(
-            this Control ctrl,
+        public Observable<EventArgs> LeaveAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -379,11 +328,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.GotFocus"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> GotFocusAsObservable(
-            this Control ctrl,
+        public Observable<EventArgs> GotFocusAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -392,11 +339,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.LostFocus"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> LostFocusAsObservable(
-            this Control ctrl,
+        public Observable<EventArgs> LostFocusAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -405,11 +350,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.HandleCreated"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> HandleCreatedAsObservable(
-            this Control ctrl,
+        public Observable<EventArgs> HandleCreatedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -418,11 +361,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.HandleDestroyed"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> HandleDestroyedAsObservable(
-            this Control ctrl,
+        public Observable<EventArgs> HandleDestroyedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -431,11 +372,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.HelpRequested"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<HelpEventArgs> HelpRequestedAsObservable(
-            this Control ctrl,
+        public Observable<HelpEventArgs> HelpRequestedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<HelpEventHandler, HelpEventArgs>(
                 h => (s, e) => h(e),
@@ -444,11 +383,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.ImeModeChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> ImeModeChangedAsObservable(
-            this Control ctrl,
+        public Observable<EventArgs> ImeModeChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -457,11 +394,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.RightToLeftChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> RightToLeftChangedAsObservable(
-            this Control ctrl,
+        public Observable<EventArgs> RightToLeftChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -470,11 +405,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.Invalidated"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<InvalidateEventArgs> InvalidatedAsObservable(
-            this Control ctrl,
+        public Observable<InvalidateEventArgs> InvalidatedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<InvalidateEventHandler, InvalidateEventArgs>(
                 h => (s, e) => h(e),
@@ -483,11 +416,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.KeyDown"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<KeyEventArgs> KeyDownAsObservable(
-            this Control ctrl,
+        public Observable<KeyEventArgs> KeyDownAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<KeyEventHandler, KeyEventArgs>(
                 h => (s, e) => h(e),
@@ -496,11 +427,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.PreviewKeyDown"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<PreviewKeyDownEventArgs> PreviewKeyDownAsObservable(
-            this Control ctrl,
+        public Observable<PreviewKeyDownEventArgs> PreviewKeyDownAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<PreviewKeyDownEventHandler, PreviewKeyDownEventArgs>(
                 h => (s, e) => h(e),
@@ -509,11 +438,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.QueryAccessibilityHelp"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<QueryAccessibilityHelpEventArgs> QueryAccessibilityHelpAsObservable(
-            this Control ctrl,
+        public Observable<QueryAccessibilityHelpEventArgs> QueryAccessibilityHelpAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<QueryAccessibilityHelpEventHandler, QueryAccessibilityHelpEventArgs>(
                 h => (s, e) => h(e),
@@ -522,11 +449,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.QueryContinueDrag"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<QueryContinueDragEventArgs> QueryContinueDragAsObservable(
-            this Control ctrl,
+        public Observable<QueryContinueDragEventArgs> QueryContinueDragAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<QueryContinueDragEventHandler, QueryContinueDragEventArgs>(
                 h => (s, e) => h(e),
@@ -535,11 +460,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.RegionChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> RegionChangedAsObservable(
-            this Control ctrl,
+        public Observable<EventArgs> RegionChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -548,11 +471,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.Resize"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> ResizeAsObservable(
-            this Control ctrl,
+        public Observable<EventArgs> ResizeAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -561,11 +482,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.SizeChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> SizeChangedAsObservable(
-            this Control ctrl,
+        public Observable<EventArgs> SizeChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -574,11 +493,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.StyleChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> StyleChangedAsObservable(
-            this Control ctrl,
+        public Observable<EventArgs> StyleChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -587,11 +504,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.KeyUp"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<KeyEventArgs> KeyUpAsObservable(
-            this Control ctrl,
+        public Observable<KeyEventArgs> KeyUpAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<KeyEventHandler, KeyEventArgs>(
                 h => (s, e) => h(e),
@@ -600,11 +515,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.KeyPress"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<KeyPressEventArgs> KeyPressAsObservable(
-            this Control ctrl,
+        public Observable<KeyPressEventArgs> KeyPressAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<KeyPressEventHandler, KeyPressEventArgs>(
                 h => (s, e) => h(e),
@@ -613,11 +526,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.ParentChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> ParentChangedAsObservable(
-            this Control ctrl,
+        public Observable<EventArgs> ParentChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -626,11 +537,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.Layout"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<LayoutEventArgs> LayoutAsObservable(
-            this Control ctrl,
+        public Observable<LayoutEventArgs> LayoutAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<LayoutEventHandler, LayoutEventArgs>(
                 h => (s, e) => h(e),
@@ -639,11 +548,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.LocationChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> LocationChangedAsObservable(
-            this Control ctrl,
+        public Observable<EventArgs> LocationChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -652,11 +559,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.MarginChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> MarginChangedAsObservable(
-            this Control ctrl,
+        public Observable<EventArgs> MarginChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -665,11 +570,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.PaddingChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> PaddingChangedAsObservable(
-            this Control ctrl,
+        public Observable<EventArgs> PaddingChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -678,11 +581,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.Paint"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<PaintEventArgs> PaintAsObservable(
-            this Control ctrl,
+        public Observable<PaintEventArgs> PaintAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<PaintEventHandler, PaintEventArgs>(
                 h => (s, e) => h(e),
@@ -691,11 +592,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.TabIndexChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> TabIndexChangedAsObservable(
-            this Control ctrl,
+        public Observable<EventArgs> TabIndexChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -704,11 +603,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.TabStopChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> TabStopChangedAsObservable(
-            this Control ctrl,
+        public Observable<EventArgs> TabStopChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -717,11 +614,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.TextChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> TextChangedAsObservable(
-            this Control ctrl,
+        public Observable<EventArgs> TextChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -730,11 +625,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.Validated"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> ValidatedAsObservable(
-            this Control ctrl,
+        public Observable<EventArgs> ValidatedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -743,11 +636,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.Validating"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<CancelEventArgs> ValidatingAsObservable(
-            this Control ctrl,
+        public Observable<CancelEventArgs> ValidatingAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<CancelEventHandler, CancelEventArgs>(
                 h => (s, e) => h(e),
@@ -756,11 +647,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.VisibleChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> VisibleChangedAsObservable(
-            this Control ctrl,
+        public Observable<EventArgs> VisibleChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -769,11 +658,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.MouseCaptureChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> MouseCaptureChangedAsObservable(
-            this Control ctrl,
+        public Observable<EventArgs> MouseCaptureChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -782,11 +669,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.MouseClick"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<MouseEventArgs> MouseClickAsObservable(
-            this Control ctrl,
+        public Observable<MouseEventArgs> MouseClickAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<MouseEventHandler, MouseEventArgs>(
                 h => (s, e) => h(e),
@@ -795,11 +680,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.MouseDoubleClick"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<MouseEventArgs> MouseDoubleClickAsObservable(
-            this Control ctrl,
+        public Observable<MouseEventArgs> MouseDoubleClickAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<MouseEventHandler, MouseEventArgs>(
                 h => (s, e) => h(e),
@@ -808,11 +691,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.MouseDown"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<MouseEventArgs> MouseDownAsObservable(
-            this Control ctrl,
+        public Observable<MouseEventArgs> MouseDownAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<MouseEventHandler, MouseEventArgs>(
                 h => (s, e) => h(e),
@@ -821,11 +702,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.MouseUp"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<MouseEventArgs> MouseUpAsObservable(
-            this Control ctrl,
+        public Observable<MouseEventArgs> MouseUpAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<MouseEventHandler, MouseEventArgs>(
                 h => (s, e) => h(e),
@@ -834,11 +713,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.MouseWheel"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<MouseEventArgs> MouseWheelAsObservable(
-            this Control ctrl,
+        public Observable<MouseEventArgs> MouseWheelAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<MouseEventHandler, MouseEventArgs>(
                 h => (s, e) => h(e),
@@ -847,11 +724,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.MouseMove"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<MouseEventArgs> MouseMoveAsObservable(
-            this Control ctrl,
+        public Observable<MouseEventArgs> MouseMoveAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<MouseEventHandler, MouseEventArgs>(
                 h => (s, e) => h(e),
@@ -860,11 +735,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.MouseHover"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> MouseHoverAsObservable(
-            this Control ctrl,
+        public Observable<EventArgs> MouseHoverAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -873,11 +746,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.MouseEnter"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> MouseEnterAsObservable(
-            this Control ctrl,
+        public Observable<EventArgs> MouseEnterAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -886,11 +757,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.MouseLeave"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> MouseLeaveAsObservable(
-            this Control ctrl,
+        public Observable<EventArgs> MouseLeaveAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -899,11 +768,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="Control.Move"/> as <see cref="Observable"/></summary>
-        /// <param name="ctrl">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> MoveAsObservable(
-            this Control ctrl,
+        public Observable<EventArgs> MoveAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),

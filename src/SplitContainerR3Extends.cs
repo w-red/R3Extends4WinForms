@@ -1,22 +1,23 @@
 ﻿using R3;
 
-namespace R3Extends4WinForms
+namespace R3Extends4WinForms;
+
+/// <summary><see cref="R3"/>'s Extends for <see cref="SplitContainer"/>.</summary>
+/// <remarks>
+/// Add extension methods for any events you need.<br />
+/// Maybe there are some things that have been expanded by your Framework,<br />
+/// so they need to be added.
+/// The type must follow the type of each event handler.
+/// </remarks>
+public static class SplitContainerR3Extends
 {
-    /// <summary><see cref="R3"/>'s Extends for <see cref="SplitContainer"/>.</summary>
-    /// <remarks>
-    /// Add extension methods for any events you need.<br />
-    /// Maybe there are some things that have been expanded by your Framework,<br />
-    /// so they need to be added.
-    /// The type must follow the type of each event handler.
-    /// </remarks>
-    public static class SplitContainerR3Extends
+    /// <summary><see cref="SplitContainer"/> extension methods.</summary>
+    extension(SplitContainer sc)
     {
         /// <summary><see cref="SplitContainer.BackgroundImageChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="sc">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> BackgroundImageChangedAsObservable(
-            this SplitContainer sc,
+        public Observable<EventArgs> BackgroundImageChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -25,11 +26,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="SplitContainer.SplitterMoved"/> as <see cref="Observable"/></summary>
-        /// <param name="sc">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<SplitterEventArgs> SplitterMovedAsObservable(
-            this SplitContainer sc,
+        public Observable<SplitterEventArgs> SplitterMovedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<SplitterEventHandler, SplitterEventArgs>(
                 h => (s, e) => h(e),
@@ -38,11 +37,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="SplitContainer.SplitterMoving"/> as <see cref="Observable"/></summary>
-        /// <param name="sc">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<SplitterCancelEventArgs> SplitterMovingAsObservable(
-            this SplitContainer sc,
+        public Observable<SplitterCancelEventArgs> SplitterMovingAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<SplitterCancelEventHandler, SplitterCancelEventArgs>(
                 h => (s, e) => h(e),

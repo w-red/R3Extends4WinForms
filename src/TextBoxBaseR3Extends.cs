@@ -1,22 +1,23 @@
 ﻿using R3;
 
-namespace R3Extends4WinForms
+namespace R3Extends4WinForms;
+
+/// <summary><see cref="R3"/>'s Extends for <see cref="TextBoxBase"/>.</summary>
+/// <remarks>
+/// Add extension methods for any events you need.<br />
+/// Maybe there are some things that have been expanded by your Framework,<br />
+/// so they need to be added.
+/// The type must follow the type of each event handler.
+/// </remarks>
+public static class TextBoxBaseR3Extends
 {
-    /// <summary><see cref="R3"/>'s Extends for <see cref="TextBoxBase"/>.</summary>
-    /// <remarks>
-    /// Add extension methods for any events you need.<br />
-    /// Maybe there are some things that have been expanded by your Framework,<br />
-    /// so they need to be added.
-    /// The type must follow the type of each event handler.
-    /// </remarks>
-    public static class TextBoxBaseR3Extends
+    /// <summary><see cref="TextBoxBase"/> extension methods.</summary>
+    extension(TextBoxBase tbb)
     {
         /// <summary><see cref="TextBoxBase.AcceptsTabChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="tbb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> AcceptsTabChangedAsObservable(
-            this TextBoxBase tbb,
+        public Observable<EventArgs> AcceptsTabChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -25,11 +26,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="TextBoxBase.BorderStyleChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="tbb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> BorderStyleChangedAsObservable(
-            this TextBoxBase tbb,
+        public Observable<EventArgs> BorderStyleChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -38,11 +37,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="TextBoxBase.Click"/> as <see cref="Observable"/></summary>
-        /// <param name="tbb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> ClickAsObservable(
-            this TextBoxBase tbb,
+        public Observable<EventArgs> ClickAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -51,11 +48,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="TextBoxBase.MouseClick"/> as <see cref="Observable"/></summary>
-        /// <param name="tbb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<MouseEventArgs> MouseClickAsObservable(
-            this TextBoxBase tbb,
+        public Observable<MouseEventArgs> MouseClickAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<MouseEventHandler, MouseEventArgs>(
                 h => (s, e) => h(e),
@@ -64,11 +59,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="TextBoxBase.HideSelectionChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="tbb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> HideSelectionChangedAsObservable(
-            this TextBoxBase tbb,
+        public Observable<EventArgs> HideSelectionChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -77,11 +70,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="TextBoxBase.ModifiedChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="tbb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> ModifiedChangedAsObservable(
-            this TextBoxBase tbb,
+        public Observable<EventArgs> ModifiedChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -90,11 +81,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="TextBoxBase.MultilineChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="tbb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> MultilineChangedAsObservable(
-            this TextBoxBase tbb,
+        public Observable<EventArgs> MultilineChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
@@ -103,11 +92,9 @@ namespace R3Extends4WinForms
                 tkn);
 
         /// <summary><see cref="TextBoxBase.ReadOnlyChanged"/> as <see cref="Observable"/></summary>
-        /// <param name="tbb">target</param>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
-        public static Observable<EventArgs> ReadOnlyChangedAsObservable(
-            this TextBoxBase tbb,
+        public Observable<EventArgs> ReadOnlyChangedAsObservable(
             CancellationToken tkn = default) =>
             Observable.FromEvent<EventHandler, EventArgs>(
                 h => (s, e) => h(e),
