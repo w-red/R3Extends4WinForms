@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="WinFormsNET10/WinFormsNET10.csproj" />
+  <Project Path="WinFormsNET6/WinFormsNET6.csproj" />
+  <Project Path="WinFormsNET8/WinFormsNET8.csproj" />
+  <Project Path="WinFormsSampleNet472/WinFormsSampleNet472.csproj" />
+</Solution>
