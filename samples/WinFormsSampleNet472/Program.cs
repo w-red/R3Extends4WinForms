@@ -5,11 +5,10 @@ using System.Windows.Forms;
 
 namespace WinFormsSampleNet472;
 
-internal static class Program
+/// <summary>Program</summary>
+public static class Program
 {
-    /// <summary>
-    /// アプリケーションのメイン エントリ ポイントです。
-    /// </summary>
+    /// <summary>Entry point.</summary>
     [STAThread]
     static void Main()
     {
