@@ -1,7 +1,7 @@
 ﻿using R3;
 using System;
 
-namespace WinFormsSampleNet472;
+namespace SampleCommonModules;
 
 /// <summary>ViewModel - Sample</summary>
 public class R3Extends4WinFormsSampleViewModel : IDisposable
@@ -69,5 +69,6 @@ public class R3Extends4WinFormsSampleViewModel : IDisposable
     public void Dispose()
     {
         Disposables.Dispose();
+        GC.SuppressFinalize(this);
     }
 }

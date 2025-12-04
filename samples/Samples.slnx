@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="SampleCommonModules/SampleCommonModules.csproj" Id="270b6829-20de-44f7-8f9e-2bf0fc7262e9" />
   <Project Path="WinFormsNET10/WinFormsNET10.csproj" />
   <Project Path="WinFormsNET6/WinFormsNET6.csproj" />
   <Project Path="WinFormsNET8/WinFormsNET8.csproj" />

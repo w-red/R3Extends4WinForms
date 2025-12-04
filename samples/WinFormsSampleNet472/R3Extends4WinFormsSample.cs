@@ -4,6 +4,8 @@ using R3;
 using R3.WinForms;
 using R3Extends4WinForms;
 
+using SampleCommonModules;
+
 namespace WinFormsSampleNet472;
 
 /// <summary>View - Sample</summary>
@@ -28,6 +30,15 @@ public partial class R3Extends4WinFormsSample : Form
         this.LoadAsObservable()
             .Subscribe(e =>
             {
+                // add data binding.
+                SampleViewModelBindingSource.DataSource ??= Vm;
+                ExecuteButton.DataBindings.Add(
+                    "Enabled",
+                    Vm,
+                    nameof(Vm.ButtonCanExecute.Value),
+                    false,
+                    DataSourceUpdateMode.OnPropertyChanged);
+
                 // add events binding.
                 ToLowerRb
                     .CheckedChangedAsObservable()

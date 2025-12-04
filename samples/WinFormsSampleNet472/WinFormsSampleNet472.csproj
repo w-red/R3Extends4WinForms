@@ -40,6 +40,9 @@
     <StartupObject>WinFormsSampleNet472.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="SampleCommonModules">
+      <HintPath>..\SampleCommonModules\bin\Release\net472\SampleCommonModules.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -63,7 +66,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="R3Extends4WinFormsSampleViewModel.cs" />
     <EmbeddedResource Include="R3Extends4WinFormsSample.resx">
       <DependentUpon>R3Extends4WinFormsSample.cs</DependentUpon>
     </EmbeddedResource>
@@ -76,7 +78,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Properties\DataSources\R3Extends4WinFormsSample.datasource" />
     <None Include="Properties\DataSources\R3Extends4WinFormsSampleViewModel.datasource" />
+    <None Include="Properties\DataSources\SampleCommonModules.R3Extends4WinFormsSampleViewModel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

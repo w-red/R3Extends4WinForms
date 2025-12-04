@@ -38,14 +38,14 @@
             this.ToUpperRb = new System.Windows.Forms.RadioButton();
             this.ToLowerRb = new System.Windows.Forms.RadioButton();
             this.ExecuteButton = new System.Windows.Forms.Button();
-            this.ViewModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.SampleViewModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.OptionsGb.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ViewModelBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SampleViewModelBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // InputTb
             // 
-            this.InputTb.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ViewModelBindingSource, "InputText", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.InputTb.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SampleViewModelBindingSource, "InputText", true));
             this.InputTb.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.InputTb.Location = new System.Drawing.Point(33, 49);
             this.InputTb.Name = "InputTb";
@@ -132,7 +132,6 @@
             // 
             // ExecuteButton
             // 
-            this.ExecuteButton.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", this.ViewModelBindingSource, "ButtonCanExecute", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.ExecuteButton.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.ExecuteButton.Location = new System.Drawing.Point(519, 191);
             this.ExecuteButton.Name = "ExecuteButton";
@@ -141,9 +140,9 @@
             this.ExecuteButton.Text = "Execute";
             this.ExecuteButton.UseVisualStyleBackColor = true;
             // 
-            // ViewModelBindingSource
+            // SampleViewModelBindingSource
             // 
-            this.ViewModelBindingSource.DataSource = typeof(WinFormsSampleNet472.R3Extends4WinFormsSampleViewModel);
+            this.SampleViewModelBindingSource.DataSource = typeof(SampleCommonModules.R3Extends4WinFormsSampleViewModel);
             // 
             // R3Extends4WinFormsSample
             // 
@@ -159,7 +158,7 @@
             this.Text = "R3Extends4WinFormsSample";
             this.OptionsGb.ResumeLayout(false);
             this.OptionsGb.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ViewModelBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SampleViewModelBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -176,7 +175,7 @@
         private System.Windows.Forms.RadioButton ToUpperRb;
         private System.Windows.Forms.RadioButton ToLowerRb;
         private System.Windows.Forms.Button ExecuteButton;
-        private System.Windows.Forms.BindingSource ViewModelBindingSource;
+        private System.Windows.Forms.BindingSource SampleViewModelBindingSource;
     }
 }
 
