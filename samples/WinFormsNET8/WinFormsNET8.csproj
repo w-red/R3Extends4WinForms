@@ -1,13 +1,19 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
-    <UseWindowsForms>true</UseWindowsForms>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <StartupObject>WinFormsNET8.Program</StartupObject>
+	  <OutputType>WinExe</OutputType>
+	  <TargetFramework>net8.0-windows</TargetFramework>
+	  <Nullable>enable</Nullable>
+	  <UseWindowsForms>true</UseWindowsForms>
+	  <ImplicitUsings>enable</ImplicitUsings>
+	  <StartupObject>WinFormsNET8.Program</StartupObject>
+	  <LangVersion>latest</LangVersion>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\WinFormsSampleNet472\R3Extends4WinFormsSample.cs" Link="R3Extends4WinFormsSample.cs" />
+    <Compile Include="..\WinFormsSampleNet472\R3Extends4WinFormsSample.Designer.cs" Link="R3Extends4WinFormsSample.Designer.cs" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="PolySharp" Version="1.15.0">
@@ -17,6 +23,10 @@
     <PackageReference Include="R3" Version="1.3.0" />
     <PackageReference Include="R3Extends4WinForms" Version="0.2.0" />
     <PackageReference Include="R3Extensions.WinForms" Version="1.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SampleCommonModules\SampleCommonModules.csproj" />
   </ItemGroup>
 
 </Project>
