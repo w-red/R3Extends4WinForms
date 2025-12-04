@@ -30,12 +30,17 @@ public partial class R3Extends4WinFormsSample : Form
         this.LoadAsObservable()
             .Subscribe(e =>
             {
-                // add data binding.
-                SampleViewModelBindingSource.DataSource ??= Vm;
+                // setup data binding.
+                OutputTb.DataBindings.Add(
+                    "Text",
+                    Vm.OutputText,
+                    "Value",
+                    false,
+                    DataSourceUpdateMode.OnPropertyChanged);
                 ExecuteButton.DataBindings.Add(
                     "Enabled",
-                    Vm,
-                    nameof(Vm.ButtonCanExecute.Value),
+                    Vm.ButtonCanExecute,
+                    "Value",
                     false,
                     DataSourceUpdateMode.OnPropertyChanged);
 

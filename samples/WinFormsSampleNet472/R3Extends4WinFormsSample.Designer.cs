@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.InputTb = new System.Windows.Forms.TextBox();
             this.ArrowLb = new System.Windows.Forms.Label();
             this.OutputTb = new System.Windows.Forms.TextBox();
@@ -38,14 +37,11 @@
             this.ToUpperRb = new System.Windows.Forms.RadioButton();
             this.ToLowerRb = new System.Windows.Forms.RadioButton();
             this.ExecuteButton = new System.Windows.Forms.Button();
-            this.SampleViewModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.OptionsGb.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SampleViewModelBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // InputTb
             // 
-            this.InputTb.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SampleViewModelBindingSource, "InputText", true));
             this.InputTb.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.InputTb.Location = new System.Drawing.Point(33, 49);
             this.InputTb.Name = "InputTb";
@@ -140,10 +136,6 @@
             this.ExecuteButton.Text = "Execute";
             this.ExecuteButton.UseVisualStyleBackColor = true;
             // 
-            // SampleViewModelBindingSource
-            // 
-            this.SampleViewModelBindingSource.DataSource = typeof(SampleCommonModules.R3Extends4WinFormsSampleViewModel);
-            // 
             // R3Extends4WinFormsSample
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -158,7 +150,6 @@
             this.Text = "R3Extends4WinFormsSample";
             this.OptionsGb.ResumeLayout(false);
             this.OptionsGb.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SampleViewModelBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,7 +166,6 @@
         private System.Windows.Forms.RadioButton ToUpperRb;
         private System.Windows.Forms.RadioButton ToLowerRb;
         private System.Windows.Forms.Button ExecuteButton;
-        private System.Windows.Forms.BindingSource SampleViewModelBindingSource;
     }
 }
 
