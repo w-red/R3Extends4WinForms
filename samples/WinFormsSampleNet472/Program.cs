@@ -19,7 +19,8 @@ internal static class Program
         // R3 enabled UnhandledException
         WinFormsProviderInitializer
             .SetDefaultObservableSystem(
-                static (ex) => Trace.WriteLine($"R3 UnhandledException:{ex}"),
+                static (ex) =>
+                    Trace.WriteLine($"R3 UnhandledException:{ex}"),
                 frm);
         Application.Run(frm);
     }

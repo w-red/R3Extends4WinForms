@@ -1,5 +1,4 @@
 ﻿using R3;
-using System.ComponentModel;
 
 namespace WinFormsSampleNet472;
 
@@ -49,10 +48,14 @@ public class R3Extends4WinFormsSampleViewModel
             {
                 OutputText.Value = OperationMode.Value switch
                 {
-                    OperationModeEnum.Raw => InputText.Value,
-                    OperationModeEnum.ToUpper => InputText.Value.ToUpper(),
-                    OperationModeEnum.ToLower => InputText.Value.ToLower(),
-                    OperationModeEnum.Delete => string.Empty,
+                    OperationModeEnum.Raw =>
+                        InputText.Value,
+                    OperationModeEnum.ToUpper =>
+                        InputText.Value.ToUpper(),
+                    OperationModeEnum.ToLower =>
+                        InputText.Value.ToLower(),
+                    OperationModeEnum.Delete =>
+                        string.Empty,
                     _ => "Error!"
                 };
             })
