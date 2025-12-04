@@ -1,8 +1,10 @@
 ﻿using R3;
+using System;
 
 namespace WinFormsSampleNet472;
 
-public class R3Extends4WinFormsSampleViewModel
+/// <summary>ViewModel - Sample</summary>
+public class R3Extends4WinFormsSampleViewModel : IDisposable
 {
     /// <summary>Disposables</summary>
     public CompositeDisposable Disposables { get; } = [];
@@ -20,6 +22,7 @@ public class R3Extends4WinFormsSampleViewModel
         new BindableReactiveProperty<OperationModeEnum>(
             OperationModeEnum.ToLower)
         .EnableValidation<R3Extends4WinFormsSampleViewModel>();
+
     /// <summary>ButtonCanExecute</summary>
     public BindableReactiveProperty<bool> ButtonCanExecute { get; } =
         new BindableReactiveProperty<bool>(false)
@@ -60,17 +63,9 @@ public class R3Extends4WinFormsSampleViewModel
                 };
             })
             .AddTo(Disposables);
-
-#if false
-        OutputText
-            .Subscribe(_ =>
-            {
-                OutputText.ForceNotify();
-            })
-            .AddTo(Disposables);
-#endif
     }
 
+    /// <summary>Dispose</summary>
     public void Dispose()
     {
         Disposables.Dispose();
