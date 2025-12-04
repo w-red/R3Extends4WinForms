@@ -31,16 +31,14 @@ public partial class R3Extends4WinFormsSample : Form
             .Subscribe(e =>
             {
                 // setup data binding.
-                OutputTb.DataBindings.Add(
+                OutputTb.DataBindings.AddReactivePropertyValue(
                     "Text",
                     Vm.OutputText,
-                    "Value",
                     false,
                     DataSourceUpdateMode.OnPropertyChanged);
-                ExecuteButton.DataBindings.Add(
+                ExecuteButton.DataBindings.AddReactivePropertyValue(
                     "Enabled",
                     Vm.ButtonCanExecute,
-                    "Value",
                     false,
                     DataSourceUpdateMode.OnPropertyChanged);
 
@@ -127,5 +125,29 @@ public partial class R3Extends4WinFormsSample : Form
                 Disposables.Dispose();
             })
             .AddTo(Disposables);
+    }
+}
+
+/// <summary>extension <see cref="ControlBindingsCollection"/></summary>
+public static class ControlBindingsCollectionExtensions
+{
+    extension(ControlBindingsCollection cbc)
+    {
+        /// <summary>Add <see cref="ReactiveProperty<T>"/>'s Value</summary>
+        /// <typeparam name="T">Type of ReactiveProperty</typeparam>
+        /// <param name="name">name of property.</param>
+        /// <param name="rp"></param>
+        /// <param name="formattingEnabled"></param>
+        /// <param name="updateMode"></param>
+        /// <returns>Binding</returns>
+        public Binding AddReactivePropertyValue<T>(string name, ReactiveProperty<T> rp, bool formattingEnabled, DataSourceUpdateMode updateMode)
+        {
+            return cbc.Add(
+                name,
+                rp,
+                "Value",
+                formattingEnabled,
+                updateMode);
+        }
     }
 }
