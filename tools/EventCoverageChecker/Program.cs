@@ -93,6 +93,10 @@ static void GenerateReport(HashSet<string> allEvents, HashSet<string> implemente
     
     report.AppendLine("# Event Coverage Report");
     report.AppendLine();
+    report.AppendLine($"*Generated on {DateTime.UtcNow:u}*");
+    report.AppendLine();
+    report.AppendLine($"*Target Framework {AppContext.TargetFrameworkName}*");
+    report.AppendLine();
     report.AppendLine($"**Total Events:** {allEvents.Count} | **Implemented:** {implementedEvents.Count} | **Missing:** {missingEvents.Count}");
     report.AppendLine();
 
