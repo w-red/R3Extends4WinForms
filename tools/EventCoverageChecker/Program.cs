@@ -17,7 +17,23 @@ if (projectRoot == null)
 var winFormsEvents = GetWinFormsEvents();
 var implementedExtensions = GetImplementedObservableExtensions(Path.Combine(projectRoot, "src"));
 
-var reportPath = Path.Combine(projectRoot, "tools", "EventCoverageChecker", "CoverageReport.md");
+var tgtName = "";
+#if NET472_OR_GREATER
+    tgtName = "472";
+#elif NET6_0_OR_GREATER
+    tgtName = "NET6";
+#elif NET8_0_OR_GREATER
+    tgtName = "NET8";
+#elif NET10_0_OR_GREATER
+    tgtName = "NET10";
+#endif
+var reportPath = 
+    Path
+    .Combine(
+        projectRoot,
+        "tools",
+        "EventCoverageChecker",
+        $"CoverageReport{tgtName}.md");
 GenerateReport(winFormsEvents, implementedExtensions, reportPath);
 
 var missingCount = winFormsEvents.Except(implementedExtensions).Count();
