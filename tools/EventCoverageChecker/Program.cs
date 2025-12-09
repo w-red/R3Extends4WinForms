@@ -30,16 +30,23 @@ static HashSet<string> GetWinFormsEvents()
     var eventsSet = new HashSet<string>();
     var assembly = typeof(Control).Assembly; // System.Windows.Forms.dll
 
-    var types = assembly.GetTypes().Where(t => t.IsPublic && t.Namespace == "System.Windows.Forms");
+    var types = 
+        assembly
+        .GetTypes()
+        .Where(t => t.IsPublic && t.Namespace == "System.Windows.Forms");
 
     foreach (var type in types)
     {
-        var events = type.GetEvents(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+        var events =
+            type
+            .GetEvents(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
         foreach (var ev in events)
         {
-            var browsableAttr = ev.GetCustomAttributes(typeof(BrowsableAttribute), false)
-                                  .OfType<BrowsableAttribute>()
-                                  .FirstOrDefault();
+            var browsableAttr = 
+                ev
+                .GetCustomAttributes(typeof(BrowsableAttribute), false)
+                .OfType<BrowsableAttribute>()
+                .FirstOrDefault();
             
             // Exclude events where Browsable(false) is set
             if (browsableAttr != null && !browsableAttr.Browsable)
@@ -47,7 +54,14 @@ static HashSet<string> GetWinFormsEvents()
                 continue;
             }
             
-            eventsSet.Add($"{type.Name}.{ev.Name}");
+            if (!"Timer".Equals(type.Name))
+            {
+                eventsSet.Add($"{type.Name}/{ev.Name}");
+            }
+            else
+            {
+                eventsSet.Add($"{type.FullName}/{ev.Name}");
+            }
         }
     }
     return eventsSet;
@@ -64,8 +78,17 @@ static HashSet<string> GetImplementedObservableExtensions(string srcPath)
 
     foreach (var file in files)
     {
-        var typeName = Path.GetFileNameWithoutExtension(file).Replace("R3Extends", "");
-        var content = File.ReadAllText(file);
+        var typeName = 
+            Path
+            .GetFileNameWithoutExtension(file)
+            .Replace("R3Extends", "");
+        if ("Timer".Equals(typeName))
+        {
+            typeName = "System.Windows.Forms.Timer";
+        }
+        var content = 
+            File
+            .ReadAllText(file);
 
         if (!content.Contains($"extension({typeName}"))
         {
@@ -73,32 +96,33 @@ static HashSet<string> GetImplementedObservableExtensions(string srcPath)
         }
 
         var matches = extensionRegex.Matches(content);
-
         foreach (Match match in matches)
         {
             if (match.Groups.Count == 2)
             {
                 var eventName = match.Groups[1].Value.Trim();
-                implementedSet.Add($"{typeName}.{eventName}");
+                implementedSet.Add($"{typeName}/{eventName}");
             }
         }
     }
     return implementedSet;
 }
 
-static void GenerateReport(HashSet<string> allEvents, HashSet<string> implementedEvents, string path)
+static void GenerateReport(
+    HashSet<string> allEvents,
+    HashSet<string> implementedEvents,
+    string path)
 {
     var report = new StringBuilder();
-    var missingEvents = allEvents.Except(implementedEvents).ToHashSet();
+    var missingEvents = 
+        allEvents
+        .Except(implementedEvents)
+        .ToHashSet();
     
-    report.AppendLine("# Event Coverage Report");
-    report.AppendLine();
-    report.AppendLine($"*Generated on {DateTime.UtcNow:u}*");
-    report.AppendLine();
-    report.AppendLine($"*Target Framework {AppContext.TargetFrameworkName}*");
-    report.AppendLine();
-    report.AppendLine($"**Total Events:** {allEvents.Count} | **Implemented:** {implementedEvents.Count} | **Missing:** {missingEvents.Count}");
-    report.AppendLine();
+    report.AppendLine("# Event Coverage Report").AppendLine()
+        .AppendLine($"*Generated on {DateTime.UtcNow:u}*").AppendLine()
+        .AppendLine($"*Target Framework {AppContext.TargetFrameworkName}*").AppendLine()
+        .AppendLine($"**Total Events:** {allEvents.Count} | **Implemented:** {implementedEvents.Count} | **Missing:** {missingEvents.Count}").AppendLine();
 
     if (!allEvents.Any())
     {
@@ -107,10 +131,11 @@ static void GenerateReport(HashSet<string> allEvents, HashSet<string> implemente
         return;
     }
     
-    var groupedByClass = allEvents
+    var groupedByClass = 
+        allEvents
         .Select(e =>
         {
-            var parts = e.Split('.');
+            var parts = e.Split('/');
             return new { TypeName = parts[0], EventName = parts[1] };
         })
         .GroupBy(e => e.TypeName)
@@ -124,8 +149,12 @@ static void GenerateReport(HashSet<string> allEvents, HashSet<string> implemente
         var typeName = group.Key;
         var events = group.OrderBy(e => e.EventName).ToList();
         
-        var implementedCount = events.Count(e => implementedEvents.Contains($"{typeName}.{e.EventName}"));
-        var coverage = events.Any() ? (double)implementedCount / events.Count : 0;
+        var implementedCount =
+            events
+            .Count(e => implementedEvents.Contains($"{typeName}/{e.EventName}"));
+        var coverage = 
+            events.Any() ?
+            (double)implementedCount / events.Count : 0;
         
         report.AppendLine($"### `{typeName}`");
         report.AppendLine($"**Coverage: {coverage:P0}** ({implementedCount} / {events.Count})");
@@ -135,7 +164,9 @@ static void GenerateReport(HashSet<string> allEvents, HashSet<string> implemente
 
         foreach (var ev in events)
         {
-            var isImplemented = implementedEvents.Contains($"{typeName}.{ev.EventName}");
+            var isImplemented = 
+                implementedEvents
+                .Contains($"{typeName}/{ev.EventName}");
             var statusIcon = isImplemented ? "✅" : "❌";
             report.AppendLine($"| {statusIcon} | {ev.EventName} |");
         }
