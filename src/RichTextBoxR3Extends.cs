@@ -90,5 +90,27 @@ public static class RichTextBoxR3Extends
                 h => rtb.Protected += h,
                 h => rtb.Protected -= h,
                 tkn);
+
+        /// <summary><see cref="RichTextBox.SelectionChanged"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<EventArgs> SelectionChangedAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => rtb.SelectionChanged += h,
+                h => rtb.SelectionChanged -= h,
+                tkn);
+
+        /// <summary><see cref="RichTextBox.VScroll"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<EventArgs> VScrollAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => rtb.VScroll += h,
+                h => rtb.VScroll -= h,
+                tkn);
     }
 }
