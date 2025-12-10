@@ -148,12 +148,16 @@ static void GenerateReport(Dictionary<string, EventDef> definitions, List<Implem
             {
                 successCount++;
                 // Correct
-                tableRows.AppendLine($"| ✅ | {impl.TypeName} | {impl.EventName} | {def.HandlerType} | {impl.HandlerType} | {def.ArgsType} | {impl.ArgsType} | {impl.ReturnType} |");
+                var typeUrl = GetLearnUrl(impl.TypeName);
+                var eventUrl = GetLearnUrl(impl.TypeName, impl.EventName);
+                tableRows.AppendLine($"| ✅ | [{impl.TypeName}]({typeUrl}) | [{impl.EventName}]({eventUrl}) | {def.HandlerType} | {impl.HandlerType} | {def.ArgsType} | {impl.ArgsType} | {impl.ReturnType} |");
             }
             else
             {
                 errorCount++;
-                tableRows.AppendLine($"| ❌ | {impl.TypeName} | {impl.EventName} | **{def.HandlerType}** | `{impl.HandlerType}` | **{def.ArgsType}** | `{impl.ArgsType}` | `{impl.ReturnType}` |");
+                var typeUrl = GetLearnUrl(impl.TypeName);
+                var eventUrl = GetLearnUrl(impl.TypeName, impl.EventName);
+                tableRows.AppendLine($"| ❌ | [{impl.TypeName}]({typeUrl}) | [{impl.EventName}]({eventUrl}) | **{def.HandlerType}** | `{impl.HandlerType}` | **{def.ArgsType}** | `{impl.ArgsType}` | `{impl.ReturnType}` |");
             }
         }
         else
@@ -161,7 +165,9 @@ static void GenerateReport(Dictionary<string, EventDef> definitions, List<Implem
              missingCount++;
              // Implementation exists but event not found in WinForms.
              // These are stored in a separate table.
-             missingRows.AppendLine($"| ⚠️ | {impl.TypeName} | {impl.EventName} | N/A | `{impl.HandlerType}` | N/A | `{impl.ArgsType}` | `{impl.ReturnType}` |");
+             var typeUrl = GetLearnUrl(impl.TypeName);
+             var eventUrl = GetLearnUrl(impl.TypeName, impl.EventName);
+             missingRows.AppendLine($"| ⚠️ | [{impl.TypeName}]({typeUrl}) | [{impl.EventName}]({eventUrl}) | N/A | `{impl.HandlerType}` | N/A | `{impl.ArgsType}` | `{impl.ReturnType}` |");
         }
     }
 
@@ -232,5 +238,26 @@ static string GetCleanTypeName(string name)
     return name;
 }
 
+static string GetLearnUrl(string typeName, string? eventName = null)
+{
+    var baseUrl = "https://learn.microsoft.com/dotnet/api/";
+    
+    // In EventHandlerChecker, typeName comes from the file name minus "R3Extends", or "System.Windows.Forms.Timer".
+    // Or from WinForms reflection which is just "Button", "Timer" etc.
+    
+    // We need to ensure we have the full namespace for the URL unless it's already there (rarely for controls except Timer)
+    var fullTypeName = typeName.Contains(".") ? typeName : $"System.Windows.Forms.{typeName}";
+    
+    var url = $"{baseUrl}{fullTypeName.ToLower()}";
+    
+    if (!string.IsNullOrEmpty(eventName))
+    {
+        url += $".{eventName.ToLower()}";
+    }
+    
+    return url;
+}
+
 record EventDef(string HandlerType, string ArgsType);
 record ImplementationDef(string TypeName, string EventName, string ReturnType, string HandlerType, string ArgsType);
+

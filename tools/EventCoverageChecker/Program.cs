@@ -167,7 +167,8 @@ static void GenerateReport(
             events.Any() ?
             (double)implementedCount / events.Count : 0;
         
-        report.AppendLine($"### `{typeName}`");
+        var typeUrl = GetLearnUrl(typeName);
+        report.AppendLine($"### [`{typeName}`]({typeUrl})");
         report.AppendLine($"**Coverage: {coverage:P0}** ({implementedCount} / {events.Count})");
         report.AppendLine();
         report.AppendLine("| Status | Event Name |");
@@ -179,7 +180,8 @@ static void GenerateReport(
                 implementedEvents
                 .Contains($"{typeName}/{ev.EventName}");
             var statusIcon = isImplemented ? "✅" : "❌";
-            report.AppendLine($"| {statusIcon} | {ev.EventName} |");
+            var eventUrl = GetLearnUrl(typeName, ev.EventName);
+            report.AppendLine($"| {statusIcon} | [{ev.EventName}]({eventUrl}) |");
         }
         report.AppendLine();
     }
@@ -209,7 +211,8 @@ static void GenerateReport(
              // Check if somehow implemented (unlikely but good to show)
              var implementedCount = events.Count(e => implementedEvents.Contains($"{typeName}/{e.EventName}"));
              
-             report.AppendLine($"### `{typeName}` (Legacy)");
+             var typeUrl = GetLearnUrl(typeName);
+             report.AppendLine($"### [`{typeName}`]({typeUrl}) (Legacy)");
              if (implementedCount > 0)
              {
                  report.AppendLine($"**Implemented:** {implementedCount} / {events.Count}");
@@ -228,14 +231,40 @@ static void GenerateReport(
                  // Use a different icon or just X? User wants table. 
                  // Let's use ⚠️ for ignored-missing, or just X but context implies it is ignored.
                  // User asked to "separate table", so X is fine as long as header says Ignored.
-                 var statusIcon = isImplemented ? "✅" : "⚠️"; // Warning sign for ignored items seems appropriate
-                 report.AppendLine($"| {statusIcon} | {ev.EventName} |");
+                  var statusIcon = isImplemented ? "✅" : "⚠️"; // Warning sign for ignored items seems appropriate
+                  var eventUrl = GetLearnUrl(typeName, ev.EventName);
+                  report.AppendLine($"| {statusIcon} | [{ev.EventName}]({eventUrl}) |");
              }
              report.AppendLine();
         }
     }
 
     File.WriteAllText(path, report.ToString());
+}
+
+static string GetLearnUrl(string typeName, string? eventName = null)
+{
+    var baseUrl = "https://learn.microsoft.com/dotnet/api/";
+    var lowerType = typeName.ToLower();
+    
+    // Handle special cases if any, though System.Windows.Forms.Timer usually resolves fine as system.windows.forms.timer
+    // But in our code we might have just "Timer", so we need to ensure full qualification for URL if needed.
+    // However, the existing code uses "Timer" for System.Windows.Forms.Timer in some places, 
+    // but the URL needs "system.windows.forms.timer".
+    // Let's check how typeName comes in. 
+    // In GetWinFormsEvents, we use type.Name (e.g. Button). 
+    // Except for Timer where we use type.FullName (System.Windows.Forms.Timer).
+    // So typeName passed here will be "Button" or "System.Windows.Forms.Timer".
+    
+    var fullTypeName = typeName.Contains(".") ? typeName : $"System.Windows.Forms.{typeName}";
+    var url = $"{baseUrl}{fullTypeName.ToLower()}";
+    
+    if (!string.IsNullOrEmpty(eventName))
+    {
+        url += $".{eventName.ToLower()}";
+    }
+    
+    return url;
 }
 
 static HashSet<string> GetWinFormsEvents()
