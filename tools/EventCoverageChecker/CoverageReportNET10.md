@@ -1,10 +1,10 @@
 # Event Coverage Report
 
-*Generated on 2025-12-10 00:26:25Z*
+*Generated on 2025-12-10 02:07:27Z*
 
 *Target Framework .NETCoreApp,Version=v10.0*
 
-**Total Events:** 594 | **Implemented:** 682 | **Missing:** 0
+**Total Events:** 594 | **Implemented:** 673 | **Missing:** 13
 
 ## Coverage Details by Class
 
@@ -23,11 +23,11 @@
 | ✅ | CollectionChanged |
 
 ### `BindableComponent`
-**Coverage: 100%** (1 / 1)
+**Coverage: 0%** (0 / 1)
 
 | Status | Event Name |
 |:------:|------------|
-| ✅ | BindingContextChanged |
+| ❌ | BindingContextChanged |
 
 ### `Binding`
 **Coverage: 100%** (3 / 3)
@@ -80,14 +80,14 @@
 | ✅ | PositionChanged |
 
 ### `ButtonBase`
-**Coverage: 100%** (4 / 4)
+**Coverage: 25%** (1 / 4)
 
 | Status | Event Name |
 |:------:|------------|
 | ✅ | AutoSizeChanged |
-| ✅ | CommandCanExecuteChanged |
-| ✅ | CommandChanged |
-| ✅ | CommandParameterChanged |
+| ❌ | CommandCanExecuteChanged |
+| ❌ | CommandChanged |
+| ❌ | CommandParameterChanged |
 
 ### `CheckBox`
 **Coverage: 100%** (3 / 3)
@@ -137,7 +137,7 @@
 | ✅ | Popup |
 
 ### `Control`
-**Coverage: 100%** (63 / 63)
+**Coverage: 98%** (62 / 63)
 
 | Status | Event Name |
 |:------:|------------|
@@ -153,7 +153,7 @@
 | ✅ | ControlAdded |
 | ✅ | ControlRemoved |
 | ✅ | CursorChanged |
-| ✅ | DataContextChanged |
+| ❌ | DataContextChanged |
 | ✅ | DockChanged |
 | ✅ | DoubleClick |
 | ✅ | DpiChangedAfterParent |
@@ -466,7 +466,7 @@
 | ✅ | Apply |
 
 ### `Form`
-**Coverage: 100%** (23 / 23)
+**Coverage: 83%** (19 / 23)
 
 | Status | Event Name |
 |:------:|------------|
@@ -475,12 +475,12 @@
 | ✅ | AutoValidateChanged |
 | ✅ | Deactivate |
 | ✅ | DpiChanged |
-| ✅ | FormBorderColorChanged |
-| ✅ | FormCaptionBackColorChanged |
-| ✅ | FormCaptionTextColorChanged |
+| ❌ | FormBorderColorChanged |
+| ❌ | FormCaptionBackColorChanged |
+| ❌ | FormCaptionTextColorChanged |
 | ✅ | FormClosed |
 | ✅ | FormClosing |
-| ✅ | FormCornerPreferenceChanged |
+| ❌ | FormCornerPreferenceChanged |
 | ✅ | HelpButtonClicked |
 | ✅ | InputLanguageChanged |
 | ✅ | InputLanguageChanging |
@@ -988,15 +988,15 @@
 | ✅ | DropDownOpening |
 
 ### `ToolStripItem`
-**Coverage: 100%** (23 / 23)
+**Coverage: 83%** (19 / 23)
 
 | Status | Event Name |
 |:------:|------------|
 | ✅ | BackColorChanged |
 | ✅ | Click |
-| ✅ | CommandCanExecuteChanged |
-| ✅ | CommandChanged |
-| ✅ | CommandParameterChanged |
+| ❌ | CommandCanExecuteChanged |
+| ❌ | CommandChanged |
+| ❌ | CommandParameterChanged |
 | ✅ | DisplayStyleChanged |
 | ✅ | DoubleClick |
 | ✅ | EnabledChanged |
@@ -1012,7 +1012,7 @@
 | ✅ | Paint |
 | ✅ | QueryAccessibilityHelp |
 | ✅ | RightToLeftChanged |
-| ✅ | SelectedChanged |
+| ❌ | SelectedChanged |
 | ✅ | TextChanged |
 | ✅ | VisibleChanged |
 

@@ -3,6 +3,9 @@ using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 Console.WriteLine("Event Coverage Checker");
 Console.WriteLine("======================");
@@ -14,19 +17,33 @@ if (projectRoot == null)
     return;
 }
 
-var winFormsEvents = GetWinFormsEvents();
-var implementedExtensions = GetImplementedObservableExtensions(Path.Combine(projectRoot, "src"));
-
+// Determine preprocessor symbols based on target framework
+var preprocessorSymbols = new List<string>();
 var tgtName = "";
+
 #if NET10_0_OR_GREATER
     tgtName = "NET10";
+    preprocessorSymbols.AddRange(new[] { "NET10_0", "NET10_0_OR_GREATER", "NET8_0_OR_GREATER", "NET6_0_OR_GREATER", "NET5_0_OR_GREATER", "NETCOREAPP" });
 #elif NET8_0_OR_GREATER
     tgtName = "NET8";
+    preprocessorSymbols.AddRange(new[] { "NET8_0", "NET8_0_OR_GREATER", "NET7_0_OR_GREATER", "NET6_0_OR_GREATER", "NET5_0_OR_GREATER", "NETCOREAPP" });
 #elif NET6_0_OR_GREATER
     tgtName = "NET6";
-#elif NET472_OR_GREATER
+    preprocessorSymbols.AddRange(new[] { "NET6_0", "NET6_0_OR_GREATER", "NET5_0_OR_GREATER", "NETCOREAPP" });
+#elif NET472_OR_GREATER || NET472 || NET462_OR_GREATER || NETFRAMEWORK
     tgtName = "472";
+    preprocessorSymbols.AddRange(new[] { "NET472", "NET472_OR_GREATER", "NETFRAMEWORK" });
+#else
+    tgtName = "Unknown";
 #endif
+
+// Can be passed as args or detected
+Console.WriteLine($"Running for Target: {tgtName}");
+Console.WriteLine($"Symbols: {string.Join(", ", preprocessorSymbols)}");
+
+var winFormsEvents = GetWinFormsEvents();
+var implementedExtensions = GetImplementedObservableExtensions(Path.Combine(projectRoot, "src"), preprocessorSymbols);
+
 var reportPath = 
     Path
     .Combine(
@@ -83,12 +100,14 @@ static HashSet<string> GetWinFormsEvents()
     return eventsSet;
 }
 
-static HashSet<string> GetImplementedObservableExtensions(string srcPath)
+static HashSet<string> GetImplementedObservableExtensions(string srcPath, List<string> symbols)
 {
     var implementedSet = new HashSet<string>();
-    var extensionRegex = new Regex(
-        @"public Observable<.*> ([a-zA-Z0-9_]+)AsObservable\s*\(\s*CancellationToken",
-        RegexOptions.Compiled | RegexOptions.Multiline);
+    
+    // Configure parse options with preprocessor symbols
+    var parseOptions = new CSharpParseOptions(
+        LanguageVersion.Latest, 
+        preprocessorSymbols: symbols);
 
     var files = Directory.EnumerateFiles(srcPath, "*R3Extends.cs", SearchOption.TopDirectoryOnly);
 
@@ -102,23 +121,32 @@ static HashSet<string> GetImplementedObservableExtensions(string srcPath)
         {
             typeName = "System.Windows.Forms.Timer";
         }
-        var content = 
-            File
-            .ReadAllText(file);
+        
+        var content = File.ReadAllText(file);
 
-        if (!content.Contains($"extension({typeName}"))
-        {
-            continue;
-        }
+        // Parse with Roslyn
+        var syntaxTree = CSharpSyntaxTree.ParseText(content, parseOptions);
+        var root = syntaxTree.GetRoot();
 
-        var matches = extensionRegex.Matches(content);
-        foreach (Match match in matches)
+        // Find methods returning Observable<T> and named *AsObservable
+        var methods = 
+            root
+            .DescendantNodes()
+            .OfType<MethodDeclarationSyntax>();
+
+        foreach (var method in methods)
         {
-            if (match.Groups.Count == 2)
-            {
-                var eventName = match.Groups[1].Value.Trim();
-                implementedSet.Add($"{typeName}/{eventName}");
-            }
+            var methodName = method.Identifier.Text;
+            if (!methodName.EndsWith("AsObservable")) continue;
+            
+            // Basic verify return type starts with Observable
+            // (We could check GenericNameSyntax but text check is usually enough given naming conventions)
+            if (!method.ReturnType.ToString().StartsWith("Observable")) continue;
+
+            // Extract event name
+            var eventName = methodName.Substring(0, methodName.Length - "AsObservable".Length);
+            
+            implementedSet.Add($"{typeName}/{eventName}");
         }
     }
     return implementedSet;
