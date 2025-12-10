@@ -313,6 +313,19 @@ public static class ToolStripItemR3Extends
                 h => tsi.RightToLeftChanged -= h,
                 tkn);
 
+#if NET9_0_OR_GREATER
+        /// <summary><see cref="ToolStripItem.SelectedChanged"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<EventArgs> SelectedChangedAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => tsi.SelectedChanged += h,
+                h => tsi.SelectedChanged -= h,
+                tkn);
+#endif
+
         /// <summary><see cref="ToolStripItem.TextChanged"/> as <see cref="Observable"/></summary>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>

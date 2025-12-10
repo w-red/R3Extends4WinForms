@@ -26,8 +26,7 @@ public static class FormR3Extends
                 h => frm.Load -= h,
                 tkn);
 
-#if NET10_0_OR_GREATER
-#else
+#if !NET10_0_OR_GREATER
         /// <summary><see cref="Form.Closing"/> as <see cref="Observable"/></summary>
         /// <param name="tkn">token</param>
         /// <returns>Observable object.</returns>
@@ -48,6 +47,52 @@ public static class FormR3Extends
                 h => (s, e) => h(e),
                 h => frm.Closed += h,
                 h => frm.Closed -= h,
+                tkn);
+#endif
+
+#if NET9_0_OR_GREATER
+        /// <summary><see cref="Form.FormBorderColorChanged"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<EventArgs> FormBorderColorChangedAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => frm.FormBorderColorChanged += h,
+                h => frm.FormBorderColorChanged -= h,
+                tkn);
+
+        /// <summary><see cref="Form.FormCaptionBackColorChanged"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<EventArgs> FormCaptionBackColorChangedAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => frm.FormCaptionBackColorChanged += h,
+                h => frm.FormCaptionBackColorChanged -= h,
+                tkn);
+
+        /// <summary><see cref="Form.FormCaptionTextColorChanged"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<EventArgs> FormCaptionTextColorChangedAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => frm.FormCaptionTextColorChanged += h,
+                h => frm.FormCaptionTextColorChanged -= h,
+                tkn);
+
+        /// <summary><see cref="Form.FormCornerPreferenceChanged"/> as <see cref="Observable"/></summary>
+        /// <param name="tkn">token</param>
+        /// <returns>Observable object.</returns>
+        public Observable<EventArgs> FormCornerPreferenceChangedAsObservable(
+            CancellationToken tkn = default) =>
+            Observable.FromEvent<EventHandler, EventArgs>(
+                h => (s, e) => h(e),
+                h => frm.FormCornerPreferenceChanged += h,
+                h => frm.FormCornerPreferenceChanged -= h,
                 tkn);
 #endif
 
