@@ -18,14 +18,14 @@ var winFormsEvents = GetWinFormsEvents();
 var implementedExtensions = GetImplementedObservableExtensions(Path.Combine(projectRoot, "src"));
 
 var tgtName = "";
-#if NET472_OR_GREATER
-    tgtName = "472";
-#elif NET6_0_OR_GREATER
-    tgtName = "NET6";
+#if NET10_0_OR_GREATER
+    tgtName = "NET10";
 #elif NET8_0_OR_GREATER
     tgtName = "NET8";
-#elif NET10_0_OR_GREATER
-    tgtName = "NET10";
+#elif NET6_0_OR_GREATER
+    tgtName = "NET6";
+#elif NET472_OR_GREATER
+    tgtName = "472";
 #endif
 var reportPath = 
     Path

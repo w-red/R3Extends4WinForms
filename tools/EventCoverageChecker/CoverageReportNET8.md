@@ -1,10 +1,10 @@
 # Event Coverage Report
 
-*Generated on 2025-12-09 23:57:36Z*
+*Generated on 2025-12-09 23:56:03Z*
 
-*Target Framework .NETFramework,Version=v4.7.2*
+*Target Framework .NETCoreApp,Version=v8.0*
 
-**Total Events:** 571 | **Implemented:** 677 | **Missing:** 0
+**Total Events:** 530 | **Implemented:** 677 | **Missing:** 0
 
 ## Coverage Details by Class
 
@@ -21,6 +21,13 @@
 | Status | Event Name |
 |:------:|------------|
 | ✅ | CollectionChanged |
+
+### `BindableComponent`
+**Coverage: 100%** (1 / 1)
+
+| Status | Event Name |
+|:------:|------------|
+| ✅ | BindingContextChanged |
 
 ### `Binding`
 **Coverage: 100%** (3 / 3)
@@ -73,11 +80,14 @@
 | ✅ | PositionChanged |
 
 ### `ButtonBase`
-**Coverage: 100%** (1 / 1)
+**Coverage: 100%** (4 / 4)
 
 | Status | Event Name |
 |:------:|------------|
 | ✅ | AutoSizeChanged |
+| ✅ | CommandCanExecuteChanged |
+| ✅ | CommandChanged |
+| ✅ | CommandParameterChanged |
 
 ### `CheckBox`
 **Coverage: 100%** (3 / 3)
@@ -118,16 +128,8 @@
 |:------:|------------|
 | ✅ | HelpRequest |
 
-### `ContextMenu`
-**Coverage: 100%** (2 / 2)
-
-| Status | Event Name |
-|:------:|------------|
-| ✅ | Collapse |
-| ✅ | Popup |
-
 ### `Control`
-**Coverage: 100%** (62 / 62)
+**Coverage: 100%** (63 / 63)
 
 | Status | Event Name |
 |:------:|------------|
@@ -143,6 +145,7 @@
 | ✅ | ControlAdded |
 | ✅ | ControlRemoved |
 | ✅ | CursorChanged |
+| ✅ | DataContextChanged |
 | ✅ | DockChanged |
 | ✅ | DoubleClick |
 | ✅ | DpiChangedAfterParent |
@@ -202,74 +205,6 @@
 | ✅ | ItemChanged |
 | ✅ | ListChanged |
 | ✅ | MetaDataChanged |
-
-### `DataGrid`
-**Coverage: 100%** (14 / 14)
-
-| Status | Event Name |
-|:------:|------------|
-| ✅ | AllowNavigationChanged |
-| ✅ | BackButtonClick |
-| ✅ | BackgroundColorChanged |
-| ✅ | BorderStyleChanged |
-| ✅ | CaptionVisibleChanged |
-| ✅ | CurrentCellChanged |
-| ✅ | DataSourceChanged |
-| ✅ | FlatModeChanged |
-| ✅ | Navigate |
-| ✅ | ParentRowsLabelStyleChanged |
-| ✅ | ParentRowsVisibleChanged |
-| ✅ | ReadOnlyChanged |
-| ✅ | Scroll |
-| ✅ | ShowParentDetailsButtonClick |
-
-### `DataGridBoolColumn`
-**Coverage: 100%** (3 / 3)
-
-| Status | Event Name |
-|:------:|------------|
-| ✅ | AllowNullChanged |
-| ✅ | FalseValueChanged |
-| ✅ | TrueValueChanged |
-
-### `DataGridColumnStyle`
-**Coverage: 100%** (7 / 7)
-
-| Status | Event Name |
-|:------:|------------|
-| ✅ | AlignmentChanged |
-| ✅ | FontChanged |
-| ✅ | HeaderTextChanged |
-| ✅ | MappingNameChanged |
-| ✅ | NullTextChanged |
-| ✅ | ReadOnlyChanged |
-| ✅ | WidthChanged |
-
-### `DataGridTableStyle`
-**Coverage: 100%** (20 / 20)
-
-| Status | Event Name |
-|:------:|------------|
-| ✅ | AllowSortingChanged |
-| ✅ | AlternatingBackColorChanged |
-| ✅ | BackColorChanged |
-| ✅ | ColumnHeadersVisibleChanged |
-| ✅ | ForeColorChanged |
-| ✅ | GridLineColorChanged |
-| ✅ | GridLineStyleChanged |
-| ✅ | HeaderBackColorChanged |
-| ✅ | HeaderFontChanged |
-| ✅ | HeaderForeColorChanged |
-| ✅ | LinkColorChanged |
-| ✅ | LinkHoverColorChanged |
-| ✅ | MappingNameChanged |
-| ✅ | PreferredColumnWidthChanged |
-| ✅ | PreferredRowHeightChanged |
-| ✅ | ReadOnlyChanged |
-| ✅ | RowHeadersVisibleChanged |
-| ✅ | RowHeaderWidthChanged |
-| ✅ | SelectionBackColorChanged |
-| ✅ | SelectionForeColorChanged |
 
 ### `DataGridView`
 **Coverage: 100%** (117 / 117)
@@ -479,20 +414,6 @@
 | ✅ | RightToLeftLayoutChanged |
 | ✅ | Shown |
 
-### `GridColumnStylesCollection`
-**Coverage: 100%** (1 / 1)
-
-| Status | Event Name |
-|:------:|------------|
-| ✅ | CollectionChanged |
-
-### `GridTableStylesCollection`
-**Coverage: 100%** (1 / 1)
-
-| Status | Event Name |
-|:------:|------------|
-| ✅ | CollectionChanged |
-
 ### `GroupBox`
 **Coverage: 100%** (1 / 1)
 
@@ -595,7 +516,7 @@
 | ✅ | ValueMemberChanged |
 
 ### `ListView`
-**Coverage: 100%** (21 / 21)
+**Coverage: 100%** (23 / 23)
 
 | Status | Event Name |
 |:------:|------------|
@@ -609,6 +530,8 @@
 | ✅ | DrawColumnHeader |
 | ✅ | DrawItem |
 | ✅ | DrawSubItem |
+| ✅ | GroupCollapsedStateChanged |
+| ✅ | GroupTaskLinkClick |
 | ✅ | ItemActivate |
 | ✅ | ItemCheck |
 | ✅ | ItemChecked |
@@ -621,13 +544,6 @@
 | ✅ | SelectedIndexChanged |
 | ✅ | VirtualItemsSelectionRangeChanged |
 
-### `MainMenu`
-**Coverage: 100%** (1 / 1)
-
-| Status | Event Name |
-|:------:|------------|
-| ✅ | Collapse |
-
 ### `MaskedTextBox`
 **Coverage: 100%** (5 / 5)
 
@@ -638,17 +554,6 @@
 | ✅ | MaskInputRejected |
 | ✅ | TextAlignChanged |
 | ✅ | TypeValidationCompleted |
-
-### `MenuItem`
-**Coverage: 100%** (5 / 5)
-
-| Status | Event Name |
-|:------:|------------|
-| ✅ | Click |
-| ✅ | DrawItem |
-| ✅ | MeasureItem |
-| ✅ | Popup |
-| ✅ | Select |
 
 ### `MenuStrip`
 **Coverage: 100%** (2 / 2)
@@ -784,14 +689,6 @@
 | ✅ | SplitterMoved |
 | ✅ | SplitterMoving |
 
-### `StatusBar`
-**Coverage: 100%** (2 / 2)
-
-| Status | Event Name |
-|:------:|------------|
-| ✅ | DrawItem |
-| ✅ | PanelClick |
-
 ### `System.Windows.Forms.Timer`
 **Coverage: 100%** (1 / 1)
 
@@ -826,6 +723,44 @@
 |:------:|------------|
 | ✅ | TextChanged |
 
+### `TaskDialogButton`
+**Coverage: 100%** (1 / 1)
+
+| Status | Event Name |
+|:------:|------------|
+| ✅ | Click |
+
+### `TaskDialogExpander`
+**Coverage: 100%** (1 / 1)
+
+| Status | Event Name |
+|:------:|------------|
+| ✅ | ExpandedChanged |
+
+### `TaskDialogPage`
+**Coverage: 100%** (4 / 4)
+
+| Status | Event Name |
+|:------:|------------|
+| ✅ | Created |
+| ✅ | Destroyed |
+| ✅ | HelpRequest |
+| ✅ | LinkClicked |
+
+### `TaskDialogRadioButton`
+**Coverage: 100%** (1 / 1)
+
+| Status | Event Name |
+|:------:|------------|
+| ✅ | CheckedChanged |
+
+### `TaskDialogVerificationCheckBox`
+**Coverage: 100%** (1 / 1)
+
+| Status | Event Name |
+|:------:|------------|
+| ✅ | CheckedChanged |
+
 ### `TextBox`
 **Coverage: 100%** (1 / 1)
 
@@ -846,15 +781,6 @@
 | ✅ | MouseClick |
 | ✅ | MultilineChanged |
 | ✅ | ReadOnlyChanged |
-
-### `ToolBar`
-**Coverage: 100%** (3 / 3)
-
-| Status | Event Name |
-|:------:|------------|
-| ✅ | AutoSizeChanged |
-| ✅ | ButtonClick |
-| ✅ | ButtonDropDown |
 
 ### `ToolStrip`
 **Coverage: 100%** (10 / 10)
@@ -933,12 +859,15 @@
 | ✅ | DropDownOpening |
 
 ### `ToolStripItem`
-**Coverage: 100%** (19 / 19)
+**Coverage: 100%** (22 / 22)
 
 | Status | Event Name |
 |:------:|------------|
 | ✅ | BackColorChanged |
 | ✅ | Click |
+| ✅ | CommandCanExecuteChanged |
+| ✅ | CommandChanged |
+| ✅ | CommandParameterChanged |
 | ✅ | DisplayStyleChanged |
 | ✅ | DoubleClick |
 | ✅ | EnabledChanged |

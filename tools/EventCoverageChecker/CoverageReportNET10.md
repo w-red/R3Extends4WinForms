@@ -1,10 +1,10 @@
 # Event Coverage Report
 
-*Generated on 2025-12-09 06:40:27Z*
+*Generated on 2025-12-09 23:59:29Z*
 
-*Target Framework .NETFramework,Version=v4.7.2*
+*Target Framework .NETCoreApp,Version=v10.0*
 
-**Total Events:** 571 | **Implemented:** 614 | **Missing:** 63
+**Total Events:** 594 | **Implemented:** 677 | **Missing:** 5
 
 ## Coverage Details by Class
 
@@ -21,6 +21,13 @@
 | Status | Event Name |
 |:------:|------------|
 | ✅ | CollectionChanged |
+
+### `BindableComponent`
+**Coverage: 100%** (1 / 1)
+
+| Status | Event Name |
+|:------:|------------|
+| ✅ | BindingContextChanged |
 
 ### `Binding`
 **Coverage: 100%** (3 / 3)
@@ -73,11 +80,14 @@
 | ✅ | PositionChanged |
 
 ### `ButtonBase`
-**Coverage: 100%** (1 / 1)
+**Coverage: 100%** (4 / 4)
 
 | Status | Event Name |
 |:------:|------------|
 | ✅ | AutoSizeChanged |
+| ✅ | CommandCanExecuteChanged |
+| ✅ | CommandChanged |
+| ✅ | CommandParameterChanged |
 
 ### `CheckBox`
 **Coverage: 100%** (3 / 3)
@@ -119,15 +129,15 @@
 | ✅ | HelpRequest |
 
 ### `ContextMenu`
-**Coverage: 0%** (0 / 2)
+**Coverage: 100%** (2 / 2)
 
 | Status | Event Name |
 |:------:|------------|
-| ❌ | Collapse |
-| ❌ | Popup |
+| ✅ | Collapse |
+| ✅ | Popup |
 
 ### `Control`
-**Coverage: 100%** (62 / 62)
+**Coverage: 100%** (63 / 63)
 
 | Status | Event Name |
 |:------:|------------|
@@ -143,6 +153,7 @@
 | ✅ | ControlAdded |
 | ✅ | ControlRemoved |
 | ✅ | CursorChanged |
+| ✅ | DataContextChanged |
 | ✅ | DockChanged |
 | ✅ | DoubleClick |
 | ✅ | DpiChangedAfterParent |
@@ -204,72 +215,72 @@
 | ✅ | MetaDataChanged |
 
 ### `DataGrid`
-**Coverage: 0%** (0 / 14)
+**Coverage: 100%** (14 / 14)
 
 | Status | Event Name |
 |:------:|------------|
-| ❌ | AllowNavigationChanged |
-| ❌ | BackButtonClick |
-| ❌ | BackgroundColorChanged |
-| ❌ | BorderStyleChanged |
-| ❌ | CaptionVisibleChanged |
-| ❌ | CurrentCellChanged |
-| ❌ | DataSourceChanged |
-| ❌ | FlatModeChanged |
-| ❌ | Navigate |
-| ❌ | ParentRowsLabelStyleChanged |
-| ❌ | ParentRowsVisibleChanged |
-| ❌ | ReadOnlyChanged |
-| ❌ | Scroll |
-| ❌ | ShowParentDetailsButtonClick |
+| ✅ | AllowNavigationChanged |
+| ✅ | BackButtonClick |
+| ✅ | BackgroundColorChanged |
+| ✅ | BorderStyleChanged |
+| ✅ | CaptionVisibleChanged |
+| ✅ | CurrentCellChanged |
+| ✅ | DataSourceChanged |
+| ✅ | FlatModeChanged |
+| ✅ | Navigate |
+| ✅ | ParentRowsLabelStyleChanged |
+| ✅ | ParentRowsVisibleChanged |
+| ✅ | ReadOnlyChanged |
+| ✅ | Scroll |
+| ✅ | ShowParentDetailsButtonClick |
 
 ### `DataGridBoolColumn`
-**Coverage: 0%** (0 / 3)
+**Coverage: 100%** (3 / 3)
 
 | Status | Event Name |
 |:------:|------------|
-| ❌ | AllowNullChanged |
-| ❌ | FalseValueChanged |
-| ❌ | TrueValueChanged |
+| ✅ | AllowNullChanged |
+| ✅ | FalseValueChanged |
+| ✅ | TrueValueChanged |
 
 ### `DataGridColumnStyle`
-**Coverage: 0%** (0 / 7)
+**Coverage: 100%** (7 / 7)
 
 | Status | Event Name |
 |:------:|------------|
-| ❌ | AlignmentChanged |
-| ❌ | FontChanged |
-| ❌ | HeaderTextChanged |
-| ❌ | MappingNameChanged |
-| ❌ | NullTextChanged |
-| ❌ | ReadOnlyChanged |
-| ❌ | WidthChanged |
+| ✅ | AlignmentChanged |
+| ✅ | FontChanged |
+| ✅ | HeaderTextChanged |
+| ✅ | MappingNameChanged |
+| ✅ | NullTextChanged |
+| ✅ | ReadOnlyChanged |
+| ✅ | WidthChanged |
 
 ### `DataGridTableStyle`
-**Coverage: 0%** (0 / 20)
+**Coverage: 100%** (20 / 20)
 
 | Status | Event Name |
 |:------:|------------|
-| ❌ | AllowSortingChanged |
-| ❌ | AlternatingBackColorChanged |
-| ❌ | BackColorChanged |
-| ❌ | ColumnHeadersVisibleChanged |
-| ❌ | ForeColorChanged |
-| ❌ | GridLineColorChanged |
-| ❌ | GridLineStyleChanged |
-| ❌ | HeaderBackColorChanged |
-| ❌ | HeaderFontChanged |
-| ❌ | HeaderForeColorChanged |
-| ❌ | LinkColorChanged |
-| ❌ | LinkHoverColorChanged |
-| ❌ | MappingNameChanged |
-| ❌ | PreferredColumnWidthChanged |
-| ❌ | PreferredRowHeightChanged |
-| ❌ | ReadOnlyChanged |
-| ❌ | RowHeadersVisibleChanged |
-| ❌ | RowHeaderWidthChanged |
-| ❌ | SelectionBackColorChanged |
-| ❌ | SelectionForeColorChanged |
+| ✅ | AllowSortingChanged |
+| ✅ | AlternatingBackColorChanged |
+| ✅ | BackColorChanged |
+| ✅ | ColumnHeadersVisibleChanged |
+| ✅ | ForeColorChanged |
+| ✅ | GridLineColorChanged |
+| ✅ | GridLineStyleChanged |
+| ✅ | HeaderBackColorChanged |
+| ✅ | HeaderFontChanged |
+| ✅ | HeaderForeColorChanged |
+| ✅ | LinkColorChanged |
+| ✅ | LinkHoverColorChanged |
+| ✅ | MappingNameChanged |
+| ✅ | PreferredColumnWidthChanged |
+| ✅ | PreferredRowHeightChanged |
+| ✅ | ReadOnlyChanged |
+| ✅ | RowHeadersVisibleChanged |
+| ✅ | RowHeaderWidthChanged |
+| ✅ | SelectionBackColorChanged |
+| ✅ | SelectionForeColorChanged |
 
 ### `DataGridView`
 **Coverage: 100%** (117 / 117)
@@ -455,7 +466,7 @@
 | ✅ | Apply |
 
 ### `Form`
-**Coverage: 100%** (19 / 19)
+**Coverage: 83%** (19 / 23)
 
 | Status | Event Name |
 |:------:|------------|
@@ -464,8 +475,12 @@
 | ✅ | AutoValidateChanged |
 | ✅ | Deactivate |
 | ✅ | DpiChanged |
+| ❌ | FormBorderColorChanged |
+| ❌ | FormCaptionBackColorChanged |
+| ❌ | FormCaptionTextColorChanged |
 | ✅ | FormClosed |
 | ✅ | FormClosing |
+| ❌ | FormCornerPreferenceChanged |
 | ✅ | HelpButtonClicked |
 | ✅ | InputLanguageChanged |
 | ✅ | InputLanguageChanging |
@@ -480,18 +495,18 @@
 | ✅ | Shown |
 
 ### `GridColumnStylesCollection`
-**Coverage: 0%** (0 / 1)
+**Coverage: 100%** (1 / 1)
 
 | Status | Event Name |
 |:------:|------------|
-| ❌ | CollectionChanged |
+| ✅ | CollectionChanged |
 
 ### `GridTableStylesCollection`
-**Coverage: 0%** (0 / 1)
+**Coverage: 100%** (1 / 1)
 
 | Status | Event Name |
 |:------:|------------|
-| ❌ | CollectionChanged |
+| ✅ | CollectionChanged |
 
 ### `GroupBox`
 **Coverage: 100%** (1 / 1)
@@ -595,7 +610,7 @@
 | ✅ | ValueMemberChanged |
 
 ### `ListView`
-**Coverage: 100%** (21 / 21)
+**Coverage: 100%** (23 / 23)
 
 | Status | Event Name |
 |:------:|------------|
@@ -609,6 +624,8 @@
 | ✅ | DrawColumnHeader |
 | ✅ | DrawItem |
 | ✅ | DrawSubItem |
+| ✅ | GroupCollapsedStateChanged |
+| ✅ | GroupTaskLinkClick |
 | ✅ | ItemActivate |
 | ✅ | ItemCheck |
 | ✅ | ItemChecked |
@@ -622,11 +639,11 @@
 | ✅ | VirtualItemsSelectionRangeChanged |
 
 ### `MainMenu`
-**Coverage: 0%** (0 / 1)
+**Coverage: 100%** (1 / 1)
 
 | Status | Event Name |
 |:------:|------------|
-| ❌ | Collapse |
+| ✅ | Collapse |
 
 ### `MaskedTextBox`
 **Coverage: 100%** (5 / 5)
@@ -640,15 +657,15 @@
 | ✅ | TypeValidationCompleted |
 
 ### `MenuItem`
-**Coverage: 0%** (0 / 5)
+**Coverage: 100%** (5 / 5)
 
 | Status | Event Name |
 |:------:|------------|
-| ❌ | Click |
-| ❌ | DrawItem |
-| ❌ | MeasureItem |
-| ❌ | Popup |
-| ❌ | Select |
+| ✅ | Click |
+| ✅ | DrawItem |
+| ✅ | MeasureItem |
+| ✅ | Popup |
+| ✅ | Select |
 
 ### `MenuStrip`
 **Coverage: 100%** (2 / 2)
@@ -785,12 +802,19 @@
 | ✅ | SplitterMoving |
 
 ### `StatusBar`
-**Coverage: 0%** (0 / 2)
+**Coverage: 100%** (2 / 2)
 
 | Status | Event Name |
 |:------:|------------|
-| ❌ | DrawItem |
-| ❌ | PanelClick |
+| ✅ | DrawItem |
+| ✅ | PanelClick |
+
+### `System.Windows.Forms.Timer`
+**Coverage: 100%** (1 / 1)
+
+| Status | Event Name |
+|:------:|------------|
+| ✅ | Tick |
 
 ### `TabControl`
 **Coverage: 100%** (7 / 7)
@@ -813,11 +837,49 @@
 | ✅ | CellPaint |
 
 ### `TabPage`
-**Coverage: 0%** (0 / 1)
+**Coverage: 100%** (1 / 1)
 
 | Status | Event Name |
 |:------:|------------|
-| ❌ | TextChanged |
+| ✅ | TextChanged |
+
+### `TaskDialogButton`
+**Coverage: 100%** (1 / 1)
+
+| Status | Event Name |
+|:------:|------------|
+| ✅ | Click |
+
+### `TaskDialogExpander`
+**Coverage: 100%** (1 / 1)
+
+| Status | Event Name |
+|:------:|------------|
+| ✅ | ExpandedChanged |
+
+### `TaskDialogPage`
+**Coverage: 100%** (4 / 4)
+
+| Status | Event Name |
+|:------:|------------|
+| ✅ | Created |
+| ✅ | Destroyed |
+| ✅ | HelpRequest |
+| ✅ | LinkClicked |
+
+### `TaskDialogRadioButton`
+**Coverage: 100%** (1 / 1)
+
+| Status | Event Name |
+|:------:|------------|
+| ✅ | CheckedChanged |
+
+### `TaskDialogVerificationCheckBox`
+**Coverage: 100%** (1 / 1)
+
+| Status | Event Name |
+|:------:|------------|
+| ✅ | CheckedChanged |
 
 ### `TextBox`
 **Coverage: 100%** (1 / 1)
@@ -840,21 +902,14 @@
 | ✅ | MultilineChanged |
 | ✅ | ReadOnlyChanged |
 
-### `Timer`
-**Coverage: 0%** (0 / 1)
-
-| Status | Event Name |
-|:------:|------------|
-| ❌ | Tick |
-
 ### `ToolBar`
-**Coverage: 0%** (0 / 3)
+**Coverage: 100%** (3 / 3)
 
 | Status | Event Name |
 |:------:|------------|
-| ❌ | AutoSizeChanged |
-| ❌ | ButtonClick |
-| ❌ | ButtonDropDown |
+| ✅ | AutoSizeChanged |
+| ✅ | ButtonClick |
+| ✅ | ButtonDropDown |
 
 ### `ToolStrip`
 **Coverage: 100%** (10 / 10)
@@ -892,12 +947,12 @@
 | ✅ | TextUpdate |
 
 ### `ToolStripContentPanel`
-**Coverage: 0%** (0 / 2)
+**Coverage: 100%** (2 / 2)
 
 | Status | Event Name |
 |:------:|------------|
-| ❌ | Load |
-| ❌ | RendererChanged |
+| ✅ | Load |
+| ✅ | RendererChanged |
 
 ### `ToolStripControlHost`
 **Coverage: 100%** (7 / 7)
@@ -933,12 +988,15 @@
 | ✅ | DropDownOpening |
 
 ### `ToolStripItem`
-**Coverage: 100%** (19 / 19)
+**Coverage: 96%** (22 / 23)
 
 | Status | Event Name |
 |:------:|------------|
 | ✅ | BackColorChanged |
 | ✅ | Click |
+| ✅ | CommandCanExecuteChanged |
+| ✅ | CommandChanged |
+| ✅ | CommandParameterChanged |
 | ✅ | DisplayStyleChanged |
 | ✅ | DoubleClick |
 | ✅ | EnabledChanged |
@@ -954,6 +1012,7 @@
 | ✅ | Paint |
 | ✅ | QueryAccessibilityHelp |
 | ✅ | RightToLeftChanged |
+| ❌ | SelectedChanged |
 | ✅ | TextChanged |
 | ✅ | VisibleChanged |
 
