@@ -1,5 +1,5 @@
 # Event Handler & Argument Type Check Report
-Generated on 2025-12-10 01:43:00Z
+Generated on 2025-12-10 02:59:52Z
 
 ## Summary
 | Category | Count |
