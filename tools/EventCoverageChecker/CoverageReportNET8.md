@@ -1,10 +1,10 @@
 # Event Coverage Report
 
-*Generated on 2025-12-10 02:07:18Z*
+*Generated on 2025-12-10 02:59:25Z*
 
 *Target Framework .NETCoreApp,Version=v8.0*
 
-**Total Events:** 530 | **Implemented:** 683 | **Missing:** 0
+**Total Active Events:** 530 | **Implemented:** 530 | **Missing:** 0 | **Ignored:** 0
 
 ## Coverage Details by Class
 

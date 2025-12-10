@@ -1,10 +1,10 @@
 # Event Coverage Report
 
-*Generated on 2025-12-10 02:06:57Z*
+*Generated on 2025-12-10 02:59:21Z*
 
 *Target Framework .NETFramework,Version=v4.7.2*
 
-**Total Events:** 571 | **Implemented:** 665 | **Missing:** 0
+**Total Active Events:** 571 | **Implemented:** 571 | **Missing:** 0 | **Ignored:** 0
 
 ## Coverage Details by Class
 
