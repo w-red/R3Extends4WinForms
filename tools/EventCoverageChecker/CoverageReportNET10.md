@@ -1,10 +1,10 @@
 # Event Coverage Report
 
-*Generated on 2025-12-10 00:19:30Z*
+*Generated on 2025-12-10 00:26:25Z*
 
 *Target Framework .NETCoreApp,Version=v10.0*
 
-**Total Events:** 594 | **Implemented:** 681 | **Missing:** 3
+**Total Events:** 594 | **Implemented:** 682 | **Missing:** 0
 
 ## Coverage Details by Class
 
@@ -466,7 +466,7 @@
 | ✅ | Apply |
 
 ### `Form`
-**Coverage: 91%** (21 / 23)
+**Coverage: 100%** (23 / 23)
 
 | Status | Event Name |
 |:------:|------------|
@@ -477,10 +477,10 @@
 | ✅ | DpiChanged |
 | ✅ | FormBorderColorChanged |
 | ✅ | FormCaptionBackColorChanged |
-| ❌ | FormCaptionTextColorChanged |
+| ✅ | FormCaptionTextColorChanged |
 | ✅ | FormClosed |
 | ✅ | FormClosing |
-| ❌ | FormCornerPreferenceChanged |
+| ✅ | FormCornerPreferenceChanged |
 | ✅ | HelpButtonClicked |
 | ✅ | InputLanguageChanged |
 | ✅ | InputLanguageChanging |
@@ -988,7 +988,7 @@
 | ✅ | DropDownOpening |
 
 ### `ToolStripItem`
-**Coverage: 96%** (22 / 23)
+**Coverage: 100%** (23 / 23)
 
 | Status | Event Name |
 |:------:|------------|
@@ -1012,7 +1012,7 @@
 | ✅ | Paint |
 | ✅ | QueryAccessibilityHelp |
 | ✅ | RightToLeftChanged |
-| ❌ | SelectedChanged |
+| ✅ | SelectedChanged |
 | ✅ | TextChanged |
 | ✅ | VisibleChanged |
 
