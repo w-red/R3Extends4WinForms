@@ -1,10 +1,10 @@
 # Event Coverage Report
 
-*Generated on 2025-12-09 23:59:29Z*
+*Generated on 2025-12-10 00:19:30Z*
 
 *Target Framework .NETCoreApp,Version=v10.0*
 
-**Total Events:** 594 | **Implemented:** 677 | **Missing:** 5
+**Total Events:** 594 | **Implemented:** 681 | **Missing:** 3
 
 ## Coverage Details by Class
 
@@ -466,7 +466,7 @@
 | ✅ | Apply |
 
 ### `Form`
-**Coverage: 83%** (19 / 23)
+**Coverage: 91%** (21 / 23)
 
 | Status | Event Name |
 |:------:|------------|
@@ -475,8 +475,8 @@
 | ✅ | AutoValidateChanged |
 | ✅ | Deactivate |
 | ✅ | DpiChanged |
-| ❌ | FormBorderColorChanged |
-| ❌ | FormCaptionBackColorChanged |
+| ✅ | FormBorderColorChanged |
+| ✅ | FormCaptionBackColorChanged |
 | ❌ | FormCaptionTextColorChanged |
 | ✅ | FormClosed |
 | ✅ | FormClosing |
