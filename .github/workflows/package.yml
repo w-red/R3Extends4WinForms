@@ -38,15 +38,20 @@ jobs:
       run: |
         if ($env:GITHUB_REF -match 'refs/tags/v(.+)') {
           $tagVersion = $matches[1]
-          # v1000 形式の場合、1.0.0.0 に変換
-          if ($tagVersion -match '^\d+$') {
-            $major = $tagVersion.Substring(0, 1)
-            $minor = if ($tagVersion.Length -gt 1) { $tagVersion.Substring(1, 1) } else { "0" }
-            $patch = if ($tagVersion.Length -gt 2) { $tagVersion.Substring(2, 1) } else { "0" }
-            $build = if ($tagVersion.Length -gt 3) { $tagVersion.Substring(3, 1) } else { "0" }
-            $version = "$major.$minor.$patch.$build"
+          
+          # サフィックスを分離 (例: 1000-test → 数字部分: 1000, サフィックス: -test)
+          if ($tagVersion -match '^(\d+)(.*)$') {
+            $numberPart = $matches[1]
+            $suffix = $matches[2]
+            
+            # 数字部分を4桁のバージョンに変換
+            $major = $numberPart.Substring(0, 1)
+            $minor = if ($numberPart.Length -gt 1) { $numberPart.Substring(1, 1) } else { "0" }
+            $patch = if ($numberPart.Length -gt 2) { $numberPart.Substring(2, 1) } else { "0" }
+            $build = if ($numberPart.Length -gt 3) { $numberPart.Substring(3, 1) } else { "0" }
+            $version = "$major.$minor.$patch.$build$suffix"
           } else {
-            # v1.0.0 のような通常形式はそのまま使用
+            # v1.0.0 や v1.0.0-test のような通常形式はそのまま使用
             $version = $tagVersion
           }
         } else {
