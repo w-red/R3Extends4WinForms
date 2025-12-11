@@ -34,9 +34,20 @@ jobs:
       shell: pwsh
       run: |
         if ($env:GITHUB_REF -match 'refs/tags/v(.+)') {
-          $version = $matches[1]
+          $tagVersion = $matches[1]
+          # v1000 形式の場合、1.0.0.0 に変換
+          if ($tagVersion -match '^\d+$') {
+            $major = $tagVersion.Substring(0, 1)
+            $minor = if ($tagVersion.Length -gt 1) { $tagVersion.Substring(1, 1) } else { "0" }
+            $patch = if ($tagVersion.Length -gt 2) { $tagVersion.Substring(2, 1) } else { "0" }
+            $build = if ($tagVersion.Length -gt 3) { $tagVersion.Substring(3, 1) } else { "0" }
+            $version = "$major.$minor.$patch.$build"
+          } else {
+            # v1.0.0 のような通常形式はそのまま使用
+            $version = $tagVersion
+          }
         } else {
-          $version = "0.0.0"
+          $version = "0.0.0.0"
         }
         echo "VERSION=$version" >> $env:GITHUB_OUTPUT
         echo "Version: $version"
