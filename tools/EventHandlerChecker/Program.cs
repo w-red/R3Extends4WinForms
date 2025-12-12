@@ -48,8 +48,8 @@ static Dictionary<string, EventDef> GetWinFormsEventDefs()
 
     foreach (var type in types)
     {
-        // Removed DeclaredOnly to find inherited events regarding the specific control type
-        var events = type.GetEvents(BindingFlags.Public | BindingFlags.Instance);
+        // Get both instance and static events to support classes like Application
+        var events = type.GetEvents(BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static);
         foreach (var ev in events)
         {
 
@@ -69,10 +69,34 @@ static Dictionary<string, EventDef> GetWinFormsEventDefs()
             // Timer is special case often in these checks, but strictly speaking it's System.Windows.Forms.Timer
             if (type.Name == "Timer") key = "System.Windows.Forms.Timer/" + ev.Name;
 
-            defs[key] = new EventDef(handlerType.Name, argsType.Name);
+            defs[key] = new EventDef(FormatTypeName(handlerType), FormatTypeName(argsType));
         }
     }
     return defs;
+}
+
+static string FormatTypeName(Type type)
+{
+    if (!type.IsGenericType)
+    {
+        return type.FullName ?? type.Name;
+    }
+
+    var genericTypeDef = type.GetGenericTypeDefinition();
+    var genericArgs = type.GetGenericArguments();
+    
+    // Get the name without the `1, `2 suffix
+    var baseName = genericTypeDef.FullName ?? genericTypeDef.Name;
+    var backtickIndex = baseName.IndexOf('`');
+    if (backtickIndex > 0)
+    {
+        baseName = baseName.Substring(0, backtickIndex);
+    }
+    
+    // Format generic arguments
+    var formattedArgs = string.Join(", ", genericArgs.Select(FormatTypeName));
+    
+    return $"{baseName}<{formattedArgs}>";
 }
 
 static List<ImplementationDef> GetOrParseImplementations(string srcPath)
@@ -223,8 +247,8 @@ static bool IsMatch(string expected, string actual)
     // If exact match
     if (actual == expected) return true;
     
-    // If actual is fully qualified
-    if (actual.EndsWith("." + expected)) return true;
+    // If actual is qualified
+    if (actual.EndsWith("." + expected) || expected.EndsWith($".{actual}")) return true;
 
     // If expected was generic (stripped `1), check if actual starts with it + <
     if (actual.StartsWith(expected + "<") || actual.EndsWith("." + expected + "<")) return true;

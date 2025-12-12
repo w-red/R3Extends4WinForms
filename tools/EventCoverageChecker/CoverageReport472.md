@@ -1,12 +1,24 @@
 # Event Coverage Report
 
-*Generated on 2025-12-10 05:22:54Z*
+*Generated on 2025-12-11 05:17:27Z*
 
 *Target Framework .NETFramework,Version=v4.7.2*
 
-**Total Active Events:** 571 | **Implemented:** 571 | **Missing:** 0 | **Ignored:** 0
+**Total Active Events:** 578 | **Implemented:** 577 | **Missing:** 1 | **Ignored:** 0
 
 ## Coverage Details by Class
+
+### [`Application`](https://learn.microsoft.com/dotnet/api/system.windows.forms.application)
+**Coverage: 100%** (6 / 6)
+
+| Status | Event Name |
+|:------:|------------|
+| ✅ | [ApplicationExit](https://learn.microsoft.com/dotnet/api/system.windows.forms.application.applicationexit) |
+| ✅ | [EnterThreadModal](https://learn.microsoft.com/dotnet/api/system.windows.forms.application.enterthreadmodal) |
+| ✅ | [Idle](https://learn.microsoft.com/dotnet/api/system.windows.forms.application.idle) |
+| ✅ | [LeaveThreadModal](https://learn.microsoft.com/dotnet/api/system.windows.forms.application.leavethreadmodal) |
+| ✅ | [ThreadException](https://learn.microsoft.com/dotnet/api/system.windows.forms.application.threadexception) |
+| ✅ | [ThreadExit](https://learn.microsoft.com/dotnet/api/system.windows.forms.application.threadexit) |
 
 ### [`ApplicationContext`](https://learn.microsoft.com/dotnet/api/system.windows.forms.applicationcontext)
 **Coverage: 100%** (1 / 1)
@@ -956,6 +968,13 @@
 | ✅ | [RightToLeftChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.toolstripitem.righttoleftchanged) |
 | ✅ | [TextChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.toolstripitem.textchanged) |
 | ✅ | [VisibleChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.toolstripitem.visiblechanged) |
+
+### [`ToolStripManager`](https://learn.microsoft.com/dotnet/api/system.windows.forms.toolstripmanager)
+**Coverage: 0%** (0 / 1)
+
+| Status | Event Name |
+|:------:|------------|
+| ❌ | [RendererChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.toolstripmanager.rendererchanged) |
 
 ### [`ToolStripMenuItem`](https://learn.microsoft.com/dotnet/api/system.windows.forms.toolstripmenuitem)
 **Coverage: 100%** (2 / 2)

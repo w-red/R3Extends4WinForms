@@ -23,7 +23,7 @@ var tgtName = "";
 
 #if NET10_0_OR_GREATER
     tgtName = "NET10";
-    preprocessorSymbols.AddRange(new[] { 
+    preprocessorSymbols.AddRange([ 
         "NET10_0", "NET10_0_OR_GREATER", 
         "NET9_0_OR_GREATER", 
         "NET8_0_OR_GREATER", 
@@ -31,26 +31,26 @@ var tgtName = "";
         "NET6_0_OR_GREATER", 
         "NET5_0_OR_GREATER", 
         "NETCOREAPP", "NETCOREAPP3_1_OR_GREATER" 
-    });
+    ]);
 #elif NET8_0_OR_GREATER
     tgtName = "NET8";
-    preprocessorSymbols.AddRange(new[] { 
+    preprocessorSymbols.AddRange([
         "NET8_0", "NET8_0_OR_GREATER", 
         "NET7_0_OR_GREATER", 
         "NET6_0_OR_GREATER", 
         "NET5_0_OR_GREATER", 
         "NETCOREAPP", "NETCOREAPP3_1_OR_GREATER" 
-    });
+    ]);
 #elif NET6_0_OR_GREATER
     tgtName = "NET6";
-    preprocessorSymbols.AddRange(new[] { 
+    preprocessorSymbols.AddRange([
         "NET6_0", "NET6_0_OR_GREATER", 
         "NET5_0_OR_GREATER", 
         "NETCOREAPP", "NETCOREAPP3_1_OR_GREATER" 
-    });
+    ]);
 #elif NET472_OR_GREATER || NET472 || NET462_OR_GREATER || NETFRAMEWORK
     tgtName = "472";
-    preprocessorSymbols.AddRange(new[] { 
+    preprocessorSymbols.AddRange([
         "NET472", "NET472_OR_GREATER", 
         "NET471_OR_GREATER", 
         "NET47_OR_GREATER", 
@@ -64,7 +64,7 @@ var tgtName = "";
         "NET35_OR_GREATER", 
         "NET20_OR_GREATER", 
         "NETFRAMEWORK" 
-    });
+    ]);
 #else
     tgtName = "Unknown";
 #endif
@@ -123,11 +123,18 @@ static void GenerateReport(
     HashSet<string> ignoredTypes,
     string path)
 {
-    var activeEvents = allEvents.Where(e => !ignoredTypes.Contains(e.Split('/')[0])).ToHashSet();
-    var ignoredEvents = allEvents.Where(e => ignoredTypes.Contains(e.Split('/')[0])).ToHashSet();
+    var activeEvents = allEvents
+        .Where(e => !ignoredTypes.Contains(e.Split('/')[0]))
+        .ToHashSet();
+    var ignoredEvents = allEvents
+        .Where(e => ignoredTypes.Contains(e.Split('/')[0]))
+        .ToHashSet();
 
     var report = new StringBuilder();
-    var missingEvents = activeEvents.Except(implementedEvents).ToHashSet();
+    var missingEvents = 
+        activeEvents
+        .Except(implementedEvents)
+        .ToHashSet();
     
     report.AppendLine("# Event Coverage Report").AppendLine()
         .AppendLine($"*Generated on {DateTime.UtcNow:u}*").AppendLine()
@@ -279,9 +286,10 @@ static HashSet<string> GetWinFormsEvents()
 
     foreach (var type in types)
     {
+        // Get both instance and static events to support classes like Application
         var events =
             type
-            .GetEvents(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+            .GetEvents(BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static | BindingFlags.DeclaredOnly);
         foreach (var ev in events)
         {
             var browsableAttr = 
@@ -306,6 +314,28 @@ static HashSet<string> GetWinFormsEvents()
             }
         }
     }
+    
+    // Add static events from Application class
+    var appType = typeof(System.Windows.Forms.Application);
+    var staticEvents = appType.GetEvents(BindingFlags.Public | BindingFlags.Static | BindingFlags.DeclaredOnly);
+    
+    foreach (var ev in staticEvents)
+    {
+        var browsableAttr = 
+            ev
+            .GetCustomAttributes(typeof(BrowsableAttribute), false)
+            .OfType<BrowsableAttribute>()
+            .FirstOrDefault();
+        
+        // Exclude events where Browsable(false) is set
+        if (browsableAttr != null && !browsableAttr.Browsable)
+        {
+            continue;
+        }
+        
+        eventsSet.Add($"Application/{ev.Name}");
+    }
+    
     return eventsSet;
 }
 
@@ -330,6 +360,9 @@ static HashSet<string> GetImplementedObservableExtensions(string srcPath, List<s
         {
             typeName = "System.Windows.Forms.Timer";
         }
+        // Application is a special case - it's a static class with static events
+        // but we still want to track it as "Application"
+        // (no special handling needed, just use "Application")
         
         var content = File.ReadAllText(file);
 
