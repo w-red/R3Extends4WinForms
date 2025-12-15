@@ -1,6 +1,8 @@
-﻿using System.Reflection;
+﻿using R3Extends4WinForms;
+using System.Diagnostics;
+using System.Reflection;
 using System.Text;
-using System.Text.RegularExpressions;
+using R3;
 
 Console.WriteLine("Event Handler & Argument Checker");
 Console.WriteLine("================================");
@@ -13,12 +15,14 @@ if (projectRoot == null)
 }
 
 var winFormsEvents = GetWinFormsEventDefs();
+var implEvents = GetR3Ex4WinFormsEventDefs(); // Currently unused, but could be extended for more checks.
+
 var srcPath = Path.Combine(projectRoot, "src");
-var implementations = GetOrParseImplementations(srcPath);
+//var implementations = GetOrParseImplementations(srcPath);
 
 var tgtName = "";
 #if NET10_0_OR_GREATER
-    tgtName = "NET10";
+tgtName = "NET10";
 #elif NET8_0_OR_GREATER
     tgtName = "NET8";
 #elif NET6_0_OR_GREATER
@@ -29,19 +33,20 @@ var tgtName = "";
 
 var reportPath = Path.Combine(projectRoot, "tools", "EventHandlerChecker", $"HandlerTypeReport{tgtName}.md");
 
-GenerateReport(winFormsEvents, implementations, reportPath);
+GenerateReport(winFormsEvents, implEvents, reportPath);
 
 Console.WriteLine($"Analysis complete.");
 Console.WriteLine($"Report generated at: {reportPath}");
 
+
 static Dictionary<string, EventDef> GetWinFormsEventDefs()
 {
     var defs = new Dictionary<string, EventDef>();
-    var assembly = typeof(Control).Assembly; 
+    var assembly = typeof(Control).Assembly;
 
     // We only care about types that are likely to have extensions
     // Filter to System.Windows.Forms namespace and Public types
-    var types = 
+    var types =
         assembly
         .GetTypes()
         .Where(t => t.IsPublic && t.Namespace == "System.Windows.Forms");
@@ -52,7 +57,6 @@ static Dictionary<string, EventDef> GetWinFormsEventDefs()
         var events = type.GetEvents(BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static);
         foreach (var ev in events)
         {
-
             var handlerType = ev.EventHandlerType;
             if (handlerType == null) continue;
 
@@ -65,16 +69,66 @@ static Dictionary<string, EventDef> GetWinFormsEventDefs()
             // parameters[1] is 'e' (EventArgs)
             var argsType = parameters[1].ParameterType;
 
-            var key = $"{GetCleanTypeName(type.Name)}/{ev.Name}";
+            var key = $"{type.Name}/{ev.Name}";
             // Timer is special case often in these checks, but strictly speaking it's System.Windows.Forms.Timer
             if (type.Name == "Timer") key = "System.Windows.Forms.Timer/" + ev.Name;
 
-            defs[key] = new EventDef(FormatTypeName(handlerType), FormatTypeName(argsType));
+            defs[key] = new EventDef(handlerType, argsType);
         }
     }
     return defs;
 }
 
+static Dictionary<string, ImplementationDef> GetR3Ex4WinFormsEventDefs()
+{
+    var defs = new Dictionary<string, ImplementationDef>();
+    var assembly = typeof(ApplicationR3Extends).Assembly;
+
+    // We only care about types that are likely to have extensions
+    // Filter to System.Windows.Forms namespace and Public types
+    var types =
+        assembly
+        .GetTypes()
+        .Where(t => t.IsPublic);
+
+    foreach (var type in types)
+    {
+        Debug.Print($"Checking type: {type.Name}");
+        // Get both instance and static events to support classes like Application
+        var methods =
+            type
+            .GetMethods(BindingFlags.Public | BindingFlags.NonPublic |
+                        BindingFlags.Instance | BindingFlags.Static |
+                        BindingFlags.DeclaredOnly);
+        foreach (var mt in methods)
+        {
+            Debug.Print($"Checking method: {mt.Name}, ret:{mt.ReturnType.GetGenericTypeDefinition()}, args:{mt.GetParameters()}");
+
+            var impTypeName = 
+                mt.DeclaringType.Name.Replace("R3Extends", "");
+            var impEventName = 
+                mt.Name.Replace("AsObservable", "");
+            var retType = 
+                mt.ReturnType.GetGenericArguments();
+            if (impTypeName == "Timer")
+            {
+                impTypeName = "System.Windows.Forms.Timer";
+            }
+
+            defs.Add(
+                $"{impTypeName}/{impEventName}",
+                new ImplementationDef(
+                    impTypeName,
+                    impEventName,
+                    retType[0]  // Observable<T> -> T
+                )
+            );
+        }
+    }
+    return defs;
+}
+
+#if false
 static string FormatTypeName(Type type)
 {
     if (!type.IsGenericType)
@@ -84,7 +138,7 @@ static string FormatTypeName(Type type)
 
     var genericTypeDef = type.GetGenericTypeDefinition();
     var genericArgs = type.GetGenericArguments();
-    
+
     // Get the name without the `1, `2 suffix
     var baseName = genericTypeDef.FullName ?? genericTypeDef.Name;
     var backtickIndex = baseName.IndexOf('`');
@@ -92,37 +146,80 @@ static string FormatTypeName(Type type)
     {
         baseName = baseName.Substring(0, backtickIndex);
     }
-    
+
     // Format generic arguments
     var formattedArgs = string.Join(", ", genericArgs.Select(FormatTypeName));
-    
+
     return $"{baseName}<{formattedArgs}>";
 }
+#endif
 
+
+static string GetFriendlyTypeNameString(Type type)
+{
+    if (type.IsGenericType)
+    {
+        // ジェネリック型の場合
+        // 型定義名を取得し、後ろの `N を削除する
+        var genericArgs = type.GetGenericArguments();
+        var builder = new StringBuilder();
+
+        builder
+            .Append(type.Name.Substring(0, type.Name.IndexOf('`')))
+            .Append('<');
+
+        // 各ジェネリック引数に対しても再帰的にこのメソッドを適用する
+        builder.Append(string.Join(", ",
+            genericArgs
+            .Select((ga) => GetFriendlyTypeNameString(ga))))
+            .Append('>');
+
+        return builder.ToString();
+    }
+    else
+    {
+        // 非ジェネリック型の場合
+        // そのままの名前を返す
+        return type.Name;
+    }
+}
+
+#if false
 static List<ImplementationDef> GetOrParseImplementations(string srcPath)
 {
     var list = new List<ImplementationDef>();
-    
+
     // Regex explanation:
     // Capture Return Type: public Observable<(.+)>
     // Capture Event Name:  MethodNameAsObservable
     // Capture Handler type in FromEvent: FromEvent<Handler,
     // Capture Args type in FromEvent: FromEvent<Handler, Args>
     // Note: We need to handle multi-line and spacing flexibilities.
-    
+
     var methodPattern = new Regex(
         @"public\s+Observable<(?<RetT>.+?)>\s+(?<Name>\w+)AsObservable[\s\S]*?Observable\.FromEvent\s*<\s*(?<HandlerT>.+?),\s*(?<ArgsT>.+?)\s*>",
         RegexOptions.Compiled | RegexOptions.Multiline);
 
-    var files = Directory.EnumerateFiles(srcPath, "*R3Extends.cs", SearchOption.TopDirectoryOnly);
+    var files =
+        Directory
+        .EnumerateFiles(
+            srcPath,
+            "*R3Extends.cs",
+            SearchOption.TopDirectoryOnly);
 
     foreach (var file in files)
     {
-        var typeName = Path.GetFileNameWithoutExtension(file).Replace("R3Extends", "");
-        if (typeName == "Timer") typeName = "System.Windows.Forms.Timer";
+        var typeName =
+            Path
+            .GetFileNameWithoutExtension(file)
+            .Replace("R3Extends", "");
+        if (typeName == "Timer")
+        {
+            typeName = "System.Windows.Forms.Timer";
+        }
 
         var content = File.ReadAllText(file);
-        
+
         var matches = methodPattern.Matches(content);
         foreach (Match match in matches)
         {
@@ -138,8 +235,12 @@ static List<ImplementationDef> GetOrParseImplementations(string srcPath)
 
     return list;
 }
+#endif
 
-static void GenerateReport(Dictionary<string, EventDef> definitions, List<ImplementationDef> implementations, string path)
+static void GenerateReport(
+    Dictionary<string, EventDef> definitions,
+    Dictionary<string, ImplementationDef> implementations,
+    string path)
 {
     var report = new StringBuilder();
     var tableRows = new StringBuilder(); // Main table content
@@ -153,52 +254,50 @@ static void GenerateReport(Dictionary<string, EventDef> definitions, List<Implem
     int missingCount = 0;
 
     // Group implementations by Type/Event
-    foreach (var impl in implementations)
+    foreach (var impl in implementations.Values)
     {
         var key = $"{impl.TypeName}/{impl.EventName}";
-        
+
         if (definitions.TryGetValue(key, out var def))
         {
             checkedCount++;
-            
+
             // Allow loose matching (e.g. valid namespace qualifications)
             // But usually we just want simplified name matching
-            
-            bool safeHandler = IsMatch(def.HandlerType, impl.HandlerType);
-            bool safeArgs = IsMatch(def.ArgsType, impl.ArgsType);
-            bool safeRet = IsMatch(def.ArgsType, impl.ReturnType);
 
-            if (safeHandler && safeArgs && safeRet)
+            bool isSafeRet = IsMatch(def.ArgsType, impl.ReturnType);
+
+            if (isSafeRet)
             {
                 successCount++;
                 // Correct
                 var typeUrl = GetLearnUrl(impl.TypeName);
                 var eventUrl = GetLearnUrl(impl.TypeName, impl.EventName);
-                tableRows.AppendLine($"| ✅ | [{impl.TypeName}]({typeUrl}) | [{impl.EventName}]({eventUrl}) | {def.HandlerType} | {impl.HandlerType} | {def.ArgsType} | {impl.ArgsType} | {impl.ReturnType} |");
+                tableRows.AppendLine($"| ✅ | [{impl.TypeName}]({typeUrl}) | [{impl.EventName}]({eventUrl}) | {def.ArgsType} | {impl.ReturnType} |");
             }
             else
             {
                 errorCount++;
                 var typeUrl = GetLearnUrl(impl.TypeName);
                 var eventUrl = GetLearnUrl(impl.TypeName, impl.EventName);
-                tableRows.AppendLine($"| ❌ | [{impl.TypeName}]({typeUrl}) | [{impl.EventName}]({eventUrl}) | **{def.HandlerType}** | `{impl.HandlerType}` | **{def.ArgsType}** | `{impl.ArgsType}` | `{impl.ReturnType}` |");
+                tableRows.AppendLine($"| ❌ | [{impl.TypeName}]({typeUrl}) | [{impl.EventName}]({eventUrl}) | **{def.ArgsType}** | `{impl.ReturnType}` |");
             }
         }
         else
         {
-             missingCount++;
-             // Implementation exists but event not found in WinForms.
-             // These are stored in a separate table.
-             var typeUrl = GetLearnUrl(impl.TypeName);
-             var eventUrl = GetLearnUrl(impl.TypeName, impl.EventName);
-             missingRows.AppendLine($"| ⚠️ | [{impl.TypeName}]({typeUrl}) | [{impl.EventName}]({eventUrl}) | N/A | `{impl.HandlerType}` | N/A | `{impl.ArgsType}` | `{impl.ReturnType}` |");
+            missingCount++;
+            // Implementation exists but event not found in WinForms.
+            // These are stored in a separate table.
+            var typeUrl = GetLearnUrl(impl.TypeName);
+            var eventUrl = GetLearnUrl(impl.TypeName, impl.EventName);
+            missingRows.AppendLine($"| ⚠️ | [{impl.TypeName}]({typeUrl}) | [{impl.EventName}]({eventUrl}) | N/A | `{impl.ReturnType}` |");
         }
     }
 
     report.AppendLine("# Event Handler & Argument Type Check Report");
     report.AppendLine($"Generated on {DateTime.UtcNow:u}");
     report.AppendLine();
-    
+
     // Summary Table
     report.AppendLine("## Summary");
     report.AppendLine("| Category | Count |");
@@ -212,8 +311,8 @@ static void GenerateReport(Dictionary<string, EventDef> definitions, List<Implem
 
     // Details Table
     report.AppendLine("## Details");
-    report.AppendLine("| Status | Class | Event | Expected Handler | Actual Handler | Expected Args | Actual Args | Ret Type |");
-    report.AppendLine("|:---:|---|---|---|---|---|---|---|");
+    report.AppendLine("| Status | Class | Event | Expected Args | Actual Args |");
+    report.AppendLine("|:---:|---|---|---|---|");
     report.Append(tableRows.ToString());
 
     // Missing Items Table (if any)
@@ -223,15 +322,22 @@ static void GenerateReport(Dictionary<string, EventDef> definitions, List<Implem
         report.AppendLine("## Ignored Events (Not found in System.Windows.Forms)");
         report.AppendLine("> These events exist in the implementation but could not be found in the `System.Windows.Forms` assembly via reflection. They might be from other assemblies (e.g. `System.ComponentModel`) or are obscured.");
         report.AppendLine();
-        report.AppendLine("| Status | Class | Event | Expected Handler | Actual Handler | Expected Args | Actual Args | Ret Type |");
-        report.AppendLine("|:---:|---|---|---|---|---|---|---|");
+        report.AppendLine("| Status | Class | Event | Expected Args | Actual Args |");
+        report.AppendLine("|:---:|---|---|---|---|");
         report.Append(missingRows.ToString());
     }
-    
+
     File.WriteAllText(path, report.ToString());
 }
 
-static bool IsMatch(string expected, string actual)
+
+static bool IsMatch(Type expected, Type actual)
+{
+    return expected.Equals(actual);
+}
+
+#if false
+static bool IsMatchEx(string expected, string actual)
 {
     // Handle generics notation from Reflection (e.g. EventHandler`1)
     if (expected.Contains("`"))
@@ -243,10 +349,10 @@ static bool IsMatch(string expected, string actual)
     // BUT we want to be correct. 
     // If expected is "EventHandler", acts matches "EventHandler<T>" -> this is debatable.
     // However, WinForms uses EventHandler<T> for EventHandler`1.
-    
+
     // If exact match
     if (actual == expected) return true;
-    
+
     // If actual is qualified
     if (actual.EndsWith("." + expected) || expected.EndsWith($".{actual}")) return true;
 
@@ -255,33 +361,36 @@ static bool IsMatch(string expected, string actual)
 
     return false;
 }
-
-static string GetCleanTypeName(string name)
-{
-    // Generic cleanup if needed, but WinForms controls are usually non-generic
-    return name;
-}
+#endif
 
 static string GetLearnUrl(string typeName, string? eventName = null)
 {
     var baseUrl = "https://learn.microsoft.com/dotnet/api/";
-    
+
     // In EventHandlerChecker, typeName comes from the file name minus "R3Extends", or "System.Windows.Forms.Timer".
     // Or from WinForms reflection which is just "Button", "Timer" etc.
-    
+
     // We need to ensure we have the full namespace for the URL unless it's already there (rarely for controls except Timer)
-    var fullTypeName = typeName.Contains(".") ? typeName : $"System.Windows.Forms.{typeName}";
-    
+    var fullTypeName =
+        typeName.Contains('.') ?
+        typeName : $"System.Windows.Forms.{typeName}";
+
     var url = $"{baseUrl}{fullTypeName.ToLower()}";
-    
+
     if (!string.IsNullOrEmpty(eventName))
     {
         url += $".{eventName.ToLower()}";
     }
-    
+
     return url;
 }
 
-record EventDef(string HandlerType, string ArgsType);
-record ImplementationDef(string TypeName, string EventName, string ReturnType, string HandlerType, string ArgsType);
+record EventDef(
+    Type HandlerType,
+    Type ArgsType);
+
+record ImplementationDef(
+    string TypeName,
+    string EventName,
+    Type ReturnType);
 
