@@ -1,11 +1,9 @@
-using System.ComponentModel;
-using System.Reflection;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Windows.Forms;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System.ComponentModel;
+using System.Reflection;
+using System.Text;
 
 Console.WriteLine("Event Coverage Checker");
 Console.WriteLine("======================");
@@ -135,13 +133,25 @@ static void GenerateReport(
         activeEvents
         .Except(implementedEvents)
         .ToHashSet();
-    
-    report.AppendLine("# Event Coverage Report").AppendLine()
-        .AppendLine($"*Generated on {DateTime.UtcNow:u}*").AppendLine()
-        .AppendLine($"*Target Framework {AppContext.TargetFrameworkName}*").AppendLine()
-        .AppendLine($"**Total Active Events:** {activeEvents.Count} | **Implemented:** {activeEvents.Intersect(implementedEvents).Count()} | **Missing:** {missingEvents.Count} | **Ignored:** {ignoredEvents.Count}").AppendLine();
 
-    if (!activeEvents.Any())
+    report.AppendLine("# Event Coverage Report")
+        .AppendLine()
+        .AppendLine($"*Generated on {DateTime.UtcNow:u}*")
+        .AppendLine()
+        .AppendLine($"*Target Framework {AppContext.TargetFrameworkName}*")
+        .AppendLine();
+
+    // Summary Table
+    report.AppendLine("## Summary");
+    report.AppendLine("| Category | Count |")
+        .AppendLine("|---|---:|")
+        .AppendLine($"| Total Active Events (Found in WinForms) | {activeEvents.Count} |")
+        .AppendLine($"| Implemented (✅) | {activeEvents.Intersect(implementedEvents).Count()} |")
+        .AppendLine($"| Missing (❌) | {missingEvents.Count} |")
+        .AppendLine($"| Ignored (⚠️) | {ignoredEvents.Count} |")
+        .AppendLine();
+
+    if (activeEvents.Count == 0)
     {
         report.AppendLine("No browsable events found to check.");
         File.WriteAllText(path, report.ToString());
@@ -165,40 +175,49 @@ static void GenerateReport(
     foreach (var group in groupedByClass)
     {
         var typeName = group.Key;
-        var events = group.OrderBy(e => e.EventName).ToList();
+        var events = 
+            group
+            .OrderBy(e => e.EventName)
+            .ToList();
         
         var implementedCount =
             events
-            .Count(e => implementedEvents.Contains($"{typeName}/{e.EventName}"));
+            .Count(
+                e => 
+                    implementedEvents
+                    .Contains($"{typeName}/{e.EventName}"));
         var coverage = 
-            events.Any() ?
+            events.Count == 0 ?
             (double)implementedCount / events.Count : 0;
         
         var typeUrl = GetLearnUrl(typeName);
-        report.AppendLine($"### [`{typeName}`]({typeUrl})");
-        report.AppendLine($"**Coverage: {coverage:P0}** ({implementedCount} / {events.Count})");
-        report.AppendLine();
-        report.AppendLine("| Status | Event Name |");
-        report.AppendLine("|:------:|------------|");
+        report.AppendLine($"### [`{typeName}`]({typeUrl})")
+            .AppendLine($"**Coverage: {coverage:P0}** ({implementedCount} / {events.Count})")
+            .AppendLine();
+        report.AppendLine("| Status | Event Name |")
+            .AppendLine("|:------:|------------|");
 
         foreach (var ev in events)
         {
             var isImplemented = 
                 implementedEvents
                 .Contains($"{typeName}/{ev.EventName}");
-            var statusIcon = isImplemented ? "✅" : "❌";
-            var eventUrl = GetLearnUrl(typeName, ev.EventName);
-            report.AppendLine($"| {statusIcon} | [{ev.EventName}]({eventUrl}) |");
+            var statusIcon =
+                isImplemented ? "✅" : "❌";
+            var eventUrl =
+                GetLearnUrl(typeName, ev.EventName);
+            report
+                .AppendLine($"| {statusIcon} | [{ev.EventName}]({eventUrl}) |");
         }
         report.AppendLine();
     }
 
     // Secondary Section: Legacy Components
-    if (ignoredEvents.Any())
+    if (ignoredEvents.Count > 0)
     {
-        report.AppendLine("## Ignored / Legacy Components");
-        report.AppendLine("These components are deprecated or present only for compatibility. They are excluded from the main coverage statistics.");
-        report.AppendLine();
+        report.AppendLine("## Ignored / Legacy Components")
+            .AppendLine("These components are deprecated or present only for compatibility. They are excluded from the main coverage statistics.")
+            .AppendLine();
 
         var ignoredGrouped = 
             ignoredEvents
@@ -213,10 +232,16 @@ static void GenerateReport(
         foreach (var group in ignoredGrouped)
         {
              var typeName = group.Key;
-             var events = group.OrderBy(e => e.EventName).ToList();
+             var events = 
+                group
+                .OrderBy(e => e.EventName)
+                .ToList();
              
              // Check if somehow implemented (unlikely but good to show)
-             var implementedCount = events.Count(e => implementedEvents.Contains($"{typeName}/{e.EventName}"));
+             var implementedCount = events
+                .Count(
+                    e => implementedEvents
+                        .Contains($"{typeName}/{e.EventName}"));
              
              var typeUrl = GetLearnUrl(typeName);
              report.AppendLine($"### [`{typeName}`]({typeUrl}) (Legacy)");
@@ -234,13 +259,13 @@ static void GenerateReport(
              
              foreach (var ev in events)
              {
-                 var isImplemented = implementedEvents.Contains($"{typeName}/{ev.EventName}");
-                 // Use a different icon or just X? User wants table. 
-                 // Let's use ⚠️ for ignored-missing, or just X but context implies it is ignored.
-                 // User asked to "separate table", so X is fine as long as header says Ignored.
-                  var statusIcon = isImplemented ? "✅" : "⚠️"; // Warning sign for ignored items seems appropriate
-                  var eventUrl = GetLearnUrl(typeName, ev.EventName);
-                  report.AppendLine($"| {statusIcon} | [{ev.EventName}]({eventUrl}) |");
+                var isImplemented = implementedEvents.Contains($"{typeName}/{ev.EventName}");
+                // Use a different icon or just X? User wants table. 
+                // Let's use ⚠️ for ignored-missing, or just X but context implies it is ignored.
+                // User asked to "separate table", so X is fine as long as header says Ignored.
+                var statusIcon = isImplemented ? "✅" : "⚠️"; // Warning sign for ignored items seems appropriate
+                var eventUrl = GetLearnUrl(typeName, ev.EventName);
+                report.AppendLine($"| {statusIcon} | [{ev.EventName}]({eventUrl}) |");
              }
              report.AppendLine();
         }
@@ -263,12 +288,14 @@ static string GetLearnUrl(string typeName, string? eventName = null)
     // Except for Timer where we use type.FullName (System.Windows.Forms.Timer).
     // So typeName passed here will be "Button" or "System.Windows.Forms.Timer".
     
-    var fullTypeName = typeName.Contains(".") ? typeName : $"System.Windows.Forms.{typeName}";
+    var fullTypeName = 
+        typeName.Contains('.') ?
+        typeName : $"System.Windows.Forms.{typeName}";
     var url = $"{baseUrl}{fullTypeName.ToLower()}";
     
     if (!string.IsNullOrEmpty(eventName))
     {
-        url += $".{eventName.ToLower()}";
+        url += $".{eventName!.ToLower()}";
     }
     
     return url;

@@ -1,15 +1,21 @@
 # Event Coverage Report
 
-*Generated on 2025-12-11 05:17:29Z*
+*Generated on 2025-12-19 05:55:18Z*
 
 *Target Framework .NETCoreApp,Version=v6.0*
 
-**Total Active Events:** 528 | **Implemented:** 527 | **Missing:** 1 | **Ignored:** 0
+## Summary
+| Category | Count |
+|---|---:|
+| Total Active Events (Found in WinForms) | 528 |
+| Implemented (✅) | 528 |
+| Missing (❌) | 0 |
+| Ignored (⚠️) | 0 |
 
 ## Coverage Details by Class
 
 ### [`Application`](https://learn.microsoft.com/dotnet/api/system.windows.forms.application)
-**Coverage: 100%** (6 / 6)
+**Coverage: 0%** (6 / 6)
 
 | Status | Event Name |
 |:------:|------------|
@@ -21,21 +27,21 @@
 | ✅ | [ThreadExit](https://learn.microsoft.com/dotnet/api/system.windows.forms.application.threadexit) |
 
 ### [`ApplicationContext`](https://learn.microsoft.com/dotnet/api/system.windows.forms.applicationcontext)
-**Coverage: 100%** (1 / 1)
+**Coverage: 0%** (1 / 1)
 
 | Status | Event Name |
 |:------:|------------|
 | ✅ | [ThreadExit](https://learn.microsoft.com/dotnet/api/system.windows.forms.applicationcontext.threadexit) |
 
 ### [`AutoCompleteStringCollection`](https://learn.microsoft.com/dotnet/api/system.windows.forms.autocompletestringcollection)
-**Coverage: 100%** (1 / 1)
+**Coverage: 0%** (1 / 1)
 
 | Status | Event Name |
 |:------:|------------|
 | ✅ | [CollectionChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.autocompletestringcollection.collectionchanged) |
 
 ### [`Binding`](https://learn.microsoft.com/dotnet/api/system.windows.forms.binding)
-**Coverage: 100%** (3 / 3)
+**Coverage: 0%** (3 / 3)
 
 | Status | Event Name |
 |:------:|------------|
@@ -44,7 +50,7 @@
 | ✅ | [Parse](https://learn.microsoft.com/dotnet/api/system.windows.forms.binding.parse) |
 
 ### [`BindingManagerBase`](https://learn.microsoft.com/dotnet/api/system.windows.forms.bindingmanagerbase)
-**Coverage: 100%** (5 / 5)
+**Coverage: 0%** (5 / 5)
 
 | Status | Event Name |
 |:------:|------------|
@@ -55,14 +61,14 @@
 | ✅ | [PositionChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.bindingmanagerbase.positionchanged) |
 
 ### [`BindingNavigator`](https://learn.microsoft.com/dotnet/api/system.windows.forms.bindingnavigator)
-**Coverage: 100%** (1 / 1)
+**Coverage: 0%** (1 / 1)
 
 | Status | Event Name |
 |:------:|------------|
 | ✅ | [RefreshItems](https://learn.microsoft.com/dotnet/api/system.windows.forms.bindingnavigator.refreshitems) |
 
 ### [`BindingsCollection`](https://learn.microsoft.com/dotnet/api/system.windows.forms.bindingscollection)
-**Coverage: 100%** (2 / 2)
+**Coverage: 0%** (2 / 2)
 
 | Status | Event Name |
 |:------:|------------|
@@ -70,7 +76,7 @@
 | ✅ | [CollectionChanging](https://learn.microsoft.com/dotnet/api/system.windows.forms.bindingscollection.collectionchanging) |
 
 ### [`BindingSource`](https://learn.microsoft.com/dotnet/api/system.windows.forms.bindingsource)
-**Coverage: 100%** (9 / 9)
+**Coverage: 0%** (9 / 9)
 
 | Status | Event Name |
 |:------:|------------|
@@ -85,14 +91,14 @@
 | ✅ | [PositionChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.bindingsource.positionchanged) |
 
 ### [`ButtonBase`](https://learn.microsoft.com/dotnet/api/system.windows.forms.buttonbase)
-**Coverage: 100%** (1 / 1)
+**Coverage: 0%** (1 / 1)
 
 | Status | Event Name |
 |:------:|------------|
 | ✅ | [AutoSizeChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.buttonbase.autosizechanged) |
 
 ### [`CheckBox`](https://learn.microsoft.com/dotnet/api/system.windows.forms.checkbox)
-**Coverage: 100%** (3 / 3)
+**Coverage: 0%** (3 / 3)
 
 | Status | Event Name |
 |:------:|------------|
@@ -101,7 +107,7 @@
 | ✅ | [CheckStateChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.checkbox.checkstatechanged) |
 
 ### [`CheckedListBox`](https://learn.microsoft.com/dotnet/api/system.windows.forms.checkedlistbox)
-**Coverage: 100%** (3 / 3)
+**Coverage: 0%** (3 / 3)
 
 | Status | Event Name |
 |:------:|------------|
@@ -110,7 +116,7 @@
 | ✅ | [MouseClick](https://learn.microsoft.com/dotnet/api/system.windows.forms.checkedlistbox.mouseclick) |
 
 ### [`ComboBox`](https://learn.microsoft.com/dotnet/api/system.windows.forms.combobox)
-**Coverage: 100%** (8 / 8)
+**Coverage: 0%** (8 / 8)
 
 | Status | Event Name |
 |:------:|------------|
@@ -124,14 +130,14 @@
 | ✅ | [TextUpdate](https://learn.microsoft.com/dotnet/api/system.windows.forms.combobox.textupdate) |
 
 ### [`CommonDialog`](https://learn.microsoft.com/dotnet/api/system.windows.forms.commondialog)
-**Coverage: 100%** (1 / 1)
+**Coverage: 0%** (1 / 1)
 
 | Status | Event Name |
 |:------:|------------|
 | ✅ | [HelpRequest](https://learn.microsoft.com/dotnet/api/system.windows.forms.commondialog.helprequest) |
 
 ### [`Control`](https://learn.microsoft.com/dotnet/api/system.windows.forms.control)
-**Coverage: 100%** (62 / 62)
+**Coverage: 0%** (62 / 62)
 
 | Status | Event Name |
 |:------:|------------|
@@ -199,7 +205,7 @@
 | ✅ | [VisibleChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.control.visiblechanged) |
 
 ### [`CurrencyManager`](https://learn.microsoft.com/dotnet/api/system.windows.forms.currencymanager)
-**Coverage: 100%** (3 / 3)
+**Coverage: 0%** (3 / 3)
 
 | Status | Event Name |
 |:------:|------------|
@@ -208,7 +214,7 @@
 | ✅ | [MetaDataChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.currencymanager.metadatachanged) |
 
 ### [`DataGridView`](https://learn.microsoft.com/dotnet/api/system.windows.forms.datagridview)
-**Coverage: 100%** (117 / 117)
+**Coverage: 0%** (117 / 117)
 
 | Status | Event Name |
 |:------:|------------|
@@ -331,28 +337,28 @@
 | ✅ | [UserDeletingRow](https://learn.microsoft.com/dotnet/api/system.windows.forms.datagridview.userdeletingrow) |
 
 ### [`DataGridViewCellCollection`](https://learn.microsoft.com/dotnet/api/system.windows.forms.datagridviewcellcollection)
-**Coverage: 100%** (1 / 1)
+**Coverage: 0%** (1 / 1)
 
 | Status | Event Name |
 |:------:|------------|
 | ✅ | [CollectionChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.datagridviewcellcollection.collectionchanged) |
 
 ### [`DataGridViewColumnCollection`](https://learn.microsoft.com/dotnet/api/system.windows.forms.datagridviewcolumncollection)
-**Coverage: 100%** (1 / 1)
+**Coverage: 0%** (1 / 1)
 
 | Status | Event Name |
 |:------:|------------|
 | ✅ | [CollectionChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.datagridviewcolumncollection.collectionchanged) |
 
 ### [`DataGridViewRowCollection`](https://learn.microsoft.com/dotnet/api/system.windows.forms.datagridviewrowcollection)
-**Coverage: 100%** (1 / 1)
+**Coverage: 0%** (1 / 1)
 
 | Status | Event Name |
 |:------:|------------|
 | ✅ | [CollectionChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.datagridviewrowcollection.collectionchanged) |
 
 ### [`DateTimePicker`](https://learn.microsoft.com/dotnet/api/system.windows.forms.datetimepicker)
-**Coverage: 100%** (5 / 5)
+**Coverage: 0%** (5 / 5)
 
 | Status | Event Name |
 |:------:|------------|
@@ -363,35 +369,35 @@
 | ✅ | [ValueChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.datetimepicker.valuechanged) |
 
 ### [`DomainUpDown`](https://learn.microsoft.com/dotnet/api/system.windows.forms.domainupdown)
-**Coverage: 100%** (1 / 1)
+**Coverage: 0%** (1 / 1)
 
 | Status | Event Name |
 |:------:|------------|
 | ✅ | [SelectedItemChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.domainupdown.selecteditemchanged) |
 
 ### [`ErrorProvider`](https://learn.microsoft.com/dotnet/api/system.windows.forms.errorprovider)
-**Coverage: 100%** (1 / 1)
+**Coverage: 0%** (1 / 1)
 
 | Status | Event Name |
 |:------:|------------|
 | ✅ | [RightToLeftChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.errorprovider.righttoleftchanged) |
 
 ### [`FileDialog`](https://learn.microsoft.com/dotnet/api/system.windows.forms.filedialog)
-**Coverage: 100%** (1 / 1)
+**Coverage: 0%** (1 / 1)
 
 | Status | Event Name |
 |:------:|------------|
 | ✅ | [FileOk](https://learn.microsoft.com/dotnet/api/system.windows.forms.filedialog.fileok) |
 
 ### [`FontDialog`](https://learn.microsoft.com/dotnet/api/system.windows.forms.fontdialog)
-**Coverage: 100%** (1 / 1)
+**Coverage: 0%** (1 / 1)
 
 | Status | Event Name |
 |:------:|------------|
 | ✅ | [Apply](https://learn.microsoft.com/dotnet/api/system.windows.forms.fontdialog.apply) |
 
 ### [`Form`](https://learn.microsoft.com/dotnet/api/system.windows.forms.form)
-**Coverage: 100%** (19 / 19)
+**Coverage: 0%** (19 / 19)
 
 | Status | Event Name |
 |:------:|------------|
@@ -416,14 +422,14 @@
 | ✅ | [Shown](https://learn.microsoft.com/dotnet/api/system.windows.forms.form.shown) |
 
 ### [`GroupBox`](https://learn.microsoft.com/dotnet/api/system.windows.forms.groupbox)
-**Coverage: 100%** (1 / 1)
+**Coverage: 0%** (1 / 1)
 
 | Status | Event Name |
 |:------:|------------|
 | ✅ | [AutoSizeChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.groupbox.autosizechanged) |
 
 ### [`HtmlDocument`](https://learn.microsoft.com/dotnet/api/system.windows.forms.htmldocument)
-**Coverage: 100%** (10 / 10)
+**Coverage: 0%** (10 / 10)
 
 | Status | Event Name |
 |:------:|------------|
@@ -439,7 +445,7 @@
 | ✅ | [Stop](https://learn.microsoft.com/dotnet/api/system.windows.forms.htmldocument.stop) |
 
 ### [`HtmlElement`](https://learn.microsoft.com/dotnet/api/system.windows.forms.htmlelement)
-**Coverage: 100%** (19 / 19)
+**Coverage: 0%** (19 / 19)
 
 | Status | Event Name |
 |:------:|------------|
@@ -464,7 +470,7 @@
 | ✅ | [MouseUp](https://learn.microsoft.com/dotnet/api/system.windows.forms.htmlelement.mouseup) |
 
 ### [`HtmlWindow`](https://learn.microsoft.com/dotnet/api/system.windows.forms.htmlwindow)
-**Coverage: 100%** (7 / 7)
+**Coverage: 0%** (7 / 7)
 
 | Status | Event Name |
 |:------:|------------|
@@ -477,7 +483,7 @@
 | ✅ | [Unload](https://learn.microsoft.com/dotnet/api/system.windows.forms.htmlwindow.unload) |
 
 ### [`Label`](https://learn.microsoft.com/dotnet/api/system.windows.forms.label)
-**Coverage: 100%** (2 / 2)
+**Coverage: 0%** (2 / 2)
 
 | Status | Event Name |
 |:------:|------------|
@@ -485,7 +491,7 @@
 | ✅ | [TextAlignChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.label.textalignchanged) |
 
 ### [`LinkLabel`](https://learn.microsoft.com/dotnet/api/system.windows.forms.linklabel)
-**Coverage: 100%** (2 / 2)
+**Coverage: 0%** (2 / 2)
 
 | Status | Event Name |
 |:------:|------------|
@@ -493,7 +499,7 @@
 | ✅ | [TabStopChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.linklabel.tabstopchanged) |
 
 ### [`ListBox`](https://learn.microsoft.com/dotnet/api/system.windows.forms.listbox)
-**Coverage: 100%** (5 / 5)
+**Coverage: 0%** (5 / 5)
 
 | Status | Event Name |
 |:------:|------------|
@@ -504,7 +510,7 @@
 | ✅ | [SelectedIndexChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.listbox.selectedindexchanged) |
 
 ### [`ListControl`](https://learn.microsoft.com/dotnet/api/system.windows.forms.listcontrol)
-**Coverage: 100%** (7 / 7)
+**Coverage: 0%** (7 / 7)
 
 | Status | Event Name |
 |:------:|------------|
@@ -517,7 +523,7 @@
 | ✅ | [ValueMemberChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.listcontrol.valuememberchanged) |
 
 ### [`ListView`](https://learn.microsoft.com/dotnet/api/system.windows.forms.listview)
-**Coverage: 100%** (23 / 23)
+**Coverage: 0%** (23 / 23)
 
 | Status | Event Name |
 |:------:|------------|
@@ -546,7 +552,7 @@
 | ✅ | [VirtualItemsSelectionRangeChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.listview.virtualitemsselectionrangechanged) |
 
 ### [`MaskedTextBox`](https://learn.microsoft.com/dotnet/api/system.windows.forms.maskedtextbox)
-**Coverage: 100%** (5 / 5)
+**Coverage: 0%** (5 / 5)
 
 | Status | Event Name |
 |:------:|------------|
@@ -557,7 +563,7 @@
 | ✅ | [TypeValidationCompleted](https://learn.microsoft.com/dotnet/api/system.windows.forms.maskedtextbox.typevalidationcompleted) |
 
 ### [`MenuStrip`](https://learn.microsoft.com/dotnet/api/system.windows.forms.menustrip)
-**Coverage: 100%** (2 / 2)
+**Coverage: 0%** (2 / 2)
 
 | Status | Event Name |
 |:------:|------------|
@@ -565,7 +571,7 @@
 | ✅ | [MenuDeactivate](https://learn.microsoft.com/dotnet/api/system.windows.forms.menustrip.menudeactivate) |
 
 ### [`MonthCalendar`](https://learn.microsoft.com/dotnet/api/system.windows.forms.monthcalendar)
-**Coverage: 100%** (3 / 3)
+**Coverage: 0%** (3 / 3)
 
 | Status | Event Name |
 |:------:|------------|
@@ -574,7 +580,7 @@
 | ✅ | [RightToLeftLayoutChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.monthcalendar.righttoleftlayoutchanged) |
 
 ### [`NotifyIcon`](https://learn.microsoft.com/dotnet/api/system.windows.forms.notifyicon)
-**Coverage: 100%** (10 / 10)
+**Coverage: 0%** (10 / 10)
 
 | Status | Event Name |
 |:------:|------------|
@@ -590,21 +596,21 @@
 | ✅ | [MouseUp](https://learn.microsoft.com/dotnet/api/system.windows.forms.notifyicon.mouseup) |
 
 ### [`NumericUpDown`](https://learn.microsoft.com/dotnet/api/system.windows.forms.numericupdown)
-**Coverage: 100%** (1 / 1)
+**Coverage: 0%** (1 / 1)
 
 | Status | Event Name |
 |:------:|------------|
 | ✅ | [ValueChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.numericupdown.valuechanged) |
 
 ### [`Panel`](https://learn.microsoft.com/dotnet/api/system.windows.forms.panel)
-**Coverage: 100%** (1 / 1)
+**Coverage: 0%** (1 / 1)
 
 | Status | Event Name |
 |:------:|------------|
 | ✅ | [AutoSizeChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.panel.autosizechanged) |
 
 ### [`PictureBox`](https://learn.microsoft.com/dotnet/api/system.windows.forms.picturebox)
-**Coverage: 100%** (3 / 3)
+**Coverage: 0%** (3 / 3)
 
 | Status | Event Name |
 |:------:|------------|
@@ -613,21 +619,21 @@
 | ✅ | [SizeModeChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.picturebox.sizemodechanged) |
 
 ### [`PrintPreviewControl`](https://learn.microsoft.com/dotnet/api/system.windows.forms.printpreviewcontrol)
-**Coverage: 100%** (1 / 1)
+**Coverage: 0%** (1 / 1)
 
 | Status | Event Name |
 |:------:|------------|
 | ✅ | [StartPageChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.printpreviewcontrol.startpagechanged) |
 
 ### [`ProgressBar`](https://learn.microsoft.com/dotnet/api/system.windows.forms.progressbar)
-**Coverage: 100%** (1 / 1)
+**Coverage: 0%** (1 / 1)
 
 | Status | Event Name |
 |:------:|------------|
 | ✅ | [RightToLeftLayoutChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.progressbar.righttoleftlayoutchanged) |
 
 ### [`PropertyGrid`](https://learn.microsoft.com/dotnet/api/system.windows.forms.propertygrid)
-**Coverage: 100%** (5 / 5)
+**Coverage: 0%** (5 / 5)
 
 | Status | Event Name |
 |:------:|------------|
@@ -638,7 +644,7 @@
 | ✅ | [SelectedObjectsChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.propertygrid.selectedobjectschanged) |
 
 ### [`RadioButton`](https://learn.microsoft.com/dotnet/api/system.windows.forms.radiobutton)
-**Coverage: 100%** (2 / 2)
+**Coverage: 0%** (2 / 2)
 
 | Status | Event Name |
 |:------:|------------|
@@ -646,7 +652,7 @@
 | ✅ | [CheckedChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.radiobutton.checkedchanged) |
 
 ### [`RichTextBox`](https://learn.microsoft.com/dotnet/api/system.windows.forms.richtextbox)
-**Coverage: 100%** (7 / 7)
+**Coverage: 0%** (7 / 7)
 
 | Status | Event Name |
 |:------:|------------|
@@ -659,14 +665,14 @@
 | ✅ | [VScroll](https://learn.microsoft.com/dotnet/api/system.windows.forms.richtextbox.vscroll) |
 
 ### [`ScrollableControl`](https://learn.microsoft.com/dotnet/api/system.windows.forms.scrollablecontrol)
-**Coverage: 100%** (1 / 1)
+**Coverage: 0%** (1 / 1)
 
 | Status | Event Name |
 |:------:|------------|
 | ✅ | [Scroll](https://learn.microsoft.com/dotnet/api/system.windows.forms.scrollablecontrol.scroll) |
 
 ### [`ScrollBar`](https://learn.microsoft.com/dotnet/api/system.windows.forms.scrollbar)
-**Coverage: 100%** (2 / 2)
+**Coverage: 0%** (2 / 2)
 
 | Status | Event Name |
 |:------:|------------|
@@ -674,7 +680,7 @@
 | ✅ | [ValueChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.scrollbar.valuechanged) |
 
 ### [`SplitContainer`](https://learn.microsoft.com/dotnet/api/system.windows.forms.splitcontainer)
-**Coverage: 100%** (3 / 3)
+**Coverage: 0%** (3 / 3)
 
 | Status | Event Name |
 |:------:|------------|
@@ -683,7 +689,7 @@
 | ✅ | [SplitterMoving](https://learn.microsoft.com/dotnet/api/system.windows.forms.splitcontainer.splittermoving) |
 
 ### [`Splitter`](https://learn.microsoft.com/dotnet/api/system.windows.forms.splitter)
-**Coverage: 100%** (2 / 2)
+**Coverage: 0%** (2 / 2)
 
 | Status | Event Name |
 |:------:|------------|
@@ -691,14 +697,14 @@
 | ✅ | [SplitterMoving](https://learn.microsoft.com/dotnet/api/system.windows.forms.splitter.splittermoving) |
 
 ### [`System.Windows.Forms.Timer`](https://learn.microsoft.com/dotnet/api/system.windows.forms.timer)
-**Coverage: 100%** (1 / 1)
+**Coverage: 0%** (1 / 1)
 
 | Status | Event Name |
 |:------:|------------|
 | ✅ | [Tick](https://learn.microsoft.com/dotnet/api/system.windows.forms.timer.tick) |
 
 ### [`TabControl`](https://learn.microsoft.com/dotnet/api/system.windows.forms.tabcontrol)
-**Coverage: 100%** (7 / 7)
+**Coverage: 0%** (7 / 7)
 
 | Status | Event Name |
 |:------:|------------|
@@ -711,35 +717,35 @@
 | ✅ | [Selecting](https://learn.microsoft.com/dotnet/api/system.windows.forms.tabcontrol.selecting) |
 
 ### [`TableLayoutPanel`](https://learn.microsoft.com/dotnet/api/system.windows.forms.tablelayoutpanel)
-**Coverage: 100%** (1 / 1)
+**Coverage: 0%** (1 / 1)
 
 | Status | Event Name |
 |:------:|------------|
 | ✅ | [CellPaint](https://learn.microsoft.com/dotnet/api/system.windows.forms.tablelayoutpanel.cellpaint) |
 
 ### [`TabPage`](https://learn.microsoft.com/dotnet/api/system.windows.forms.tabpage)
-**Coverage: 100%** (1 / 1)
+**Coverage: 0%** (1 / 1)
 
 | Status | Event Name |
 |:------:|------------|
 | ✅ | [TextChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.tabpage.textchanged) |
 
 ### [`TaskDialogButton`](https://learn.microsoft.com/dotnet/api/system.windows.forms.taskdialogbutton)
-**Coverage: 100%** (1 / 1)
+**Coverage: 0%** (1 / 1)
 
 | Status | Event Name |
 |:------:|------------|
 | ✅ | [Click](https://learn.microsoft.com/dotnet/api/system.windows.forms.taskdialogbutton.click) |
 
 ### [`TaskDialogExpander`](https://learn.microsoft.com/dotnet/api/system.windows.forms.taskdialogexpander)
-**Coverage: 100%** (1 / 1)
+**Coverage: 0%** (1 / 1)
 
 | Status | Event Name |
 |:------:|------------|
 | ✅ | [ExpandedChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.taskdialogexpander.expandedchanged) |
 
 ### [`TaskDialogPage`](https://learn.microsoft.com/dotnet/api/system.windows.forms.taskdialogpage)
-**Coverage: 100%** (3 / 3)
+**Coverage: 0%** (3 / 3)
 
 | Status | Event Name |
 |:------:|------------|
@@ -748,28 +754,28 @@
 | ✅ | [HelpRequest](https://learn.microsoft.com/dotnet/api/system.windows.forms.taskdialogpage.helprequest) |
 
 ### [`TaskDialogRadioButton`](https://learn.microsoft.com/dotnet/api/system.windows.forms.taskdialogradiobutton)
-**Coverage: 100%** (1 / 1)
+**Coverage: 0%** (1 / 1)
 
 | Status | Event Name |
 |:------:|------------|
 | ✅ | [CheckedChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.taskdialogradiobutton.checkedchanged) |
 
 ### [`TaskDialogVerificationCheckBox`](https://learn.microsoft.com/dotnet/api/system.windows.forms.taskdialogverificationcheckbox)
-**Coverage: 100%** (1 / 1)
+**Coverage: 0%** (1 / 1)
 
 | Status | Event Name |
 |:------:|------------|
 | ✅ | [CheckedChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.taskdialogverificationcheckbox.checkedchanged) |
 
 ### [`TextBox`](https://learn.microsoft.com/dotnet/api/system.windows.forms.textbox)
-**Coverage: 100%** (1 / 1)
+**Coverage: 0%** (1 / 1)
 
 | Status | Event Name |
 |:------:|------------|
 | ✅ | [TextAlignChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.textbox.textalignchanged) |
 
 ### [`TextBoxBase`](https://learn.microsoft.com/dotnet/api/system.windows.forms.textboxbase)
-**Coverage: 100%** (8 / 8)
+**Coverage: 0%** (8 / 8)
 
 | Status | Event Name |
 |:------:|------------|
@@ -783,7 +789,7 @@
 | ✅ | [ReadOnlyChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.textboxbase.readonlychanged) |
 
 ### [`ToolStrip`](https://learn.microsoft.com/dotnet/api/system.windows.forms.toolstrip)
-**Coverage: 100%** (10 / 10)
+**Coverage: 0%** (10 / 10)
 
 | Status | Event Name |
 |:------:|------------|
@@ -799,7 +805,7 @@
 | ✅ | [RendererChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.toolstrip.rendererchanged) |
 
 ### [`ToolStripButton`](https://learn.microsoft.com/dotnet/api/system.windows.forms.toolstripbutton)
-**Coverage: 100%** (2 / 2)
+**Coverage: 0%** (2 / 2)
 
 | Status | Event Name |
 |:------:|------------|
@@ -807,7 +813,7 @@
 | ✅ | [CheckStateChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.toolstripbutton.checkstatechanged) |
 
 ### [`ToolStripComboBox`](https://learn.microsoft.com/dotnet/api/system.windows.forms.toolstripcombobox)
-**Coverage: 100%** (5 / 5)
+**Coverage: 0%** (5 / 5)
 
 | Status | Event Name |
 |:------:|------------|
@@ -818,7 +824,7 @@
 | ✅ | [TextUpdate](https://learn.microsoft.com/dotnet/api/system.windows.forms.toolstripcombobox.textupdate) |
 
 ### [`ToolStripContentPanel`](https://learn.microsoft.com/dotnet/api/system.windows.forms.toolstripcontentpanel)
-**Coverage: 100%** (2 / 2)
+**Coverage: 0%** (2 / 2)
 
 | Status | Event Name |
 |:------:|------------|
@@ -826,7 +832,7 @@
 | ✅ | [RendererChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.toolstripcontentpanel.rendererchanged) |
 
 ### [`ToolStripControlHost`](https://learn.microsoft.com/dotnet/api/system.windows.forms.toolstripcontrolhost)
-**Coverage: 100%** (7 / 7)
+**Coverage: 0%** (7 / 7)
 
 | Status | Event Name |
 |:------:|------------|
@@ -839,7 +845,7 @@
 | ✅ | [Validating](https://learn.microsoft.com/dotnet/api/system.windows.forms.toolstripcontrolhost.validating) |
 
 ### [`ToolStripDropDown`](https://learn.microsoft.com/dotnet/api/system.windows.forms.toolstripdropdown)
-**Coverage: 100%** (4 / 4)
+**Coverage: 0%** (4 / 4)
 
 | Status | Event Name |
 |:------:|------------|
@@ -849,7 +855,7 @@
 | ✅ | [Opening](https://learn.microsoft.com/dotnet/api/system.windows.forms.toolstripdropdown.opening) |
 
 ### [`ToolStripDropDownItem`](https://learn.microsoft.com/dotnet/api/system.windows.forms.toolstripdropdownitem)
-**Coverage: 100%** (4 / 4)
+**Coverage: 0%** (4 / 4)
 
 | Status | Event Name |
 |:------:|------------|
@@ -859,7 +865,7 @@
 | ✅ | [DropDownOpening](https://learn.microsoft.com/dotnet/api/system.windows.forms.toolstripdropdownitem.dropdownopening) |
 
 ### [`ToolStripItem`](https://learn.microsoft.com/dotnet/api/system.windows.forms.toolstripitem)
-**Coverage: 100%** (19 / 19)
+**Coverage: 0%** (19 / 19)
 
 | Status | Event Name |
 |:------:|------------|
@@ -884,14 +890,14 @@
 | ✅ | [VisibleChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.toolstripitem.visiblechanged) |
 
 ### [`ToolStripManager`](https://learn.microsoft.com/dotnet/api/system.windows.forms.toolstripmanager)
-**Coverage: 0%** (0 / 1)
+**Coverage: 0%** (1 / 1)
 
 | Status | Event Name |
 |:------:|------------|
-| ❌ | [RendererChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.toolstripmanager.rendererchanged) |
+| ✅ | [RendererChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.toolstripmanager.rendererchanged) |
 
 ### [`ToolStripMenuItem`](https://learn.microsoft.com/dotnet/api/system.windows.forms.toolstripmenuitem)
-**Coverage: 100%** (2 / 2)
+**Coverage: 0%** (2 / 2)
 
 | Status | Event Name |
 |:------:|------------|
@@ -899,7 +905,7 @@
 | ✅ | [CheckStateChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.toolstripmenuitem.checkstatechanged) |
 
 ### [`ToolStripPanel`](https://learn.microsoft.com/dotnet/api/system.windows.forms.toolstrippanel)
-**Coverage: 100%** (2 / 2)
+**Coverage: 0%** (2 / 2)
 
 | Status | Event Name |
 |:------:|------------|
@@ -907,14 +913,14 @@
 | ✅ | [RendererChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.toolstrippanel.rendererchanged) |
 
 ### [`ToolStripProgressBar`](https://learn.microsoft.com/dotnet/api/system.windows.forms.toolstripprogressbar)
-**Coverage: 100%** (1 / 1)
+**Coverage: 0%** (1 / 1)
 
 | Status | Event Name |
 |:------:|------------|
 | ✅ | [RightToLeftLayoutChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.toolstripprogressbar.righttoleftlayoutchanged) |
 
 ### [`ToolStripRenderer`](https://learn.microsoft.com/dotnet/api/system.windows.forms.toolstriprenderer)
-**Coverage: 100%** (20 / 20)
+**Coverage: 0%** (20 / 20)
 
 | Status | Event Name |
 |:------:|------------|
@@ -940,7 +946,7 @@
 | ✅ | [RenderToolStripStatusLabelBackground](https://learn.microsoft.com/dotnet/api/system.windows.forms.toolstriprenderer.rendertoolstripstatuslabelbackground) |
 
 ### [`ToolStripSplitButton`](https://learn.microsoft.com/dotnet/api/system.windows.forms.toolstripsplitbutton)
-**Coverage: 100%** (3 / 3)
+**Coverage: 0%** (3 / 3)
 
 | Status | Event Name |
 |:------:|------------|
@@ -949,7 +955,7 @@
 | ✅ | [DefaultItemChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.toolstripsplitbutton.defaultitemchanged) |
 
 ### [`ToolStripTextBox`](https://learn.microsoft.com/dotnet/api/system.windows.forms.toolstriptextbox)
-**Coverage: 100%** (6 / 6)
+**Coverage: 0%** (6 / 6)
 
 | Status | Event Name |
 |:------:|------------|
@@ -961,7 +967,7 @@
 | ✅ | [TextBoxTextAlignChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.toolstriptextbox.textboxtextalignchanged) |
 
 ### [`ToolTip`](https://learn.microsoft.com/dotnet/api/system.windows.forms.tooltip)
-**Coverage: 100%** (2 / 2)
+**Coverage: 0%** (2 / 2)
 
 | Status | Event Name |
 |:------:|------------|
@@ -969,7 +975,7 @@
 | ✅ | [Popup](https://learn.microsoft.com/dotnet/api/system.windows.forms.tooltip.popup) |
 
 ### [`TrackBar`](https://learn.microsoft.com/dotnet/api/system.windows.forms.trackbar)
-**Coverage: 100%** (4 / 4)
+**Coverage: 0%** (4 / 4)
 
 | Status | Event Name |
 |:------:|------------|
@@ -979,7 +985,7 @@
 | ✅ | [ValueChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.trackbar.valuechanged) |
 
 ### [`TreeView`](https://learn.microsoft.com/dotnet/api/system.windows.forms.treeview)
-**Coverage: 100%** (16 / 16)
+**Coverage: 0%** (16 / 16)
 
 | Status | Event Name |
 |:------:|------------|
@@ -1001,14 +1007,14 @@
 | ✅ | [RightToLeftLayoutChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.treeview.righttoleftlayoutchanged) |
 
 ### [`UpDownBase`](https://learn.microsoft.com/dotnet/api/system.windows.forms.updownbase)
-**Coverage: 100%** (1 / 1)
+**Coverage: 0%** (1 / 1)
 
 | Status | Event Name |
 |:------:|------------|
 | ✅ | [AutoSizeChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.updownbase.autosizechanged) |
 
 ### [`UserControl`](https://learn.microsoft.com/dotnet/api/system.windows.forms.usercontrol)
-**Coverage: 100%** (3 / 3)
+**Coverage: 0%** (3 / 3)
 
 | Status | Event Name |
 |:------:|------------|
@@ -1017,7 +1023,7 @@
 | ✅ | [Load](https://learn.microsoft.com/dotnet/api/system.windows.forms.usercontrol.load) |
 
 ### [`WebBrowser`](https://learn.microsoft.com/dotnet/api/system.windows.forms.webbrowser)
-**Coverage: 100%** (6 / 6)
+**Coverage: 0%** (6 / 6)
 
 | Status | Event Name |
 |:------:|------------|

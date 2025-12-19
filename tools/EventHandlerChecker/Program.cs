@@ -105,7 +105,7 @@ static Dictionary<string, ImplementationDef> GetR3Ex4WinFormsEventDefs()
             Debug.Print($"Checking method: {mt.Name}, ret:{mt.ReturnType.GetGenericTypeDefinition()}, args:{mt.GetParameters()}");
 
             var impTypeName = 
-                mt.DeclaringType.Name.Replace("R3Extends", "");
+                mt.DeclaringType!.Name.Replace("R3Extends", "");
             var impEventName = 
                 mt.Name.Replace("AsObservable", "");
             var retType = 
@@ -127,33 +127,6 @@ static Dictionary<string, ImplementationDef> GetR3Ex4WinFormsEventDefs()
     }
     return defs;
 }
-
-#if false
-static string FormatTypeName(Type type)
-{
-    if (!type.IsGenericType)
-    {
-        return type.FullName ?? type.Name;
-    }
-
-    var genericTypeDef = type.GetGenericTypeDefinition();
-    var genericArgs = type.GetGenericArguments();
-
-    // Get the name without the `1, `2 suffix
-    var baseName = genericTypeDef.FullName ?? genericTypeDef.Name;
-    var backtickIndex = baseName.IndexOf('`');
-    if (backtickIndex > 0)
-    {
-        baseName = baseName.Substring(0, backtickIndex);
-    }
-
-    // Format generic arguments
-    var formattedArgs = string.Join(", ", genericArgs.Select(FormatTypeName));
-
-    return $"{baseName}<{formattedArgs}>";
-}
-#endif
-
 
 static string GetFriendlyTypeNameString(Type type)
 {
@@ -183,59 +156,6 @@ static string GetFriendlyTypeNameString(Type type)
         return type.Name;
     }
 }
-
-#if false
-static List<ImplementationDef> GetOrParseImplementations(string srcPath)
-{
-    var list = new List<ImplementationDef>();
-
-    // Regex explanation:
-    // Capture Return Type: public Observable<(.+)>
-    // Capture Event Name:  MethodNameAsObservable
-    // Capture Handler type in FromEvent: FromEvent<Handler,
-    // Capture Args type in FromEvent: FromEvent<Handler, Args>
-    // Note: We need to handle multi-line and spacing flexibilities.
-
-    var methodPattern = new Regex(
-        @"public\s+Observable<(?<RetT>.+?)>\s+(?<Name>\w+)AsObservable[\s\S]*?Observable\.FromEvent\s*<\s*(?<HandlerT>.+?),\s*(?<ArgsT>.+?)\s*>",
-        RegexOptions.Compiled | RegexOptions.Multiline);
-
-    var files =
-        Directory
-        .EnumerateFiles(
-            srcPath,
-            "*R3Extends.cs",
-            SearchOption.TopDirectoryOnly);
-
-    foreach (var file in files)
-    {
-        var typeName =
-            Path
-            .GetFileNameWithoutExtension(file)
-            .Replace("R3Extends", "");
-        if (typeName == "Timer")
-        {
-            typeName = "System.Windows.Forms.Timer";
-        }
-
-        var content = File.ReadAllText(file);
-
-        var matches = methodPattern.Matches(content);
-        foreach (Match match in matches)
-        {
-            list.Add(new ImplementationDef(
-                typeName,
-                match.Groups["Name"].Value,
-                match.Groups["RetT"].Value.Trim(),
-                match.Groups["HandlerT"].Value.Trim(),
-                match.Groups["ArgsT"].Value.Trim()
-            ));
-        }
-    }
-
-    return list;
-}
-#endif
 
 static void GenerateReport(
     Dictionary<string, EventDef> definitions,
@@ -294,37 +214,37 @@ static void GenerateReport(
         }
     }
 
-    report.AppendLine("# Event Handler & Argument Type Check Report");
-    report.AppendLine($"Generated on {DateTime.UtcNow:u}");
-    report.AppendLine();
+    report.AppendLine("# Event Handler & Argument Type Check Report")
+        .AppendLine($"Generated on {DateTime.UtcNow:u}")
+        .AppendLine();
 
     // Summary Table
-    report.AppendLine("## Summary");
-    report.AppendLine("| Category | Count |");
-    report.AppendLine("|---|---:|");
-    report.AppendLine($"| Total Implementations | {totalImplementations} |");
-    report.AppendLine($"| Checked (Found in WinForms) | {checkedCount} |");
-    report.AppendLine($"| Correct (✅) | {successCount} |");
-    report.AppendLine($"| Incorrect (❌) | {errorCount} |");
-    report.AppendLine($"| Missing/Ignored (⚠️) | {missingCount} |");
-    report.AppendLine();
+    report.AppendLine("## Summary")
+        .AppendLine("| Category | Count |")
+        .AppendLine("|---|---:|")
+        .AppendLine($"| Total Implementations | {totalImplementations} |")
+        .AppendLine($"| Checked (Found in WinForms) | {checkedCount} |")
+        .AppendLine($"| Correct (✅) | {successCount} |")
+        .AppendLine($"| Incorrect (❌) | {errorCount} |")
+        .AppendLine($"| Missing/Ignored (⚠️) | {missingCount} |")
+        .AppendLine();
 
     // Details Table
-    report.AppendLine("## Details");
-    report.AppendLine("| Status | Class | Event | Expected Args | Actual Args |");
-    report.AppendLine("|:---:|---|---|---|---|");
-    report.Append(tableRows.ToString());
+    report.AppendLine("## Details")
+        .AppendLine("| Status | Class | Event | Expected Args | Actual Args |")
+        .AppendLine("|:---:|---|---|---|---|")
+        .Append(tableRows);
 
     // Missing Items Table (if any)
     if (missingCount > 0)
     {
         report.AppendLine();
-        report.AppendLine("## Ignored Events (Not found in System.Windows.Forms)");
-        report.AppendLine("> These events exist in the implementation but could not be found in the `System.Windows.Forms` assembly via reflection. They might be from other assemblies (e.g. `System.ComponentModel`) or are obscured.");
-        report.AppendLine();
-        report.AppendLine("| Status | Class | Event | Expected Args | Actual Args |");
-        report.AppendLine("|:---:|---|---|---|---|");
-        report.Append(missingRows.ToString());
+        report.AppendLine("## Ignored Events (Not found in System.Windows.Forms)")
+            .AppendLine("> These events exist in the implementation but could not be found in the `System.Windows.Forms` assembly via reflection. They might be from other assemblies (e.g. `System.ComponentModel`) or are obscured.")
+            .AppendLine();
+        report.AppendLine("| Status | Class | Event | Expected Args | Actual Args |")
+            .AppendLine("|:---:|---|---|---|---|")
+            .Append(missingRows);
     }
 
     File.WriteAllText(path, report.ToString());
@@ -379,7 +299,7 @@ static string GetLearnUrl(string typeName, string? eventName = null)
 
     if (!string.IsNullOrEmpty(eventName))
     {
-        url += $".{eventName.ToLower()}";
+        url += $".{eventName!.ToLower()}";
     }
 
     return url;
