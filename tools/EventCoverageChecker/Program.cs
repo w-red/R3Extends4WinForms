@@ -96,9 +96,13 @@ if (tgtName == "472")
 
 // ... (in Main) ...
 var winFormsEvents = GetWinFormsEvents().ToHashSet(); // Get all events
-var activeEvents = winFormsEvents.Where(e => !ignoredTypes.Contains(e.Split('/')[0])).ToHashSet();
+var componentsEvents = GetComponetEvents().ToHashSet();
+var activeEvents = winFormsEvents
+    .Where(e => !ignoredTypes.Contains(e.Split('/')[0])).ToHashSet();
 
-var implementedExtensions = GetImplementedObservableExtensions(Path.Combine(projectRoot, "src"), preprocessorSymbols);
+var implementedExtensions =
+    GetImplementedObservableExtensions(
+        Path.Combine(projectRoot, "src"), preprocessorSymbols);
 
 var reportPath = 
     Path
@@ -107,7 +111,13 @@ var reportPath =
         "tools",
         "EventCoverageChecker",
         $"CoverageReport{tgtName}.md");
-GenerateReport(winFormsEvents, implementedExtensions, ignoredTypes, reportPath);
+
+GenerateReport(
+    winFormsEvents,
+    componentsEvents,
+    implementedExtensions,
+    ignoredTypes,
+    reportPath);
 
 var missingCount = activeEvents.Except(implementedExtensions).Count();
 Console.WriteLine($"Analysis complete. Found {missingCount} missing events (excluding legacy types).");
@@ -116,20 +126,39 @@ Console.WriteLine($"Report generated at: {reportPath}");
 // ...
 
 static void GenerateReport(
-    HashSet<string> allEvents,
+    HashSet<string> winFormsEvents,
+    HashSet<string> componentEvents,
     HashSet<string> implementedEvents,
     HashSet<string> ignoredTypes,
     string path)
 {
-    var activeEvents = allEvents
+    var report = new StringBuilder();
+#if true
+    var wholeEvents = 
+        winFormsEvents
+        .Union(componentEvents)
+        .ToHashSet();
+    var activeEvents = wholeEvents
         .Where(e => !ignoredTypes.Contains(e.Split('/')[0]))
         .ToHashSet();
-    var ignoredEvents = allEvents
+    var ignoredEvents = wholeEvents
+        .Where(e => ignoredTypes.Contains(e.Split('/')[0]))
+        .ToHashSet();
+#else
+    var activeEvents = winFormsEvents
+        .Where(e => !ignoredTypes.Contains(e.Split('/')[0]))
+        .ToHashSet();
+    var ignoredEvents = winFormsEvents
         .Where(e => ignoredTypes.Contains(e.Split('/')[0]))
         .ToHashSet();
 
-    var report = new StringBuilder();
     var missingEvents = 
+        activeEvents
+        .Except(implementedEvents)
+        .ToHashSet();
+#endif
+
+    var missingEvents =
         activeEvents
         .Except(implementedEvents)
         .ToHashSet();
@@ -145,7 +174,7 @@ static void GenerateReport(
     report.AppendLine("## Summary");
     report.AppendLine("| Category | Count |")
         .AppendLine("|---|---:|")
-        .AppendLine($"| Total Active Events (Found in WinForms) | {activeEvents.Count} |")
+        .AppendLine($"| Total Active Events (Found in WinForms and Component) | {activeEvents.Count} |")
         .AppendLine($"| Implemented (✅) | {activeEvents.Intersect(implementedEvents).Count()} |")
         .AppendLine($"| Missing (❌) | {missingEvents.Count} |")
         .AppendLine($"| Ignored (⚠️) | {ignoredEvents.Count} |")
@@ -366,6 +395,39 @@ static HashSet<string> GetWinFormsEvents()
     return eventsSet;
 }
 
+static HashSet<string> GetComponetEvents()
+{
+    var eventsSet = new HashSet<string>();
+    var assembly = typeof(Component).Assembly;
+
+    var types =
+        assembly
+        .GetTypes()
+        .Where(
+            t => t.IsPublic &&
+                t.Namespace == "System.ComponentModel" &&
+                t.Name == "Component");
+
+    foreach (var type in types)
+    {
+        // Get both instance and static events to support classes like Application
+        var events =
+            type
+            .GetEvents(
+                BindingFlags.Public |
+                BindingFlags.Instance |
+                BindingFlags.Static |
+                BindingFlags.DeclaredOnly);
+        foreach (var ev in events)
+        {
+            eventsSet.Add($"{type.FullName}/{ev.Name}");
+        }
+    }
+
+    return eventsSet;
+}
+
+
 static HashSet<string> GetImplementedObservableExtensions(string srcPath, List<string> symbols)
 {
     var implementedSet = new HashSet<string>();
@@ -383,6 +445,10 @@ static HashSet<string> GetImplementedObservableExtensions(string srcPath, List<s
             Path
             .GetFileNameWithoutExtension(file)
             .Replace("R3Extends", "");
+        if ("Component".Equals(typeName))
+        {
+            typeName = "System.ComponentModel.Component";
+        }
         if ("Timer".Equals(typeName))
         {
             typeName = "System.Windows.Forms.Timer";

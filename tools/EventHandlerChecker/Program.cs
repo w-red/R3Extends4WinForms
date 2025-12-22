@@ -4,7 +4,7 @@ using System.Reflection;
 using System.Text;
 using R3;
 
-Console.WriteLine("Event Handler & Argument Checker");
+Console.WriteLine("Event Handler Checker");
 Console.WriteLine("================================");
 
 var projectRoot = new DirectoryInfo(AppContext.BaseDirectory).Parent?.Parent?.Parent?.Parent?.Parent?.FullName;
@@ -15,10 +15,8 @@ if (projectRoot == null)
 }
 
 var winFormsEvents = GetWinFormsEventDefs();
-var implEvents = GetR3Ex4WinFormsEventDefs(); // Currently unused, but could be extended for more checks.
-
-var srcPath = Path.Combine(projectRoot, "src");
-//var implementations = GetOrParseImplementations(srcPath);
+var componentEvents = GetComponentEventDefs();
+var implEvents = GetR3Ex4WinFormsEventDefs();
 
 var tgtName = "";
 #if NET10_0_OR_GREATER
@@ -31,9 +29,14 @@ tgtName = "NET10";
     tgtName = "472";
 #endif
 
-var reportPath = Path.Combine(projectRoot, "tools", "EventHandlerChecker", $"HandlerTypeReport{tgtName}.md");
+var reportPath = 
+    Path.Combine(
+        projectRoot,
+        "tools",
+        "EventHandlerChecker",
+        $"HandlerTypeReport{tgtName}.md");
 
-GenerateReport(winFormsEvents, implEvents, reportPath);
+GenerateReport(winFormsEvents, componentEvents, implEvents, reportPath);
 
 Console.WriteLine($"Analysis complete.");
 Console.WriteLine($"Report generated at: {reportPath}");
@@ -42,16 +45,16 @@ Console.WriteLine($"Report generated at: {reportPath}");
 static Dictionary<string, EventDef> GetWinFormsEventDefs()
 {
     var defs = new Dictionary<string, EventDef>();
-    var assembly = typeof(Control).Assembly;
+    var winFormsAssembly = typeof(Control).Assembly;
 
     // We only care about types that are likely to have extensions
     // Filter to System.Windows.Forms namespace and Public types
-    var types =
-        assembly
+    var winFormsTypes =
+        winFormsAssembly
         .GetTypes()
         .Where(t => t.IsPublic && t.Namespace == "System.Windows.Forms");
 
-    foreach (var type in types)
+    foreach (var type in winFormsTypes)
     {
         // Get both instance and static events to support classes like Application
         var events = type.GetEvents(BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static);
@@ -76,8 +79,36 @@ static Dictionary<string, EventDef> GetWinFormsEventDefs()
             defs[key] = new EventDef(handlerType, argsType);
         }
     }
+
     return defs;
 }
+
+static Dictionary<string, EventDef> GetComponentEventDefs()
+{
+    var defs = new Dictionary<string, EventDef>();
+    var componentType = typeof(System.ComponentModel.Component);
+    var disposedEvent = componentType.GetEvent("Disposed");
+    if (disposedEvent != null)
+    {
+        var handlerType = disposedEvent.EventHandlerType;
+        if (handlerType != null)
+        {
+            var invokeMethod = handlerType.GetMethod("Invoke");
+            if (invokeMethod != null)
+            {
+                var parameters = invokeMethod.GetParameters();
+                if (parameters.Length == 2)
+                {
+                    var argsType = parameters[1].ParameterType;
+                    var key = "System.ComponentModel.Component/Disposed";
+                    defs[key] = new EventDef(handlerType, argsType);
+                }
+            }
+        }
+    }
+    return defs;
+}
+
 
 static Dictionary<string, ImplementationDef> GetR3Ex4WinFormsEventDefs()
 {
@@ -97,9 +128,12 @@ static Dictionary<string, ImplementationDef> GetR3Ex4WinFormsEventDefs()
         // Get both instance and static events to support classes like Application
         var methods =
             type
-            .GetMethods(BindingFlags.Public | BindingFlags.NonPublic |
-                        BindingFlags.Instance | BindingFlags.Static |
-                        BindingFlags.DeclaredOnly);
+            .GetMethods(
+                BindingFlags.Public | 
+                BindingFlags.NonPublic |
+                BindingFlags.Instance |
+                BindingFlags.Static |
+                BindingFlags.DeclaredOnly);
         foreach (var mt in methods)
         {
             Debug.Print($"Checking method: {mt.Name}, ret:{mt.ReturnType.GetGenericTypeDefinition()}, args:{mt.GetParameters()}");
@@ -113,6 +147,10 @@ static Dictionary<string, ImplementationDef> GetR3Ex4WinFormsEventDefs()
             if (impTypeName == "Timer")
             {
                 impTypeName = "System.Windows.Forms.Timer";
+            }
+            else if (impTypeName == "Component")
+            {
+                impTypeName = "System.ComponentModel.Component";
             }
 
             defs.Add(
@@ -158,12 +196,14 @@ static string GetFriendlyTypeNameString(Type type)
 }
 
 static void GenerateReport(
-    Dictionary<string, EventDef> definitions,
+    Dictionary<string, EventDef> winFormsDefinitions,
+    Dictionary<string, EventDef> componentsDefinitions,
     Dictionary<string, ImplementationDef> implementations,
     string path)
 {
     var report = new StringBuilder();
     var tableRows = new StringBuilder(); // Main table content
+    var componentRows = new StringBuilder(); // Component events table content
     var missingRows = new StringBuilder(); // Missing items table content
 
     // Header logic calculation
@@ -178,16 +218,14 @@ static void GenerateReport(
     {
         var key = $"{impl.TypeName}/{impl.EventName}";
 
-        if (definitions.TryGetValue(key, out var def))
+        if (winFormsDefinitions.TryGetValue(key, out var def))
         {
             checkedCount++;
 
             // Allow loose matching (e.g. valid namespace qualifications)
             // But usually we just want simplified name matching
 
-            bool isSafeRet = IsMatch(def.ArgsType, impl.ReturnType);
-
-            if (isSafeRet)
+            if (IsMatch(def.ArgsType, impl.ReturnType))
             {
                 successCount++;
                 // Correct
@@ -201,6 +239,25 @@ static void GenerateReport(
                 var typeUrl = GetLearnUrl(impl.TypeName);
                 var eventUrl = GetLearnUrl(impl.TypeName, impl.EventName);
                 tableRows.AppendLine($"| ❌ | [{impl.TypeName}]({typeUrl}) | [{impl.EventName}]({eventUrl}) | **{def.ArgsType}** | `{impl.ReturnType}` |");
+            }
+        }
+        else if (componentsDefinitions.TryGetValue(key, out var cDef))
+        {
+            checkedCount++;
+            if (IsMatch(cDef.ArgsType, impl.ReturnType))
+            {
+                successCount++;
+                // Correct
+                var typeUrl = GetLearnUrl(impl.TypeName);
+                var eventUrl = GetLearnUrl(impl.TypeName, impl.EventName);
+                componentRows.AppendLine($"| ✅ | [{impl.TypeName}]({typeUrl}) | [{impl.EventName}]({eventUrl}) | {cDef.ArgsType} | {impl.ReturnType} |");
+            }
+            else
+            {
+                errorCount++;
+                var typeUrl = GetLearnUrl(impl.TypeName);
+                var eventUrl = GetLearnUrl(impl.TypeName, impl.EventName);
+                componentRows.AppendLine($"| ❌ | [{impl.TypeName}]({typeUrl}) | [{impl.EventName}]({eventUrl}) | **{def.ArgsType}** | `{impl.ReturnType}` |");
             }
         }
         else
@@ -223,17 +280,24 @@ static void GenerateReport(
         .AppendLine("| Category | Count |")
         .AppendLine("|---|---:|")
         .AppendLine($"| Total Implementations | {totalImplementations} |")
-        .AppendLine($"| Checked (Found in WinForms) | {checkedCount} |")
+        .AppendLine($"| Checked (Found in WinForms, Components) | {checkedCount} |")
         .AppendLine($"| Correct (✅) | {successCount} |")
         .AppendLine($"| Incorrect (❌) | {errorCount} |")
         .AppendLine($"| Missing/Ignored (⚠️) | {missingCount} |")
         .AppendLine();
 
-    // Details Table
-    report.AppendLine("## Details")
+    // Details Table(System.Windows.Forms)
+    report.AppendLine("## Details(System.Windows.Forms)")
         .AppendLine("| Status | Class | Event | Expected Args | Actual Args |")
         .AppendLine("|:---:|---|---|---|---|")
         .Append(tableRows);
+
+    // Details Table(System.ComponentModel)
+    report.AppendLine("## Details(System.ComponentModel)")
+        .AppendLine("| Status | Class | Event | Expected Args | Actual Args |")
+        .AppendLine("|:---:|---|---|---|---|")
+        .Append(componentRows);
+
 
     // Missing Items Table (if any)
     if (missingCount > 0)
@@ -255,33 +319,6 @@ static bool IsMatch(Type expected, Type actual)
 {
     return expected.Equals(actual);
 }
-
-#if false
-static bool IsMatchEx(string expected, string actual)
-{
-    // Handle generics notation from Reflection (e.g. EventHandler`1)
-    if (expected.Contains("`"))
-    {
-        expected = expected.Substring(0, expected.IndexOf("`"));
-    }
-
-    // Standardize actual to remove generics part for comparison if needed, 
-    // BUT we want to be correct. 
-    // If expected is "EventHandler", acts matches "EventHandler<T>" -> this is debatable.
-    // However, WinForms uses EventHandler<T> for EventHandler`1.
-
-    // If exact match
-    if (actual == expected) return true;
-
-    // If actual is qualified
-    if (actual.EndsWith("." + expected) || expected.EndsWith($".{actual}")) return true;
-
-    // If expected was generic (stripped `1), check if actual starts with it + <
-    if (actual.StartsWith(expected + "<") || actual.EndsWith("." + expected + "<")) return true;
-
-    return false;
-}
-#endif
 
 static string GetLearnUrl(string typeName, string? eventName = null)
 {

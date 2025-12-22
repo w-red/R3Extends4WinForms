@@ -1,14 +1,14 @@
 # Event Coverage Report
 
-*Generated on 2025-12-19 05:55:13Z*
+*Generated on 2025-12-22 05:47:18Z*
 
 *Target Framework .NETFramework,Version=v4.7.2*
 
 ## Summary
 | Category | Count |
 |---|---:|
-| Total Active Events (Found in WinForms) | 578 |
-| Implemented (✅) | 578 |
+| Total Active Events (Found in WinForms and Component) | 579 |
+| Implemented (✅) | 579 |
 | Missing (❌) | 0 |
 | Ignored (⚠️) | 0 |
 
@@ -809,6 +809,13 @@
 |:------:|------------|
 | ✅ | [DrawItem](https://learn.microsoft.com/dotnet/api/system.windows.forms.statusbar.drawitem) |
 | ✅ | [PanelClick](https://learn.microsoft.com/dotnet/api/system.windows.forms.statusbar.panelclick) |
+
+### [`System.ComponentModel.Component`](https://learn.microsoft.com/dotnet/api/system.componentmodel.component)
+**Coverage: 0%** (1 / 1)
+
+| Status | Event Name |
+|:------:|------------|
+| ✅ | [Disposed](https://learn.microsoft.com/dotnet/api/system.componentmodel.component.disposed) |
 
 ### [`System.Windows.Forms.Timer`](https://learn.microsoft.com/dotnet/api/system.windows.forms.timer)
 **Coverage: 0%** (1 / 1)

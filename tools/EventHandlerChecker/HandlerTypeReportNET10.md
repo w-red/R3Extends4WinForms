@@ -1,16 +1,16 @@
 # Event Handler & Argument Type Check Report
-Generated on 2025-12-19 05:54:23Z
+Generated on 2025-12-22 03:05:10Z
 
 ## Summary
 | Category | Count |
 |---|---:|
 | Total Implementations | 627 |
-| Checked (Found in WinForms) | 626 |
-| Correct (✅) | 626 |
+| Checked (Found in WinForms, Components) | 627 |
+| Correct (✅) | 627 |
 | Incorrect (❌) | 0 |
-| Missing/Ignored (⚠️) | 1 |
+| Missing/Ignored (⚠️) | 0 |
 
-## Details
+## Details(System.Windows.Forms)
 | Status | Class | Event | Expected Args | Actual Args |
 |:---:|---|---|---|---|
 | ✅ | [ApplicationContext](https://learn.microsoft.com/dotnet/api/system.windows.forms.applicationcontext) | [ThreadExit](https://learn.microsoft.com/dotnet/api/system.windows.forms.applicationcontext.threadexit) | System.EventArgs | System.EventArgs |
@@ -639,10 +639,7 @@ Generated on 2025-12-19 05:54:23Z
 | ✅ | [WebBrowser](https://learn.microsoft.com/dotnet/api/system.windows.forms.webbrowser) | [NewWindow](https://learn.microsoft.com/dotnet/api/system.windows.forms.webbrowser.newwindow) | System.ComponentModel.CancelEventArgs | System.ComponentModel.CancelEventArgs |
 | ✅ | [WebBrowser](https://learn.microsoft.com/dotnet/api/system.windows.forms.webbrowser) | [ProgressChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.webbrowser.progresschanged) | System.Windows.Forms.WebBrowserProgressChangedEventArgs | System.Windows.Forms.WebBrowserProgressChangedEventArgs |
 | ✅ | [WebBrowser](https://learn.microsoft.com/dotnet/api/system.windows.forms.webbrowser) | [StatusTextChanged](https://learn.microsoft.com/dotnet/api/system.windows.forms.webbrowser.statustextchanged) | System.EventArgs | System.EventArgs |
-
-## Ignored Events (Not found in System.Windows.Forms)
-> These events exist in the implementation but could not be found in the `System.Windows.Forms` assembly via reflection. They might be from other assemblies (e.g. `System.ComponentModel`) or are obscured.
-
+## Details(System.ComponentModel)
 | Status | Class | Event | Expected Args | Actual Args |
 |:---:|---|---|---|---|
-| ⚠️ | [Component](https://learn.microsoft.com/dotnet/api/system.windows.forms.component) | [Disposed](https://learn.microsoft.com/dotnet/api/system.windows.forms.component.disposed) | N/A | `System.EventArgs` |
+| ✅ | [System.ComponentModel.Component](https://learn.microsoft.com/dotnet/api/system.componentmodel.component) | [Disposed](https://learn.microsoft.com/dotnet/api/system.componentmodel.component.disposed) | System.EventArgs | System.EventArgs |

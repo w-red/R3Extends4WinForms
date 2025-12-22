@@ -1,14 +1,14 @@
 # Event Coverage Report
 
-*Generated on 2025-12-19 05:55:26Z*
+*Generated on 2025-12-22 05:47:25Z*
 
 *Target Framework .NETCoreApp,Version=v10.0*
 
 ## Summary
 | Category | Count |
 |---|---:|
-| Total Active Events (Found in WinForms) | 542 |
-| Implemented (✅) | 542 |
+| Total Active Events (Found in WinForms and Component) | 543 |
+| Implemented (✅) | 543 |
 | Missing (❌) | 0 |
 | Ignored (⚠️) | 59 |
 
@@ -710,6 +710,13 @@
 |:------:|------------|
 | ✅ | [SplitterMoved](https://learn.microsoft.com/dotnet/api/system.windows.forms.splitter.splittermoved) |
 | ✅ | [SplitterMoving](https://learn.microsoft.com/dotnet/api/system.windows.forms.splitter.splittermoving) |
+
+### [`System.ComponentModel.Component`](https://learn.microsoft.com/dotnet/api/system.componentmodel.component)
+**Coverage: 0%** (1 / 1)
+
+| Status | Event Name |
+|:------:|------------|
+| ✅ | [Disposed](https://learn.microsoft.com/dotnet/api/system.componentmodel.component.disposed) |
 
 ### [`System.Windows.Forms.Timer`](https://learn.microsoft.com/dotnet/api/system.windows.forms.timer)
 **Coverage: 0%** (1 / 1)
