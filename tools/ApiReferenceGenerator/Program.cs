@@ -103,6 +103,23 @@ static void AppendClassesSection(StringBuilder report, HashSet<string> events, D
             .AppendLine()
             .AppendLine($"Extensions implement at [{fileName}](https://github.com/w-red/R3Extends4WinForms/tree/master/src/{fileName}).")
             .AppendLine();
+
+        if (className == "ToolStripManager")
+        {
+            report.AppendLine("> [!NOTE]")
+                  .AppendLine("> `RendererChanged` event is static event.")
+                  .AppendLine("> So `RendererChangedAsObservable` method is static method.")
+                  .AppendLine("> ")
+                  .AppendLine("> Usage:")
+                  .AppendLine(">")
+                  .AppendLine("> ```csharp")
+                  .AppendLine("> ToolStripManagerR3Extends.RendererChangedAsObservable().Subscribe(_ =>")
+                  .AppendLine("> {")
+                  .AppendLine(">     // do something")
+                  .AppendLine("> });")
+                  .AppendLine("> ```")
+                  .AppendLine();
+        }
         report.AppendLine("| Event | AsObservable method | 472 | Net6 | Net8 | Net10 |")
             .AppendLine("| :--- | :--- | :---: | :---: | :---: | :---: |");
 
